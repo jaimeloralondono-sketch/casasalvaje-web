@@ -6,6 +6,22 @@
   function onScroll(){ if(nav) nav.classList.toggle("solid", !hero || window.scrollY > hero.offsetHeight - 80); }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
+  // Phones: Menu button opens a full-screen sheet; links, Escape or a wider screen close it.
+  var mb = document.querySelector(".menu-btn"), sh = document.getElementById("sheet"), root = document.documentElement;
+  function menu(o){
+    sh.hidden = !o; mb.setAttribute("aria-expanded", String(o)); mb.textContent = o ? "Close" : "Menu";
+    root.style.overflow = o ? "hidden" : ""; root.classList.toggle("menu-open", o);
+    document.querySelectorAll("main, footer").forEach(function(el){ el.inert = o; });
+  }
+  if(mb && sh){
+    mb.addEventListener("click", function(){ menu(sh.hidden); });
+    sh.addEventListener("click", function(e){ if(e.target.closest("a")) menu(false); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !sh.hidden){ menu(false); mb.focus(); } });
+    var wide = window.matchMedia("(min-width:720px)");
+    var onWide = function(){ if(wide.matches && !sh.hidden) menu(false); };
+    if(wide.addEventListener) wide.addEventListener("change", onWide); else if(wide.addListener) wide.addListener(onWide);
+  }
+
   // Reveal on scroll.
   var rv = document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
@@ -32,6 +48,7 @@
       form.hidden = true;
       var ok = document.querySelector('[data-ok="' + form.id + '"]'); if(!ok) return;
       ok.hidden = false;
+      ok.focus({preventScroll:true});
       try{ ok.scrollIntoView({block:"center", behavior:"smooth"}); }catch(e){}
     }
     form.addEventListener("submit", function(e){
