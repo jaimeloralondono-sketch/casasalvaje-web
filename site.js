@@ -32,7 +32,7 @@
   }catch(e){}
   var form = document.getElementById("guestlist");
   if(!form) return;
-  var hosted = /netlify\.app$|casasalvaje\.com$/.test(location.hostname);
+  var hosted = /netlify\.app$|casa-?salvaje\.com$/.test(location.hostname);
   var sending = false;
   function done(){
     form.hidden = true;
