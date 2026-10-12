@@ -226,36 +226,59 @@
 })();
 
 // Horarios: marca la fila de hoy y dice si cada mundo está abierto ahora, siempre en hora de Cartagena.
+// Un domingo seguido de lunes festivo usa el horario "f" de data-hours (abrimos hasta las 12).
 (function(){
   var cards = [].slice.call(document.querySelectorAll(".hr-card[data-hours]"));
   if(!cards.length) return;
   var root = document.documentElement;
   var DAYS = { es: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"], en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] };
+  var DAY = 864e5;
+  // Fecha y hora de Cartagena; la fecha se guarda como medianoche UTC de ese día para contar días sin husos.
   function now(){
     try{
       var p = {};
-      new Intl.DateTimeFormat("en-US", { timeZone: "America/Bogota", weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" })
+      new Intl.DateTimeFormat("en-US", { timeZone: "America/Bogota", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", hourCycle: "h23" })
         .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
-      return { d: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(p.weekday), m: (+p.hour % 24) * 60 + (+p.minute) };
-    }catch(e){ var t = new Date(); return { d: t.getDay(), m: t.getHours() * 60 + t.getMinutes() }; }
+      return { day: Date.UTC(+p.year, +p.month - 1, +p.day), m: (+p.hour % 24) * 60 + (+p.minute) };
+    }catch(e){ var t = new Date(); return { day: Date.UTC(t.getFullYear(), t.getMonth(), t.getDate()), m: t.getHours() * 60 + t.getMinutes() }; }
   }
+  // Festivos de Colombia (Ley 51 de 1983): fijos, trasladados al lunes y los que dependen de la Pascua.
+  var cache = {};
+  function holidays(y){
+    if(cache[y]) return cache[y];
+    var a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3),
+        h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451),
+        easter = Date.UTC(y, Math.floor((h + l - 7 * m + 114) / 31) - 1, ((h + l - 7 * m + 114) % 31) + 1);
+    function monday(t){ var wd = new Date(t).getUTCDay(); return wd === 1 ? t : t + ((8 - wd) % 7) * DAY; }
+    var set = {};
+    [[0, 1], [4, 1], [6, 20], [7, 7], [11, 8], [11, 25]].forEach(function(x){ set[Date.UTC(y, x[0], x[1])] = 1; });
+    [[0, 6], [2, 19], [5, 29], [7, 15], [9, 12], [10, 1], [10, 11]].forEach(function(x){ set[monday(Date.UTC(y, x[0], x[1]))] = 1; });
+    set[easter - 3 * DAY] = 1; set[easter - 2 * DAY] = 1;
+    [43, 64, 71].forEach(function(n){ set[easter + n * DAY] = 1; });
+    return (cache[y] = set);
+  }
+  function isHoliday(t){ return !!holidays(new Date(t).getUTCFullYear())[t]; }
+  function wd(t){ return new Date(t).getUTCDay(); }
+  function eve(t){ return wd(t) === 0 && isHoliday(t + DAY); }
+  function hoursOn(H, t){ return (eve(t) && H.f) || H[wd(t)] || []; }
   function clock(m){
     m = m % 1440; var h = Math.floor(m / 60), mm = m % 60, h12 = h % 12 || 12;
     return h12 + (mm ? ":" + (mm < 10 ? "0" : "") + mm : "") + (h < 12 ? " am" : " pm");
   }
   function render(){
-    var es = (root.getAttribute("data-lang") || "en") === "es", t = now();
+    var es = (root.getAttribute("data-lang") || "en") === "es", t = now(), key = eve(t.day) ? "f" : String(wd(t.day));
     cards.forEach(function(card){
       var H; try{ H = JSON.parse(card.dataset.hours); }catch(e){ return; }
+      var k0 = H[key] ? key : String(wd(t.day));
       card.querySelectorAll(".hr-rows > div").forEach(function(row){
-        var on = row.dataset.days.split(",").indexOf(String(t.d)) > -1;
+        var on = row.dataset.days.split(",").indexOf(k0) > -1;
         row.classList.toggle("today", on);
         row.querySelector("dt").setAttribute("data-hoy", on ? (es ? "Hoy" : "Today") : "");
       });
       // Abierto ahora: tramos de hoy, o el tramo de ayer que pasa de medianoche.
-      var y = (t.d + 6) % 7, close = null;
-      (H[t.d] || []).forEach(function(r){ if(t.m >= r[0] && t.m < r[1]) close = r[1]; });
-      (H[y] || []).forEach(function(r){ if(r[1] > 1440 && t.m < r[1] - 1440) close = r[1]; });
+      var close = null;
+      hoursOn(H, t.day).forEach(function(r){ if(t.m >= r[0] && t.m < r[1]) close = r[1]; });
+      hoursOn(H, t.day - DAY).forEach(function(r){ if(r[1] > 1440 && t.m < r[1] - 1440) close = r[1]; });
       var el = card.querySelector(".hr-status"), txt;
       if(close !== null){
         txt = es ? "Abierto ahora · cierra a las " + clock(close) : "Open now · closes at " + clock(close);
@@ -263,8 +286,7 @@
       } else {
         var next = null;
         for(var k = 0; k < 8 && next === null; k++){
-          var d = (t.d + k) % 7;
-          (H[d] || []).forEach(function(r){ if(next === null && (k > 0 || r[0] > t.m)) next = { k: k, d: d, m: r[0] }; });
+          hoursOn(H, t.day + k * DAY).forEach(function(r){ if(next === null && (k > 0 || r[0] > t.m)) next = { k: k, d: wd(t.day + k * DAY), m: r[0] }; });
         }
         if(!next) txt = es ? "Cerrado" : "Closed";
         else {
