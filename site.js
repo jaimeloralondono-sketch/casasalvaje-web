@@ -175,44 +175,45 @@
   });
 })();
 
-// La casa en imágenes: orden al azar en cada visita y, cada pocos segundos, una foto cambia por otra de la misma forma.
+// La casa en imágenes: piezas al azar de gal-pool.json, nunca dos de la misma serie a la vez
+// (las fotos y los platos admiten dos), y cada pocos segundos una cambia por otra de la misma forma.
 (function(){
   var gal = document.querySelector(".gal[data-pool]");
-  if(!gal) return;
+  if(!gal || !window.fetch) return;
   var imgs = [].slice.call(gal.querySelectorAll("img"));
-  var all = imgs.map(function(im){ return { src: im.getAttribute("src"), alt: im.alt, w: +im.getAttribute("width"), h: +im.getAttribute("height") }; });
-  try{ all = all.concat(JSON.parse(gal.dataset.pool)); }catch(e){}
-  function shape(it){ var r = it.h / it.w; return r < .85 ? "wide" : r > 1.45 ? "tall" : "port"; }
+  function shape(w, h){ var r = h / w; return r < .85 ? "wide" : r > 1.45 ? "tall" : "port"; }
+  function cap(s){ return /^(foto|platos)/.test(s) ? 2 : 1; }
   function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  function put(im, it){ im.src = it.src; im.alt = it.alt; im.width = it.w; im.height = it.h; }
-  // Primera vuelta: las mismas casillas con piezas al azar, cada una de la forma que ya tenía.
-  var shown = [], pool = shuffle(all.slice());
-  imgs.forEach(function(im, i){
-    var want = shape(all[i]), k = pool.findIndex(function(it){ return shape(it) === want; });
-    var it = k < 0 ? all[i] : pool.splice(k, 1)[0];
-    if(k < 0 && pool.indexOf(it) > -1) pool.splice(pool.indexOf(it), 1);
-    put(im, it); shown[i] = it;
-  });
-  if(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  var visible = false, last = -1;
-  if("IntersectionObserver" in window){
-    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(gal);
-  } else visible = true;
-  setInterval(function(){
-    if(!visible || document.hidden) return;
-    var i; do { i = Math.floor(Math.random() * imgs.length); } while(i === last && imgs.length > 1);
-    last = i;
-    var want = shape(shown[i]);
-    var free = pool.filter(function(it){ return shape(it) === want; });
-    if(!free.length) return;
-    var next = free[Math.floor(Math.random() * free.length)], im = imgs[i], pre = new Image();
-    pre.onload = function(){
-      im.style.opacity = 0;
-      setTimeout(function(){
-        pool.splice(pool.indexOf(next), 1); pool.push(shown[i]);
-        put(im, next); shown[i] = next; im.style.opacity = 1;
-      }, 600);
-    };
-    pre.src = next.src;
-  }, 3500);
+  var slots = imgs.map(function(im){ return shape(+im.getAttribute("width"), +im.getAttribute("height")); });
+  fetch(gal.dataset.pool).then(function(r){ return r.json(); }).then(function(all){
+    var pool = shuffle(all.slice()), shown = [], count = {};
+    function fits(it, want, except){ return shape(it.w, it.h) === want && (count[it.s] || 0) - (except === it.s ? 1 : 0) < cap(it.s); }
+    function take(it){ pool.splice(pool.indexOf(it), 1); count[it.s] = (count[it.s] || 0) + 1; }
+    function give(it){ pool.push(it); count[it.s]--; }
+    function put(im, it){ im.src = it.src; im.alt = it.alt; im.width = it.w; im.height = it.h; }
+    imgs.forEach(function(im, i){
+      var it = pool.find(function(p){ return fits(p, slots[i]); }) || pool.find(function(p){ return (count[p.s] || 0) < cap(p.s); });
+      if(!it) return;
+      take(it); put(im, it); shown[i] = it;
+    });
+    if(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var visible = false, last = -1;
+    if("IntersectionObserver" in window) new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(gal);
+    else visible = true;
+    setInterval(function(){
+      if(!visible || document.hidden) return;
+      var i; do { i = Math.floor(Math.random() * imgs.length); } while(i === last && imgs.length > 1);
+      last = i;
+      var cur = shown[i]; if(!cur) return;
+      var want = shape(cur.w, cur.h);
+      var free = pool.filter(function(p){ return p.s !== cur.s && fits(p, want, cur.s); });
+      if(!free.length) return;
+      var next = free[Math.floor(Math.random() * free.length)], im = imgs[i], pre = new Image();
+      pre.onload = function(){
+        im.style.opacity = 0;
+        setTimeout(function(){ take(next); give(cur); put(im, next); shown[i] = next; im.style.opacity = 1; }, 600);
+      };
+      pre.src = next.src;
+    }, 3500);
+  }).catch(function(){});
 })();
