@@ -412,3 +412,13 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .piezas .dls{display:flex;gap:6px;flex-wrap:wrap}
 .piezas .dl::before{content:"↓ "}
 .piezas .dl.busy{opacity:.5;pointer-events:none}
+
+/* ONO: anatomía de un roll */
+.anatomia{margin-top:48px}
+.anatomia h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+.anatomia .lead{margin-top:8px}
+.anatomia-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,26%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:20px;padding-bottom:8px;scrollbar-width:thin}
+.anatomia-row figure{margin:0;scroll-snap-align:start}
+.anatomia-row img{width:100%;height:auto;display:block;border-radius:var(--img,10px)}
+.anatomia-row figcaption{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:8px;opacity:.75}
+@media (max-width:560px){.anatomia-row{grid-auto-columns:72%}}
