@@ -47,6 +47,12 @@
   }
   if(cv) cv.addEventListener("change", checkCV);
 
+  // contact.html#press (footer link, press block) comes with "Press" already chosen as the reason,
+  // unless the visitor has already picked one.
+  var reason = document.querySelector('#contact-form select[name="reason"]');
+  function pressReason(){ if(location.hash === "#press" && !reason.value) reason.value = "press"; }
+  if(reason){ pressReason(); window.addEventListener("hashchange", pressReason); }
+
   // Netlify only handles forms on the deployed site; locally we just show the confirmation.
   var hosted = /netlify\.app$|grupo-?ono\.com(\.co)?$/.test(location.hostname);
   document.querySelectorAll("form[data-netlify]").forEach(function(form){
