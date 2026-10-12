@@ -390,10 +390,15 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .look-more{margin-top:24px}
 .fondos-intro{padding-block:56px 24px}
 .fondos-intro h1{color:var(--cobalt)}
-.series-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.series-index{display:grid;gap:14px;margin-top:28px}
+.series-world b{display:block;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.series-nav{display:flex;flex-wrap:wrap;gap:6px}
 .series-nav a{text-decoration:none;font-size:0.8rem;letter-spacing:0.06em;padding:7px 12px;border-radius:999px;border:1px solid var(--line);color:var(--ink)}
 .series-nav a:hover{border-color:var(--cobalt);color:var(--cobalt)}
-.serie{padding-block:40px;border-top:1px solid var(--line);scroll-margin-top:120px}
+.mundo{border-top:1px solid var(--line);padding-block:8px 24px;scroll-margin-top:120px}
+.mundo-t{padding-top:32px;color:var(--ink-soft)}
+.serie{padding-block:24px 32px;scroll-margin-top:120px}
+.serie + .serie{border-top:1px dashed var(--line)}
 .serie h2{color:var(--cobalt)}
 .serie .lead{margin-top:8px;color:var(--ink-soft)}
 .piezas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px;margin-top:24px;align-items:start}
