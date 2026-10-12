@@ -49,6 +49,23 @@
   }catch(e){}
   var form = document.getElementById("guestlist");
   if(!form) return;
+  // Lista de invitados: solo mayores de 18 años.
+  var nac = document.getElementById("f-nac");
+  function checkAge(){
+    if(!nac) return;
+    nac.setCustomValidity("");
+    if(!nac.value) return;
+    var d = new Date(nac.value + "T00:00:00"), t = new Date();
+    var age = t.getFullYear() - d.getFullYear() - ((t.getMonth() < d.getMonth() || (t.getMonth() === d.getMonth() && t.getDate() < d.getDate())) ? 1 : 0);
+    var es = (root.getAttribute("data-lang") || "en") === "es";
+    if(isNaN(age) || age > 110) nac.setCustomValidity(es ? "Revisa la fecha de nacimiento." : "Please check your date of birth.");
+    else if(age < 18) nac.setCustomValidity(es ? "La lista es solo para mayores de 18 años." : "The guest list is for over-18s only.");
+  }
+  if(nac){
+    var mx = new Date(); mx.setFullYear(mx.getFullYear() - 18);
+    nac.max = mx.toISOString().slice(0, 10);
+    nac.addEventListener("input", checkAge); nac.addEventListener("change", checkAge);
+  }
   var hosted = /netlify\.app$|casa-?salvaje\.com$/.test(location.hostname);
   var sending = false;
   function done(){
@@ -58,6 +75,7 @@
   }
   form.addEventListener("submit", function(e){
     e.preventDefault();
+    checkAge();
     if(!form.reportValidity()) return;
     if(!hosted){ done(); return; }
     if(sending) return; sending = true;
