@@ -1,0 +1,384 @@
+
+/* Una casa, cuatro mundos. La página es una sucesión de capítulos: Casa Salvaje (crema y cobalto), La Domenica (terracota sobre lino), Kanibal (negro y rojo con glifos), SLVJ (verde y ámbar), ONO (crema japonés, próximamente). Cada capítulo lleva su propio fondo, su logo y su campaña. */
+:root{
+  --cream:#F3EBDD; --cream-2:#EADFCB; --cobalt:#1437B5; --cobalt-deep:#0E2683; --ink:#141B3A; --ink-soft:#4A527A; --line:#CDBFA6; --white:#FBF7EF;
+  --terra:#B7461C; --linen:#F4EADB; --linen-2:#E9DCC6; --olive:#5B6440;
+  --black:#0B0A0A; --blood:#C8321F; --bone:#EDE6DA;
+  --forest:#1F3A2E; --amber:#D9A441; --forest-2:#2A4A3B;
+  --paper:#F6F2E8; --sumi:#141414; --vermilion:#B4231C;
+  --display:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --body:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:root[data-lang="es"] .en{display:none!important}
+:root:not([data-lang="es"]) .es{display:none!important}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:0.02em}
+h1{font-size:clamp(2.5rem,8.5vw,5.2rem);line-height:0.98;text-transform:uppercase}
+h2{font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.05;text-transform:uppercase}
+h3{font-size:1.4rem;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;color:var(--cobalt)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:0.95rem;letter-spacing:0.04em;border:1.5px solid currentColor;transition:transform .15s ease,opacity .15s ease;cursor:pointer;font-family:inherit;background:transparent;color:inherit}
+.btn:hover{transform:translateY(-1px);opacity:.92}
+.btn.solid{background:var(--cobalt);border-color:var(--cobalt);color:var(--white)}
+.btn.ghost{color:var(--cobalt)}
+.btn:focus-visible,.lang button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.lead{max-width:62ch;font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(243,235,221,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:16px;min-height:62px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:40px;width:auto;display:block}
+.menu{display:none;gap:20px;margin-left:8px;font-size:0.88rem}
+.menu a{text-decoration:none;color:var(--ink);letter-spacing:0.04em}
+.menu a:hover{color:var(--cobalt)}
+.nav .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1.5px solid var(--cobalt);border-radius:999px;overflow:hidden}
+.lang button{font:inherit;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;padding:7px 11px;border:0;background:transparent;color:var(--cobalt);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--cobalt);color:var(--white)}
+.nav .btn{padding:9px 14px;font-size:0.82rem}
+@media (min-width:960px){.menu{display:flex}}
+
+/* Hero */
+.hero{padding-block:56px 64px}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:28px;align-items:end}
+.hero .logo{width:min(100%,250px);display:block;margin-bottom:22px}
+.hero h1{color:var(--cobalt);max-width:12ch}
+.hero .sub{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,3.2vw,1.9rem);margin-top:14px}
+.arch{position:relative;width:min(100%,440px);aspect-ratio:3/4;background:var(--cobalt);border-radius:999px 999px 18px 18px;overflow:hidden;justify-self:end}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.arch::after{content:"";position:absolute;inset:12px;border:1.5px solid rgba(251,247,239,.5);border-radius:999px 999px 10px 10px;pointer-events:none}
+@media (min-width:860px){.hero .wrap{grid-template-columns:1.15fr 0.85fr}}
+
+/* Franja */
+.strip{background:var(--cobalt);color:var(--white);overflow:hidden}
+.strip .row{display:flex;gap:48px;white-space:nowrap;padding:14px 0;font-family:var(--display);font-size:1.15rem;letter-spacing:0.14em;text-transform:uppercase;animation:slide 40s linear infinite}
+.strip .row span::after{content:"◆";margin-left:48px;font-size:0.6rem;vertical-align:middle;opacity:.7}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.strip .row{animation:none;white-space:normal;flex-wrap:wrap;gap:12px 28px;padding:14px 20px}}
+
+/* La casa */
+section{padding-block:72px}
+.num{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.num .n{font-family:var(--display);font-size:1rem;letter-spacing:0.2em;color:var(--cobalt)}
+.two{display:grid;grid-template-columns:1fr;gap:28px}
+@media (min-width:860px){.two{grid-template-columns:0.9fr 1.1fr;gap:56px}}
+.doors{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
+@media (min-width:860px){.doors{grid-template-columns:repeat(4,1fr)}}
+.door{position:relative;display:block;aspect-ratio:3/4;border-radius:999px 999px 10px 10px;overflow:hidden;text-decoration:none;color:var(--white)}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.door:hover img{transform:scale(1.04)}
+.door::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,30,.75),rgba(10,12,30,0) 55%)}
+.door .cap{position:absolute;left:16px;right:16px;bottom:16px;z-index:1}
+.door .cap b{display:block;font-family:var(--display);font-size:1.4rem;letter-spacing:0.08em;text-transform:uppercase}
+.door .cap span{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;opacity:.85}
+.look{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:40px}
+@media (min-width:760px){.look{grid-template-columns:repeat(4,1fr)}}
+.look img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block}
+.look figcaption{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+.look figure{margin:0}
+
+/* Capítulos de marca */
+.brandsec{padding-block:80px}
+.brandsec .head{display:grid;grid-template-columns:1fr;gap:22px;align-items:end;margin-bottom:32px}
+@media (min-width:860px){.brandsec .head{grid-template-columns:1fr 1fr;gap:48px}}
+.brandsec .lg{height:56px;display:flex;align-items:center;margin-bottom:18px}
+.brandsec .lg img{max-height:56px;width:auto}
+.brandsec .lg .script{font-family:var(--display);font-style:italic;font-size:2.4rem;font-weight:500;line-height:1}
+.brandsec .lg .caps{font-family:var(--display);font-weight:600;font-size:2.2rem;letter-spacing:0.22em;text-transform:uppercase}
+.brandsec h2{font-size:clamp(1.8rem,4.6vw,3rem)}
+.brandsec .meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:0.85rem;margin-top:14px}
+.brandsec .meta b{font-weight:600}
+.brandsec .meta a{text-decoration:none;font-weight:600}
+.feat{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:760px){.feat{grid-template-columns:1.2fr 1fr 1fr}.feat .big{grid-row:span 2}}
+.feat img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;aspect-ratio:4/5}
+.feat .big img{aspect-ratio:3/4}
+.row5{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+@media (min-width:760px){.row5{grid-template-columns:repeat(5,1fr)}}
+.row5 img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block}
+.row4{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+@media (min-width:760px){.row4{grid-template-columns:repeat(4,1fr)}}
+.row4 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block}
+.row3{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+@media (min-width:640px){.row3{grid-template-columns:repeat(3,1fr)}}
+.row3 img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;display:block}
+.motto{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,3vw,1.8rem);margin-top:28px;max-width:30ch}
+
+/* La Domenica */
+.domenica{background:var(--linen);color:#3A2A1E}
+.domenica .eyebrow,.domenica .meta a,.domenica .btn.ghost{color:var(--terra)}
+.domenica .btn.solid{background:var(--terra);border-color:var(--terra);color:var(--linen)}
+.domenica .lg .script{color:var(--terra)}
+/* Kanibal */
+.kanibal{background:var(--black);color:var(--bone)}
+.kanibal .eyebrow,.kanibal .meta a,.kanibal .btn.ghost{color:var(--blood)}
+.kanibal .btn.solid{background:var(--blood);border-color:var(--blood);color:var(--bone)}
+.kanibal .lead{color:rgba(237,230,218,.78)}
+.kanibal .lg img{filter:invert(1) brightness(1.1)}
+/* SLVJ */
+.slvj{background:var(--forest);color:var(--bone)}
+.slvj .eyebrow,.slvj .meta a,.slvj .btn.ghost{color:var(--amber)}
+.slvj .btn.solid{background:var(--amber);border-color:var(--amber);color:var(--forest)}
+.slvj .lead{color:rgba(237,230,218,.8)}
+.slvj .lg .caps{color:var(--amber)}
+/* ONO */
+.ono{background:var(--paper);color:var(--sumi)}
+.ono .eyebrow,.ono .meta a,.ono .btn.ghost{color:var(--vermilion)}
+.ono .btn.solid{background:var(--sumi);border-color:var(--sumi);color:var(--paper)}
+.ono .lead{color:#4A4A4A}
+.soon{display:inline-block;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;border:1.5px solid var(--vermilion);color:var(--vermilion);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+
+
+/* Texturas por marca */
+.brandsec{position:relative;overflow:hidden}
+.brandsec > .wrap{position:relative;z-index:1}
+.brandsec::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;pointer-events:none}
+.domenica::before{background-image:url(img/tex-toile.jpg);opacity:.22;filter:saturate(.6)}
+.domenica{background:var(--linen)}
+.kanibal::before{background:
+  radial-gradient(60% 50% at 85% 10%, rgba(200,50,31,.22), transparent 60%),
+  radial-gradient(40% 40% at 10% 90%, rgba(200,50,31,.14), transparent 60%);opacity:1}
+.kanibal .wrap::before{content:"ᛟ ᛏ ᚲ ᛉ ᛊ";position:absolute;right:-10px;top:-20px;font-size:9rem;line-height:1;color:var(--blood);opacity:.08;letter-spacing:.2em;pointer-events:none;font-family:var(--body)}
+.slvj::before{background-image:url(img/tex-mosaico.jpg);opacity:.16;filter:saturate(.7)}
+.ono::before{background-image:url(img/tex-shoji.jpg);opacity:.12;filter:grayscale(.3)}
+.ono .wrap::before{content:"鬼";position:absolute;right:0;top:-10px;font-size:11rem;line-height:1;color:var(--vermilion);opacity:.07;pointer-events:none;font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif}
+.brandsec .wrap{position:relative}
+.ono .row2{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+@media (min-width:760px){.ono .row2{grid-template-columns:repeat(2,1fr)}}
+.ono .row2 img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:10px;display:block}
+.ono .wide{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:12px;display:block;margin-top:12px}
+.casa-tex{background:
+  linear-gradient(rgba(243,235,221,.85),rgba(243,235,221,.85)),url(img/tex-leopardo.jpg) center/cover}
+
+/* Reglas */
+.rules{background:var(--cobalt);color:var(--white);text-align:center}
+.rules h2{font-size:clamp(2rem,7vw,4.4rem)}
+.rules .cap{margin-top:16px;font-family:var(--display);font-style:italic;font-size:1.2rem;opacity:.9}
+
+/* Galería */
+.gal{columns:2;column-gap:12px;margin-top:28px}
+.gal img{width:100%;display:block;border-radius:10px;margin-bottom:12px;break-inside:avoid}
+@media (min-width:860px){.gal{columns:3}}
+
+/* Agenda */
+.agenda{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+.agenda li{display:grid;grid-template-columns:7.5rem 1fr auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.agenda .d{font-family:var(--display);font-size:1.3rem;color:var(--cobalt);line-height:1.05}
+.agenda .d small{display:block;font-family:var(--body);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft)}
+.agenda .t b{display:block;font-weight:600}
+.agenda .t span{color:var(--ink-soft);font-size:0.92rem}
+.agenda .btn{padding:9px 14px;font-size:0.8rem}
+@media (max-width:560px){.agenda li{grid-template-columns:6rem 1fr}.agenda .btn{grid-column:2}}
+
+/* Dónde */
+.where .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:14px}
+.where .addr{font-family:var(--display);font-size:1.5rem;line-height:1.15}
+.where .meta{color:var(--ink-soft)}
+.where .links{display:flex;flex-wrap:wrap;gap:10px}
+.where .mapa{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--white)}
+.where .mapa img{width:100%;display:block}
+
+/* Lista */
+.guest{background:var(--cream-2)}
+form{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px;max-width:720px}
+@media (min-width:640px){form{grid-template-columns:1fr 1fr}form .full{grid-column:1/-1}}
+label{display:grid;gap:6px;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+input,select{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);min-width:0;width:100%}
+.check{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:400;font-size:0.9rem;color:var(--ink-soft)}
+.check input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--cobalt)}
+.note{font-size:0.82rem;color:var(--ink-soft);max-width:62ch}
+.ok{background:var(--white);border:1.5px solid var(--cobalt);border-radius:12px;padding:18px;max-width:720px}
+
+/* Footer */
+footer{padding-block:40px 52px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:0.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center}
+footer .marcas{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+footer .marcas img{height:26px;width:auto;opacity:.85}
+footer a{text-decoration:none;color:var(--cobalt);font-weight:600}
+
+/* Navegación entre páginas */
+.menu a[aria-current="page"]{color:var(--cobalt);text-decoration:underline;text-underline-offset:6px}
+.worlds{border-top:1px solid var(--line)}
+.worlds .wrap{display:flex;gap:6px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+.worlds .wrap::-webkit-scrollbar{display:none}
+.worlds a{flex:none;text-decoration:none;font-size:0.8rem;letter-spacing:0.06em;padding:7px 12px;border-radius:999px;color:var(--ink);border:1px solid var(--line)}
+.worlds a[aria-current="page"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--white)}
+@media (min-width:960px){.worlds{display:none}}
+.brandpage .brandsec{padding-block:56px 72px}
+.next{background:var(--cream);padding-block:56px}
+.next .eyebrow{margin-bottom:18px}
+.next .doors{margin-top:0}
+
+/* ===== Look and feel por marca: cada página toma la identidad completa de su mundo ===== */
+.bmark{display:flex;align-items:center;text-decoration:none;color:var(--acc)}
+.bmark img{height:38px;width:auto;display:block}
+.bmark .script{font-family:var(--disp);font-style:italic;font-size:1.7rem;line-height:1}
+.bmark .caps{font-family:var(--disp);font-weight:700;font-size:1.5rem;letter-spacing:0.24em}
+.house{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--muted);border-left:1px solid var(--ln);padding-left:12px;margin-left:12px;white-space:nowrap}
+@media (max-width:420px){.house{display:none}}
+body.themed{background:var(--pg);color:var(--ink2)}
+.themed .nav{background:var(--navbg);border-bottom-color:var(--ln)}
+.themed .menu a{color:var(--ink2)}
+.themed .menu a:hover,.themed .menu a[aria-current="page"]{color:var(--acc)}
+.themed .lang{border-color:var(--acc)}
+.themed .lang button{color:var(--acc)}
+.themed .lang button[aria-pressed="true"]{background:var(--acc);color:var(--onacc)}
+.themed .nav .btn.solid,.themed .next .btn.solid{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+.themed .next .btn.ghost{color:var(--acc)}
+.themed .btn{border-radius:var(--rad)}
+.themed .worlds{border-top-color:var(--ln)}
+.themed .worlds a{color:var(--ink2);border-color:var(--ln);border-radius:var(--rad)}
+.themed .worlds a[aria-current="page"]{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+.themed .next{background:var(--pg2);color:var(--ink2)}
+.themed .next .eyebrow{color:var(--acc)}
+.themed .door{border-radius:var(--door)}
+.themed .door .cap b{font-family:var(--disp)}
+.themed footer{border-top-color:var(--ln);color:var(--muted);background:var(--pg)}
+.themed footer a{color:var(--acc)}
+.themed footer .marcas img{filter:var(--logofx)}
+.themed h1,.themed h2,.themed .motto{font-family:var(--disp)}
+.brandpage .brandsec .lg{height:80px}
+.brandpage .brandsec .lg img{max-height:80px}
+.brandpage .brandsec h1.h2{font-size:clamp(2.3rem,6.4vw,4.2rem);line-height:1.02}
+.brandpage .brandsec .feat img,.brandpage .brandsec .row3 img,.brandpage .brandsec .row4 img,.brandpage .brandsec .row5 img,.brandpage .ono .row2 img,.brandpage .ono .wide{border-radius:var(--img)}
+
+/* ================================================================
+   CASA SALVAJE (página principal) — Manual de marca extendido v2
+   Paleta: hueso #E6DDCD, oliva #3D4635, terracota #A8533F, tinta #171612, bronce #8A6A2F.
+   Cobalto #1751B3 solo como gesto ilustrado. Tipografía: EB Garamond + Inter.
+   ================================================================ */
+:root{
+  --cream:#E6DDCD; --cream-2:#DCD1BD; --ink:#171612; --ink-soft:#4F4B41; --line:#CBBEA6; --white:#F2ECE1;
+  --olive-cs:#3D4635; --terra-cs:#A8533F; --bronze:#8A6A2F; --cobalt:#1751B3;
+  --display:"EB Garamond",Georgia,serif;
+  --body:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+body:not(.themed) h1,body:not(.themed) h2{text-transform:none;letter-spacing:0;font-weight:500}
+body:not(.themed) .nav{background:rgba(230,221,205,.95)}
+body:not(.themed) .menu a:hover{color:var(--terra-cs)}
+body:not(.themed) .menu a[aria-current="page"]{color:var(--ink)}
+body:not(.themed) .eyebrow,body:not(.themed) .num .n{color:var(--olive-cs)}
+body:not(.themed) .btn.solid{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+body:not(.themed) .btn.ghost{color:var(--ink)}
+body:not(.themed) .lang{border-color:var(--ink)}
+body:not(.themed) .lang button{color:var(--ink)}
+body:not(.themed) .lang button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+body:not(.themed) .worlds a[aria-current="page"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+body:not(.themed) .hero h1{color:var(--terra-cs);font-weight:500}
+body:not(.themed) .strip,body:not(.themed) .rules{background:var(--olive-cs);color:var(--cream)}
+body:not(.themed) .agenda .d{color:var(--olive-cs)}
+body:not(.themed) footer a{color:var(--olive-cs)}
+body:not(.themed) .check input{accent-color:var(--olive-cs)}
+body:not(.themed) .ok{border-color:var(--olive-cs)}
+body:not(.themed) .casa-tex{background:linear-gradient(rgba(230,221,205,.88),rgba(230,221,205,.88)),url(img/tex-leopardo.jpg) center/cover}
+/* el arco es el gesto cobalto de la casa */
+body:not(.themed) .arch{background:var(--cobalt)}
+
+/* Puertas: cada nombre con la letra de su marca, en el orden de firma La Domenica · Kanibal · SLVJ · ONO */
+.door[href="domenica.html"] .cap b{font-family:"Playfair Display",Georgia,serif;font-style:italic;text-transform:none;font-weight:500;letter-spacing:0}
+.door[href="kanibal.html"] .cap b{font-family:"Marcellus SC",serif;font-weight:400;letter-spacing:0.24em;font-size:1.15rem}
+.door[href="slvj.html"] .cap b{font-family:"Instrument Serif",serif;text-transform:none;font-weight:400;letter-spacing:0;font-size:1.9rem}
+.door[href="ono.html"] .cap b{font-family:"Cormorant Garamond",serif;text-transform:none;font-weight:600;letter-spacing:0.04em;font-size:1.6rem}
+
+/* ================================================================
+   LA DOMENICA — sin manual propio cargado. Según el manual de la casa:
+   día, pausa, café y mesa italiana; ligereza y claridad de su universo de día.
+   ================================================================ */
+.t-domenica{--pg:var(--linen);--pg2:var(--linen-2);--ink2:#3A2A1E;--muted:#6E5844;--acc:var(--terra);--onacc:#FFF8EE;--ln:#D9C6A8;--navbg:rgba(244,234,219,.95);--disp:"Playfair Display",Georgia,serif;--body:"Inter","Helvetica Neue",Arial,sans-serif;--rad:999px;--door:999px 999px 10px 10px;--img:14px;--logofx:none}
+.t-domenica .nav{border-bottom:0}
+.t-domenica .nav::after{content:"";display:block;height:10px;background:repeating-linear-gradient(90deg,var(--terra) 0 22px,var(--linen) 22px 44px)}
+.t-domenica h1,.t-domenica h2{text-transform:none;font-style:italic;font-weight:500;letter-spacing:0}
+.t-domenica .brandsec .lg .script{font-family:var(--disp);font-size:3.4rem}
+.t-domenica .eyebrow{letter-spacing:0.3em;color:#8E3615}
+.t-domenica .motto{font-size:clamp(1.6rem,4vw,2.4rem);color:var(--terra)}
+
+/* ================================================================
+   KANIBAL — Identidad Gráfica (2021) + manual de la casa.
+   90% Smoke Grey #D6D4CD · Grey Stone #82827A · Black Coal #131313 · 10% Kanibal Red #D63A16.
+   Principal: Trajan Sans Light, mayúsculas, track +210 (sustituto web: Marcellus SC).
+   Secundaria: Futura (sustituto web: Jost). Dirección urbana y luminosa; ilustración rupestre en rojo tierra.
+   ================================================================ */
+.t-kanibal{--pg:#D6D4CD;--pg2:#CDCBC3;--ink2:#131313;--muted:#4D4E48;--acc:#131313;--onacc:#D6D4CD;--hot:#D63A16;--ln:rgba(19,19,19,.18);--navbg:rgba(214,212,205,.95);--disp:"Marcellus SC","Trajan Sans Pro",serif;--body:"Jost","Futura","Helvetica Neue",Arial,sans-serif;--rad:0;--door:0;--img:0;--logofx:none}
+.t-kanibal .nav{border-bottom:1px solid var(--ink2)}
+.t-kanibal .bmark img{height:30px}
+.t-kanibal h1,.t-kanibal h2{text-transform:uppercase;font-weight:400;letter-spacing:0.21em}
+.t-kanibal .brandsec h1.h2{font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.25}
+.t-kanibal .kanibal{background:var(--pg);color:var(--ink2)}
+.t-kanibal .kanibal::before{background:none}
+.t-kanibal .kanibal .wrap::before{content:"";right:20px;top:-120px;width:200px;height:200px;opacity:.95;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='none' stroke='%23D63A16' stroke-width='9' stroke-linecap='round'%3E%3Ccircle cx='210' cy='70' r='26'/%3E%3Cpath d='M210 96v70M182 166h56M150 40h-40M120 40v-14M135 40v-10'/%3E%3Ccircle cx='230' cy='166' r='6' fill='%23D63A16'/%3E%3Cpath d='M60 210h120M75 210l-8-12M95 210l-8 12M115 210l-8-12M135 210l-8 12M155 210l-8-12'/%3E%3Ccircle cx='250' cy='240' r='16'/%3E%3Ccircle cx='250' cy='240' r='3' fill='%23D63A16'/%3E%3Cpath d='M250 256v26M234 282h32'/%3E%3C/svg%3E") center/contain no-repeat;z-index:-1}
+@media (max-width:700px){.t-kanibal .brandsec.kanibal{padding-top:120px}.t-kanibal .kanibal .wrap::before{width:130px;height:130px;top:-100px}}
+.t-kanibal .kanibal .lg img{filter:none;max-height:64px}
+.t-kanibal .brandsec.kanibal{padding-top:150px}
+.t-kanibal .kanibal .lead{color:#2E2E2B}
+.t-kanibal .kanibal .eyebrow{color:var(--ink2);letter-spacing:0.3em}
+.t-kanibal .kanibal .eyebrow::before{content:"";display:inline-block;width:22px;height:2px;background:var(--hot);vertical-align:middle;margin-right:10px}
+.t-kanibal .kanibal .meta a{color:var(--ink2);border-bottom:2px solid var(--hot)}
+.t-kanibal .kanibal .btn.solid{background:var(--ink2);border-color:var(--ink2);color:var(--pg)}
+.t-kanibal .btn{text-transform:uppercase;letter-spacing:0.2em;font-weight:500;font-size:0.85rem}
+.t-kanibal .motto{font-family:var(--disp);font-style:normal;text-transform:uppercase;letter-spacing:0.21em;font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--ink2)}
+.t-kanibal .motto::after{content:"";display:block;width:56px;height:3px;background:var(--hot);margin-top:14px}
+.t-kanibal .next{border-top:1px solid var(--ink2)}
+.t-kanibal footer .marcas img{filter:none}
+
+/* ================================================================
+   SLVJ — Brand Guidelines V1 + manual de la casa.
+   Negro #0C0C09 y blanco como base; dorado #BB9A65 / light gold #C5BA8F sin degradados, para usos puntuales;
+   acento vino contenido. Titulares: Roslindale Display Condensed (sustituto web: Instrument Serif).
+   Texto y botones: Moderat (sustituto web: Hanken Grotesk). Logotipo solo letras, en blanco o negro.
+   ================================================================ */
+.t-slvj{--pg:#0C0C09;--pg2:#13130F;--ink2:#FFFFFF;--muted:rgba(255,255,255,.64);--acc:#BB9A65;--onacc:#0C0C09;--wine:#6B1E26;--ln:rgba(255,255,255,.18);--navbg:rgba(12,12,9,.94);--disp:"Instrument Serif","Roslindale Display Condensed",Georgia,serif;--body:"Hanken Grotesk","Moderat","Helvetica Neue",Arial,sans-serif;--rad:0;--door:0;--img:0;--logofx:brightness(0) invert(1)}
+.t-slvj .nav{border-bottom:1px solid var(--ln)}
+.t-slvj .bmark{color:#FFFFFF}
+.t-slvj .bmark .caps{font-family:var(--body);font-weight:400;font-size:1.25rem;letter-spacing:0.42em}
+.t-slvj h1,.t-slvj h2{text-transform:none;font-weight:400;letter-spacing:-0.005em}
+.t-slvj .brandsec h1.h2{font-size:clamp(2.8rem,8vw,5.4rem);line-height:0.92}
+.t-slvj .slvj{background:var(--pg);color:var(--ink2)}
+.t-slvj .slvj::before{background:none}
+.t-slvj .slvj .lg .caps{font-family:var(--body);font-weight:400;color:#FFFFFF;font-size:2.2rem;letter-spacing:0.5em}
+.t-slvj .slvj .eyebrow,.t-slvj .slvj .meta a{color:var(--acc)}
+.t-slvj .slvj .lead{color:rgba(255,255,255,.8)}
+.t-slvj .slvj .btn.solid{background:var(--acc);border-color:var(--acc);color:var(--onacc)}
+.t-slvj .slvj .btn.ghost{color:#FFFFFF;border-color:rgba(255,255,255,.6)}
+.t-slvj .btn{font-weight:700;letter-spacing:0.06em}
+.t-slvj .brandsec .feat img,.t-slvj .brandsec .row4 img{box-shadow:none;outline:1px solid var(--ln);outline-offset:-1px}
+.t-slvj .motto{font-family:var(--disp);font-style:italic;color:#C5BA8F;font-size:clamp(1.8rem,4.6vw,2.8rem)}
+.t-slvj .next{border-top:3px solid var(--wine)}
+
+/* ================================================================
+   ONO — Manual de marca extendido v2.
+   Modo nocturno: negro ónix #000000 dominante, marfil oscuro #E2D9CD para titulares y datos,
+   rojo ritual #660000 en áreas grandes (nunca para información pequeña sobre negro).
+   Cormorant Garamond (titulares) + Inter (información). Sin adornos japoneses sin función.
+   ================================================================ */
+.t-ono{--pg:#000000;--pg2:#660000;--ink2:#E2D9CD;--muted:rgba(226,217,205,.66);--acc:#E2D9CD;--onacc:#000000;--ln:rgba(226,217,205,.16);--navbg:rgba(0,0,0,.94);--disp:"Cormorant Garamond",Georgia,serif;--body:"Inter","Helvetica Neue",Arial,sans-serif;--rad:0;--door:2px;--img:2px;--logofx:brightness(0) invert(1)}
+.t-ono .nav{border-top:4px solid #660000}
+.t-ono .bmark img{filter:invert(1) sepia(.18)}
+.t-ono h1,.t-ono h2{text-transform:none;font-weight:600;letter-spacing:0.01em}
+.t-ono .brandsec h1.h2{font-size:clamp(2.6rem,7vw,4.8rem);line-height:0.98}
+.t-ono .ono{background:var(--pg);color:var(--ink2)}
+.t-ono .ono::before{opacity:.05;filter:grayscale(1)}
+.t-ono .ono .wrap::before{content:none}
+.t-ono .ono .lg img{filter:invert(1) sepia(.18)}
+.t-ono .ono .eyebrow,.t-ono .ono .meta a{color:var(--ink2)}
+.t-ono .ono .lead{color:rgba(226,217,205,.8)}
+.t-ono .ono .soon{border-color:var(--ink2);color:var(--ink2);border-radius:0}
+.t-ono .ono .btn.solid{background:var(--ink2);border-color:var(--ink2);color:#000}
+.t-ono .btn{letter-spacing:0.12em;font-weight:500}
+.t-ono .motto{font-family:var(--disp);font-style:italic;font-weight:500;color:var(--ink2);font-size:clamp(1.6rem,4vw,2.4rem)}
+/* el rojo ritual ocupa un área grande: la franja de los otros mundos */
+.t-ono .next{color:var(--ink2)}
+.t-ono .next .btn.solid{background:var(--ink2);border-color:var(--ink2);color:#660000}
+.t-ono .next .btn.ghost{color:var(--ink2)}
+
+/* Kanibal: tres platos en fila (sin pulpo ni ostras hasta que estén en carta) */
+@media (min-width:760px){.feat.trio{grid-template-columns:repeat(3,1fr)}}
