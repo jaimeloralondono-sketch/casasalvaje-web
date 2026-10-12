@@ -410,3 +410,23 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .piezas figcaption b{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600}
 .piezas .dl{font-size:0.78rem;font-weight:600;color:var(--cobalt);text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:5px 11px}
 .piezas .dl::before{content:"↓ "}
+
+/* Tarjeta de miembro: vista previa del pase y botones de wallet. El pase real lo generan las funciones en netlify/functions. */
+.pase{width:min(100%,380px);justify-self:end;background:var(--cobalt);color:var(--cream);border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(14,38,131,.28)}
+.pase .top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+.pase .top img{height:42px;width:auto;display:block}
+.pase .top span,.pase dt{font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.pase .top b{display:block;text-align:right;font-weight:500;font-size:1rem;letter-spacing:0.04em}
+.pase .tira{display:block;width:100%;aspect-ratio:375/123;object-fit:cover}
+.pase dl{display:grid;grid-template-columns:1fr auto;gap:14px 18px;margin:0;padding:16px 18px 22px}
+.pase dd{margin:2px 0 0;font-size:1.05rem}
+.pase .nombre{grid-column:1/-1}
+.pase .nombre dd{font-family:var(--display);font-size:1.6rem;line-height:1.1}
+.pase .der{text-align:right}
+.wallet{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.wallet .btn{background:#000;border-color:#000;color:#fff}
+.nota{margin-top:14px;font-size:0.88rem;color:var(--ink-soft);max-width:46ch}
+.admin{padding-block:48px 72px}
+.admin .resultado{margin-top:28px;max-width:720px;display:grid;gap:12px}
+.admin .resultado input{font-size:0.85rem}
+.admin .error{color:var(--vermilion);font-weight:600}

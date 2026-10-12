@@ -1,0 +1,9 @@
+{
+  "name": "casasalvaje-web",
+  "private": true,
+  "type": "module",
+  "description": "Sitio de Casa Salvaje y funciones de Netlify para las tarjetas de miembro en Apple Wallet y Google Wallet.",
+  "dependencies": {
+    "passkit-generator": "3.6.1"
+  }
+}
