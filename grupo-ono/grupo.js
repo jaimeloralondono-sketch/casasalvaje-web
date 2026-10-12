@@ -56,7 +56,7 @@
       var ok = document.querySelector('[data-ok="' + form.id + '"]'); if(!ok) return;
       ok.hidden = false;
       ok.focus({preventScroll:true});
-      try{ ok.scrollIntoView({block:"center", behavior:"smooth"}); }catch(e){}
+      try{ ok.scrollIntoView({block:"center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); }catch(e){}
     }
     form.addEventListener("submit", function(e){
       e.preventDefault();

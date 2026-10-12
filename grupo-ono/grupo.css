@@ -30,7 +30,7 @@ img{max-width:100%;height:auto;display:block}
 .eyebrow{font-size:0.7rem;letter-spacing:0.26em;text-transform:uppercase;font-weight:600}
 .lead{max-width:56ch;font-size:1.08rem}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:500;text-decoration:none;font-size:0.76rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid currentColor;transition:background .2s ease,color .2s ease,border-color .2s ease;cursor:pointer;font-family:inherit;background:transparent;color:inherit}
-.btn::after{content:"→";letter-spacing:0;transition:transform .2s ease}
+.btn::after{content:"→";content:"→" / "";letter-spacing:0;transition:transform .2s ease}
 .btn:hover::after{transform:translateX(4px)}
 .btn.solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .btn.solid:hover{background:var(--red);border-color:var(--red)}
@@ -43,12 +43,15 @@ img{max-width:100%;height:auto;display:block}
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{opacity:1;transform:none}
 .js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}.js .rv.d3{transition-delay:.36s}
+/* Strip cards fade without rising: a rise would overflow the horizontal scroller vertically (flash of a scrollbar, a focusable scroller) */
+.js .strip .rv{transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 @media print{.js .rv{opacity:1!important;transform:none!important;transition:none!important}.js .chapter .media.rv img{transform:none!important;transition:none!important}}
 
 /* Nav: transparent over the hero, solid once you scroll */
 .nav{position:fixed;inset:0 0 auto 0;padding-top:env(safe-area-inset-top,0px);z-index:20;color:var(--paper);transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
 .nav.solid,.page .nav{background:rgba(17,17,17,.94);backdrop-filter:blur(8px);border-bottom-color:rgba(244,239,231,.12)}
+html.menu-open .nav{background:#0B0B0B;border-bottom-color:rgba(244,239,231,.12)}
 .nav .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
 .nav .brand{display:block;width:96px;color:var(--paper);transition:opacity .4s,visibility .4s}
 .nav .brand svg{display:block;width:100%;height:auto}
@@ -62,14 +65,19 @@ img{max-width:100%;height:auto;display:block}
 .menu a[aria-current]{opacity:1;text-decoration:underline;text-underline-offset:6px}
 .nav .right{margin-left:auto;display:flex;align-items:center;gap:12px}
 @media (min-width:720px){.menu{display:flex;margin-left:auto}}
+@media (pointer:coarse){.menu a{padding-block:13px}}
 /* Phones: a Menu button opens a full-screen sheet (the sheet sits outside the header so backdrop-filter can't clip it) */
 .menu-btn{margin-left:auto;font:inherit;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:inherit;background:none;border:0;min-height:44px;min-width:44px;padding:0 4px;cursor:pointer}
 html:not(.js) .menu-btn{display:none}
 @media (min-width:720px){.menu-btn{display:none}}
-.sheet{position:fixed;inset:0;z-index:19;background:#0B0B0B;color:var(--paper);display:grid;align-content:center;padding:calc(96px + env(safe-area-inset-top,0px)) 20px 40px;overflow-y:auto}
+.sheet{position:fixed;inset:0;z-index:19;background:#0B0B0B;color:var(--paper);display:flex;flex-direction:column;padding:calc(96px + env(safe-area-inset-top,0px)) 20px 40px;overflow-y:auto}
 .sheet nav a{display:block;font-family:var(--display);font-size:2.4rem;line-height:1.1;padding:8px 0;text-decoration:none}
-.sheet .eyebrow{margin-top:32px;color:rgba(244,239,231,.6)}
-.sheet .eyebrow a{color:var(--paper)}
+/* Centred when it fits; when it is taller than the screen (phones in landscape) it starts below the nav and scrolls */
+.sheet>nav{margin-top:auto}
+.sheet nav a[aria-current]{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+.sheet .eyebrow{margin-top:32px;margin-bottom:auto;color:rgba(244,239,231,.6)}
+/* 44px tap height without moving the line */
+.sheet .eyebrow a{color:var(--paper);display:inline-block;padding-block:15px;margin-block:-15px}
 @media (min-width:720px){.sheet{display:none!important}}
 
 /* Hero */
@@ -97,6 +105,7 @@ html:not(.js) .menu-btn{display:none}
 /* Manifesto */
 .manifesto{padding-block:clamp(90px,14vw,180px)}
 .manifesto .eyebrow{color:var(--red)}
+.manifesto h2.eyebrow{font-family:var(--body);line-height:1.6}
 .manifesto .big{font-family:var(--display);font-size:clamp(1.9rem,4.6vw,3.6rem);line-height:1.12;margin-top:22px;max-width:30ch;text-wrap:balance}
 .manifesto .big em{color:var(--red);white-space:nowrap}
 .manifesto .two{display:grid;gap:28px;margin-top:56px}
@@ -130,7 +139,8 @@ html:not(.js) .menu-btn{display:none}
 .chapter .facts b{display:block;margin-top:4px;font-family:var(--display);font-weight:500;font-size:1.25rem;line-height:1.2}
 /* The two values stay level when one label wraps (subgrid; older browsers just let them stagger) */
 .chapter .facts div{display:grid;grid-row:span 2;grid-template-rows:subgrid;align-content:start}
-@media (max-width:599px){.chapter .cta .btn{flex:1 1 100%;justify-content:center;text-align:center;text-wrap:balance}}
+.chapter .cta .btn{text-wrap:balance}
+@media (max-width:599px){.chapter .cta .btn{flex:1 1 100%;justify-content:center;text-align:center}}
 @media (min-width:900px){
   .chapter .split{grid-template-columns:1.05fr 0.95fr}
   .chapter .media{min-height:auto}
@@ -150,6 +160,8 @@ html:not(.js) .menu-btn{display:none}
 /* ONO */
 /* ONO, Manual v2: onyx black, dark ivory #E2D9CD for type, ritual red only in large areas; no Japanese ornament without a job */
 .ch-ono{background:#000;color:#E2D9CD}
+.ch-ono h2{font-weight:600;letter-spacing:.01em}
+.ch-ono .btn{letter-spacing:.12em}
 .ch-ono .eyebrow{color:rgba(226,217,205,.66)}
 .ch-ono .mark img{filter:invert(1) sepia(.18)}
 .ch-ono .lead{color:rgba(226,217,205,.75)}
@@ -168,7 +180,9 @@ html:not(.js) .menu-btn{display:none}
 .ch-cs .eyebrow{color:var(--olive)}
 .ch-cs .lead{color:#4F4B41}
 .ch-cs .facts,.ch-cs .facts div+div{border-color:#CBBEA6}
-.ch-cs .btn{color:#171612;border-radius:999px}
+.ch-cs .facts b{font-family:"EB Garamond",Georgia,serif}
+.ch-cs .btn{color:#171612;border-radius:999px;text-transform:none;letter-spacing:.04em;font-size:.95rem;font-weight:600;border-width:1.5px}
+.ch-cs .btn::after{content:none}
 .ch-cs .btn.solid{background:#171612;border-color:#171612;color:var(--bone)}
 .ch-cs .btn.solid:hover{background:var(--olive);border-color:var(--olive)}
 /* The cobalt arch is the house's one illustrated gesture */
@@ -186,11 +200,12 @@ html:not(.js) .menu-btn{display:none}
 .door::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,22,18,.82),rgba(23,22,18,0) 55%)}
 .door>span{position:absolute;left:14px;right:14px;bottom:14px;z-index:1}
 /* "Soon" sits above the name: in a top corner the dome would clip it */
-.door .soon{display:inline-block;font-style:normal;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(251,247,239,.6);padding:2px 8px;margin-bottom:8px}
+.door .soon{display:inline-block;font-style:normal;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(251,247,239,.6);background:rgba(23,22,18,.55);padding:2px 8px;margin-bottom:8px}
 .door b{display:block;font-family:var(--display);font-size:1.45rem;font-weight:600;line-height:1.05}
 .door small{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
 @media (max-width:759px){.door b{font-size:1.3rem}}
 @media (max-width:379px){.door>span{left:12px;right:12px}.door small{letter-spacing:.12em}}
+@media (max-width:359px){.door>span{left:10px;right:10px}.door small{font-size:.6rem;letter-spacing:.08em}}
 .ch-cs .below{padding-top:clamp(72px,8vw,120px)}
 .ch-cs .strip{margin-top:44px}
 
@@ -210,6 +225,7 @@ html:not(.js) .menu-btn{display:none}
 .doorway:focus-visible{outline-offset:-10px}
 .doorway:focus-visible .btn{background:var(--paper);color:var(--ink)}
 .doorway:focus-visible img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.door img,.doorway img{transition:none}.door:hover img,.door:focus-visible img,.doorway:hover img,.doorway:focus-visible img{transform:none}}
 
 /* Inner pages (careers, contact, privacy) */
 .page main{padding-top:64px}
@@ -225,7 +241,8 @@ html:not(.js) .menu-btn{display:none}
 .aside p{color:var(--ink-soft);margin-top:10px}
 .areas{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:18px;padding:0;list-style:none}
 .areas li{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase}
-.areas li+li::before{content:"· ";color:var(--ink-soft)}
+/* The dot ends a line rather than starting the next one: 10px margin, then the 10px gap */
+.areas li:not(:last-child)::after{content:"·";margin-left:10px;color:var(--ink-soft)}
 .direct{display:grid;margin-top:28px;border-top:1px solid var(--line)}
 .direct div{padding:16px 0;border-bottom:1px solid var(--line);display:grid;gap:2px}
 .direct small{font-size:0.66rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft)}
@@ -244,6 +261,7 @@ input[type=file]::file-selector-button{font:inherit;font-size:.72rem;font-weight
 .check{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-weight:400;font-size:0.9rem}
 .check input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--red)}
 .check a{color:var(--ink)}
+.check input:user-invalid{outline:2px solid var(--red-hi);outline-offset:2px}
 .ok{background:var(--white);border:1px solid var(--ink);padding:22px;max-width:760px}
 @media (max-width:639px){form .btn[type=submit]{width:100%;justify-content:center}}
 .prose{max-width:72ch}
@@ -256,9 +274,9 @@ footer .logo{width:min(70vw,300px);color:rgba(244,239,231,.9)}
 footer .logo svg{width:100%;height:auto;display:block}
 footer .cols{display:grid;gap:28px;margin-top:48px;grid-template-columns:1fr 1fr}
 @media (min-width:760px){footer .cols{grid-template-columns:repeat(4,1fr)}}
-footer h4{margin:0 0 10px;font-size:0.66rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,239,231,.62);font-weight:600}
+footer h2{margin:0 0 10px;font-family:var(--body);font-size:0.66rem;line-height:1.6;letter-spacing:.24em;text-transform:uppercase;color:rgba(244,239,231,.62);font-weight:600}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 footer a{color:var(--paper);text-decoration:none}
 footer a:hover{text-decoration:underline}
-@media (max-width:759px){footer ul{gap:0}footer li a,footer .legal a{display:inline-block;padding:11px 0}}
-footer .legal{margin-top:56px;padding-top:20px;border-top:1px solid rgba(244,239,231,.12);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+@media (max-width:759px),(pointer:coarse){footer ul{gap:0}footer li a,footer .legal a{display:inline-block;padding:11px 0}}
+footer .legal{margin-top:56px;padding-top:20px;border-top:1px solid rgba(244,239,231,.12);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:baseline}
