@@ -22,11 +22,18 @@
     if(wide.addEventListener) wide.addEventListener("change", onWide); else if(wide.addListener) wide.addListener(onWide);
   }
 
-  // Reveal on scroll.
+  // Reveal on scroll. A campaign strip reveals all its cards at once (keeping the stagger),
+  // so cards still off to the side are already showing when someone swipes to them.
   var rv = document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
-    rv.forEach(function(el){ io.observe(el); });
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var t = e.target;
+      (t.classList.contains("strip") ? t.querySelectorAll(".rv") : [t]).forEach(function(el){ el.classList.add("in"); });
+      io.unobserve(t);
+    }); }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
+    rv.forEach(function(el){ if(!el.closest(".strip")) io.observe(el); });
+    document.querySelectorAll(".strip").forEach(function(s){ io.observe(s); });
   } else rv.forEach(function(el){ el.classList.add("in"); });
 
   // CV: PDF only, 5 MB max (Netlify Forms accepts up to 8 MB per submission).
