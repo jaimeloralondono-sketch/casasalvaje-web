@@ -432,3 +432,16 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .platos-row img{height:clamp(260px,38vw,420px);width:auto;display:block;border-radius:var(--img,10px)}
 .platos-row figcaption{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:8px;opacity:.75}
 .platos .cta{margin-top:20px}
+
+/* SLVJ: fotos integradas a la página (portada de fondo, platos y banda a todo lo ancho) */
+.t-slvj .slvj .cover{position:absolute;left:0;right:0;top:0;height:min(100svh,920px);z-index:0;pointer-events:none}
+.t-slvj .slvj .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.t-slvj .slvj .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,12,9,.45) 0%,rgba(12,12,9,.5) 45%,rgba(12,12,9,.86) 75%,var(--pg) 100%),linear-gradient(to right,rgba(12,12,9,.55),rgba(12,12,9,0) 70%)}
+.t-slvj .slvj .head{padding-top:clamp(160px,36svh,380px)}
+.t-slvj .slvj .head h1,.t-slvj .slvj .head .lead{text-shadow:0 1px 24px rgba(0,0,0,.45)}
+.platos-row{margin-inline:calc(50% - 50vw);padding-inline:max(20px,calc(50vw - 540px));scroll-padding-inline:max(20px,calc(50vw - 540px))}
+.band{position:relative;margin:56px calc(50% - 50vw) 0;height:clamp(340px,52vw,640px);overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;display:block}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,9,.85) 0%,rgba(12,12,9,.2) 55%,rgba(12,12,9,.35) 100%)}
+.band .motto{position:absolute;z-index:1;left:max(20px,calc(50vw - 540px));right:20px;bottom:clamp(24px,5vw,56px);margin:0;max-width:22ch}
+.brandpage .slvj{padding-bottom:0}
