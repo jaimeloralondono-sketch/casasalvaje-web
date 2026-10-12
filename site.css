@@ -477,3 +477,4 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .post .more ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
 .post .more a{font-family:var(--display);font-size:1.25rem;text-decoration:none}
 .post .more a:hover{text-decoration:underline}
+.hr-note{font-size:0.85rem;color:var(--ink-soft);margin:0}
