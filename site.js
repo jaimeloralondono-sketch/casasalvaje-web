@@ -7,7 +7,24 @@
     document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.set === l)); });
     var idi = document.getElementById("idioma"); if(idi) idi.value = l;
     try{ localStorage.setItem("cs-lang", l); }catch(e){}
-    wireWhatsApp();
+    wireWhatsApp(); wireBooking();
+  }
+  // Reservas: CoverManager para comer; desde las 11 pm (hora Cartagena) hasta las 6 am, Fourvenues para la noche.
+  var CM = "https://restaurante.covermanager.com/";
+  var BOOK = { casa: CM + "casa-salvaje-cartagena/", kanibal: CM + "kanibal-cartagena/", slvj: CM + "slvj-cartagena/" };
+  function cartagenaHour(){
+    try{ return parseInt(new Intl.DateTimeFormat("en-US", {timeZone: "America/Bogota", hour: "numeric", hourCycle: "h23"}).format(new Date()), 10); }
+    catch(e){ return new Date().getHours(); }
+  }
+  function wireBooking(){
+    var l = root.getAttribute("data-lang") || "en";
+    var h = cartagenaHour(), night = (h >= 23 || h < 6);
+    var club = "https://site.fourvenues.com/" + (l === "es" ? "es" : "en") + "/casa-salvaje";
+    document.querySelectorAll("a[data-book]").forEach(function(a){
+      var k = a.dataset.book;
+      a.setAttribute("href", (k === "club" || night) ? club : (BOOK[k] || BOOK.casa));
+      a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
+    });
   }
   function wireWhatsApp(){
     var l = root.getAttribute("data-lang") || "es";
