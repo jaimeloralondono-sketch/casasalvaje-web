@@ -1,0 +1,32 @@
+/* Empresas y congresos: formatos para grupos, organizadores y formulario de cotización. Toma la paleta de la casa (site.css). */
+.empresas .hero h1{max-width:16ch}
+.empresas .intro{margin-top:14px;color:var(--ink-soft)}
+
+.ev-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media (min-width:640px){.ev-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:980px){.ev-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ev-card{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.ev-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+.ev-card .tx{padding:18px 20px 22px;display:grid;gap:8px}
+.ev-card .tag{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--olive-cs)}
+.ev-card h3{font-family:var(--display);font-size:1.6rem;font-weight:500;line-height:1.08;letter-spacing:0}
+.ev-card p{color:var(--ink-soft);font-size:0.95rem}
+/* fin de año: tarjeta ancha, foto a un lado y texto al otro */
+@media (min-width:640px){.ev-card.wide{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;align-items:center}.ev-card.wide img{height:100%;aspect-ratio:auto;min-height:260px}.ev-card.wide .tx{padding:28px 32px}.ev-card.wide h3{font-size:2rem}}
+
+.ev-org{background:var(--cream-2)}
+.ev-list{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line)}
+.ev-list li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.ev-list b{font-weight:600}
+.ev-list li > span{color:var(--ink-soft);font-size:0.95rem}
+
+.steps{list-style:none;counter-reset:paso;margin:28px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.steps li{counter-increment:paso;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:8px;align-content:start}
+.steps li::before{content:counter(paso,decimal-leading-zero);font-family:var(--display);font-size:1rem;letter-spacing:0.2em;color:var(--terra-cs)}
+.steps b{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1.1}
+.steps li > span{color:var(--ink-soft);font-size:0.95rem}
+
+.empresas textarea{font:inherit;font-size:1rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);min-width:0;width:100%;resize:vertical;min-height:110px;text-transform:none;letter-spacing:0;font-weight:400}
+.empresas textarea:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.empresas .where{padding-top:24px}
