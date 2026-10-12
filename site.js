@@ -8,6 +8,7 @@
     var idi = document.getElementById("idioma"); if(idi) idi.value = l;
     try{ localStorage.setItem("cs-lang", l); }catch(e){}
     wireWhatsApp(); wireBooking();
+    try{ document.dispatchEvent(new Event("cs-lang")); }catch(e){}
   }
   // Reservas: CoverManager para comer; desde las 11 pm (hora Cartagena) hasta las 6 am, Fourvenues para la noche.
   var CM = "https://restaurante.covermanager.com/";
@@ -39,8 +40,15 @@
   var start = "en";
   try{ var saved = localStorage.getItem("cs-lang"); if(saved === "en" || saved === "es") start = saved; }catch(e){}
   if(location.hash === "#en") start = "en"; if(location.hash === "#es") start = "es";
+  // Artículos del blog: cada idioma tiene su propia URL; el botón de idioma lleva a la traducción.
+  var fixed = root.getAttribute("data-fixed");
+  if(fixed) start = fixed;
   setLang(start);
-  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.set); }); });
+  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){
+    var alt = fixed && b.dataset.set !== fixed && document.querySelector('link[rel="alternate"][hreflang="' + b.dataset.set + '"]');
+    if(alt){ try{ localStorage.setItem("cs-lang", b.dataset.set); }catch(e){} location.href = new URL(alt.getAttribute("href")).pathname; return; }
+    setLang(b.dataset.set);
+  }); });
   try{
     var q = new URLSearchParams(location.search);
     var src = q.get("utm_source") || q.get("origen") || q.get("ref");
@@ -215,4 +223,60 @@
     };
     pre.src = next.src;
   }, 3500);
+})();
+
+// Horarios: marca la fila de hoy y dice si cada mundo está abierto ahora, siempre en hora de Cartagena.
+(function(){
+  var cards = [].slice.call(document.querySelectorAll(".hr-card[data-hours]"));
+  if(!cards.length) return;
+  var root = document.documentElement;
+  var DAYS = { es: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"], en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] };
+  function now(){
+    try{
+      var p = {};
+      new Intl.DateTimeFormat("en-US", { timeZone: "America/Bogota", weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" })
+        .formatToParts(new Date()).forEach(function(x){ p[x.type] = x.value; });
+      return { d: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(p.weekday), m: (+p.hour % 24) * 60 + (+p.minute) };
+    }catch(e){ var t = new Date(); return { d: t.getDay(), m: t.getHours() * 60 + t.getMinutes() }; }
+  }
+  function clock(m){
+    m = m % 1440; var h = Math.floor(m / 60), mm = m % 60, h12 = h % 12 || 12;
+    return h12 + (mm ? ":" + (mm < 10 ? "0" : "") + mm : "") + (h < 12 ? " am" : " pm");
+  }
+  function render(){
+    var es = (root.getAttribute("data-lang") || "en") === "es", t = now();
+    cards.forEach(function(card){
+      var H; try{ H = JSON.parse(card.dataset.hours); }catch(e){ return; }
+      card.querySelectorAll(".hr-rows > div").forEach(function(row){
+        var on = row.dataset.days.split(",").indexOf(String(t.d)) > -1;
+        row.classList.toggle("today", on);
+        row.querySelector("dt").setAttribute("data-hoy", on ? (es ? "Hoy" : "Today") : "");
+      });
+      // Abierto ahora: tramos de hoy, o el tramo de ayer que pasa de medianoche.
+      var y = (t.d + 6) % 7, close = null;
+      (H[t.d] || []).forEach(function(r){ if(t.m >= r[0] && t.m < r[1]) close = r[1]; });
+      (H[y] || []).forEach(function(r){ if(r[1] > 1440 && t.m < r[1] - 1440) close = r[1]; });
+      var el = card.querySelector(".hr-status"), txt;
+      if(close !== null){
+        txt = es ? "Abierto ahora · cierra a las " + clock(close) : "Open now · closes at " + clock(close);
+        el.className = "hr-status open";
+      } else {
+        var next = null;
+        for(var k = 0; k < 8 && next === null; k++){
+          var d = (t.d + k) % 7;
+          (H[d] || []).forEach(function(r){ if(next === null && (k > 0 || r[0] > t.m)) next = { k: k, d: d, m: r[0] }; });
+        }
+        if(!next) txt = es ? "Cerrado" : "Closed";
+        else {
+          var when = next.k === 0 ? (es ? "hoy" : "today") : next.k === 1 ? (es ? "mañana" : "tomorrow") : (es ? "el " : "") + DAYS[es ? "es" : "en"][next.d];
+          txt = es ? "Cerrado · abre " + when + " a las " + clock(next.m) : "Closed · opens " + when + " at " + clock(next.m);
+        }
+        el.className = "hr-status closed";
+      }
+      el.textContent = txt;
+    });
+  }
+  render();
+  document.addEventListener("cs-lang", render);
+  setInterval(render, 60000);
 })();

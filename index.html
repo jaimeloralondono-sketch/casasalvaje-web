@@ -25,6 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
 <link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.casa-salvaje.com/#casa","name":"Casa Salvaje","url":"https://www.casa-salvaje.com/","logo":"https://www.casa-salvaje.com/img/logo-salvaje-oro.png","sameAs":["https://www.instagram.com/casasalvaje.ctg"],"address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"}},{"@type":"Restaurant","name":"Kanibal","url":"https://www.casa-salvaje.com/kanibal.html","image":"https://www.casa-salvaje.com/img/og-kanibal.jpg","address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"},"parentOrganization":{"@id":"https://www.casa-salvaje.com/#casa"},"acceptsReservations":true,"menu":"https://menupp.co/casasalvaje/venue/074bf116-285a-4494-8dfc-2e05f296f282","sameAs":["https://www.instagram.com/kanibal.ctg"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"11:00","closes":"19:00"}]},{"@type":"Restaurant","name":"SLVJ","url":"https://www.casa-salvaje.com/slvj.html","image":"https://www.casa-salvaje.com/img/og-slvj.jpg","address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"},"parentOrganization":{"@id":"https://www.casa-salvaje.com/#casa"},"acceptsReservations":true,"servesCuisine":["Sushi"],"menu":"https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb","sameAs":["https://www.instagram.com/slvj.ctg"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"19:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday"],"opens":"19:00","closes":"03:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"11:00","closes":"19:00"}]}]}</script>
 </head>
 <body>
 <header class="nav">
@@ -36,8 +37,10 @@
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
+      <a href="#horarios"><span class="es">Horarios</span><span class="en">Hours</span></a>
       <a href="#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
       <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="blog/">Blog</a>
       <a href="#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
     </nav>
     <div class="right">
@@ -51,6 +54,7 @@
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
+      <a href="#horarios"><span class="es">Horarios</span><span class="en">Hours</span></a>
   </div></nav>
 </header>
 
@@ -143,9 +147,44 @@
   </section>
 
 
+  <section id="horarios" class="horarios">
+    <div class="wrap">
+      <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Horarios</span><span class="en">Opening hours</span></span></div>
+      <h2><span class="es">Cuándo abre cada mundo.</span><span class="en">When each world is open.</span></h2>
+      <p class="intro"><span class="es">Todas las horas son de Cartagena (GMT−5). La fila de hoy va marcada y cada mundo te dice si está abierto ahora mismo.</span><span class="en">All times are Cartagena time (GMT−5). Today's row is highlighted and each world tells you whether it's open right now.</span></p>
+      <div class="hr-grid">
+        <article class="hr-card" data-hours='{"1":[[720,1440]],"2":[[720,1440]],"3":[[720,1440]],"4":[[720,1440]],"5":[[720,1440]],"6":[[720,1440]],"0":[[660,1140]]}'>
+          <div class="top"><h3><a href="kanibal.html">Kanibal</a><small><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span></small></h3><span class="hr-status" aria-live="polite"></span></div>
+          <dl class="hr-rows">
+            <div data-days="1,2,3,4,5,6"><dt><span class="es">Lunes a sábado</span><span class="en">Monday to Saturday</span></dt><dd>12 pm – 12 am</dd></div>
+            <div data-days="0"><dt><span class="es">Domingo</span><span class="en">Sunday</span></dt><dd>11 am – 7 pm</dd></div>
+          </dl>
+        </article>
+        <article class="hr-card" data-hours='{"1":[[720,900],[1140,1440]],"2":[[720,900],[1140,1440]],"3":[[720,900],[1140,1440]],"4":[[720,900],[1140,1620]],"5":[[720,900],[1140,1620]],"6":[[720,900],[1140,1620]],"0":[[660,1140]]}'>
+          <div class="top"><h3><a href="slvj.html">SLVJ</a><small><span class="es">Banquete · Club</span><span class="en">Feast · Club</span></small></h3><span class="hr-status" aria-live="polite"></span></div>
+          <dl class="hr-rows">
+            <div data-days="1,2,3"><dt><span class="es">Lunes a miércoles</span><span class="en">Monday to Wednesday</span></dt><dd>12 – 3 pm · 7 pm – 12 am</dd></div>
+            <div data-days="4,5,6"><dt><span class="es">Jueves a sábado</span><span class="en">Thursday to Saturday</span></dt><dd>12 – 3 pm · 7 pm – 12 am<small><span class="es">después, club hasta las 3 am</span><span class="en">then club until 3 am</span></small></dd></div>
+            <div data-days="0"><dt><span class="es">Domingo</span><span class="en">Sunday</span></dt><dd>11 am – 7 pm</dd></div>
+          </dl>
+        </article>
+        <article class="hr-card">
+          <div class="top"><h3><a href="domenica.html">La Domenica</a><small><span class="es">Café · Pizza · Aperitivo</span><span class="en">Coffee · Pizza · Aperitivo</span></small></h3><span class="hr-status"><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div>
+          <p class="soonline"><span class="es">Abrirá de mañana y tarde. Horario por confirmar: entra a la lista y te avisamos.</span><span class="en">Mornings and afternoons. Hours to be confirmed: join the list and we'll let you know.</span></p>
+        </article>
+        <article class="hr-card">
+          <div class="top"><h3><a href="ono.html">ONO</a><small>Hosomaki bar</small></h3><span class="hr-status"><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div>
+          <p class="soonline"><span class="es">Apertura entre noviembre y diciembre de 2026. Horario por anunciar en la lista.</span><span class="en">Opening November – December 2026. Hours announced to the list first.</span></p>
+        </article>
+      </div>
+      <p class="hr-foot"><span class="es">Festivos y fechas especiales pueden cambiar el horario. Si vas con el tiempo justo, </span><span class="en">Holidays and special dates can change these hours. If you're cutting it close, </span><a class="wa" href="#lista"><span class="es">escríbenos por WhatsApp</span><span class="en">message us on WhatsApp</span></a>.</p>
+    </div>
+  </section>
+
+
   <section id="agenda" style="padding-top:0">
     <div class="wrap">
-      <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Agenda</span><span class="en">What's on</span></span></div>
+      <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Agenda</span><span class="en">What's on</span></span></div>
       <h2><span class="es">Fechas con cupo. Reserva antes de que se acaben.</span><span class="en">Dates with limited seats. Book before they go.</span></h2>
       <ul class="agenda">
         <li><div class="d"><span class="es">Último martes</span><span class="en">Last Tuesday</span><small><span class="es">cada mes</span><span class="en">monthly</span></small></div><div class="t"><b>Omakase</b><span class="es">En la barra de sushi de SLVJ, cupo limitado. Próxima fecha por anunciar en la lista.</span><span class="en">At the SLVJ sushi bar, limited seats. Next date announced to the list first.</span></div><a class="btn solid wa" data-evento="Omakase" href="#lista"><span class="es">Quiero cupo</span><span class="en">Save me a seat</span></a></li>
@@ -159,7 +198,7 @@
   <section id="donde" class="where" style="padding-top:0">
     <div class="wrap two">
       <div>
-        <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Cómo llegar</span><span class="en">Find us</span></span></div>
+        <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Cómo llegar</span><span class="en">Find us</span></span></div>
         <h2><span class="es">Donde Baloco se encuentra con Santa Teresa.</span><span class="en">Where Baloco meets Santa Teresa.</span></h2>
         <div class="card" style="margin-top:22px">
           <div class="addr">Calle Santa Teresa #32-41<br>Centro Histórico, Cartagena de Indias</div>
@@ -178,7 +217,7 @@
 
   <section id="lista" class="guest">
     <div class="wrap">
-      <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span></span></div>
+      <div class="num"><span class="n">05</span><span class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span></span></div>
       <h2><span class="es">Deja tu nombre en la puerta.</span><span class="en">Leave your name at the door.</span></h2>
       <p class="lead es" style="margin-top:12px;color:var(--ink-soft)">Para reservar mesa hoy, escríbenos por WhatsApp. Para invitaciones, fiestas, experiencias con cupo y la apertura de ONO, entra a la lista.</p>
       <p class="lead en" style="margin-top:12px;color:var(--ink-soft)">To book a table today, message us on WhatsApp. For invitations, parties, limited-seat experiences and the opening of ONO, join the list.</p>
@@ -212,7 +251,7 @@
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
       <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
   </div>
 </footer>
 
