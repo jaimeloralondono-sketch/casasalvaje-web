@@ -1,12 +1,12 @@
-# Grupo ONO · sitio corporativo
+# Grupo ONO · corporate site
 
-Sitio estático de Grupo ONO (ONO Hosomaki Bar en Bogotá y Casa Salvaje en Cartagena). Vive en esta carpeta, aparte del sitio de Casa Salvaje.
+Static site for Grupo ONO (ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena). It lives in this folder, separate from the Casa Salvaje site. English only.
 
-Páginas: `index.html` (portada con el logo que se dibuja, manifiesto, un capítulo por marca, accesos a empleo y contacto), `empleo.html`, `contacto.html`, `datos.html`, `gracias.html`. El logo está redibujado en vector en `img/logo-grupo-ono.svg` y va en línea dentro de cada página.
+Pages: `index.html` (hero with the self-drawing logo, manifesto, one chapter per brand, links to careers and contact), `careers.html`, `contact.html`, `privacy.html`, `thanks.html`. The logo is redrawn as a vector in `img/logo-grupo-ono.svg` and inlined in every page.
 
-En Netlify: sitio nuevo desde este mismo repo, **Base directory = `grupo-ono`**, sin comando de build, publish = `.` (lo dice `netlify.toml`). Los formularios `trabaja-con-nosotros` (con hoja de vida en PDF) y `contacto` llegan a Netlify Forms; activa las notificaciones por correo en Site settings → Forms.
+On Netlify: new site from this same repo, **Base directory = `grupo-ono`**, no build command, publish = `.` (set in `netlify.toml`). The `careers` (with a PDF CV) and `contact` forms go to Netlify Forms; turn on email notifications under Site settings → Forms.
 
-Pendientes antes de publicar:
-- Enlace (web o Instagram) y dirección de ONO Bogotá (`index.html`, comentario PENDIENTE).
-- Razón social, NIT y correo de datos personales en `datos.html` (revisión legal).
-- Dominio: el código reconoce `grupo-ono.com`, `grupoono.com` y `.com.co`; si es otro, ajústalo en `grupo.js` (`hosted`).
+To do before launch:
+- ONO Bogotá website or Instagram link and address (`index.html`, TODO comment).
+- Company legal name, NIT and data-rights email in `privacy.html` (legal review).
+- Domain: the code recognises `grupo-ono.com`, `grupoono.com` and `.com.co`; if it's another one, update `hosted` in `grupo.js`.

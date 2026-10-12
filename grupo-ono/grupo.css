@@ -1,6 +1,6 @@
-/* Grupo ONO. El grupo habla poco y deja que las marcas se vean: portada negra con el logo de línea que se dibuja,
-   un manifiesto corto y un capítulo a pantalla completa por marca, cada uno con sus colores
-   (ONO: negro y rojo ritual; Casa Salvaje: crema y cobalto). Los formularios viven en sus propias páginas. */
+/* Grupo ONO. The group says little and lets the brands show: a black hero with the line logo drawing itself,
+   a short manifesto and one full-screen chapter per brand, each in its own colours
+   (ONO: black and ritual red; Casa Salvaje: cream and cobalt). Forms live on their own pages. */
 :root{
   --paper:#F4EFE7; --paper-2:#EAE3D7; --ink:#111111; --ink-soft:#55514B; --line:#CFC6B7; --white:#FBF8F3;
   --red:#660000; --red-hi:#B4231C;
@@ -14,8 +14,6 @@
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-:root[data-lang="es"] .en{display:none!important}
-:root:not([data-lang="es"]) .es{display:none!important}
 h1,h2,h3{font-family:var(--display);font-weight:500;margin:0;text-wrap:balance;letter-spacing:0.005em}
 h2{font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:1.02}
 h3{font-size:1.6rem;line-height:1.1;font-weight:600}
@@ -32,16 +30,16 @@ img{max-width:100%;height:auto;display:block}
 .btn.solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .btn.solid:hover{background:var(--red);border-color:var(--red)}
 .btn[disabled]{opacity:.5;cursor:wait}
-.btn:focus-visible,.lang button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--red-hi);outline-offset:3px}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--red-hi);outline-offset:3px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
-/* Aparición al hacer scroll (solo con JS y sin "reducir movimiento") */
+/* Reveal on scroll (only with JS and without "reduce motion") */
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{opacity:1;transform:none}
 .js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}.js .rv.d3{transition-delay:.36s}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 
-/* Nav: transparente sobre la portada, sólida al bajar */
+/* Nav: transparent over the hero, solid once you scroll */
 .nav{position:fixed;inset:0 0 auto 0;z-index:20;color:var(--paper);transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
 .nav.solid,.page .nav{background:rgba(17,17,17,.94);backdrop-filter:blur(8px);border-bottom-color:rgba(244,239,231,.12)}
 .nav .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
@@ -51,12 +49,9 @@ img{max-width:100%;height:auto;display:block}
 .menu a{text-decoration:none;opacity:.85}
 .menu a:hover{opacity:1}
 .nav .right{margin-left:auto;display:flex;align-items:center;gap:12px}
-.lang{display:flex;border:1px solid rgba(244,239,231,.6)}
-.lang button{font:inherit;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;padding:7px 10px;border:0;background:transparent;color:inherit;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
 @media (min-width:960px){.menu{display:flex}}
 
-/* Portada */
+/* Hero */
 .hero{position:relative;min-height:100vh;min-height:100svh;background:#0B0B0B;color:var(--paper);display:grid;place-items:center;overflow:hidden;padding:110px 20px 90px}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;transform:scale(1.06);animation:settle 3.2s ease-out forwards}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(11,11,11,.15),rgba(11,11,11,.85) 75%)}
@@ -77,7 +72,7 @@ img{max-width:100%;height:auto;display:block}
 @keyframes drip{0%{top:-50%}100%{top:100%}}
 @media (prefers-reduced-motion:reduce){.hero>img,.hero .logo .ono *,.hero .logo .grupo,.hero .tag,.hero .eyebrow{animation:none;opacity:1;stroke-dashoffset:0;transform:none}.hero>img{opacity:.32}.hero .down::after{animation:none}}
 
-/* Manifiesto */
+/* Manifesto */
 .manifesto{padding-block:clamp(90px,14vw,180px)}
 .manifesto .eyebrow{color:var(--red)}
 .manifesto .big{font-family:var(--display);font-size:clamp(1.9rem,4.6vw,3.6rem);line-height:1.12;margin-top:22px;max-width:30ch;text-wrap:balance}
@@ -92,7 +87,7 @@ img{max-width:100%;height:auto;display:block}
 .values b{font-family:var(--display);font-size:1.4rem;font-weight:600;display:block;line-height:1.2}
 .values li>div>span{color:var(--ink-soft);font-size:0.95rem}
 
-/* Capítulos de marca */
+/* Brand chapters */
 .chapter{position:relative;overflow:hidden}
 .chapter .split{display:grid;min-height:100vh;min-height:100svh}
 .chapter .media{position:relative;min-height:62vh;overflow:hidden}
@@ -159,7 +154,7 @@ img{max-width:100%;height:auto;display:block}
 .door small{font-size:0.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
 .ch-cs .strip{margin-top:44px}
 
-/* Gente y contacto */
+/* Careers and contact */
 .doorways{display:grid;background:#0B0B0B}
 @media (min-width:860px){.doorways{grid-template-columns:1fr 1fr}}
 .doorway{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:var(--paper);text-decoration:none;overflow:hidden;isolation:isolate}
@@ -173,7 +168,7 @@ img{max-width:100%;height:auto;display:block}
 .doorway .btn{justify-self:start;margin-top:6px}
 .doorway:hover .btn{background:var(--paper);color:var(--ink)}
 
-/* Páginas interiores (empleo, contacto, datos) */
+/* Inner pages (careers, contact, privacy) */
 .page main{padding-top:64px}
 .page-head{background:#0B0B0B;color:var(--paper);padding-block:80px 64px}
 .page-head .eyebrow{color:#C98B80}
