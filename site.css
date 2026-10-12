@@ -167,7 +167,7 @@ section{padding-block:72px}
 
 /* Galería */
 .gal{columns:2;column-gap:12px;margin-top:28px}
-.gal img{width:100%;display:block;border-radius:10px;margin-bottom:12px;break-inside:avoid}
+.gal img{width:100%;height:auto;display:block;border-radius:10px;margin-bottom:12px;break-inside:avoid;transition:opacity .6s ease}
 @media (min-width:860px){.gal{columns:3}}
 
 /* Agenda */
@@ -409,7 +409,19 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .piezas figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:10px}
 .piezas figcaption b{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600}
 .piezas .dl{font-size:0.78rem;font-weight:600;color:var(--cobalt);text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:5px 11px}
+.piezas .dls{display:flex;gap:6px;flex-wrap:wrap}
 .piezas .dl::before{content:"↓ "}
+.piezas .dl.busy{opacity:.5;pointer-events:none}
+
+/* ONO: anatomía de un roll */
+.anatomia{margin-top:48px}
+.anatomia h2{font-size:clamp(1.6rem,4vw,2.4rem)}
+.anatomia .lead{margin-top:8px}
+.anatomia-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,26%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:20px;padding-bottom:8px;scrollbar-width:thin}
+.anatomia-row figure{margin:0;scroll-snap-align:start}
+.anatomia-row img{width:100%;height:auto;display:block;border-radius:var(--img,10px)}
+.anatomia-row figcaption{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:8px;opacity:.75}
+@media (max-width:560px){.anatomia-row{grid-auto-columns:72%}}
 
 /* Tarjeta de miembro: vista previa del pase y botones de wallet. El pase real lo generan las funciones en netlify/functions. */
 .pase{width:min(100%,380px);justify-self:end;background:var(--cobalt);color:var(--cream);border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(14,38,131,.28)}
