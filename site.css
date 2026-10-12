@@ -464,3 +464,23 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .admin .resultado{margin-top:28px;max-width:720px;display:grid;gap:12px}
 .admin .resultado input{font-size:0.85rem}
 .admin .error{color:var(--vermilion);font-weight:600}
+/* SLVJ: mapa de mesas. Texto a la izquierda y el mapa a la derecha; en el celular, uno debajo del otro. */
+.mesas{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center;margin-block:56px}
+@media (min-width:860px){.mesas{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px}}
+.mesas h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-top:10px}
+.mesas .lead{margin-top:12px}
+.mesas-cifras{display:flex;flex-wrap:wrap;gap:12px 36px;margin:26px 0 0}
+.mesas-cifras div{display:flex;flex-direction:column-reverse;gap:2px}
+.mesas-cifras dt{font-family:var(--disp,var(--display));font-size:clamp(2.2rem,5vw,3rem);line-height:1;font-variant-numeric:tabular-nums}
+.mesas-cifras dd{margin:0;font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted,var(--ink-soft))}
+.mesas-lista{margin-top:24px;border-top:1px solid var(--ln,var(--line));padding-top:14px}
+.mesas-lista summary{cursor:pointer;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--acc,var(--cobalt))}
+.mesas-lista summary:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+.mesas-lista ul{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px 18px;font-size:0.95rem;font-variant-numeric:tabular-nums}
+.mesas-lista b{font-weight:700;margin-right:4px}
+.mesas-lista i{font-style:normal;color:var(--acc,var(--cobalt));font-weight:600}
+.mesas-lista .note{margin-top:12px;color:var(--muted,var(--ink-soft))}
+.mesas-mapa{margin:0;justify-self:center;width:100%;max-width:500px}
+.mesas-mapa a{display:block}
+.mesas-mapa img{display:block;width:100%;height:auto;outline:1px solid var(--ln,var(--line));outline-offset:-1px}
+.mesas-mapa figcaption{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:10px;opacity:.75}
