@@ -42,7 +42,7 @@ img{max-width:100%;height:auto;display:block}
 .js .rv.in{opacity:1;transform:none}
 .js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}.js .rv.d3{transition-delay:.36s}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
-@media print{.js .rv{opacity:1!important;transform:none!important}.js .chapter .media.rv img{transform:none!important}}
+@media print{.js .rv{opacity:1!important;transform:none!important;transition:none!important}.js .chapter .media.rv img{transform:none!important;transition:none!important}}
 
 /* Nav: transparent over the hero, solid once you scroll */
 .nav{position:fixed;inset:0 0 auto 0;padding-top:env(safe-area-inset-top,0px);z-index:20;color:var(--paper);transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
