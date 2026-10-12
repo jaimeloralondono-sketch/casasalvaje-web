@@ -1,10 +1,10 @@
 /* Grupo ONO. The group says little and lets the brands show: a black hero with the line logo drawing itself,
    a short manifesto and one full-screen chapter per brand, each in its own colours
-   (ONO: black and ritual red; Casa Salvaje: cream and cobalt). Forms live on their own pages. */
+   (ONO: black and ritual red; Casa Salvaje: bone, olive and terracotta, with the cobalt arch). Forms live on their own pages. */
 :root{
   --paper:#F4EFE7; --paper-2:#EAE3D7; --ink:#111111; --ink-soft:#55514B; --line:#CFC6B7; --white:#FBF8F3;
   --red:#660000; --red-hi:#B4231C;
-  --cream:#F3EBDD; --cobalt:#1437B5; --gold:#B08A4A;
+  --bone:#E6DDCD; --olive:#3D4635; --terracotta:#A8533F; --cobalt:#1751B3; --gold:#B08A4A;
   --display:"Cormorant Garamond","Times New Roman",Georgia,serif;
   --body:"Inter","Helvetica Neue",Arial,sans-serif;
   --focus:#B4231C;
@@ -20,6 +20,8 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);f
 h1,h2,h3{font-family:var(--display);font-weight:500;margin:0;text-wrap:balance;letter-spacing:0.005em}
 h2{font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:1.02}
 h3{font-size:1.6rem;line-height:1.1;font-weight:600}
+/* Cormorant defaults to old-style figures (its 1 is x-height tall): use lining figures in headings and data */
+h1,h2,h3,.facts b,.direct a,.values b,.door b{font-variant-numeric:lining-nums}
 p{margin:0}
 a{color:inherit}
 img{max-width:100%;height:auto;display:block}
@@ -151,14 +153,16 @@ html:not(.js) .menu-btn{display:none}
 .ch-ono .below{border-top:6px solid var(--red)}
 
 /* Casa Salvaje */
-.ch-cs{background:var(--cream);color:#141B3A}
-.ch-cs h2{font-weight:600;text-transform:uppercase;letter-spacing:.02em;color:var(--cobalt)}
-.ch-cs .eyebrow,.ch-cs .roman{color:var(--cobalt)}
-.ch-cs .lead{color:#4A527A}
-.ch-cs .facts,.ch-cs .facts div+div{border-color:#CDBFA6}
-.ch-cs .btn{color:var(--cobalt)}
-.ch-cs .btn.solid{background:var(--cobalt);border-color:var(--cobalt);color:var(--cream)}
-.ch-cs .btn.solid:hover{background:#0E2683;border-color:#0E2683}
+.ch-cs{background:var(--bone);color:#171612}
+/* Terracotta is 3.9:1 on bone: display sizes only, never small text */
+.ch-cs h2{font-family:"EB Garamond",Georgia,serif;font-weight:500;text-transform:none;letter-spacing:0;color:var(--terracotta)}
+.ch-cs .eyebrow{color:var(--olive)}
+.ch-cs .lead{color:#4F4B41}
+.ch-cs .facts,.ch-cs .facts div+div{border-color:#CBBEA6}
+.ch-cs .btn{color:#171612;border-radius:999px}
+.ch-cs .btn.solid{background:#171612;border-color:#171612;color:var(--bone)}
+.ch-cs .btn.solid:hover{background:var(--olive);border-color:var(--olive)}
+/* The cobalt arch is the house's one illustrated gesture */
 .ch-cs .media{background:var(--cobalt);display:grid;place-items:center;padding:56px 20px}
 .ch-cs .arch{position:relative;width:min(100%,430px);aspect-ratio:3/4;border-radius:999px 999px 14px 14px;overflow:hidden}
 .ch-cs .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -169,10 +173,15 @@ html:not(.js) .menu-btn{display:none}
 .door{position:relative;display:block;aspect-ratio:3/4;border-radius:999px 999px 8px 8px;overflow:hidden;text-decoration:none;color:#FBF7EF}
 .door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .door:hover img{transform:scale(1.05)}
-.door::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,30,.8),rgba(10,12,30,0) 55%)}
+.door:focus-visible img{transform:scale(1.05)}
+.door::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,22,18,.82),rgba(23,22,18,0) 55%)}
 .door>span{position:absolute;left:14px;right:14px;bottom:14px;z-index:1}
+/* "Soon" sits above the name: in a top corner the dome would clip it */
+.door .soon{display:inline-block;font-style:normal;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(251,247,239,.6);padding:2px 8px;margin-bottom:8px}
 .door b{display:block;font-family:var(--display);font-size:1.45rem;font-weight:600;line-height:1.05}
-.door small{font-size:0.62rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.door small{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+@media (max-width:759px){.door b{font-size:1.3rem}}
+.ch-cs .below{padding-top:clamp(72px,8vw,120px)}
 .ch-cs .strip{margin-top:44px}
 
 /* Careers and contact */
