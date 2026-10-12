@@ -409,4 +409,6 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .piezas figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:10px}
 .piezas figcaption b{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600}
 .piezas .dl{font-size:0.78rem;font-weight:600;color:var(--cobalt);text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:5px 11px}
+.piezas .dls{display:flex;gap:6px;flex-wrap:wrap}
 .piezas .dl::before{content:"↓ "}
+.piezas .dl.busy{opacity:.5;pointer-events:none}
