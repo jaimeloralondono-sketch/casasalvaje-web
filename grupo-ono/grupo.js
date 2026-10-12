@@ -8,7 +8,19 @@
   }
   setLang(root.getAttribute("data-lang") === "en" ? "en" : "es");
   document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.set); }); });
-  var y = document.getElementById("year"); if(y) y.textContent = new Date().getFullYear();
+  document.querySelectorAll(".year").forEach(function(y){ y.textContent = new Date().getFullYear(); });
+
+  // Nav: transparente sobre la portada, sólida al bajar.
+  var nav = document.querySelector(".nav"), hero = document.querySelector(".hero");
+  function onScroll(){ if(nav) nav.classList.toggle("solid", !hero || window.scrollY > hero.offsetHeight - 80); }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // Aparición al hacer scroll.
+  var rv = document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }); }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
+    rv.forEach(function(el){ io.observe(el); });
+  } else rv.forEach(function(el){ el.classList.add("in"); });
 
   // Hoja de vida: solo PDF y máximo 5 MB (Netlify Forms acepta hasta 8 MB por envío).
   var cv = document.getElementById("f-cv");
