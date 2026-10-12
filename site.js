@@ -174,3 +174,45 @@
       .then(function(){ a.classList.remove("busy"); });
   });
 })();
+
+// La casa en imágenes: orden al azar en cada visita y, cada pocos segundos, una foto cambia por otra de la misma forma.
+(function(){
+  var gal = document.querySelector(".gal[data-pool]");
+  if(!gal) return;
+  var imgs = [].slice.call(gal.querySelectorAll("img"));
+  var all = imgs.map(function(im){ return { src: im.getAttribute("src"), alt: im.alt, w: +im.getAttribute("width"), h: +im.getAttribute("height") }; });
+  try{ all = all.concat(JSON.parse(gal.dataset.pool)); }catch(e){}
+  function shape(it){ var r = it.h / it.w; return r < .85 ? "wide" : r > 1.45 ? "tall" : "port"; }
+  function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function put(im, it){ im.src = it.src; im.alt = it.alt; im.width = it.w; im.height = it.h; }
+  // Primera vuelta: las mismas casillas con piezas al azar, cada una de la forma que ya tenía.
+  var shown = [], pool = shuffle(all.slice());
+  imgs.forEach(function(im, i){
+    var want = shape(all[i]), k = pool.findIndex(function(it){ return shape(it) === want; });
+    var it = k < 0 ? all[i] : pool.splice(k, 1)[0];
+    if(k < 0 && pool.indexOf(it) > -1) pool.splice(pool.indexOf(it), 1);
+    put(im, it); shown[i] = it;
+  });
+  if(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var visible = false, last = -1;
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(gal);
+  } else visible = true;
+  setInterval(function(){
+    if(!visible || document.hidden) return;
+    var i; do { i = Math.floor(Math.random() * imgs.length); } while(i === last && imgs.length > 1);
+    last = i;
+    var want = shape(shown[i]);
+    var free = pool.filter(function(it){ return shape(it) === want; });
+    if(!free.length) return;
+    var next = free[Math.floor(Math.random() * free.length)], im = imgs[i], pre = new Image();
+    pre.onload = function(){
+      im.style.opacity = 0;
+      setTimeout(function(){
+        pool.splice(pool.indexOf(next), 1); pool.push(shown[i]);
+        put(im, next); shown[i] = next; im.style.opacity = 1;
+      }, 600);
+    };
+    pre.src = next.src;
+  }, 3500);
+})();

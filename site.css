@@ -167,7 +167,7 @@ section{padding-block:72px}
 
 /* Galería */
 .gal{columns:2;column-gap:12px;margin-top:28px}
-.gal img{width:100%;display:block;border-radius:10px;margin-bottom:12px;break-inside:avoid}
+.gal img{width:100%;height:auto;display:block;border-radius:10px;margin-bottom:12px;break-inside:avoid;transition:opacity .6s ease}
 @media (min-width:860px){.gal{columns:3}}
 
 /* Agenda */
