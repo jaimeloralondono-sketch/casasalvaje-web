@@ -1,0 +1,25 @@
+/* Grupo ONO · print (brief §8.3): a fact sheet, 3 pages at most. Linked with media="print"; the desktop grid in grupo.css also applies to print. */
+:root{--ink:#000;--ink-2:#000;--hair:#999;--pad:12px;--pad-w:12px;--cg:12px;--t-body:400 1.0625rem/1.4 var(--f-text);--t-lead:400 1.125rem/1.4 var(--f-text);--t-name:condensed 500 1.25rem/1.1 var(--f-display)}
+html{font-size:10px}
+*{color:#000!important;background:none!important;box-shadow:none!important}
+.band,.skip,.site-header nav,.hero .key,.win picture,.ono-fig,.arch-fig,.posters,.cs-wall,.door picture,.site-footer .elev,.kanji,.ono-logo,.cs-logo,.strip,.kit,.ctas{display:none!important}
+.toc{position:static}
+.elev{--gs:#000}
+.hero .elev{width:4.5cm}.hero :is(.hero-meta,.caps){width:11cm}
+.dir-list li{grid-template-columns:4rem 2fr 2fr 2.5fr 1.5fr 4fr}
+.sec,.w-ono,.w-cs,.w-cs-cream{border-top:1px solid #000}
+.ono-copy,.cs-copy,.camp-note{grid-column:1/-1;max-width:none}
+.about-main .values{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none}
+.hero,.stand-row,.campaign,.values,.site-footer .wrap,.sec-head,:is(.w-ono,.w-cs) .ledger,.foot-cols,.legal,.dir-note,.guest,:is(.w-ono,.w-cs,.about-main) .lead{padding-block:0;margin-block:8px}
+.lun{aspect-ratio:auto;padding:0;justify-content:start}.plate{padding:2px 0 0}
+.tl{min-height:0}
+.dir-list li{padding:6px 0}.dir-list .sub{margin-top:6px}.sub .no::before{top:-6px;height:calc(6px + .7em)}
+.ledger>div,.people>div,.route>*{padding:5px 0}.values{gap:6px}.values li{padding-top:6px}.doors-type{gap:12px}.doors-type>li{gap:4px;padding-top:6px}
+.foot-cols{gap:12px}.foot-cols :is(li,a){padding-block:1px}.foot-h{margin-bottom:2px}
+.st-open::before{border:.3em solid}
+a[href^="http"]::after,a[href^="mailto"]::after{content:" (" attr(href) ")";padding:0;margin:0;height:auto;background:none!important;mask:none;font-size:.85em}
+.door h4::after{content:none}
+:is(.stand,.h2,.w-ono h2,.cs-h,.worlds-h){font-size:2rem;max-width:none}
+.sub li,tr,.ledger>div,.people>div,.door,figure,.values li,.doors-type>li{break-inside:avoid}
+.label,h2,h3,h4,.sec-head{break-after:avoid}
+section.press{break-before:page}

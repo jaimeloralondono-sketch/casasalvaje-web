@@ -1,0 +1,55 @@
+/* Grupo ONO · inner pages (careers, contact, privacy, thanks, 404): page heads, prose, side columns and the form system C20. Loaded after grupo.css. */
+:root{--t-h1:condensed 500 clamp(2.5rem,1.5rem + 4.2vw,4.5rem)/.96 var(--f-display);--t-input:400 1.125rem/1.4 var(--f-text);
+--tick:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7' fill='none' stroke='%23fff' stroke-width='2.5'/%3E%3C/svg%3E")}
+.page-head{padding-block:clamp(40px,6vw,80px) clamp(32px,4vw,56px)}
+.page-head h1{font:var(--t-h1);letter-spacing:-.015em;max-width:18ch;margin-top:12px}
+.page-head .lead{margin-top:20px}
+.prose>*{max-width:68ch}
+.prose h2{font:var(--t-h3);margin:48px 0 12px}
+.prose p+p,.prose p+ul,.prose ul+p{margin-top:1em}
+.prose :is(ul,ol){padding-left:1.25em;list-style:revert}
+.prose [type=a]{list-style-type:lower-alpha}
+.note{color:var(--ink-2);margin-top:12px}
+.h3{font:var(--t-h3)}
+.strip{margin-bottom:clamp(40px,5vw,64px)}
+.strip img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 45%}
+.side .ledger{margin-top:16px}
+.side h3,.txt h2{margin:40px 0 12px}
+.side .values{margin:0}
+.callout{display:grid;gap:8px;margin-top:24px;padding:16px;border:1px solid var(--ink)}
+.callout .st{font:600 1rem/1.45 var(--f-text)}
+.ruled{border-bottom:1px solid var(--hair)}
+.ruled li{padding:10px 0;border-top:1px solid var(--hair)}
+.toc .ruled{margin-top:8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--cg)}
+.elev--sm{max-width:420px}
+.hold{order:-1;pointer-events:none}
+.duo{align-items:center}
+.nf .elev{margin-inline:auto}
+@media screen and (max-width:899px){.hold .elev{max-width:280px}}
+@media (min-width:900px),print{.strip{grid-column:1/9}.side{grid-column:1/5}.main{grid-column:5/13}.toc{grid-column:1/4;position:sticky;top:16px;align-self:start}.prose{grid-column:4/13}.txt{grid-column:1/8}.hold{order:0;grid-column:8/13}}
+/* C20 forms */
+.form{display:grid;gap:40px}
+fieldset{display:grid;gap:20px;min-width:0;margin:0;padding:0;border:0}
+legend{float:left;width:100%;padding:0 0 4px}
+.field{display:grid;gap:6px;align-content:start}
+.field>label{font-weight:500;font-size:1rem}
+input:not([type=checkbox],[type=radio],[type=hidden]),select,textarea{width:100%;min-height:48px;padding:10px 14px;font:var(--t-input);color:var(--ink);background:var(--field);border:1.5px solid var(--rule);border-radius:0;appearance:none}
+textarea{min-height:9rem;resize:vertical}
+select{padding-right:44px;background-image:linear-gradient(45deg,#0000 50%,currentColor 0),linear-gradient(135deg,currentColor 50%,#0000 0);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+/* 48px tall like its neighbours: 3 border + 8 padding + 36 button, with min-height 48 */
+input[type=file]{padding:4px 6px}
+::file-selector-button{min-height:36px;margin-right:12px;padding:0 16px;font:500 1rem/1 var(--f-text);color:var(--ink);background:none;border:1.5px solid var(--ink);cursor:pointer}
+.hint{color:var(--ink-2)}
+.err{color:var(--todo);font-weight:600}
+/* empty error slots take no space but stay rendered, so the live CV slot is announced when it fills */
+.err:empty{position:absolute}
+[aria-invalid=true]{border-color:var(--todo)!important}
+.check{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start}
+.check input{width:24px;height:24px;margin:2px 0 0;border:1.5px solid var(--rule);background:var(--field) center/20px no-repeat;appearance:none;cursor:pointer}
+.check input:checked{background-color:var(--ink);background-image:var(--tick);background-blend-mode:difference;border-color:var(--ink)}
+.form .btn{font-size:1rem;letter-spacing:0;text-transform:none}
+.check+.err{margin:6px 0 0 36px}
+@media (min-width:760px){.two{grid-template-columns:1fr 1fr}.two>:is(legend,.full){grid-column:1/-1}}
+@media (forced-colors:active){:is(input,select,textarea):not([type=checkbox],[type=radio],[type=hidden]){border:1.5px solid FieldText}
+.check input,select{appearance:auto}}

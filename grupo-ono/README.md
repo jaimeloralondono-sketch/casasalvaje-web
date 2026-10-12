@@ -2,7 +2,23 @@
 
 Static site for Grupo ONO, the hospitality group behind ONO Hosomaki Bar (Bogotá) and Casa Salvaje (Cartagena). It is plain HTML and CSS with no build step, written in English only, and hosted on Netlify with Netlify Forms. Everything lives in this `grupo-ono/` folder. The repository root is the separate Casa Salvaje site, so leave it alone.
 
-Pages: `index.html`, `careers.html`, `contact.html`, `privacy.html`, `thanks.html` and `404.html`. Shared files: `grupo.css`; `forms.js` (careers and contact only); `fonts/` (self-hosted Archivo and Cormorant Garamond, with `OFL.txt`); `img/` (originals, which the press kit links to); `img/d/` (responsive derivatives); `tools/launch_check.py`; `_redirects`; `netlify.toml`.
+Pages: `index.html`, `careers.html`, `contact.html`, `privacy.html`, `thanks.html` and `404.html`. Shared files: `grupo.css`; `pages.css`; `print.css`; `forms.js` (careers and contact only); `fonts/` (self-hosted Archivo and Cormorant Garamond, with `OFL.txt`); `img/` (originals, see below); `img/d/` (responsive derivatives); `tools/launch_check.py`; `_redirects`; `netlify.toml`.
+
+### Stylesheets
+
+The brief asks for one `grupo.css` of at most 20 KB (6 KB gzip). The full component set does not fit that budget, so the CSS is split three ways:
+
+- `grupo.css`: tokens, base, header, footer, elevation and every home-page component, plus reduced-motion and forced-colours rules. Every page loads it. Keep it at or under 20,480 bytes raw (`wc -c grupo-ono/grupo.css`).
+- `pages.css`: the inner-page parts (page heads, prose, side columns, the thanks and 404 layouts, and the C20 form system). Only careers, contact, privacy, thanks and 404 load it, after `grupo.css`.
+- `print.css`: the print fact sheet (brief 8.3), linked on every page with `media="print"`, so it never blocks rendering. The desktop grid in `grupo.css` and `pages.css` is declared for `(min-width:900px), print`, so paper reuses the desktop columns. On paper the home page leaves out the navigation, the hero Key, photos and posters (with their captions), the press-kit table (its download links cannot be followed on paper) and the CTA buttons (their links repeat the directory). It prints on 3 A4 or Letter pages.
+
+### Images
+
+- `img/` holds three kinds of original. First, the press-kit files that the home page links for download. Second, `art/guest-list-heaven-has-a-guest-list.jpg`, kept for the press kit (brief 6.2) and now listed in it. Third, the masters that the derivatives in `img/d/` are cut from. Nothing links the masters, but they are kept on purpose, so re-exports can be made from them: `art/ono-grabados-waves.jpg`, `art/ono-sellos-oni.jpg`, `art/rituales-peacock.jpg`, `art/tipografia-bad-habits.jpg`, `kanibal-salon.jpg`, `slvj-neon.jpg` and `slvj-salon.jpg`. The last three show diners, so they stay out of the press kit until releases arrive (section 1, item 9).
+- The WebP fallbacks for the slots whose AVIF uses quality 42 (`p-waves`, `door-kan`, `p-skin-tuna`, `p-rituales`, `p-tipografia`) were re-encoded at WebP quality 55, method 6. Because `img/d/` is cached as immutable, they live under new names: `img/d/<slot>2-<width>.webp`. AVIF and JPEG keep the original slot names.
+- `img/d/logo-ono-bone-192.png` is the ONO brush logo, pre-coloured bone (#EFE4D6) on transparent, as a lazy image. It replaces the old CSS mask, which always loaded eagerly. In forced-colours mode the same file is used as a mask, so the logo draws in `CanvasText`.
+- Only the two hero windows are eager with `fetchpriority="high"` on the home page. The exception is the careers strip (`careers.html`): it is that page's LCP image, so it stays eager and also carries `fetchpriority="high"`.
+- `fonts/cormorant-garamond-600-caps.woff2` holds only capitals, digits and punctuation (7.5 KB). Every Cormorant use on the site is uppercase. If Cormorant is ever used for lowercase text, re-subset it from the Google Fonts original.
 
 The site never shows an invented fact. Anything still unknown appears on the page as `<mark class="todo">[…]</mark>`, with an `<!-- OWNER: … -->` comment next to it.
 

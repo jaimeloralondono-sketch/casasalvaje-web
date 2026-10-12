@@ -20,6 +20,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/archivo-wdth75-100-wght400-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/grupo.css">
+<link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/print.css" media="print">
 <script src="/forms.js" defer></script>
 <!-- LAUNCH: uncomment once the production domain is confirmed, replacing [DOMAIN]; switch the JSON-LD IRIs below to absolute https://[DOMAIN] at the same time.
 <link rel="canonical" href="https://[DOMAIN]/careers.html">
@@ -61,7 +63,7 @@
   </div>
   <div class="wrap g12">
     <figure class="strip">
-      <picture><source type="image/avif" srcset="/img/d/careers-strip-720.avif 720w, /img/d/careers-strip-1000.avif 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)"><source type="image/webp" srcset="/img/d/careers-strip-720.webp 720w, /img/d/careers-strip-1000.webp 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)"><img src="/img/d/careers-strip-1000.jpg" srcset="/img/d/careers-strip-720.jpg 720w, /img/d/careers-strip-1000.jpg 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)" width="1000" height="666" alt="The Kanibal dining room set for service, with white walls, green panelling and paper lanterns." decoding="async"></picture>
+      <picture><source type="image/avif" srcset="/img/d/careers-strip-720.avif 720w, /img/d/careers-strip-1000.avif 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)"><source type="image/webp" srcset="/img/d/careers-strip-720.webp 720w, /img/d/careers-strip-1000.webp 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)"><img src="/img/d/careers-strip-1000.jpg" srcset="/img/d/careers-strip-720.jpg 720w, /img/d/careers-strip-1000.jpg 1000w" sizes="(min-width:1320px) 870px, (min-width:900px) 66vw, calc(100vw - 32px)" width="1000" height="666" alt="The Kanibal dining room set for service, with white walls, green panelling and paper lanterns." decoding="async" fetchpriority="high"></picture>
       <figcaption>Kanibal, Casa Salvaje, Cartagena.</figcaption>
     </figure>
   </div>
@@ -71,7 +73,7 @@
         <h2 class="h3" id="h-hire">Where we hire</h2>
         <dl class="ledger">
           <div><dt>Bogotá</dt><dd>ONO Hosomaki Bar</dd></div>
-          <div><dt>Cartagena</dt><dd>Casa Salvaje <span class="sm">La Domenica, Kanibal, SLVJ, ONO Cartagena</span></dd></div>
+          <div><dt>Cartagena</dt><dd>Casa Salvaje <span class="sm">(La Domenica, Kanibal, SLVJ, ONO Cartagena)</span></dd></div>
         </dl>
         <div class="callout">
           <p class="st st-opening">Hiring ahead of ONO Cartagena, opening <span class="nw">Nov–Dec 2026</span>.</p><!-- REVIEW 2026-12-31: opening window -->
@@ -121,7 +123,7 @@
         </fieldset>
         <fieldset class="two">
           <legend>CV and links</legend>
-          <div class="field"><label for="f-cv">CV (optional)</label><input id="f-cv" name="cv" aria-describedby="cv-hint cv-err" type="file" accept=".pdf,application/pdf"><p class="hint" id="cv-hint">PDF, up to 5 MB.</p><p class="err" id="cv-err"></p></div>
+          <div class="field"><label for="f-cv">CV (optional)</label><input id="f-cv" name="cv" aria-describedby="cv-hint cv-err" type="file" accept=".pdf,application/pdf"><p class="hint" id="cv-hint">PDF, up to 5 MB.</p><p class="err" id="cv-err" aria-live="polite"></p></div>
           <div class="field"><label for="f-profile">Instagram or LinkedIn (optional)</label><input id="f-profile" name="profile" autocomplete="url"></div>
         </fieldset>
         <fieldset>

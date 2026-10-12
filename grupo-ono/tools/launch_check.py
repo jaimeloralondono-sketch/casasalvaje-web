@@ -70,6 +70,13 @@ SLOTS = {
     "p-tipografia": "img/art/tipografia-bad-habits.jpg",
     "careers-strip": "img/kanibal-salon.jpg",
     "logo-salvaje": "img/logo-salvaje-oro.png",
+    "logo-ono-bone": "img/logo-ono.png, recoloured bone",
+    # WebP fallbacks re-encoded at q55 under new names (img/d is cached immutable)
+    "p-waves2": "img/art/ono-grabados-waves.jpg, WebP",
+    "door-kan2": "img/kan-steak.jpg, WebP",
+    "p-skin-tuna2": "img/art/ono-skin-tuna.jpg, WebP",
+    "p-rituales2": "img/art/rituales-peacock.jpg, WebP",
+    "p-tipografia2": "img/art/tipografia-bad-habits.jpg, WebP",
 }
 DERIV_RE = re.compile(r"^img/d/(?P<slot>.+)-(?P<w>\d+)\.(?P<ext>avif|webp|jpe?g|png)$", re.I)
 EXT_RANK = {"jpg": 0, "jpeg": 0, "png": 1, "webp": 2, "avif": 3}
