@@ -511,3 +511,12 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .mu-frame{border-radius:12px;overflow:hidden;min-height:152px;background:rgba(0,0,0,.15)}
 .t-kanibal .mu-frame,.t-slvj .mu-frame{border-radius:0}
 .mu-frame iframe{display:block;border:0}
+.mu-panel.off{position:absolute;left:-200vw;visibility:hidden}
+.mu-own{display:flex;align-items:center;gap:12px;padding:6px 4px 4px}
+.mu-panel .mu-pp{flex:none;width:44px;height:44px;padding:0;border:1px solid currentColor;border-radius:50%;opacity:1;position:relative}
+.t-kanibal .mu-panel .mu-pp,.t-slvj .mu-panel .mu-pp{border-radius:0}
+.mu-pp::before{content:"";position:absolute;left:17px;top:14px;border-style:solid;border-width:8px 0 8px 12px;border-color:transparent transparent transparent currentColor}
+.musica.on .mu-pp::before{left:14px;top:13px;width:4px;height:16px;border-width:0 5px;border-style:solid;border-color:currentColor}
+.mu-now{min-width:0;display:flex;flex-direction:column;gap:4px}
+.mu-now b{font:500 1.05rem/1.2 var(--disp,var(--display));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:none}
+.mu-now span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}

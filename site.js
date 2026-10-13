@@ -218,87 +218,144 @@
   }).catch(function(){});
 })();
 
-// Música: cada página trae sus playlists de Spotify en <body data-musica="...">.
-// "ID ID" se mezclan en una sola; "Cena=ID Fiesta=ID" da a elegir. Siempre empieza en una canción al azar
-// y al terminar sigue con otra al azar (las canciones salen de /api/playlist; si falla, se carga la playlist tal cual).
+// Música: suena desde el primer toque en cualquier parte de la página y siempre empieza en una canción al azar.
+// Si la página tiene mp3 propios en musica/musica.json, usa el reproductor de la casa; si no, las playlists de
+// Spotify de <body data-musica="...">: "ID ID" se mezclan en una sola, "Cena=ID Fiesta=ID" da a elegir.
 (function(){
   var spec = document.body.getAttribute("data-musica");
-  if(!spec) return;
-  var root = document.documentElement;
-  var es = function(){ return root.getAttribute("data-lang") === "es"; };
-  var sets = spec.trim().split(/\s+/).map(function(p){ var k = p.split("="); return k.length > 1 ? { name: k[0], id: k[1] } : { name: "", id: k[0] }; });
-  var groups = [], byName = {};
-  sets.forEach(function(s){
-    var g = byName[s.name]; if(!g){ g = byName[s.name] = { name: s.name, ids: [] }; groups.push(g); }
-    g.ids.push(s.id);
-  });
-  // De noche (11 pm a 6 am, hora Cartagena) arranca en "Fiesta" si existe.
-  var h = new Date().getHours();
-  try{ h = parseInt(new Intl.DateTimeFormat("en-US", {timeZone: "America/Bogota", hour: "numeric", hourCycle: "h23"}).format(new Date()), 10); }catch(e){}
-  var night = h >= 23 || h < 6;
-  var cur = groups.filter(function(g){ return /fiesta|party/i.test(g.name) === night; })[0] || groups[0];
-
-  var box = document.createElement("div"); box.className = "musica";
-  box.innerHTML =
-    '<div class="mu-panel" hidden><div class="mu-top">' +
-      (groups.length > 1 ? '<div class="mu-sets">' + groups.map(function(g, i){ return '<button type="button" data-i="' + i + '">' + g.name + '</button>'; }).join("") + '</div>' : '<span></span>') +
-      '<span class="mu-act"><button type="button" class="mu-next" aria-label="Otra canción"><span class="es">Otra</span><span class="en">Next</span> &#8635;</button>' +
-      '<button type="button" class="mu-x" aria-label="Cerrar">&#215;</button></span></div>' +
-      '<div class="mu-frame"><div></div></div></div>' +
-    '<button type="button" class="mu-btn" aria-expanded="false"><span class="mu-eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="es">Música</span><span class="en">Music</span></button>';
-  document.body.appendChild(box);
-  var panel = box.querySelector(".mu-panel"), btn = box.querySelector(".mu-btn");
-
-  var cache = {}, queue = [], ctrl = null, ready = null, ending = false, playing = false;
+  if(!spec || !window.fetch) return;
+  var page = location.pathname.replace(/^.*\//, "").replace(/\.html$/, "") || "index";
   function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  function tracks(id){
-    if(!cache[id]) cache[id] = fetch("/api/playlist?id=" + id).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      .then(function(d){ return d.tracks || []; }).catch(function(){ delete cache[id]; return []; });
-    return cache[id];
+  function groupsFrom(pairs){
+    var gs = [], by = {};
+    pairs.forEach(function(p){ var g = by[p[0]]; if(!g){ g = by[p[0]] = { name: p[0], items: [] }; gs.push(g); } g.items = g.items.concat(p[1]); });
+    return gs;
   }
-  function api(){
-    if(ready) return ready;
-    ready = new Promise(function(res){
-      window.onSpotifyIframeApiReady = function(IFrameAPI){
-        IFrameAPI.createController(box.querySelector(".mu-frame div"), { width: "100%", height: 152 }, function(c){
-          ctrl = c;
-          c.addListener("playback_update", function(e){
-            var d = e.data || {};
-            playing = !d.isPaused;
-            box.classList.toggle("on", playing);
-            if(d.duration > 0 && d.position >= d.duration - 900 && !ending && queue.length){ ending = true; setTimeout(next, 900); }
-          });
-          res(c);
-        });
+  // De noche (11 pm a 6 am, hora Cartagena) arranca en "Fiesta" si existe.
+  function pick(gs){
+    var h = new Date().getHours();
+    try{ h = parseInt(new Intl.DateTimeFormat("en-US", {timeZone: "America/Bogota", hour: "numeric", hourCycle: "h23"}).format(new Date()), 10); }catch(e){}
+    var night = h >= 23 || h < 6;
+    return gs.filter(function(g){ return /fiesta|party/i.test(g.name) === night; })[0] || gs[0];
+  }
+  fetch("musica/musica.json").then(function(r){ return r.ok ? r.json() : {}; }).catch(function(){ return {}; }).then(function(all){
+    var mine = all[page] || {};
+    var own = groupsFrom(Object.keys(mine).map(function(k){ return [k, mine[k] || []]; })).filter(function(g){ return g.items.length; });
+    if(own.length) build(own, "mp3");
+    else build(groupsFrom(spec.trim().split(/\s+/).map(function(p){ var k = p.split("="); return k.length > 1 ? [k[0], [k[1]]] : ["", [k[0]]]; })), "spotify");
+  });
+
+  function build(groups, mode){
+    var cur = pick(groups), queue = [], stopped = false, started = false;
+    var box = document.createElement("div"); box.className = "musica";
+    box.innerHTML =
+      '<div class="mu-panel off"><div class="mu-top">' +
+        (groups.length > 1 ? '<div class="mu-sets">' + groups.map(function(g, i){ return '<button type="button" data-i="' + i + '">' + g.name + '</button>'; }).join("") + '</div>' : '<span></span>') +
+        '<span class="mu-act"><button type="button" class="mu-next"><span class="es">Otra</span><span class="en">Next</span> &#8635;</button>' +
+        '<button type="button" class="mu-x" aria-label="Cerrar / Close">&#215;</button></span></div>' +
+        (mode === "mp3"
+          ? '<div class="mu-own"><button type="button" class="mu-pp" aria-label="Play / Pausa"></button><div class="mu-now"><b></b><span></span></div></div>'
+          : '<div class="mu-frame"><div></div></div>') +
+      '</div>' +
+      '<button type="button" class="mu-btn" aria-expanded="false"><span class="mu-eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="es">Música</span><span class="en">Music</span></button>';
+    document.body.appendChild(box);
+    var panel = box.querySelector(".mu-panel"), btn = box.querySelector(".mu-btn");
+    function on(v){ box.classList.toggle("on", v); }
+    function mark(){ box.querySelectorAll(".mu-sets button").forEach(function(b){ b.setAttribute("aria-pressed", String(groups[b.dataset.i] === cur)); }); }
+    mark();
+
+    var player = mode === "mp3" ? ownPlayer() : spotifyPlayer();
+    player.prepare(cur);
+
+    // Primer toque en cualquier parte: empieza la música (los navegadores no dejan que suene antes).
+    function first(e){
+      if(box.contains(e.target)) return;
+      document.removeEventListener("click", first, true); document.removeEventListener("keydown", first, true);
+      if(!stopped && !started){ started = true; player.play(); }
+    }
+    document.addEventListener("click", first, true); document.addEventListener("keydown", first, true);
+
+    function open(v){
+      panel.classList.toggle("off", !v); btn.setAttribute("aria-expanded", String(v));
+      if(v && !started){ started = true; player.play(); }
+    }
+    btn.addEventListener("click", function(){ open(panel.classList.contains("off")); });
+    box.querySelector(".mu-x").addEventListener("click", function(){ open(false); });
+    box.querySelector(".mu-next").addEventListener("click", function(){ started = true; player.next(); });
+    box.querySelectorAll(".mu-sets button").forEach(function(b){ b.addEventListener("click", function(){
+      var g = groups[b.dataset.i]; if(g === cur) return;
+      cur = g; mark(); started = true; player.switchTo(g);
+    }); });
+
+    // Reproductor de la casa: mp3 propios. Cada canción es "ruta.mp3" o {"src": "...", "title": "...", "artist": "..."}.
+    function ownPlayer(){
+      var audio = new Audio(), pp = box.querySelector(".mu-pp"), now = box.querySelector(".mu-now");
+      audio.preload = "auto";
+      function info(t){ return typeof t === "string" ? { src: t, title: decodeURIComponent(t.replace(/^.*\//, "").replace(/\.[a-z0-9]+$/i, "")).replace(/[-_]+/g, " ") } : t; }
+      function cue(){ var raw = queue.shift(), t = info(raw); queue.push(raw); audio.src = t.src; now.querySelector("b").textContent = t.title || ""; now.querySelector("span").textContent = t.artist || ""; }
+      function fadeIn(){ audio.volume = 0; var v = 0, id = setInterval(function(){ v = Math.min(1, v + .05); audio.volume = v; if(v >= 1) clearInterval(id); }, 80); }
+      function go(){ var p = audio.play(); fadeIn(); if(p && p.catch) p.catch(function(){}); }
+      audio.addEventListener("play", function(){ on(true); stopped = false; });
+      audio.addEventListener("pause", function(){ on(false); });
+      audio.addEventListener("ended", function(){ cue(); go(); });
+      pp.addEventListener("click", function(){ if(audio.paused) go(); else { stopped = true; audio.pause(); } });
+      return {
+        prepare: function(g){ queue = shuffle(g.items.slice()); cue(); },
+        play: go,
+        next: function(){ cue(); go(); },
+        switchTo: function(g){ queue = shuffle(g.items.slice()); cue(); go(); }
       };
-      var s = document.createElement("script"); s.src = "https://open.spotify.com/embed/iframe-api/v1"; s.async = true;
-      document.head.appendChild(s);
-    });
-    return ready;
+    }
+
+    // Spotify: el embed siempre empieza por la primera canción, así que /api/playlist trae la lista
+    // y se carga una al azar; al terminar sigue otra al azar. Si falla, se carga la playlist tal cual.
+    function spotifyPlayer(){
+      var cache = {}, ctrl = null, ready = null, want = false, ending = false;
+      function tracks(id){
+        if(!cache[id]) cache[id] = fetch("/api/playlist?id=" + id).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+          .then(function(d){ return d.tracks || []; }).catch(function(){ delete cache[id]; return []; });
+        return cache[id];
+      }
+      function uriFor(g){
+        return Promise.all(g.items.map(tracks)).then(function(lists){
+          queue = shuffle([].concat.apply([], lists));
+          box.querySelector(".mu-next").hidden = !queue.length;
+          if(queue.length){ var t = queue.shift(); queue.push(t); return "spotify:track:" + t; }
+          return "spotify:playlist:" + g.items[Math.floor(Math.random() * g.items.length)];
+        });
+      }
+      function api(uri){
+        if(ready) return ready;
+        ready = new Promise(function(res){
+          window.onSpotifyIframeApiReady = function(IFrameAPI){
+            IFrameAPI.createController(box.querySelector(".mu-frame div"), { uri: uri, width: "100%", height: 152 }, function(c){
+              ctrl = c;
+              c.addListener("playback_update", function(e){
+                var d = e.data || {};
+                on(!d.isPaused);
+                if(d.duration > 0 && d.position >= d.duration - 900 && !ending && queue.length){ ending = true; setTimeout(next, 900); }
+              });
+              if(want) c.play();
+              res(c);
+            });
+          };
+          var s = document.createElement("script"); s.src = "https://open.spotify.com/embed/iframe-api/v1"; s.async = true;
+          document.head.appendChild(s);
+        });
+        return ready;
+      }
+      function load(uri){ ending = false; return api(uri).then(function(c){ c.loadUri(uri); c.play(); }); }
+      function next(){ if(!queue.length) return; var t = queue.shift(); queue.push(t); load("spotify:track:" + t); }
+      return {
+        // El reproductor se carga en cuanto la página termina, para que el primer toque ya lo encuentre listo.
+        prepare: function(g){
+          function go(){ uriFor(g).then(api); }
+          if(document.readyState === "complete") setTimeout(go, 800); else window.addEventListener("load", function(){ setTimeout(go, 800); });
+        },
+        play: function(){ if(ctrl) ctrl.play(); else want = true; },
+        next: next,
+        switchTo: function(g){ uriFor(g).then(load); }
+      };
+    }
   }
-  function play(uri){ api().then(function(c){ ending = false; c.loadUri(uri); c.play(); }); }
-  function next(){
-    if(!queue.length) return;
-    var t = queue.shift(); queue.push(t);
-    play("spotify:track:" + t);
-  }
-  function load(g){
-    cur = g;
-    box.querySelectorAll(".mu-sets button").forEach(function(b){ b.setAttribute("aria-pressed", String(groups[b.dataset.i] === g)); });
-    Promise.all(g.ids.map(tracks)).then(function(lists){
-      if(cur !== g) return;
-      queue = shuffle([].concat.apply([], lists));
-      box.querySelector(".mu-next").hidden = !queue.length;
-      if(queue.length) next();
-      else play("spotify:playlist:" + g.ids[Math.floor(Math.random() * g.ids.length)]);
-    });
-  }
-  function open(v){
-    panel.hidden = !v; btn.setAttribute("aria-expanded", String(v));
-    if(v && !ctrl && !ready) load(cur);
-  }
-  btn.addEventListener("click", function(){ open(panel.hidden); });
-  box.querySelector(".mu-x").addEventListener("click", function(){ open(false); });
-  box.querySelector(".mu-next").addEventListener("click", next);
-  box.querySelectorAll(".mu-sets button").forEach(function(b){ b.addEventListener("click", function(){ if(groups[b.dataset.i] !== cur) load(groups[b.dataset.i]); }); });
 })();
