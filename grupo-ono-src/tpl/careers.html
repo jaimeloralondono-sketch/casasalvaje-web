@@ -1,0 +1,45 @@
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow">Careers</div>
+      <h1>People make the night.</h1>
+      <p class="lead">We look for skilled people who want to keep learning, in Bogotá and Cartagena. Leave your details and CV; when a role that fits you opens up, we’ll be in touch.</p>
+      <p class="es" lang="es">Puedes escribirnos en español.</p>
+      <p class="hiring">Now hiring for ONO Cartagena, opening Nov – Dec 2026: sushi chefs, bar, floor and hosts.</p>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap two">
+      <div class="aside">
+        <h2>Areas</h2>
+        <ul class="areas">
+          <li>Kitchen</li>
+          <li>Bar</li>
+          <li>Floor</li>
+          <li>Hosts</li>
+          <li>Office</li>
+          <li>Events &amp; marketing</li>
+        </ul>
+        <p style="margin-top:24px">There doesn’t need to be an open role: we keep your CV for upcoming hires, including the opening of ONO Cartagena.</p>
+      </div>
+      <div>
+        <form id="careers" name="careers" method="POST" data-netlify="true" netlify-honeypot="web2" enctype="multipart/form-data" action="thanks.html">
+          <input type="hidden" name="form-name" value="careers">
+          <p hidden><label>Web 2 <input name="web2"></label></p>
+          <label>Full name<input name="name" required autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+          <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+57 300 000 0000"></label>
+          <label>City<select name="city" required><option value="">Choose…</option><option>Bogotá</option><option>Cartagena</option><option value="either">Either</option></select></label>
+          <label>Area<select name="area" required><option value="">Choose…</option><option value="kitchen">Kitchen</option><option value="bar">Bar</option><option value="floor">Floor</option><option value="hosts">Hosts</option><option value="office">Office</option><option value="events-marketing">Events &amp; marketing</option><option value="other">Other</option></select></label>
+          <label>Years of experience<select name="experience" required><option value="">Choose…</option><option>0–1</option><option>1–3</option><option>3–5</option><option>5+</option></select></label>
+          <label class="full"><span>Tell us about yourself <span class="opt">(optional)</span></span><textarea name="message" maxlength="2000"></textarea></label>
+          <label class="full"><span>CV (PDF, max 5 MB) <span class="opt">(optional)</span></span><input id="f-cv" name="cv" type="file" accept=".pdf,application/pdf"></label>
+          <label class="full"><span>Instagram or LinkedIn <span class="opt">(optional)</span></span><input name="profile" autocomplete="url" placeholder="@ / linkedin.com/in/…"></label>
+          <label class="full check"><input name="consent" type="checkbox" required value="yes"><span>I authorise Grupo ONO to use my details for recruitment, under its <a href="privacy.html">personal data policy</a>. <span lang="es">Autorizo a Grupo ONO a tratar mis datos para procesos de selección, según su <a href="privacy.html">política de datos personales</a>.</span></span></label>
+          <div class="full"><button class="btn solid" type="submit">Send my application</button></div>
+        </form>
+        <div class="ok" data-ok="careers" tabindex="-1" hidden><b>We’ve got your application.</b> If a role fits you, we’ll be in touch.</div>
+      </div>
+    </div>
+  </section>
+</main>
