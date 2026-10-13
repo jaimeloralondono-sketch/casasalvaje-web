@@ -1,0 +1,100 @@
+/* Academia Salvaje: curso de IA para el equipo de hospitalidad. Póster cobalto con tipografía amarilla, sobre la paleta de la casa (site.css). */
+.acad{--sol:#F4E36B;--sol-ink:#1A1A10}
+.acad .poster{background:var(--cobalt);color:var(--sol);padding-block:40px 56px;position:relative;overflow:hidden}
+.acad .poster .wrap{display:grid;grid-template-rows:auto 1fr auto;min-height:min(78vh,720px);gap:28px}
+.acad .poster .top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.acad .estrella{width:clamp(64px,12vw,120px);height:auto;display:block;animation:gira 24s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.acad .estrella{animation:none}}
+.acad .temario{list-style:none;margin:0;padding:0;font-weight:600;font-size:clamp(0.82rem,1.6vw,1rem);line-height:1.45;text-align:right}
+.acad .poster .titulo{align-self:end}
+.acad .poster h1{color:var(--sol);font-family:"Hanken Grotesk",var(--body);font-weight:700;text-transform:none;letter-spacing:-0.045em;font-size:clamp(4rem,17vw,11rem);line-height:0.86;max-width:none}
+.acad .poster h1 small{display:inline-block;font-size:0.72rem;letter-spacing:0.32em;text-transform:uppercase;font-weight:700;vertical-align:baseline;margin-left:0.6em}
+.acad .poster .bajada{font-family:"Hanken Grotesk",var(--body);font-weight:700;letter-spacing:-0.03em;font-size:clamp(1.5rem,4.6vw,3rem);line-height:1.02;margin-top:10px}
+.acad .poster .cta{margin-top:28px}
+.acad .btn.sol{background:var(--sol);border-color:var(--sol);color:var(--cobalt-deep)}
+.acad .btn.linea{color:var(--sol)}
+
+.acad .strip{background:var(--sol);color:var(--cobalt-deep)}
+
+/* Progreso */
+.acad .progreso{display:flex;align-items:center;gap:14px;margin-top:22px;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
+.acad .barra{flex:1;height:8px;border-radius:99px;background:var(--cream-2);overflow:hidden;max-width:420px}
+.acad .barra i{display:block;height:100%;width:0;background:var(--cobalt);border-radius:99px;transition:width .5s ease}
+
+/* Días */
+.acad .dias{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:28px}
+.acad .dias button{font:inherit;border:1.5px solid var(--line);background:var(--white);color:var(--ink);border-radius:14px;padding:12px 6px;cursor:pointer;display:grid;gap:2px;justify-items:center;min-width:0}
+.acad .dias button b{font-family:"Hanken Grotesk",var(--body);font-size:clamp(1.4rem,4vw,2.2rem);letter-spacing:-0.04em;line-height:1}
+.acad .dias button span{font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.acad .dias button[aria-selected="true"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--sol)}
+.acad .dias button.hecho:not([aria-selected="true"]){border-color:var(--cobalt);color:var(--cobalt)}
+.acad .dias button.hecho b::after{content:" ✓";font-size:0.5em;vertical-align:super}
+.acad .dias button:disabled{opacity:.4;cursor:not-allowed}
+.acad .dias button:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+
+.acad .leccion{margin-top:28px;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,4vw,44px);display:grid;gap:22px}
+.acad .leccion .eyebrow{color:var(--cobalt)}
+.acad .leccion h2{font-family:"Hanken Grotesk",var(--body);text-transform:none;letter-spacing:-0.035em;font-weight:700;color:var(--cobalt)}
+.acad .leccion .lead{color:var(--ink-soft)}
+.acad .leccion h3{font-family:var(--display);font-size:1.5rem;font-weight:600}
+.acad .regla{background:var(--cobalt);color:var(--sol);border-radius:14px;padding:20px 24px;font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.25}
+.acad .regla b{display:block;font-family:var(--body);font-style:normal;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:6px}
+.acad .claves{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.acad .claves li{padding-left:28px;position:relative}
+.acad .claves li::before{content:"✱";position:absolute;left:0;color:var(--cobalt);font-weight:700}
+
+.acad .prompt{border:1.5px dashed var(--cobalt);border-radius:14px;overflow:hidden}
+.acad .prompt header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;background:var(--cream);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--cobalt)}
+.acad .prompt pre{margin:0;padding:16px 18px;white-space:pre-wrap;word-break:break-word;font:0.95rem/1.55 var(--body);color:var(--ink)}
+.acad .copiar{font:inherit;font-size:0.75rem;letter-spacing:0.08em;font-weight:600;border:1.5px solid var(--cobalt);background:var(--white);color:var(--cobalt);border-radius:99px;padding:6px 12px;cursor:pointer;text-transform:uppercase}
+.acad .copiar.ok{background:var(--cobalt);color:var(--sol)}
+
+.acad .ejemplo{display:grid;gap:12px}
+@media (min-width:760px){.acad .ejemplo{grid-template-columns:1fr 1fr}}
+.acad .ejemplo div{border-radius:14px;padding:16px 18px;font-size:0.95rem}
+.acad .ejemplo .mal{background:var(--cream-2)}
+.acad .ejemplo .bien{background:#E6EBFA}
+.acad .ejemplo b{display:block;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px}
+.acad .ejemplo .mal b{color:var(--terra)}
+.acad .ejemplo .bien b{color:var(--cobalt)}
+
+.acad .turno{background:var(--cream);border-radius:14px;padding:18px 20px;display:grid;gap:8px}
+.acad .turno b{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cobalt)}
+.acad .acciones{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.acad .hecho-ok{color:var(--cobalt);font-weight:600}
+
+/* Examen */
+.acad .examen{display:grid;gap:18px;margin:0;padding:0;border:0}
+.acad .preg{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0;display:grid;gap:10px}
+.acad .preg legend{font-weight:600;padding:0 6px;font-size:1.02rem}
+.acad .preg label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;padding:8px 10px;border-radius:10px}
+.acad .preg label:hover{background:var(--cream)}
+.acad .preg input{accent-color:var(--cobalt);margin-top:4px}
+.acad .preg.ok{border-color:var(--cobalt);background:#F1F4FD}
+.acad .preg.no{border-color:var(--terra);background:#FBF0EA}
+.acad .preg .porque{font-size:0.9rem;color:var(--ink-soft)}
+.acad .campo{display:grid;gap:6px;max-width:440px}
+.acad .campo label{font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600}
+.acad .campo input{font:inherit;font-size:1.05rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink)}
+.acad .aviso{font-weight:600;color:var(--terra)}
+
+/* Certificado */
+.acad .cert{background:var(--cobalt);color:var(--sol);border-radius:18px;padding:clamp(26px,5vw,56px);display:grid;grid-template-rows:auto 1fr auto;gap:22px;min-height:min(120vw,560px);position:relative;overflow:hidden;container-type:inline-size}
+@media (min-width:760px){.acad .cert{aspect-ratio:1.414/1;min-height:0}}
+.acad .cert .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.acad .cert .estrella{width:clamp(44px,10cqi,90px)}
+.acad .cert .top p{text-align:right;font-weight:600;font-size:clamp(0.62rem,1.8cqi,0.95rem);line-height:1.45}
+.acad .cert .quien{align-self:end}
+.acad .cert .quien small{font-size:clamp(0.58rem,1.5cqi,0.8rem);letter-spacing:0.3em;text-transform:uppercase;font-weight:700}
+.acad .cert .quien b{font-size:clamp(2.2rem,11cqi,5.4rem)!important;display:block;font-family:"Hanken Grotesk",var(--body);font-weight:700;letter-spacing:-0.045em;font-size:clamp(1.8rem,9cqi,5.4rem);line-height:0.92;margin-top:6px;overflow-wrap:anywhere}
+.acad .cert .quien span{display:block;font-family:"Hanken Grotesk",var(--body);font-weight:700;letter-spacing:-0.02em;font-size:clamp(0.9rem,3.2cqi,1.9rem);line-height:1.05;margin-top:10px}
+.acad .cert .pie{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;font-size:clamp(0.58rem,1.6cqi,0.85rem);letter-spacing:0.14em;text-transform:uppercase;font-weight:600}
+.acad .cert .pie img{height:clamp(22px,5cqi,42px);width:auto;display:block}
+
+@media print{
+  @page{size:A4 landscape;margin:0}
+  body *{visibility:hidden}
+  .acad .cert,.acad .cert *{visibility:visible}
+  .acad .cert{position:fixed;inset:0;border-radius:0;aspect-ratio:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}

@@ -2,5 +2,6 @@
 /tarjeta  /tarjeta.html  200
 /tarjetas/admin  /tarjetas-admin.html  200
 /empresas  /empresas.html  200
+/academia  /academia.html  200
 /grupo-ono/*  /  301!
 /grupo-ono-src/*  /  301!
