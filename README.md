@@ -27,3 +27,14 @@ Variables de entorno en Netlify (Site configuration → Environment variables):
 | `GOOGLE_SA_EMAIL`, `GOOGLE_SA_KEY` | Correo y clave privada (`private_key` del JSON) de la cuenta de servicio con acceso al emisor. |
 
 Las funciones de Netlify admiten 4 KB de variables en total, así que conviene dejar los certificados públicos de Apple como archivos y en variables solo las claves privadas.
+
+## Música
+
+Cada página suena desde el primer toque del visitante (los navegadores no dejan que suene antes) y siempre empieza en una canción al azar. El botón "Música" abre el reproductor.
+
+- **Mientras no haya mp3 propios** suenan las playlists de Spotify del atributo `data-musica` del `<body>` de cada página (`ID ID` se mezclan; `Cena=ID Fiesta=ID` da a elegir). La función `/api/playlist` lee las canciones para empezar al azar.
+- **Para usar canciones propias** (con licencia): subir los mp3 a `musica/` y anotarlos en `musica/musica.json`, por página y por grupo. En cuanto una página tiene canciones ahí, usa el reproductor de la casa en vez de Spotify. Cada canción puede ser solo la ruta (el nombre del archivo hace de título) o `{ "src": "musica/slvj/velvet.mp3", "title": "Velvet Hour", "artist": "..." }`.
+
+```json
+{ "slvj": { "Cena": ["musica/slvj/cena-1.mp3"], "Fiesta": ["musica/slvj/fiesta-1.mp3"] } }
+```
