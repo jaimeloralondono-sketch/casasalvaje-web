@@ -575,3 +575,21 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .post .more a{font-family:var(--display);font-size:1.25rem;text-decoration:none}
 .post .more a:hover{text-decoration:underline}
 .hr-note{font-size:0.85rem;color:var(--ink-soft);margin:0}
+
+/* Notas desde la casa: artículos del blog en la portada y en cada mundo */
+.delblog h2{margin-top:10px}
+.delblog .posts{margin-top:24px;padding-bottom:28px}
+.delblog .post-card h3{font-size:1.3rem;line-height:1.15;text-transform:none;letter-spacing:0;font-weight:500}
+.themed .delblog .eyebrow,.themed .delblog .post-card time{color:var(--acc)}
+.themed .delblog .post-card p{color:var(--muted)}
+.themed .delblog .post-card img{border-radius:var(--img)}
+.themed .delblog .btn.ghost{color:var(--acc);border-color:var(--acc)}
+@media (max-width:759px){.delblog .posts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:76%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}.delblog .posts::-webkit-scrollbar{display:none}.delblog .post-card{scroll-snap-align:start}.delblog .post-card img{aspect-ratio:4/4.4}}
+/* Panel de métricas del blog */
+.met-wrap{overflow-x:auto;margin-top:20px}
+.met{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:640px}
+.met th,.met td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.met th:first-child,.met td:first-child{text-align:left;white-space:normal}
+.met th{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft)}
+.met td a{color:var(--ink)}
+.met tfoot td{font-weight:600;border-bottom:0}

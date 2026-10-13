@@ -1,3 +1,27 @@
+// Blog: recuerda el último artículo leído (30 días) para saber qué reservas, WhatsApps y registros
+// en la lista llegan por el blog. Se cuentan en /api/blog/clic y se ven en /blog/metricas.
+var CS_BLOG = (function(){
+  var m = location.pathname.match(/\/blog\/([a-z0-9-]+?)(\.html)?$/), now = Date.now(), b = null;
+  try{ b = JSON.parse(localStorage.getItem("cs-blog") || "null"); }catch(e){}
+  if(m && m[1] !== "index" && m[1] !== "metricas"){
+    var h1 = document.querySelector("h1");
+    b = { a: m[1], t: h1 ? h1.textContent.trim() : m[1], ts: now };
+    try{ localStorage.setItem("cs-blog", JSON.stringify(b)); }catch(e){}
+    csSend("vista", b.a);
+  }
+  return b && now - b.ts < 30 * 864e5 ? b : null;
+})();
+function csSend(t, a){
+  var body = JSON.stringify({ t: t, a: a });
+  try{ if(navigator.sendBeacon && navigator.sendBeacon("/api/blog/clic", body)) return; }catch(e){}
+  try{ fetch("/api/blog/clic", { method: "POST", body: body, keepalive: true }).catch(function(){}); }catch(e){}
+}
+function csTrack(t){ if(CS_BLOG) csSend(t, CS_BLOG.a); }
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a.wa, a[data-book]");
+  if(a) csTrack(a.classList.contains("wa") ? "whatsapp" : "reserva");
+}, true);
+
 
 (function(){
   var WHATSAPP = "573108286602";
@@ -23,7 +47,9 @@
     var club = "https://site.fourvenues.com/" + (l === "es" ? "es" : "en") + "/casa-salvaje";
     document.querySelectorAll("a[data-book]").forEach(function(a){
       var k = a.dataset.book;
-      a.setAttribute("href", (k === "club" || night) ? club : (BOOK[k] || BOOK.casa));
+      var href = (k === "club" || night) ? club : (BOOK[k] || BOOK.casa);
+      if(CS_BLOG) href += (href.indexOf("?") < 0 ? "?" : "&") + "utm_source=casa-salvaje&utm_medium=blog&utm_campaign=" + CS_BLOG.a;
+      a.setAttribute("href", href);
       a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
     });
   }
@@ -33,6 +59,7 @@
       if(!WHATSAPP){ a.setAttribute("href", "#lista"); return; }
       var ev = a.dataset.evento ? (l === "en" ? " at " : " en ") + a.dataset.evento : "";
       var msg = l === "en" ? "Hi Casa Salvaje, I'd like to book a table" + ev + "." : "Hola Casa Salvaje, quiero reservar una mesa" + ev + ".";
+      if(CS_BLOG) msg += l === "en" ? " I saw \u201c" + CS_BLOG.t + "\u201d on your blog." : " Vi en su blog \u00ab" + CS_BLOG.t + "\u00bb.";
       a.setAttribute("href", "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg));
       a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
     });
@@ -53,7 +80,7 @@
     var q = new URLSearchParams(location.search);
     var src = q.get("utm_source") || q.get("origen") || q.get("ref");
     if(src){ var o = document.getElementById("origen"); if(o) o.value = src; try{ sessionStorage.setItem("cs-origen", src); }catch(e){} }
-    else { try{ var s = sessionStorage.getItem("cs-origen"); var o2 = document.getElementById("origen"); if(s && o2) o2.value = s; }catch(e){} }
+    else { try{ var s = sessionStorage.getItem("cs-origen"); var o2 = document.getElementById("origen"); if(s && o2) o2.value = s; else if(CS_BLOG && o2) o2.value = "blog:" + CS_BLOG.a; }catch(e){} }
   }catch(e){}
   var form = document.getElementById("guestlist");
   if(!form) return;
@@ -77,6 +104,7 @@
   var hosted = /netlify\.app$|casa-?salvaje\.com$/.test(location.hostname);
   var sending = false;
   function done(){
+    csTrack("lista");
     form.hidden = true;
     var ok = document.getElementById("ok"); ok.hidden = false;
     try{ ok.scrollIntoView({block:"center", behavior:"smooth"}); }catch(e){}
