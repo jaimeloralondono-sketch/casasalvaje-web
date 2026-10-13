@@ -1,8 +1,0 @@
-/* The site's Google Fonts as static TTF instances, kept locally: Chromium embeds static fonts in the PDF as TrueType
-   (variable fonts would come out as Type 3). */
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;src:url(cormorant-garamond-500-italic.ttf) format('truetype')}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;src:url(cormorant-garamond-500.ttf) format('truetype')}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;src:url(cormorant-garamond-600.ttf) format('truetype')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:400;src:url(inter-400.ttf) format('truetype')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:500;src:url(inter-500.ttf) format('truetype')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:600;src:url(inter-600.ttf) format('truetype')}
