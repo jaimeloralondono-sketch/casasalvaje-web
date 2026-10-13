@@ -49,5 +49,12 @@ Están en `index.html#horarios`. Cada tarjeta tiene el texto visible y, en `data
 `concierge` (`concierge.html`, `concierge.css`, `concierge.js`): página pública con el chat del concierge. El chat llama a `POST /api/concierge` (`netlify/functions/concierge.mjs`), que responde con Claude usando la ficha de la casa escrita en la función (horarios, reservas, guías del blog y el aliado Vacation Cartagena para casas, botes y tours). Cuando hace falta una persona, la respuesta trae un botón a WhatsApp con el pedido ya escrito.
 
 - Para activarlo: en Netlify, Site configuration → Environment variables, crear `ANTHROPIC_API_KEY` con una clave de la consola de Claude (platform.claude.com). Sin la clave, el chat ofrece WhatsApp.
-- Si cambia un horario o una regla, actualízalo también en `FICHA` dentro de `netlify/functions/concierge.mjs`.
+- La ficha de la casa está en `netlify/lib/ficha.mjs` y la usan la web y el WhatsApp. Si cambia un horario o una regla, se cambia ahí.
 - La conversación vive solo en la pestaña del huésped; el servidor no guarda nada.
+
+## WhatsApp con Claude (vía Bird)
+`POST /api/whatsapp` (`netlify/functions/whatsapp-background.mjs`) recibe de Bird cada mensaje que llega al WhatsApp de la casa y responde con Claude, con la misma ficha que la web. Es una función *background*: Netlify le contesta a Bird al instante y la respuesta se piensa después.
+
+- El bot no responde si alguien del equipo escribió en esa conversación en las últimas 6 horas (desde la app del celular o desde Bird), ni después de pasar la conversación al equipo (`[[HUMANO: ...]]`). Tampoco atiende grupos.
+- Variables en Netlify: `ANTHROPIC_API_KEY`, `BIRD_API_KEY` (Bird → Developers → API keys, con permiso de WhatsApp) y `BIRD_WEBHOOK_SECRET` (el `whsec_...` que Bird muestra una vez al crear el webhook). Opcionales: `WHATSAPP_PRUEBA` (números separados por coma: solo a esos responde, para probar) y `WHATSAPP_APAGADO=1` (apaga el bot sin tocar nada más).
+- En Bird: conectar el número con coexistencia (WhatsApp → Numbers → New number → Keep using the Business app) y crear un webhook a `https://www.casa-salvaje.com/api/whatsapp` con el evento `whatsapp.received`.
