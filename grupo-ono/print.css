@@ -19,9 +19,11 @@ html{font-size:12.4px}
 .foot-cols{gap:12px}.foot-cols :is(li,a){padding-block:1px}.foot-h{margin-bottom:2px}
 .st-open::before{border:.3em solid}
 a[href^="http"]::after,a[href^="mailto"]::after{content:" (" attr(href) ")";padding:0;margin:0;height:auto;background:none!important;mask:none;word-break:break-all}
+a.nw{display:inline}
 .door h4::after{content:none}
 :is(.stand,.h2,.w-ono h2,.cs-h,.worlds-h){font-size:1.75rem;max-width:none}
 .prose h2{margin:24px 0 8px}
 .sub li,tr,.ledger>div,.people>div,.door,figure,.values li,.doors-type>li{break-inside:avoid}
 .label,h2,h3,h4,.sec-head{break-after:avoid}
 section.press{break-before:page}
+.form{display:block}.form>.hint~*{margin-top:40px}.field{break-inside:avoid}

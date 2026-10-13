@@ -54,6 +54,6 @@ input[type=file]{padding:4px 6px}
 .form .btn{font-size:1rem;letter-spacing:0;text-transform:none;cursor:pointer}
 .btn[aria-disabled=true]{opacity:.65;cursor:progress}
 .check+.err{margin:6px 0 0 36px}
-@media (min-width:760px){.two{grid-template-columns:1fr 1fr}.two>:is(legend,.full){grid-column:1/-1}}
+@media (min-width:760px){.two{grid-template-columns:1fr 1fr}.two>:is(legend,.full){grid-column:1/-1}.route>*{grid-template-columns:minmax(7.75rem,1fr) minmax(0,3fr)}}
 @media (forced-colors:active){:is(input,select,textarea):not([type=checkbox],[type=radio],[type=hidden]){border:1.5px solid FieldText}
 .check input,select{appearance:auto}}
