@@ -486,3 +486,28 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .mesas-mapa figcaption{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:10px;opacity:.75}
 /* SLVJ: el anillo de foco de los botones dorados se veía negro sobre el fondo negro */
 .t-slvj .btn.solid:focus-visible{outline-color:var(--acc)}
+
+/* Música: botón flotante y reproductor de Spotify, con el color de cada marca */
+.musica{--mbg:var(--ink);--mfg:var(--white);position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-family:var(--body)}
+.themed .musica{--mbg:var(--acc);--mfg:var(--onacc)}
+.mu-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 18px 11px 16px;border:0;border-radius:999px;background:var(--mbg);color:var(--mfg);font:500 .72rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 24px rgba(0,0,0,.22)}
+.t-kanibal .mu-btn,.t-slvj .mu-btn{border-radius:0}
+.mu-eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
+.mu-eq i{display:block;width:2px;height:4px;background:currentColor;transition:height .3s}
+.musica.on .mu-eq i{animation:mu-eq 1s ease-in-out infinite}
+.musica.on .mu-eq i:nth-child(2){animation-delay:-.4s}
+.musica.on .mu-eq i:nth-child(3){animation-delay:-.7s}
+@keyframes mu-eq{0%,100%{height:3px}50%{height:12px}}
+@media (prefers-reduced-motion:reduce){.musica.on .mu-eq i{animation:none;height:9px}}
+.mu-panel{width:min(360px,calc(100vw - 32px));padding:10px;background:var(--mbg);color:var(--mfg);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.t-kanibal .mu-panel,.t-slvj .mu-panel{border-radius:0}
+.mu-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 2px 8px}
+.mu-sets{display:flex;gap:4px}
+.mu-panel button{background:none;border:1px solid transparent;color:inherit;font:500 .68rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;padding:7px 10px;border-radius:999px;cursor:pointer;opacity:.7}
+.mu-panel button:hover,.mu-panel button[aria-pressed="true"]{opacity:1}
+.mu-sets button[aria-pressed="true"]{border-color:currentColor}
+.mu-act{display:flex;gap:2px}
+.mu-x{font-size:1.1rem!important;padding:4px 8px!important}
+.mu-frame{border-radius:12px;overflow:hidden;min-height:152px;background:rgba(0,0,0,.15)}
+.t-kanibal .mu-frame,.t-slvj .mu-frame{border-radius:0}
+.mu-frame iframe{display:block;border:0}

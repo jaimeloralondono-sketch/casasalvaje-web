@@ -217,3 +217,88 @@
     }, 3500);
   }).catch(function(){});
 })();
+
+// Música: cada página trae sus playlists de Spotify en <body data-musica="...">.
+// "ID ID" se mezclan en una sola; "Cena=ID Fiesta=ID" da a elegir. Siempre empieza en una canción al azar
+// y al terminar sigue con otra al azar (las canciones salen de /api/playlist; si falla, se carga la playlist tal cual).
+(function(){
+  var spec = document.body.getAttribute("data-musica");
+  if(!spec) return;
+  var root = document.documentElement;
+  var es = function(){ return root.getAttribute("data-lang") === "es"; };
+  var sets = spec.trim().split(/\s+/).map(function(p){ var k = p.split("="); return k.length > 1 ? { name: k[0], id: k[1] } : { name: "", id: k[0] }; });
+  var groups = [], byName = {};
+  sets.forEach(function(s){
+    var g = byName[s.name]; if(!g){ g = byName[s.name] = { name: s.name, ids: [] }; groups.push(g); }
+    g.ids.push(s.id);
+  });
+  // De noche (11 pm a 6 am, hora Cartagena) arranca en "Fiesta" si existe.
+  var h = new Date().getHours();
+  try{ h = parseInt(new Intl.DateTimeFormat("en-US", {timeZone: "America/Bogota", hour: "numeric", hourCycle: "h23"}).format(new Date()), 10); }catch(e){}
+  var night = h >= 23 || h < 6;
+  var cur = groups.filter(function(g){ return /fiesta|party/i.test(g.name) === night; })[0] || groups[0];
+
+  var box = document.createElement("div"); box.className = "musica";
+  box.innerHTML =
+    '<div class="mu-panel" hidden><div class="mu-top">' +
+      (groups.length > 1 ? '<div class="mu-sets">' + groups.map(function(g, i){ return '<button type="button" data-i="' + i + '">' + g.name + '</button>'; }).join("") + '</div>' : '<span></span>') +
+      '<span class="mu-act"><button type="button" class="mu-next" aria-label="Otra canción"><span class="es">Otra</span><span class="en">Next</span> &#8635;</button>' +
+      '<button type="button" class="mu-x" aria-label="Cerrar">&#215;</button></span></div>' +
+      '<div class="mu-frame"><div></div></div></div>' +
+    '<button type="button" class="mu-btn" aria-expanded="false"><span class="mu-eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="es">Música</span><span class="en">Music</span></button>';
+  document.body.appendChild(box);
+  var panel = box.querySelector(".mu-panel"), btn = box.querySelector(".mu-btn");
+
+  var cache = {}, queue = [], ctrl = null, ready = null, ending = false, playing = false;
+  function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function tracks(id){
+    if(!cache[id]) cache[id] = fetch("/api/playlist?id=" + id).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(d){ return d.tracks || []; }).catch(function(){ delete cache[id]; return []; });
+    return cache[id];
+  }
+  function api(){
+    if(ready) return ready;
+    ready = new Promise(function(res){
+      window.onSpotifyIframeApiReady = function(IFrameAPI){
+        IFrameAPI.createController(box.querySelector(".mu-frame div"), { width: "100%", height: 152 }, function(c){
+          ctrl = c;
+          c.addListener("playback_update", function(e){
+            var d = e.data || {};
+            playing = !d.isPaused;
+            box.classList.toggle("on", playing);
+            if(d.duration > 0 && d.position >= d.duration - 900 && !ending && queue.length){ ending = true; setTimeout(next, 900); }
+          });
+          res(c);
+        });
+      };
+      var s = document.createElement("script"); s.src = "https://open.spotify.com/embed/iframe-api/v1"; s.async = true;
+      document.head.appendChild(s);
+    });
+    return ready;
+  }
+  function play(uri){ api().then(function(c){ ending = false; c.loadUri(uri); c.play(); }); }
+  function next(){
+    if(!queue.length) return;
+    var t = queue.shift(); queue.push(t);
+    play("spotify:track:" + t);
+  }
+  function load(g){
+    cur = g;
+    box.querySelectorAll(".mu-sets button").forEach(function(b){ b.setAttribute("aria-pressed", String(groups[b.dataset.i] === g)); });
+    Promise.all(g.ids.map(tracks)).then(function(lists){
+      if(cur !== g) return;
+      queue = shuffle([].concat.apply([], lists));
+      box.querySelector(".mu-next").hidden = !queue.length;
+      if(queue.length) next();
+      else play("spotify:playlist:" + g.ids[Math.floor(Math.random() * g.ids.length)]);
+    });
+  }
+  function open(v){
+    panel.hidden = !v; btn.setAttribute("aria-expanded", String(v));
+    if(v && !ctrl && !ready) load(cur);
+  }
+  btn.addEventListener("click", function(){ open(panel.hidden); });
+  box.querySelector(".mu-x").addEventListener("click", function(){ open(false); });
+  box.querySelector(".mu-next").addEventListener("click", next);
+  box.querySelectorAll(".mu-sets button").forEach(function(b){ b.addEventListener("click", function(){ if(groups[b.dataset.i] !== cur) load(groups[b.dataset.i]); }); });
+})();
