@@ -277,6 +277,8 @@ html:not(.js) .menu-btn{display:none}
 @media (orientation:landscape) and (max-height:500px) and (max-width:899px){.ch-cs .media{padding-block:24px}}
 @media (orientation:landscape) and (max-height:500px) and (max-width:759px){
   .doors{grid-template-columns:repeat(2,minmax(0,calc((100vh - 96px)*.75)));grid-template-columns:repeat(2,minmax(0,calc((100svh - 96px)*.75)));justify-content:center}
+  /* keep "The four worlds" on the doors' left edge: the wrap is as wide as the two doors plus the gap and its own padding */
+  .ch-cs .below .wrap{max-width:calc((100vh - 96px)*1.5 + 50px);max-width:calc((100svh - 96px)*1.5 + 50px)}
 }
 
 /* Careers and contact */
@@ -285,6 +287,9 @@ html:not(.js) .menu-btn{display:none}
 .doorway{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:var(--paper);text-decoration:none;overflow:hidden;isolation:isolate}
 .doorway img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .doorway::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(11,11,11,.9),rgba(11,11,11,.25) 70%)}
+/* .deep: a darker scrim for photos with bright lamps, walls or faces under the text (both doorways):
+   every glyph holds 4.5:1 from 320px up */
+.doorway.deep::before{background:linear-gradient(to top,rgba(11,11,11,.94),rgba(11,11,11,.7) 55%,rgba(11,11,11,.35) 85%)}
 .doorway:hover img{transform:scale(1.04)}
 .doorway .txt{padding:40px max(20px,env(safe-area-inset-right,0px)) 48px max(20px,env(safe-area-inset-left,0px));display:grid;gap:16px;max-width:700px}
 @media (min-width:860px){.doorway .txt{padding:56px max(clamp(40px,5vw,72px),env(safe-area-inset-right,0px)) 64px max(clamp(40px,5vw,72px),env(safe-area-inset-left,0px))}}

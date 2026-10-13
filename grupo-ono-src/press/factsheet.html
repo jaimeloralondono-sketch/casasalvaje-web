@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grupo ONO · Fact sheet</title>
+<!-- One-page A4 press fact sheet. press_kit.py renders it to PDF with Playwright (page.pdf).
+     Every statement here comes from the client's approved facts: change copy only when they confirm a new fact. -->
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+@page{size:A4;margin:0}
+:root{--paper:#F4EFE7;--ink:#111111;--soft:#55514B;--line:#CFC6B7;
+  --display:"Cormorant Garamond","Times New Roman",Georgia,serif;--body:"Inter","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:var(--body);font-size:8.6pt;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+.sheet{width:210mm;height:297mm;padding:15mm 16mm 12mm;display:flex;flex-direction:column;overflow:hidden}
+.eyebrow{font-size:6.4pt;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.lab{display:block;font-size:6pt;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--soft);margin-bottom:.4mm}
+.num{font-variant-numeric:lining-nums}
+
+/* Masthead: the line logo, and what this page is */
+header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:7mm;border-bottom:.3mm solid var(--ink)}
+header .logo{width:58mm;color:var(--ink)}
+header .logo svg{display:block;width:100%;height:auto}
+header .what{text-align:right}
+header .what .place{display:block;font-family:var(--display);font-size:15pt;font-weight:500;line-height:1.2;margin-top:1.6mm}
+header .what .upd{display:block;margin-top:1.4mm;font-size:6.6pt;color:var(--soft)}
+
+.lead{margin-top:8mm;max-width:158mm;font-family:var(--display);font-size:17.5pt;font-weight:500;line-height:1.24}
+.lead em{font-style:italic}
+
+/* Timeline and venues: one column per opening, in order, joined by the rule (dashed for the one still to come) */
+.venues{margin-top:10mm}
+.venues > .eyebrow{display:block;margin-bottom:4mm}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);column-gap:7mm}
+.v{position:relative;padding-top:6.5mm}
+.v::before{content:"";position:absolute;left:0;right:-7mm;top:1.3mm;border-top:.3mm solid var(--ink)}
+.v:last-child::before{right:0;border-top-style:dashed;border-top-color:var(--soft)}
+.v::after{content:"";position:absolute;left:0;top:0;width:2.9mm;height:2.9mm;border-radius:50%;background:var(--ink)}
+.v.next::after{background:var(--paper);border:.3mm solid var(--ink)}
+.yr{display:block;font-family:var(--display);font-size:25pt;font-weight:600;line-height:1}
+.when{display:block;margin-top:1.6mm;font-size:7.8pt;font-weight:500;white-space:nowrap}
+.nw{white-space:nowrap}
+.v h2{margin:5.5mm 0 0;font-family:var(--display);font-size:18pt;font-weight:600;line-height:1.05;letter-spacing:.005em}
+.v .city{display:block;margin-top:1.2mm;font-size:6.4pt;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.v .tag{margin-top:2.6mm;font-family:var(--display);font-style:italic;font-size:12.5pt;line-height:1.2}
+.v dl{margin:4mm 0 0;border-top:.25mm solid var(--line)}
+.v dl div{padding:2.1mm 0 2.3mm;border-bottom:.25mm solid var(--line)}
+.v dt{display:block;font-size:6pt;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+.v dd{margin:.5mm 0 0;font-family:var(--display);font-size:11.6pt;font-weight:500;line-height:1.22;font-variant-numeric:lining-nums}
+.v dd.url{font-family:var(--body);font-size:7.7pt;line-height:1.45;font-weight:400;overflow-wrap:anywhere}
+
+/* Press: ONO in the press, and who to write to */
+.press{margin-top:auto;padding-top:7mm;border-top:.3mm solid var(--ink);display:grid;grid-template-columns:1.55fr 1fr;column-gap:10mm}
+.press .eyebrow{display:block;margin-bottom:3mm}
+.art .pub{font-family:var(--display);font-size:15pt;font-weight:600;line-height:1.1}
+.art .title{margin-top:1.2mm;font-family:var(--display);font-style:italic;font-size:12.4pt;line-height:1.22}
+.art .meta{margin-top:1.6mm;font-size:7.4pt;color:var(--soft)}
+.art .meta a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:.6mm;overflow-wrap:anywhere}
+.also{margin-top:4mm;padding-top:2.6mm;border-top:.25mm solid var(--line)}
+.also .names{font-family:var(--display);font-size:13.5pt;font-weight:500;line-height:1.2}
+.also .names span{margin:0 1.8mm;color:var(--soft)}
+.contact .mail{display:block;font-family:var(--display);font-size:14.5pt;font-weight:500;line-height:1.2;overflow-wrap:anywhere}
+.contact .row{margin-top:3.4mm}
+.contact .row .val{font-size:8pt}
+
+footer{margin-top:7mm;padding-top:2.6mm;border-top:.25mm solid var(--line);display:flex;justify-content:space-between;font-size:6.4pt;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div class="logo" role="img" aria-label="Grupo ONO">{{LOGO}}</div>
+    <div class="what">
+      <span class="eyebrow">Press fact sheet</span>
+      <span class="place">Bogotá · Cartagena</span>
+      <span class="upd">Updated October 2026</span>
+    </div>
+  </header>
+
+  <p class="lead">Grupo ONO is the house behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena. It makes places with character, where <em>the kitchen, the bar, the music and the service tell one story.</em></p>
+
+  <section class="venues">
+    <span class="eyebrow">Timeline and venues</span>
+    <div class="cols">
+      <div class="v">
+        <span class="yr num">2025</span>
+        <span class="when num">Opened November 2025</span>
+        <h2>ONO Hosomaki Bar</h2>
+        <span class="city">Bogotá</span>
+        <p class="tag">“Tokyo spirit, Bogotá soul.”</p>
+        <dl>
+          <div><dt>Address</dt><dd>Calle 84A #9-11, Bogotá</dd></div>
+          <div><dt>Hours</dt><dd>Tuesday to Saturday, 7&nbsp;pm – 3&nbsp;am</dd></div>
+          <div><dt>Website</dt><dd class="url"><a href="https://onoculto.com/">onoculto.com</a></dd></div>
+          <div><dt>Reservations</dt><dd class="url"><a href="https://restaurante.covermanager.com/ono/"><span class="nw">restaurante.covermanager.com/</span><wbr><span class="nw">ono/</span></a></dd></div>
+        </dl>
+      </div>
+      <div class="v">
+        <span class="yr num">2026</span>
+        <span class="when num">Opened 25 September 2026</span>
+        <h2>Casa Salvaje</h2>
+        <span class="city">Cartagena</span>
+        <p class="tag" aria-hidden="true">&nbsp;</p>
+        <dl>
+          <div><dt>Address</dt><dd>Calle Santa Teresa #32-41, Centro Histórico, Cartagena de Indias</dd></div>
+          <div><dt>Website</dt><dd class="url"><a href="https://www.casa-salvaje.com">casa-salvaje.com</a></dd></div>
+          <div><dt>Reservations</dt><dd class="url"><a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/"><span class="nw">restaurante.covermanager.com/</span><wbr><span class="nw">casa-salvaje-cartagena/</span></a></dd></div>
+          <div><dt>Instagram</dt><dd class="url"><a href="https://www.instagram.com/casasalvaje.ctg">@casasalvaje.ctg</a></dd></div>
+        </dl>
+      </div>
+      <div class="v next">
+        <span class="yr num">2026</span>
+        <span class="when num">Opening November – December 2026</span>
+        <h2>ONO Cartagena</h2>
+        <span class="city">Cartagena</span>
+        <p class="tag" aria-hidden="true">&nbsp;</p>
+        <dl>
+          <div><dt>Where</dt><dd>Inside Casa Salvaje, Calle Santa Teresa #32-41, Centro Histórico, Cartagena de Indias</dd></div>
+          <div><dt>Website</dt><dd class="url"><a href="https://www.casa-salvaje.com/ono.html">casa-salvaje.com/ono.html</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="press">
+    <div class="art">
+      <span class="eyebrow">ONO in the press</span>
+      <p class="pub">AXXIS</p>
+      <p class="title" lang="es">“Ono Hosomaki Bar: un viaje sensorial de cocina, cócteles y vida nocturna”</p>
+      <p class="meta num">19 February 2026 · <a href="https://revistaaxxis.com.co/revistaaxxis/diseno-ono-hosomaki-bar-bogota/"><span class="nw">revistaaxxis.com.co/</span><wbr><span class="nw">revistaaxxis/</span><wbr><span class="nw">diseno-ono-hosomaki-bar-bogota/</span></a></p>
+      <div class="also">
+        <span class="lab">Also featured in</span>
+        <p class="names">Marie Claire<span>·</span>Revista Diners</p>
+      </div>
+    </div>
+    <div class="contact">
+      <span class="eyebrow">Press contact</span>
+      <a class="mail" href="mailto:jaimeloralondono@gmail.com?subject=Press%20enquiry">jaimeloralondono@gmail.com</a>
+      <div class="row"><span class="lab">Press kit</span><a class="val" href="https://grupo-ono.com/contact.html#press">grupo-ono.com/contact.html#press</a></div>
+      <div class="row"><span class="lab">Image credit</span><span class="val">Images: courtesy of Grupo ONO</span></div>
+    </div>
+  </section>
+
+  <footer><span>Grupo ONO</span><a href="https://grupo-ono.com">grupo-ono.com</a></footer>
+</div>
+</body>
+</html>
