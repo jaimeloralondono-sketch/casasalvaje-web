@@ -593,3 +593,21 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .met th{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft)}
 .met td a{color:var(--ink)}
 .met tfoot td{font-weight:600;border-bottom:0}
+.post .body h3{font-family:var(--display);font-size:1.35rem;font-weight:500;text-transform:none;letter-spacing:0;margin:24px 0 8px}
+
+/* Artículos editoriales: lectura de revista */
+.post.editorial .body{font-family:var(--display);font-size:1.28rem;line-height:1.62}
+.post.editorial .body .lede{font-size:1.45rem;line-height:1.5}
+.post.editorial .body .lede::first-letter{float:left;font-size:4.6em;line-height:.82;margin:.06em .1em 0 0;color:var(--terra-cs);font-weight:500}
+.post.editorial .body h2{font-size:clamp(1.7rem,4.4vw,2.3rem);font-style:italic;margin:12px 0 14px}
+.post.editorial .body h3{font-size:1.55rem;margin:34px 0 8px;padding-top:18px;border-top:1px solid var(--line)}
+.post.editorial .body .chapter{font-family:var(--body);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra-cs);font-weight:600;margin:56px 0 0;display:flex;align-items:center;gap:14px}
+.post.editorial .body .chapter::after{content:"";flex:1;height:1px;background:var(--line)}
+.post.editorial .body .pull{margin:40px 0;padding:22px 0;border-block:1px solid var(--line);font-style:italic;font-size:clamp(1.5rem,4.6vw,2rem);line-height:1.3;color:var(--terra-cs);text-align:center}
+.post.editorial .body .llevate{font-family:var(--body);font-size:.95rem;line-height:1.5;color:var(--ink-soft)}
+.post.editorial .body .llevate span{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--olive-cs);margin-right:8px}
+.post.editorial .libreta{font-family:var(--body);font-size:.95rem;margin-top:56px}
+.post.editorial .libreta ul{list-style:none;padding:0;margin:8px 0 12px}
+.post.editorial .libreta li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+.post.editorial .libreta li span{display:block;font-family:var(--display);font-size:1.25rem;color:var(--ink);margin-bottom:2px}
+.post.editorial .libreta li a{font-size:.85rem}
