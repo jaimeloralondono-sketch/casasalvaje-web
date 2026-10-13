@@ -1,6 +1,6 @@
 @font-face{font-family:"Archivo";src:url(/fonts/archivo-wdth75-100-wght400-600.woff2) format("woff2");font-weight:400 600;font-stretch:75% 100%;font-display:swap}
-@font-face{font-family:"Archivo Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans");size-adjust:99%;ascent-override:88.7%;descent-override:21.2%}
-@font-face{font-family:"Archivo Narrow Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans");size-adjust:79.2%;ascent-override:110.9%;descent-override:26.5%}
+@font-face{font-family:"Archivo Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans"),local("Roboto");size-adjust:99%;ascent-override:88.7%;descent-override:21.2%}
+@font-face{font-family:"Archivo Narrow Fallback";src:local("Arial"),local("Helvetica"),local("Liberation Sans"),local("Roboto");size-adjust:79.2%;ascent-override:110.9%;descent-override:26.5%}
 @font-face{font-family:"Cormorant Garamond";src:url(/fonts/cormorant-garamond-600-caps.woff2) format("woff2");font-weight:600;font-display:swap}
 :root{color-scheme:light dark;
 --wall:#E8E6E1;--wall-2:#DCD9D2;--field:#F4F3F0;--ink:#161514;--ink-2:#4F4B45;--rule:#7A756C;--hair:#C3BEB5;
@@ -39,7 +39,6 @@ p,li,dd,figcaption{text-wrap:pretty}
 ol,ul{padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 [id]{scroll-margin-top:16px}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 .wrap{max-width:calc(1320px + 2*var(--g));margin-inline:auto;padding-inline:var(--g)}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .label,dt,legend,.foot-h,.kit th{font:var(--t-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
@@ -99,7 +98,7 @@ a.door::after{content:none}
 .cap:is(:hover,:focus-visible)::before,.hero:has(.w1:is(:hover,:focus-visible)) .cap1::before,.hero:has(.w2:is(:hover,:focus-visible)) .cap2::before{transform:scaleY(3)}
 .key{display:flex;flex-wrap:wrap;align-items:center;gap:0 24px;margin-top:clamp(24px,3vw,40px);padding-top:8px;border-top:1px solid var(--hair)}
 .key :is(ol,ul){display:flex;flex-wrap:wrap;gap:0 20px}
-.key ol{width:100%;display:grid;grid-template-columns:repeat(var(--kc,2),minmax(0,1fr))}
+.key ol{width:100%;display:grid;align-items:baseline;grid-template-columns:repeat(var(--kc,2),minmax(0,1fr))}
 .key a{display:inline-grid;grid-auto-flow:column;align-items:baseline;align-content:center;gap:8px;min-height:44px;font:var(--t-small);text-decoration:none}
 .key a:hover span+span{text-decoration:underline}
 .no{color:var(--ink-2)}
@@ -194,7 +193,7 @@ figcaption{font:var(--t-cap);color:var(--ink-2);margin-top:8px}
 .door .fit img{object-fit:contain}
 .plate{display:grid;align-content:start;gap:4px;padding:12px 12px 14px}
 .desc{font:var(--t-small);color:var(--accent,var(--plate-ink))}
-.desc .nw{display:inline-block;white-space:normal}
+:is(.desc,.lead,blockquote) .nw{display:inline-block;white-space:normal}
 .door:hover h4{text-decoration-line:underline}
 .door:hover img{transform:scale(1.03)}
 @media (max-width:399px){:is(.w-ono,.w-cs) .ledger{grid-template-columns:1fr}}
@@ -217,7 +216,7 @@ figcaption{font:var(--t-cap);color:var(--ink-2);margin-top:8px}
 .kit thead th{border-top-color:var(--ink)}
 .kit td:first-child{font-weight:600;overflow-wrap:anywhere}
 .kit a{display:inline-flex;align-items:center;min-height:44px;margin-block:-12px}
-@media screen and (max-width:899px){.kit thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.kit tr{display:flex;flex-wrap:wrap;gap:2px 16px;padding:12px 0;border-top:1px solid var(--hair)}.kit td{padding:0;border:0}.kit a{min-height:0;margin:0}.kit td:nth-child(-n+2){width:100%}}
+@media screen and (max-width:1119px){.kit thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.kit tr{display:flex;flex-wrap:wrap;gap:2px 16px;padding:12px 0;border-top:1px solid var(--hair)}.kit td{padding:0;border:0}.kit a{min-height:0;margin:0}.kit td:nth-child(-n+2){width:100%}}
 .guest{max-width:62ch;margin-bottom:32px}
 .doors-type{display:grid;gap:40px var(--cg)}
 .doors-type>li{display:grid;align-content:start;gap:12px;padding-top:16px;border-top:1px solid var(--ink)}
@@ -231,11 +230,11 @@ figcaption{font:var(--t-cap);color:var(--ink-2);margin-top:8px}
 .foot-cols li{padding-block:8px}
 .foot-cols a{padding-block:4px}
 .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;margin-top:40px;padding-top:16px;border-top:1px solid var(--hair);color:var(--ink-2)}
-@media (min-width:760px),print{.people>div,.route>*{grid-template-columns:minmax(0,1fr) minmax(0,3fr)}.foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}.posters{grid-template-columns:repeat(3,minmax(0,1fr))}.posters--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media screen and (max-width:899px){.sub .dir-pl{display:none}}
+@media (min-width:760px),print{.people>div,.route>*{grid-template-columns:minmax(6.5rem,1fr) minmax(0,3fr)}.foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}.posters{grid-template-columns:repeat(3,minmax(0,1fr))}.posters--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media screen and (max-width:56.24em){.sub .dir-pl{display:none}}
+@media (min-width:56.25em),print{.dir-list{display:grid;grid-template-columns:4.5rem 3fr 3fr 3fr 2fr 3fr;column-gap:var(--cg)}.dir-list li>*{grid-column:auto}.dir-list :is(li,.sub){display:grid;grid-column:1/-1;grid-template-columns:subgrid}}
 @media (min-width:900px),print{.g12{grid-template-columns:repeat(12,minmax(0,1fr))}.wide{display:block}
 .stand{grid-column:1/9}.facts{grid-column:9/13;align-self:end}
-.dir-list{display:grid;grid-template-columns:4.5rem 3fr 3fr 3fr 2fr 3fr;column-gap:var(--cg)}.dir-list li>*{grid-column:auto}.dir-list :is(li,.sub){display:grid;grid-column:1/-1;grid-template-columns:subgrid}
 .ono-fig{grid-column:1/6}.ono-copy{grid-column:7/13;align-self:center}.campaign{grid-column:1/-1}.campaign .posters{grid-column:1/10}.camp-note{grid-column:10/13}
 .cs-copy{grid-column:1/6;align-self:center}.arch-fig{grid-column:7/13;align-self:center}
 .doors{grid-template-columns:repeat(4,minmax(0,1fr))}

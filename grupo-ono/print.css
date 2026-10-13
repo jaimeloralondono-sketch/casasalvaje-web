@@ -1,8 +1,9 @@
-/* Grupo ONO · print (brief §8.3): a fact sheet (home: 4 A4 / 5 Letter pages), no text under 7.5pt (12.4px base × .8125rem labels). Linked with media="print"; the desktop grid in grupo.css also applies to print. */
+/* Grupo ONO · print (brief §8.3): a fact sheet (home: 4 pages, A4 or Letter, 10 mm margins), no text under 7.5pt (12.4px base × .8125rem labels). Linked with media="print"; the desktop grid in grupo.css also applies to print. */
+@page{margin:10mm}
 :root{--ink:#000;--ink-2:#000;--hair:#999;--pad:12px;--pad-w:12px;--cg:12px;--t-body:400 1.0625rem/1.3 var(--f-text);--t-lead:400 1rem/1.3 var(--f-text);--t-name:condensed 500 1.25rem/1.1 var(--f-display)}
 html{font-size:12.4px}
 *{color:#000!important;background:none!important;box-shadow:none!important}
-.band,.skip,.site-header nav,.hero .key,.win picture,.ono-fig,.arch-fig,.posters,.cs-wall,.door picture,.site-footer .elev,.kanji,.ono-logo,.cs-logo,.strip,.kit,.ctas{display:none!important}
+.band,.skip,.site-header nav,.hero .key,.win picture,.ono-fig,.arch-fig,.posters,.cs-wall,.door picture,.site-footer .elev,.kanji,.ono-logo,.cs-logo,.strip,.kit,.ctas,body:has(.dir-list) .foot-cols{display:none!important}
 .toc{position:static}
 .elev{--gs:#000}
 .hero .elev{width:4.5cm}.hero :is(.hero-meta,.caps){width:11cm}
