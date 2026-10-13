@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-langs="es en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Concierge · Casa Salvaje Cartagena</title>
+<meta name="description" content="Casa Salvaje's concierge in Cartagena: book dinner and the club, plan your trip day by day, find villas, boats and tours with our partner Vacation Cartagena, and ask anything about the city.">
+<link rel="canonical" href="https://www.casa-salvaje.com/concierge">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Casa Salvaje">
+<meta property="og:title" content="Concierge · Casa Salvaje Cartagena">
+<meta property="og:description" content="Dinner, the club, villas, boats and the city. Ask the house.">
+<meta property="og:url" content="https://www.casa-salvaje.com/concierge">
+<meta property="og:image" content="https://www.casa-salvaje.com/img/og-casa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="concierge.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="concierge.html" aria-current="page">Concierge</a>
+    </nav>
+    <div class="right">
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+    </div>
+  </div>
+  <nav class="worlds" aria-label="Mundos"><div class="wrap">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+      <a href="concierge.html" aria-current="page">Concierge</a>
+  </div></nav>
+</header>
+
+<main id="top" class="cc">
+  <section class="cc-hero">
+    <div class="wrap">
+      <div class="eyebrow">Concierge · Casa Salvaje</div>
+      <h1><span class="es">¿Qué se te antoja esta noche?</span><span class="en">What are you in the mood for tonight?</span></h1>
+      <p class="sub"><span class="es">Cena, club, una casa con piscina, un bote a las islas o un secreto de la ciudad. Pregúntale a la casa.</span><span class="en">Dinner, the club, a house with a pool, a boat to the islands or a city secret. Ask the house.</span></p>
+    </div>
+  </section>
+
+  <section class="cc-chat-sec">
+    <div class="wrap">
+      <div class="chat" id="chat">
+        <div class="chat-head">
+          <img src="img/logo-salvaje-oro.png" alt="" width="40" height="52">
+          <div><b>Concierge</b><span class="es">Responde al instante · una persona te atiende por WhatsApp</span><span class="en">Replies instantly · a person takes over on WhatsApp</span></div>
+        </div>
+        <div class="chat-log" id="log" aria-live="polite">
+          <div class="msg bot"><p><span class="es">Bienvenido a Casa Salvaje. Te ayudo a reservar en Kanibal o SLVJ, armar tu noche, encontrar casa, bote o tour en Cartagena, o con cualquier pregunta de la ciudad. ¿Qué tienes en mente?</span><span class="en">Welcome to Casa Salvaje. I can help you book Kanibal or SLVJ, plan your night, find a house, boat or tour in Cartagena, or answer anything about the city. What do you have in mind?</span></p></div>
+        </div>
+        <div class="chips" id="chips">
+          <button type="button" class="chip-plan" data-ir="plan"><span class="es">Arma tu plan</span><span class="en">Plan your trip</span></button>
+          <button type="button" data-es="Quiero reservar una cena para esta semana" data-en="I'd like to book dinner this week"><span class="es">Reservar cena</span><span class="en">Book dinner</span></button>
+          <button type="button" data-es="¿Cómo funciona la noche y el club? Queremos mesa" data-en="How does the night and the club work? We'd like a table"><span class="es">Mesa en el club</span><span class="en">Club table</span></button>
+          <button type="button" data-es="Buscamos un bote a las islas para un día" data-en="We're looking for a boat to the islands for a day"><span class="es">Bote a las islas</span><span class="en">Boat to the islands</span></button>
+          <button type="button" data-es="Busco una casa con piscina en Cartagena" data-en="I'm looking for a house with a pool in Cartagena"><span class="es">Casa con piscina</span><span class="en">House with a pool</span></button>
+          <button type="button" data-es="¿Qué hacemos hoy en Cartagena?" data-en="What should we do in Cartagena today?"><span class="es">Qué hacer hoy</span><span class="en">What to do today</span></button>
+          <button type="button" data-es="Vamos a celebrar un cumpleaños" data-en="We're celebrating a birthday"><span class="es">Celebrar algo</span><span class="en">Celebrate</span></button>
+        </div>
+        <form class="chat-form" id="form" autocomplete="off">
+          <label class="sr" for="q"><span class="es">Tu mensaje</span><span class="en">Your message</span></label>
+          <textarea id="q" rows="1" maxlength="1500" data-ph-es="Escribe aquí…" data-ph-en="Type here…"></textarea>
+          <button type="submit" class="btn solid" id="enviar"><span class="es">Enviar</span><span class="en">Send</span></button>
+        </form>
+        <p class="chat-pie"><span class="es">Las respuestas las escribe una IA (Claude) con la información de la casa. Para confirmar reservas, precios o algo especial, sigue por WhatsApp con nuestro equipo. No compartas datos de tarjetas ni documentos.</span><span class="en">Replies are written by an AI (Claude) using the house's information. To confirm bookings, prices or anything special, continue on WhatsApp with our team. Don't share card or ID details.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cc-plan" id="plan">
+    <div class="wrap">
+      <div class="plan-cab">
+        <div class="eyebrow"><span class="es">Arma tu plan</span><span class="en">Plan your trip</span></div>
+        <h2><span class="es">Tu Cartagena, día por día.</span><span class="en">Your Cartagena, day by day.</span></h2>
+        <p class="sub"><span class="es">Elige lo que se te antoja: casa, bote, playa, cena y club. La casa lo ordena y nuestro equipo lo reserva.</span><span class="en">Pick what you fancy: a house, a boat, the beach, dinner and the club. The house puts it in order and our team books it.</span></p>
+      </div>
+      <form class="plan-form" id="plan-form" autocomplete="off" novalidate>
+        <fieldset class="paso">
+          <legend><i>1</i><span class="es">¿Cuándo y cuántos?</span><span class="en">When and how many?</span></legend>
+          <div class="datos">
+            <label class="campo" for="pl-llegada"><span class="es">Llegada</span><span class="en">Arrival</span><input type="date" id="pl-llegada"></label>
+            <div class="campo stepper" data-campo="noches" data-min="1" data-max="7">
+              <span class="es">Noches</span><span class="en">Nights</span>
+              <div class="ctrl"><button type="button" data-paso="-1" aria-label="Menos noches">−</button><output id="pl-noches">3</output><button type="button" data-paso="1" aria-label="Más noches">+</button></div>
+            </div>
+            <div class="campo stepper" data-campo="personas" data-min="1" data-max="40">
+              <span class="es">Personas</span><span class="en">People</span>
+              <div class="ctrl"><button type="button" data-paso="-1" aria-label="Menos personas">−</button><output id="pl-personas">2</output><button type="button" data-paso="1" aria-label="Más personas">+</button></div>
+            </div>
+          </div>
+          <div class="ocasiones" role="group" aria-label="Ocasión / Occasion">
+            <button type="button" data-id="ninguna" aria-pressed="true"><span class="es">Solo porque sí</span><span class="en">Just because</span></button>
+            <button type="button" data-id="cumple" aria-pressed="false"><span class="es">Cumpleaños</span><span class="en">Birthday</span></button>
+            <button type="button" data-id="aniversario" aria-pressed="false"><span class="es">Aniversario</span><span class="en">Anniversary</span></button>
+            <button type="button" data-id="despedida" aria-pressed="false"><span class="es">Despedida</span><span class="en">Bachelor(ette)</span></button>
+            <button type="button" data-id="luna-miel" aria-pressed="false"><span class="es">Luna de miel</span><span class="en">Honeymoon</span></button>
+            <button type="button" data-id="empresa" aria-pressed="false"><span class="es">Empresa o grupo</span><span class="en">Company or group</span></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend><i>2</i><span class="es">Dónde quedarse</span><span class="en">Where to stay</span></legend>
+          <div class="tiles" data-grupo="quedarse">
+            <button type="button" class="tile destacada" data-id="casa-belle" aria-pressed="false"><img src="img/casa-belle.jpg" alt="El patio de Casa Belle con su piscina larga entre palmas" width="1200" height="800" loading="lazy"><span class="sello"><span class="es">De la casa</span><span class="en">Our own</span></span><b>Casa Belle</b><span><span class="es">Casa colonial en el Centro, a pasos de nosotros: piscina en el patio y en la terraza, sala de cine y BBQ en el rooftop.</span><span class="en">A colonial house in the Old City, steps from us: a courtyard pool and a rooftop pool, a cinema room and a rooftop BBQ.</span></span></button>
+            <button type="button" class="tile" data-id="hotel-las-islas" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l5-5 5 5"/><path d="M4.5 11v6h7v-6"/><path d="M13 12l4-4 4 4"/><path d="M14 11v6h6v-6"/><path d="M2 20c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1"/></svg><b>Hotel Las Islas</b><span><span class="es">Bungalows frente al mar en Barú, a 45 minutos en lancha.</span><span class="en">Seafront bungalows in Barú, 45 minutes by boat.</span></span></button>
+            <button type="button" class="tile" data-id="casa-enai" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17c0-3.5.3-5.8.8-7.8"/><path d="M12.8 9.2c-.8-2.4-3.2-3.2-5.6-2.4 2.4.2 4 1 5.6 2.4z"/><path d="M12.8 9.2c.8-2.4 3.2-3.2 5.6-2.4-2.4.2-4 1-5.6 2.4z"/><ellipse cx="12" cy="17.5" rx="7" ry="1.8"/><path d="M2 21h20"/></svg><b><span class="es">Casa Enai</span><span class="en">Casa Enai</span></b><span><span class="es">Una isla privada en el Rosario, solo para tu grupo.</span><span class="en">A private island in the Rosario, just for your group.</span></span></button>
+            <button type="button" class="tile" data-id="apartamento" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M11 21v-3h2v3"/></svg><b><span class="es">Apartamento</span><span class="en">Apartment</span></b><span><span class="es">La opción más sencilla y económica.</span><span class="en">The simpler, budget-friendly option.</span></span></button>
+            <button type="button" class="tile" data-id="otra-casa" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v6h14v-6"/><path d="M10 16v-3h4v3"/><path d="M2 20c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1"/></svg><b><span class="es">Otra casa o villa</span><span class="en">Another house or villa</span></b><span><span class="es">Con nuestro aliado Vacation Cartagena.</span><span class="en">With our partner Vacation Cartagena.</span></span></button>
+            <button type="button" class="tile" data-id="ya-tengo" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M21 12v2"/></svg><b><span class="es">Ya tengo dónde quedarme</span><span class="en">I already have a place</span></b><span><span class="es">Solo armamos los días.</span><span class="en">We'll just plan the days.</span></span></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend><i>3</i><span class="es">De día</span><span class="en">By day</span></legend>
+          <div class="tiles" data-grupo="dia">
+            <button type="button" class="tile destacada" data-id="yate-privado" aria-pressed="false"><img src="img/yate-privado.jpg" alt="La cubierta de popa del yate con Bocagrande al fondo" width="1200" height="800" loading="lazy"><span class="sello"><span class="es">Del concierge</span><span class="en">Our own</span></span><b><span class="es">Yate privado</span><span class="en">Private yacht</span></b><span><span class="es">Tres Sunseeker de 64 y 72 pies, hasta 20 personas, con capitán y marineros. Un día en las islas o el atardecer en la bahía, solo para tu grupo.</span><span class="en">Three Sunseekers, 64 and 72 feet, up to 20 guests, with captain and crew. A day at the islands or sunset on the bay, just for your group.</span></span></button>
+            <button type="button" class="tile" data-id="bote-islas" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v13"/><path d="M12 4l7 11h-7"/><path d="M12 7l-6 8h6"/><path d="M3 18h18l-2.5 3h-13z"/></svg><b><span class="es">Bote a las Islas del Rosario</span><span class="en">Boat to the Rosario Islands</span></b><span><span class="es">Mar cristalino, día completo.</span><span class="en">Crystal water, a full day.</span></span></button>
+            <button type="button" class="tile" data-id="baru" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="3.5"/><path d="M12 2.5v1.5M5 9H3.5M20.5 9H19M7.1 4.1l1 1M16.9 4.1l-1 1"/><path d="M2 16c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1"/><path d="M2 20c1.7 0 1.7-1 3.3-1s1.7 1 3.4 1 1.6-1 3.3-1 1.7 1 3.3 1 1.7-1 3.4-1 1.6 1 3.3 1"/></svg><b><span class="es">Día de playa en Barú</span><span class="en">Beach day in Barú</span></b><span><span class="es">Arena blanca y almuerzo frente al mar.</span><span class="en">White sand, lunch by the sea.</span></span></button>
+            <button type="button" class="tile" data-id="atardecer" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16a7 7 0 0 1 14 0"/><path d="M2 16h20"/><path d="M12 5v2M4.9 8.9l1.4 1.4M19.1 8.9l-1.4 1.4"/><path d="M6 20h12"/></svg><b><span class="es">Atardecer en velero</span><span class="en">Sunset sail</span></b><span><span class="es">La ciudad vista desde el agua.</span><span class="en">The city seen from the water.</span></span></button>
+            <button type="button" class="tile" data-id="buceo" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-5 9-6 13-2l5-3v10l-5-3c-4 4-10 3-13-2z"/><circle cx="8" cy="11" r=".9"/></svg><b><span class="es">Buceo o snorkel</span><span class="en">Diving or snorkeling</span></b><span><span class="es">Los arrecifes del Rosario.</span><span class="en">The Rosario reefs.</span></span></button>
+            <button type="button" class="tile" data-id="ciudad" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V10a7 7 0 0 1 14 0v11"/><path d="M9 21v-7a3 3 0 0 1 6 0v7"/><path d="M3 21h18"/></svg><b><span class="es">Caminar la ciudad amurallada</span><span class="en">Walk the walled city</span></b><span><span class="es">Balcones, plazas y murallas.</span><span class="en">Balconies, plazas and walls.</span></span></button>
+            <button type="button" class="tile" data-id="compras" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b><span class="es">Diseño y compras locales</span><span class="en">Local design &amp; shopping</span></b><span><span class="es">Las marcas de nuestra guía.</span><span class="en">The brands in our guide.</span></span></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend><i>4</i><span class="es">De noche</span><span class="en">At night</span></legend>
+          <div class="tiles" data-grupo="noche">
+            <button type="button" class="tile" data-id="kanibal" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-6-3-6-6 0-4 4-6 4-10 2 2 3 4 3 6 1-1 1.5-2 1.5-3 2 2 3.5 4.5 3.5 7 0 3-2 6-6 6z"/></svg><b><span class="es">Cena de fuego en Kanibal</span><span class="en">Fire dinner at Kanibal</span></b><span><span class="es">Parrilla, brasa e instinto.</span><span class="en">Grill, embers and instinct.</span></span></button>
+            <button type="button" class="tile" data-id="slvj" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16a8 8 0 0 1-16 0z"/><path d="M14 3l-4 9M19 4l-6 8"/></svg><b><span class="es">Sushi y banquete en SLVJ</span><span class="en">Sushi &amp; feast at SLVJ</span></b><span><span class="es">Barra japonesa y mesa larga.</span><span class="en">Japanese bar, long table.</span></span></button>
+            <button type="button" class="tile" data-id="club" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg><b><span class="es">El club SLVJ</span><span class="en">The SLVJ club</span></b><span><span class="es">Jueves a sábado, hasta las 3 am.</span><span class="en">Thursday to Saturday, until 3 am.</span></span></button>
+            <button type="button" class="tile" data-id="omakase" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="12" width="16" height="6" rx="3"/><path d="M5 12c2-4 12-4 14 0"/><path d="M8 21h8"/></svg><b><span class="es">Omakase en la barra</span><span class="en">Omakase at the bar</span></b><span><span class="es">El último martes del mes.</span><span class="en">The last Tuesday of the month.</span></span></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso">
+          <legend><i>5</i><span class="es">Extras</span><span class="en">Extras</span></legend>
+          <p class="nota-paso"><span class="es">Lo que se te ocurra, el concierge lo consigue.</span><span class="en">Whatever you have in mind, the concierge sorts it out.</span></p>
+          <div class="campo stepper para-extras" data-campo="personas" data-min="1" data-max="40">
+            <span class="es">¿Para cuántas personas?</span><span class="en">For how many people?</span>
+            <div class="ctrl"><button type="button" data-paso="-1" aria-label="Menos personas">−</button><output>2</output><button type="button" data-paso="1" aria-label="Más personas">+</button></div>
+          </div>
+          <div class="tiles" data-grupo="extras">
+            <button type="button" class="tile" data-id="chef" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14a4 4 0 1 1 1.5-7.7A4 4 0 0 1 16 5.5 3.5 3.5 0 1 1 17 14"/><path d="M7 14v6h10v-6"/><path d="M7 17h10"/></svg><b><span class="es">Chef privado</span><span class="en">Private chef</span></b><span><span class="es">En la casa o en el yate.</span><span class="en">At the house or on the yacht.</span></span></button>
+            <button type="button" class="tile" data-id="sonido" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r="1.2"/></svg><b><span class="es">Parlantes y DJ</span><span class="en">Speakers &amp; DJ</span></b><span><span class="es">Sonido para la casa, la isla o el yate.</span><span class="en">Sound for the house, the island or the yacht.</span></span></button>
+            <button type="button" class="tile" data-id="traslados" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16V8a2 2 0 0 1 2-2h10l4 4v6"/><path d="M3 16h18"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M15 6v4h4"/></svg><b><span class="es">Traslados</span><span class="en">Transfers</span></b><span><span class="es">Aeropuerto, muelle y cenas.</span><span class="en">Airport, marina and dinners.</span></span></button>
+            <button type="button" class="tile" data-id="mercado" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h4v4l1.5 2v11a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V9L10 7z"/><path d="M8.5 13h7"/></svg><b><span class="es">Mercado y licor</span><span class="en">Groceries &amp; drinks</span></b><span><span class="es">La casa lista cuando llegas.</span><span class="en">The house stocked when you arrive.</span></span></button>
+            <button type="button" class="tile" data-id="decoracion" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16v-7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/><path d="M4 15c2 1.5 4 1.5 6 0s4-1.5 6 0 3 1 4 0"/><path d="M12 11V7"/><path d="M12 4.5c.8.8.8 1.7 0 2.5-.8-.8-.8-1.7 0-2.5z"/></svg><b><span class="es">Decoración y torta</span><span class="en">Decoration &amp; cake</span></b><span><span class="es">Para el cumpleaños o la sorpresa.</span><span class="en">For the birthday or the surprise.</span></span></button>
+            <button type="button" class="tile" data-id="masajes" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20c-4 0-7-3-8-7 3 0 6 1.5 8 4 2-2.5 5-4 8-4-1 4-4 7-8 7z"/><path d="M12 17c-1.5-3-1.5-6 0-10 1.5 4 1.5 7 0 10z"/></svg><b><span class="es">Masajes</span><span class="en">Massages</span></b><span><span class="es">A domicilio, en la casa.</span><span class="en">In-house, at your place.</span></span></button>
+            <button type="button" class="tile" data-id="maquillaje" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21h6v-8H9z"/><path d="M10 13V8l4-3v8"/></svg><b><span class="es">Maquillaje y peinado</span><span class="en">Hair &amp; makeup</span></b><span><span class="es">Antes de la noche.</span><span class="en">Before the night out.</span></span></button>
+            <button type="button" class="tile" data-id="seguridad" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><b><span class="es">Seguridad</span><span class="en">Security</span></b><span><span class="es">Escolta para el grupo.</span><span class="en">An escort for the group.</span></span></button>
+          </div>
+        </fieldset>
+
+        <label class="plan-nota" for="pl-nota"><span class="es">¿Algo más? (opcional)</span><span class="en">Anything else? (optional)</span>
+          <textarea id="pl-nota" rows="2" maxlength="300" data-ph-es="Ej.: vamos con mis papás, nos encanta el vino, llegamos tarde el primer día" data-ph-en="E.g. travelling with my parents, we love wine, we land late on day one"></textarea>
+        </label>
+        <div class="plan-acciones">
+          <button type="submit" class="btn solid" id="pl-armar"><span class="es">Armar mi plan</span><span class="en">Build my plan</span></button>
+          <span class="aviso" id="pl-aviso" aria-live="polite"></span>
+        </div>
+      </form>
+      <div class="plan-salida" id="plan-salida" aria-live="polite" hidden></div>
+    </div>
+  </section>
+
+  <section class="cc-puertas">
+    <div class="wrap">
+      <div class="eyebrow"><span class="es">O ve directo</span><span class="en">Or go straight there</span></div>
+      <div class="puertas">
+        <a class="puerta" data-book="casa" href="index.html#lista">
+          <img src="img/kanibal-mesa.jpg" alt="" loading="lazy" width="800" height="600">
+          <b><span class="es">Reservar en la casa</span><span class="en">Book at the house</span></b>
+          <span><span class="es">Kanibal y SLVJ para comer; desde las 11 pm, la noche y el club.</span><span class="en">Kanibal and SLVJ for dinner; from 11 pm, the night and the club.</span></span>
+        </a>
+        <a class="puerta" href="https://www.vacationcartagena.com/es" target="_blank" rel="noopener">
+          <img src="img/camp-espejo.jpg" alt="" loading="lazy" width="800" height="600">
+          <b><span class="es">Casas, botes y experiencias</span><span class="en">Villas, boats &amp; experiences</span></b>
+          <span><span class="es">Con nuestro aliado Vacation Cartagena.</span><span class="en">With our partner Vacation Cartagena.</span></span>
+        </a>
+        <a class="puerta" href="https://wa.me/573182824124?text=Hola%20Casa%20Salvaje%2C%20quiero%20armar%20un%20plan%20con%20el%20concierge" target="_blank" rel="noopener">
+          <img src="img/puerta.jpg" alt="" loading="lazy" width="800" height="600">
+          <b><span class="es">Hablar con el concierge</span><span class="en">Talk to the concierge</span></b>
+          <span>WhatsApp +57 318 282 4124</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="marcas">
+      <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+    </div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="concierge-plan.js"></script>
+<script src="concierge.js"></script>
+</body></html>

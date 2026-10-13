@@ -96,6 +96,9 @@ document.addEventListener("click", function(e){
   // Artículos del blog: cada idioma tiene su propia URL; el botón de idioma lleva a la traducción.
   var fixed = root.getAttribute("data-fixed");
   if(fixed) start = fixed;
+  // Páginas que solo vienen en algunos idiomas (data-langs="es en"): si piden otro, se muestran en inglés.
+  var only = (root.getAttribute("data-langs") || "").split(" ").filter(Boolean);
+  if(only.length && only.indexOf(start) < 0) start = only.indexOf("en") >= 0 ? "en" : only[0];
   setLang(start);
   document.querySelectorAll(".lang select").forEach(function(sel){ sel.addEventListener("change", function(){
     var v = sel.value, alt = fixed && v !== fixed && document.querySelector('link[rel="alternate"][hreflang="' + v + '"]');
