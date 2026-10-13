@@ -47,7 +47,7 @@ body .cc-hero .eyebrow{color:#C9A46A}
 .plan-cab{max-width:760px;display:grid;gap:12px}
 .plan-cab h2{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:0.02em;font-size:clamp(2rem,6vw,3.4rem);line-height:1;color:var(--ink);margin:0;text-wrap:balance}
 .plan-cab .sub{color:var(--ink-soft);max-width:52ch}
-.plan-form{display:grid;gap:22px;margin-top:28px}
+.plan-form{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:28px;max-width:none}
 .paso{border:0;margin:0;padding:0;display:grid;gap:14px;min-width:0}
 .paso legend{display:flex;align-items:center;gap:12px;padding:0;margin-bottom:14px;font-family:var(--display);font-weight:600;font-size:1.55rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--cobalt)}
 .paso legend i{font-style:normal;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--ink);font-family:var(--body);font-size:0.9rem;font-weight:600;flex:none}
