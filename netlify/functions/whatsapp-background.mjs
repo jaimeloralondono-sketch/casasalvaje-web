@@ -1,5 +1,6 @@
 // POST /api/whatsapp  <- webhook de Bird (evento whatsapp.received).
-// Responde por WhatsApp con Claude usando la misma ficha que el chat de la web.
+// Responde por WhatsApp con Claude usando la misma ficha que el chat de la web. Va en la línea del concierge (+57 318 282 4124):
+// ahí escriben solo el bot y Jaime; el equipo atiende la línea de la casa (+57 310 828 6602) desde su app.
 // Es una función "background": Netlify responde 202 a Bird de inmediato y aquí hay tiempo para pensar la respuesta.
 //
 // Variables de entorno en Netlify:

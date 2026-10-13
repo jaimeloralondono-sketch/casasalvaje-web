@@ -163,6 +163,10 @@
         <fieldset class="paso">
           <legend><i>5</i><span class="es">Extras</span><span class="en">Extras</span></legend>
           <p class="nota-paso"><span class="es">Lo que se te ocurra, el concierge lo consigue.</span><span class="en">Whatever you have in mind, the concierge sorts it out.</span></p>
+          <div class="campo stepper para-extras" data-campo="personas" data-min="1" data-max="40">
+            <span class="es">¿Para cuántas personas?</span><span class="en">For how many people?</span>
+            <div class="ctrl"><button type="button" data-paso="-1" aria-label="Menos personas">−</button><output>2</output><button type="button" data-paso="1" aria-label="Más personas">+</button></div>
+          </div>
           <div class="tiles" data-grupo="extras">
             <button type="button" class="tile" data-id="chef" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14a4 4 0 1 1 1.5-7.7A4 4 0 0 1 16 5.5 3.5 3.5 0 1 1 17 14"/><path d="M7 14v6h10v-6"/><path d="M7 17h10"/></svg><b><span class="es">Chef privado</span><span class="en">Private chef</span></b><span><span class="es">En la casa o en el yate.</span><span class="en">At the house or on the yacht.</span></span></button>
             <button type="button" class="tile" data-id="sonido" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7.5" r="1.2"/></svg><b><span class="es">Parlantes y DJ</span><span class="en">Speakers &amp; DJ</span></b><span><span class="es">Sonido para la casa, la isla o el yate.</span><span class="en">Sound for the house, the island or the yacht.</span></span></button>

@@ -25,7 +25,7 @@
     if(!form || !salida) return;
     var armar = document.getElementById("pl-armar"), aviso = document.getElementById("pl-aviso");
     var llegada = document.getElementById("pl-llegada"), nota = document.getElementById("pl-nota");
-    var cuenta = { noches: 3, personas: 2 }, ocupado = false;
+    var cuenta = { noches: 3, personas: 2 }, tocado = {}, ocupado = false;
 
     function ph(){ nota.placeholder = es() ? nota.dataset.phEs : nota.dataset.phEn; }
     document.addEventListener("cs-lang", ph); ph();
@@ -33,14 +33,15 @@
     // Fecha mínima: hoy en Cartagena.
     try{ llegada.min = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Bogota" }).format(new Date()); }catch(e){}
 
-    // Contadores de noches y personas
+    // Contadores de noches y personas. Las personas salen en el paso 1 y en los extras: los dos van sincronizados.
     form.querySelectorAll(".stepper").forEach(function(s){
       var campo = s.dataset.campo, out = s.querySelector("output"), min = Number(s.dataset.min), max = Number(s.dataset.max);
       cuenta[campo] = Number(out.textContent) || cuenta[campo];
       s.querySelectorAll("button").forEach(function(b){
         b.addEventListener("click", function(){
           cuenta[campo] = Math.min(max, Math.max(min, cuenta[campo] + Number(b.dataset.paso)));
-          out.textContent = cuenta[campo];
+          tocado[campo] = true; aviso.textContent = "";
+          form.querySelectorAll('.stepper[data-campo="' + campo + '"]').forEach(function(x){ x.classList.remove("pide"); x.querySelector("output").textContent = cuenta[campo]; });
         });
       });
     });
@@ -153,6 +154,13 @@
       var sel = seleccion();
       if(!sel.quedarse.length && !sel.dia.length && !sel.noche.length && !sel.extras.length && !sel.nota){
         aviso.textContent = t("Elige al menos una cosa: una casa, un bote o una noche.", "Pick at least one thing: a house, a boat or a night out.");
+        return;
+      }
+      // Los extras se cotizan por persona: hay que saber cuántos son.
+      if(sel.extras.length && !tocado.personas){
+        var px = form.querySelector(".para-extras") || form.querySelector('.stepper[data-campo="personas"]');
+        px.classList.add("pide"); px.scrollIntoView({ behavior: "smooth", block: "center" });
+        aviso.textContent = t("¿Para cuántas personas son los extras? Ajusta el número y vuelve a armar el plan.", "How many people are the extras for? Set the number and build the plan again.");
         return;
       }
       ocupado = true; armar.disabled = true; aviso.textContent = "";

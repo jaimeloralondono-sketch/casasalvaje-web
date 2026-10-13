@@ -75,6 +75,8 @@ body .cc-hero .eyebrow{color:#C9A46A}
 .tile[aria-pressed="true"] svg{background:rgba(251,247,239,.14);stroke:var(--gold)}
 .tile[aria-pressed="true"]::after{border-color:var(--gold);background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.5L13 6.5' fill='none' stroke='%23141B3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
 .paso .nota-paso{margin:-8px 0 0;color:var(--ink-soft);font-size:0.95rem}
+.para-extras{max-width:22rem}
+.stepper.pide{outline:3px solid var(--gold);outline-offset:2px}
 .tile.destacada{grid-column:1/-1;grid-template-columns:1fr;grid-template-rows:none;padding:0;overflow:hidden;row-gap:6px;align-content:start}
 .tile.destacada img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin-bottom:8px}
 .tile.destacada .sello,.tile.destacada b,.tile.destacada > span:last-child{margin-inline:18px}
