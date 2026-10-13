@@ -575,3 +575,13 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .post .more a{font-family:var(--display);font-size:1.25rem;text-decoration:none}
 .post .more a:hover{text-decoration:underline}
 .hr-note{font-size:0.85rem;color:var(--ink-soft);margin:0}
+
+/* Notas desde la casa: artículos del blog en la portada y en cada mundo */
+.delblog h2{margin-top:10px}
+.delblog .posts{margin-top:24px;padding-bottom:28px}
+.delblog .post-card h3{font-size:1.3rem;line-height:1.15;text-transform:none;letter-spacing:0;font-weight:500}
+.themed .delblog .eyebrow,.themed .delblog .post-card time{color:var(--acc)}
+.themed .delblog .post-card p{color:var(--muted)}
+.themed .delblog .post-card img{border-radius:var(--img)}
+.themed .delblog .btn.ghost{color:var(--acc);border-color:var(--acc)}
+@media (max-width:759px){.delblog .posts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:76%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}.delblog .posts::-webkit-scrollbar{display:none}.delblog .post-card{scroll-snap-align:start}.delblog .post-card img{aspect-ratio:4/4.4}}
