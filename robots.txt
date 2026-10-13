@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /gracias
+Disallow: /gracias.html
+
+Sitemap: https://www.casa-salvaje.com/sitemap.xml
