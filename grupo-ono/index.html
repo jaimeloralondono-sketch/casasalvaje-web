@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Grupo ONO · Hospitality group in Bogotá and Cartagena</title>
-<meta name="description" content="Grupo ONO, founded by Jaime Lora and Dilan Carrillo, runs ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena: La Domenica, Kanibal, SLVJ and ONO Cartagena.">
+<meta name="description" content="Grupo ONO, founded by Jaime Lora and Dilan Carrillo, runs ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena, home to Kanibal and SLVJ, with La Domenica and ONO Cartagena to open.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grupo ONO">
 <meta property="og:title" content="Grupo ONO">
@@ -21,30 +21,33 @@
 <link rel="preload" href="/fonts/archivo-wdth75-100-wght400-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/grupo.css">
 <link rel="stylesheet" href="/print.css" media="print">
-<!-- LAUNCH: uncomment once the production domain is confirmed, replacing [DOMAIN]; switch the JSON-LD IRIs below to absolute https://[DOMAIN] at the same time.
-<link rel="canonical" href="https://[DOMAIN]/">
-<meta property="og:url" content="https://[DOMAIN]/">
-<meta property="og:image" content="https://[DOMAIN]/img/og-grupo-ono.jpg">
+<link rel="canonical" href="https://grupo-ono.com/">
+<meta property="og:url" content="https://grupo-ono.com/">
+<meta property="og:image" content="https://grupo-ono.com/img/og-grupo-ono.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Grupo ONO line logo drawn as a façade, its two O's lit as windows onto ONO and Casa Salvaje">
-<meta name="twitter:image" content="https://[DOMAIN]/img/og-grupo-ono.jpg">
--->
+<meta name="twitter:image" content="https://grupo-ono.com/img/og-grupo-ono.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"/#org","name":"Grupo ONO","url":"/","logo":"/img/logo-grupo-ono-512.png",
+ {"@type":"Organization","@id":"https://grupo-ono.com/#org","name":"Grupo ONO","url":"https://grupo-ono.com/","logo":"https://grupo-ono.com/img/logo-grupo-ono-512.png",
   "description":"Hospitality group behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena.",
   "founder":[{"@type":"Person","name":"Jaime Lora"},{"@type":"Person","name":"Dilan Carrillo"}],
-  "areaServed":["Bogotá","Cartagena"],"subOrganization":[{"@id":"/#ono-bogota"},{"@id":"/#casa-salvaje"}]},
- {"@type":"Restaurant","@id":"/#ono-bogota","name":"ONO Hosomaki Bar","servesCuisine":"Japanese",
-  "address":{"@type":"PostalAddress","addressLocality":"Bogotá","addressCountry":"CO"},
-  "sameAs":["https://www.instagram.com/ono.culto/"],"parentOrganization":{"@id":"/#org"}},
- {"@type":"FoodEstablishment","@id":"/#casa-salvaje","name":"Casa Salvaje","url":"https://www.casa-salvaje.com/",
+  "sameAs":["https://www.instagram.com/grupo.ono/"],
+  "areaServed":["Bogotá","Cartagena"],"subOrganization":[{"@id":"https://grupo-ono.com/#ono-bogota"},{"@id":"https://grupo-ono.com/#casa-salvaje"}]},
+ {"@type":"Restaurant","@id":"https://grupo-ono.com/#ono-bogota","name":"ONO Hosomaki Bar","url":"https://onoculto.com/","servesCuisine":"Japanese",
+  "slogan":"Tokyo spirit, Bogotá soul.","foundingDate":"2025-11","openingHours":"Tu-Sa 19:00-03:00",
+  "acceptsReservations":"https://restaurante.covermanager.com/ono/",
+  "address":{"@type":"PostalAddress","streetAddress":"Calle 84A #9-11","addressLocality":"Bogotá","addressCountry":"CO"},
+  "sameAs":["https://www.instagram.com/ono.culto/"],"parentOrganization":{"@id":"https://grupo-ono.com/#org"}},
+ {"@type":"FoodEstablishment","@id":"https://grupo-ono.com/#casa-salvaje","name":"Casa Salvaje","url":"https://www.casa-salvaje.com/",
   "telephone":"+573108286602","foundingDate":"2026-09-25",
+  "acceptsReservations":"https://restaurante.covermanager.com/casa-salvaje-cartagena/",
   "address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},
-  "sameAs":["https://www.instagram.com/casasalvaje.ctg/"],"parentOrganization":{"@id":"/#org"},
-  "department":[{"@type":"CafeOrCoffeeShop","name":"La Domenica"},{"@type":"Restaurant","name":"Kanibal"},
-   {"@type":"NightClub","name":"SLVJ","sameAs":"https://www.instagram.com/slvj.ctg/"},
+  "sameAs":["https://www.instagram.com/casasalvaje.ctg/"],"parentOrganization":{"@id":"https://grupo-ono.com/#org"},
+  "department":[{"@type":"CafeOrCoffeeShop","name":"La Domenica","sameAs":"https://www.instagram.com/ladomenica.ctg/"},
+   {"@type":"Restaurant","name":"Kanibal","acceptsReservations":"https://restaurante.covermanager.com/kanibal-cartagena/","sameAs":["https://www.instagram.com/kanibal.ctg/","https://www.casa-salvaje.com/kanibal.html#restaurant"]},
+   {"@type":["Restaurant","NightClub"],"name":"SLVJ","acceptsReservations":"https://restaurante.covermanager.com/slvj-cartagena/","sameAs":["https://www.instagram.com/slvj.ctg/","https://www.casa-salvaje.com/slvj.html#restaurant"]},
    {"@type":"Restaurant","name":"ONO Cartagena","servesCuisine":"Japanese","sameAs":"https://www.instagram.com/ono.ctg/"}]}]}
 </script>
 </head>
@@ -95,7 +98,7 @@
         <dl class="facts ledger">
           <div><dt>Hospitality group</dt><dd>Bogotá and Cartagena, Colombia</dd></div>
           <div><dt>Founded by</dt><dd>Jaime Lora and Dilan Carrillo</dd></div>
-          <div><dt>Next opening</dt><dd>ONO Cartagena, <span class="nw">Nov–Dec 2026</span><!-- REVIEW 2026-12-31: opening window --></dd></div>
+          <div><dt>Still to open</dt><dd><span>La Domenica</span><span class="vh">; </span><span>ONO Cartagena, <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --></dd></div>
         </dl>
       </div>
     </div>
@@ -107,15 +110,14 @@
         <p class="label">Directory</p>
         <h2 class="h2" id="h-dir">Every house, every door.</h2>
       </div>
-      <!-- OWNER: ONO Bogotá street address and website (not provided; do not invent) -->
       <ol class="dir-list">
         <li class="to-ono">
           <span class="no">01</span>
           <a class="dir-nm" href="#ono">ONO Hosomaki Bar</a>
-          <span class="dir-pl">Bogotá · <mark class="todo">[Address: pending from owner]</mark></span>
+          <span class="dir-pl">Calle 84A <span class="nw">#9-11</span>, Bogotá</span>
           <span class="dir-wh">Japanese-inspired hosomaki bar and night club</span>
-          <span class="st st-open">Open</span>
-          <span class="dir-lk"><a href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a></span>
+          <span class="st st-open">Open since <span class="nw">Nov 2025</span></span>
+          <span class="dir-lk"><a href="https://onoculto.com/">onoculto.com</a><span class="vh"> · </span><a href="https://www.instagram.com/ono.culto/">@ono.culto</a><span class="vh"> · </span><a href="https://restaurante.covermanager.com/ono/">Book online</a></span>
         </li>
         <li class="to-cs">
           <span class="no">02</span>
@@ -123,15 +125,15 @@
           <span class="dir-pl">Calle Santa Teresa <span class="nw">#32-41</span>, Old City, Cartagena</span>
           <span class="dir-wh">A colonial house with four worlds under one roof</span>
           <span class="st st-open">Open since <span class="nw">25 Sep 2026</span></span>
-          <span class="dir-lk"><a href="https://www.casa-salvaje.com/">casa-salvaje.com</a><span class="vh"> · </span><a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a><span class="vh"> · </span><a href="https://wa.me/573108286602">WhatsApp <span class="nw">+57 310 828 6602</span></a></span>
+          <span class="dir-lk"><a href="https://www.casa-salvaje.com/">casa-salvaje.com</a><span class="vh"> · </span><a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a><span class="vh"> · </span><a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a></span>
           <ol class="sub">
             <li>
               <span class="no">02.1</span>
               <a class="dir-nm" href="#la-domenica">La Domenica</a>
               <span class="dir-pl">Casa Salvaje</span>
               <span class="dir-wh">Caffè, pizza and aperitivo</span>
-              <span><mark class="todo">[Status: pending from owner]</mark><!-- OWNER: La Domenica's status (casa-salvaje.com does not list it as open; the facts say Casa Salvaje opened with four worlds) --></span>
-              <span class="dir-lk"><a href="https://www.casa-salvaje.com/domenica.html"><span class="nw">casa-salvaje.com</span>/<wbr>domenica</a></span>
+              <span class="st st-opening">Opening, <span class="nw">date TBC</span></span><!-- OWNER: La Domenica's opening date, once known (also the door plate, the hero and press "Still to open" facts, the Casa Salvaje lead and the boilerplate) -->
+              <span class="dir-lk"><a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/domenica.html"><span class="nw">casa-salvaje.com</span>/<wbr>domenica</a></span>
             </li>
             <li>
               <span class="no">02.2</span>
@@ -139,7 +141,7 @@
               <span class="dir-pl">Casa Salvaje</span>
               <span class="dir-wh">Tropical restaurant and bar, built around fire</span>
               <span class="st st-open">Open</span>
-              <span class="dir-lk"><a href="https://www.casa-salvaje.com/kanibal.html"><span class="nw">casa-salvaje.com</span>/<wbr>kanibal</a></span>
+              <span class="dir-lk"><a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/kanibal.html"><span class="nw">casa-salvaje.com</span>/<wbr>kanibal</a></span>
             </li>
             <li>
               <span class="no">02.3</span>
@@ -160,7 +162,7 @@
           </ol>
         </li>
       </ol>
-      <p class="dir-note">Booking a table? Casa Salvaje takes reservations by WhatsApp on <a href="https://wa.me/573108286602"><span class="nw">+57 310 828 6602</span></a>. Restaurants book through CoverManager and nights through Fourvenues, both at <a href="https://www.casa-salvaje.com/">casa-salvaje.com</a>. For ONO Bogotá, message <a href="https://www.instagram.com/ono.culto/">@ono.culto</a> on Instagram.</p>
+      <p class="dir-note">Booking a table? Casa Salvaje takes reservations by WhatsApp on <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table"><span class="nw">+57 310 828 6602</span></a>. Its restaurants also book through <a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/">CoverManager</a> and its nights through <a href="https://site.fourvenues.com/en/casa-salvaje">Fourvenues</a>. For ONO Bogotá, <a href="https://restaurante.covermanager.com/ono/">book online</a> or message <a href="https://www.instagram.com/ono.culto/">@ono.culto</a> on Instagram.</p>
     </div>
   </section>
 
@@ -176,12 +178,12 @@
         <p class="label kick">I · ONO · Hosomaki bar &amp; night club</p>
         <img class="ono-logo" src="/img/d/logo-ono-bone-192.png" width="96" height="96" alt="ONO Hosomaki Bar" loading="lazy" decoding="async">
         <h2 id="h-ono"><span class="vh">ONO Hosomaki Bar, Bogotá: </span>Where rituals meet desire.</h2>
-        <p class="lead">Where the group began: a Japanese-inspired hosomaki bar and night club in Bogotá. Hosomaki and cocktails, red light, and the Oni mask after dark.</p>
+        <p class="lead">Where the group began: a Japanese-inspired hosomaki bar and night club in Bogotá. Hosomaki and cocktails, red light, and the Oni mask after dark. Tokyo spirit, Bogotá soul.</p>
         <dl class="ledger">
-          <div><dt>Bogotá</dt><dd><span class="st st-open">Open</span><span class="vh"> · </span><span>ONO Hosomaki Bar</span><span class="vh"> · </span><span class="sm"><mark class="todo">[Address: pending from owner]</mark><!-- OWNER: ONO Bogotá street address (not provided; do not invent) --> · <a href="https://www.instagram.com/ono.culto/">@ono.culto</a></span></dd></div>
+          <div><dt>Bogotá</dt><dd><span class="st st-open">Open since <span class="nw">Nov 2025</span></span><span class="vh"> · </span><span>ONO Hosomaki Bar</span><span class="vh"> · </span><span class="sm">Calle 84A <span class="nw">#9-11</span></span><span class="vh"> · </span><span class="sm"><span class="nw">Tue–Sat</span> · <span class="nw">7 pm – 3 am</span> · 25+<span class="vh"> (guests 25 and over)</span></span><span class="vh"> · </span><span class="sm"><a href="https://onoculto.com/">onoculto.com</a>&nbsp;· <a href="https://www.instagram.com/ono.culto/">@ono.culto</a></span></dd></div>
           <div><dt>Cartagena</dt><dd><span class="st st-opening">Opening <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --><span class="vh"> · </span><span>Inside Casa Salvaje, Old City</span><span class="vh"> · </span><span class="sm"><a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></span></dd></div>
         </dl>
-        <p class="ctas"><a class="btn solid" href="https://www.instagram.com/ono.culto/">ONO Bogotá · @ono.culto</a><a class="btn" href="https://www.casa-salvaje.com/ono.html"><span>ONO Cartagena · <span class="nw">Nov–Dec 2026</span></span></a><!-- REVIEW 2026-12-31: opening window --></p>
+        <p class="ctas"><a class="btn solid" href="https://restaurante.covermanager.com/ono/">Book ONO Bogotá</a><a class="btn" href="https://www.casa-salvaje.com/ono.html"><span>ONO Cartagena · <span class="nw">Nov–Dec 2026</span></span></a><!-- REVIEW 2026-12-31: opening window --><a class="tl" href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a></p>
       </div>
       <div class="campaign g12">
         <h3 class="label">The ONO Cartagena campaign · 2026</h3>
@@ -193,6 +195,7 @@
         <div class="camp-note">
           <p>ONO Cartagena opens inside Casa Salvaje in <span class="nw">November–December 2026</span>.<!-- REVIEW 2026-12-31: opening window --></p>
           <p>We're staffing the opening. <a class="tl" href="/careers.html">Careers <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></p>
+          <p><a class="tl" href="https://www.casa-salvaje.com/fondos.html#mundo-ono">All artworks</a></p>
         </div>
       </div>
     </div>
@@ -204,13 +207,13 @@
         <picture><source type="image/webp" srcset="/img/d/logo-salvaje-240.webp"><img class="cs-logo" src="/img/d/logo-salvaje-240.png" width="240" height="312" alt="Casa Salvaje" loading="lazy" decoding="async"></picture>
         <p class="label kick">II · Casa Salvaje · Old City, Cartagena</p>
         <h2 class="cs-h" id="h-cs"><span class="vh">Casa Salvaje, Cartagena: </span>Heaven has a guest list.</h2>
-        <p class="lead">A colonial house at Calle Santa Teresa <span class="nw">#32-41</span>, in Cartagena's Old City, open since <span class="nw">25 September 2026</span>. Four worlds share one roof: La Domenica for caffè, pizza and aperitivo; Kanibal, a tropical restaurant and bar built around fire; SLVJ, restaurant, bar and club; and ONO Cartagena, opening <span class="nw">November–December 2026</span>. You come in through one door; what happens inside depends on which world calls you.<!-- REVIEW 2026-12-31: opening window --></p>
+        <p class="lead">A colonial house at Calle Santa Teresa <span class="nw">#32-41</span>, in Cartagena's Old City, open since <span class="nw">25 September 2026</span>. Four worlds share one roof: Kanibal, a tropical restaurant and bar built around fire, and SLVJ, restaurant, bar and club, both open; La Domenica, for caffè, pizza and aperitivo, opening on a date to be confirmed; and ONO Cartagena, opening <span class="nw">November–December 2026</span>. You come in through one door; what happens inside depends on which world calls you.<!-- REVIEW 2026-12-31: opening window --></p>
         <dl class="ledger">
           <div><dt>Address</dt><dd>Calle Santa Teresa <span class="nw">#32-41</span>, Old City</dd></div>
           <div><dt>Open since</dt><dd><span class="nw">25 Sep 2026</span></dd></div>
-          <div><dt>Reservations</dt><dd><a href="https://wa.me/573108286602">WhatsApp <span class="nw">+57 310 828 6602</span></a><span class="sm">Restaurants via CoverManager, nights via Fourvenues, at casa-salvaje.com</span></dd></div>
+          <div><dt>Reservations</dt><dd><a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a><span class="sm">Restaurants via <a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/">CoverManager</a>, nights via <a href="https://site.fourvenues.com/en/casa-salvaje">Fourvenues</a></span></dd></div>
         </dl>
-        <p class="ctas"><a class="btn solid" href="https://www.casa-salvaje.com/">casa-salvaje.com</a><a class="btn" href="https://wa.me/573108286602">Reserve on WhatsApp</a><a class="tl" href="https://www.instagram.com/casasalvaje.ctg/">Instagram @casasalvaje.ctg</a></p>
+        <p class="ctas"><a class="btn solid" href="https://www.casa-salvaje.com/">casa-salvaje.com</a><a class="btn" href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">Reserve on WhatsApp</a><a class="tl" href="https://www.instagram.com/casasalvaje.ctg/">Instagram @casasalvaje.ctg</a></p>
       </div>
       <figure class="arch-fig">
         <div class="arch"><picture><source type="image/avif" srcset="/img/d/arch-720.avif 720w, /img/d/arch-1200.avif 1200w, /img/d/arch-1536.avif 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)"><source type="image/webp" srcset="/img/d/arch-720.webp 720w, /img/d/arch-1200.webp 1200w, /img/d/arch-1536.webp 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)"><img src="/img/d/arch-1536.jpg" srcset="/img/d/arch-720.jpg 720w, /img/d/arch-1200.jpg 1200w, /img/d/arch-1536.jpg 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)" width="1536" height="1024" alt="The SLVJ dining room at Casa Salvaje at night: woven pendant lamps, red neon light and a full room." loading="lazy" decoding="async"></picture></div>
@@ -227,17 +230,17 @@
         <li id="la-domenica" class="d-dom"><a class="door" href="https://www.casa-salvaje.com/domenica.html" aria-labelledby="dn-dom dp-dom">
           <div class="lun"><h4 id="dn-dom">La Domenica</h4></div>
           <picture class="fit"><source type="image/avif" srcset="/img/d/door-dom-400.avif 400w, /img/d/door-dom-640.avif 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-dom-400.webp 400w, /img/d/door-dom-640.webp 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-dom-640.jpg" srcset="/img/d/door-dom-400.jpg 400w, /img/d/door-dom-640.jpg 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="640" height="640" alt="Poster: a black greyhound standing in red water. Text: &quot;Endless Sunday. La Domenica. Caffè · Pizza · Aperitivo. Cartagena.&quot;" loading="lazy" decoding="async"></picture>
-          <div class="plate" id="dp-dom"><span class="desc">Caffè&nbsp;· Pizza&nbsp;· Aperitivo</span><span><mark class="todo">[Status: pending from owner]</mark></span></div>
-        </a><!-- OWNER: La Domenica's status --></li>
+          <div class="plate" id="dp-dom"><span class="desc">Caffè&nbsp;· Pizza&nbsp;· Aperitivo</span><span class="st st-opening">Opening</span></div>
+        </a></li>
         <li id="kanibal" class="d-kan"><a class="door" href="https://www.casa-salvaje.com/kanibal.html" aria-labelledby="dn-kan dp-kan">
           <div class="lun"><h4 id="dn-kan">Kanibal</h4></div>
           <picture><source type="image/avif" srcset="/img/d/door-kan-400.avif 400w, /img/d/door-kan-640.avif 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-kan2-400.webp 400w, /img/d/door-kan2-640.webp 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-kan-640.jpg" srcset="/img/d/door-kan-400.jpg 400w, /img/d/door-kan-640.jpg 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="640" height="853" alt="A grilled steak sliced to show a rare centre, with the Kanibal wordmark and symbols." loading="lazy" decoding="async"></picture>
-          <div class="plate" id="dp-kan"><span class="desc">Tropical&nbsp;· Fire</span><span class="st st-open">Open</span></div>
+          <div class="plate" id="dp-kan"><span class="desc">Fire&nbsp;· Instinct</span><span class="st st-open">Open</span></div>
         </a></li>
         <li id="slvj" class="d-slvj"><a class="door" href="https://www.casa-salvaje.com/slvj.html" aria-labelledby="dn-slvj dp-slvj">
           <div class="lun"><h4 id="dn-slvj">SLVJ</h4></div>
           <picture><source type="image/avif" srcset="/img/d/door-slvj-400.avif 400w, /img/d/door-slvj-500.avif 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-slvj-400.webp 400w, /img/d/door-slvj-500.webp 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-slvj-500.jpg" srcset="/img/d/door-slvj-400.jpg 400w, /img/d/door-slvj-500.jpg 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="500" height="666" alt="The SLVJ neon sign over the back bar, with pendant lamps and guests at dinner." loading="lazy" decoding="async"></picture>
-          <div class="plate" id="dp-slvj"><span class="desc">Restaurant&nbsp;· Bar&nbsp;· Club</span><span class="st st-open">Open</span></div>
+          <div class="plate" id="dp-slvj"><span class="desc">Feast&nbsp;· Club</span><span class="st st-open">Open</span></div>
         </a></li>
         <li id="ono-cartagena" class="d-onoc"><a class="door" href="https://www.casa-salvaje.com/ono.html" aria-labelledby="dn-onoc dp-onoc">
           <div class="lun"><h4 id="dn-onoc">ONO Cartagena</h4></div>
@@ -261,7 +264,7 @@
     <div class="wrap g12">
       <div class="about-main">
         <p class="label">About</p>
-        <h2 class="h2" id="h-about">We started with a hosomaki bar in Bogotá. Then came a whole house in Cartagena.</h2>
+        <h2 class="h2" id="h-about">We started in 2025 with a hosomaki bar in Bogotá. In 2026 came a whole house in Cartagena.</h2>
         <p class="lead">Always the same idea: that the kitchen, the bar, the music and the service tell one story. Grupo ONO makes places with character. Each brand has its own kitchen, look and rhythm, and behind all of them is one team obsessed with produce and with a night done right.</p>
         <ol class="values">
           <li><span class="num" aria-hidden="true">I</span><p><strong>Produce</strong>What reaches the plate and the glass starts with what we buy.</p></li>
@@ -290,22 +293,23 @@
       </div>
       <div class="g12">
         <div class="boiler">
-          <h3 class="label">About Grupo ONO · 59 words</h3>
-          <blockquote><p>Grupo ONO is a hospitality group founded by Jaime Lora and Dilan Carrillo. It began in Bogotá with ONO Hosomaki Bar, a Japanese-inspired hosomaki bar and night club. On <span class="nw">25 September 2026</span> it opened Casa Salvaje in Cartagena's Old City, a colonial house with four worlds under one roof: La Domenica, Kanibal, SLVJ and ONO Cartagena, opening <span class="nw">November–December 2026</span>.</p></blockquote><!-- REVIEW 2026-12-31: opening window -->
+          <h3 class="label">About Grupo ONO · 72 words</h3>
+          <blockquote><p>Grupo ONO is a hospitality group founded by Jaime Lora and Dilan Carrillo. It began in Bogotá in <span class="nw">November 2025</span> with ONO Hosomaki Bar, a Japanese-inspired hosomaki bar and night club. On <span class="nw">25 September 2026</span> it opened Casa Salvaje in Cartagena's Old City, a colonial house with four worlds under one roof: Kanibal and SLVJ, both open; La Domenica, opening on a date to be confirmed; and ONO Cartagena, opening <span class="nw">November–December 2026</span>.</p></blockquote><!-- REVIEW 2026-12-31: opening window -->
         </div>
         <dl class="ledger ledger--sm">
           <div><dt>Founded by</dt><dd>Jaime Lora, Dilan Carrillo</dd></div>
           <div><dt>Cities</dt><dd>Bogotá, Cartagena</dd></div>
+          <div><dt>ONO Hosomaki Bar</dt><dd>Calle 84A <span class="nw">#9-11</span>, Bogotá · opened <span class="nw">Nov 2025</span> · <a href="https://onoculto.com/">onoculto.com</a></dd></div>
           <div><dt>Casa Salvaje</dt><dd>Calle Santa Teresa <span class="nw">#32-41</span>, Old City · opened <span class="nw">25 Sep 2026</span> · <a href="https://www.casa-salvaje.com/">casa-salvaje.com</a></dd></div>
-          <div><dt>Next opening</dt><dd>ONO Cartagena, <span class="nw">Nov–Dec 2026</span><!-- REVIEW 2026-12-31: opening window --></dd></div>
-          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ono.culto/">@ono.culto</a> · <a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a> · <a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a> · <a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></dd></div>
+          <div><dt>Still to open</dt><dd><span>La Domenica, date to be&nbsp;confirmed</span><span class="vh">; </span><span>ONO Cartagena, <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/grupo.ono/">@grupo.ono</a>&nbsp;· <a href="https://www.instagram.com/ono.culto/">@ono.culto</a>&nbsp;· <a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a>&nbsp;· <a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a>&nbsp;· <a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a>&nbsp;· <a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a>&nbsp;· <a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></dd></div>
+          <div><dt>ONO in the press</dt><dd><span>AXXIS, <a href="https://revistaaxxis.com.co/revistaaxxis/diseno-ono-hosomaki-bar-bogota/"><span lang="es">“Ono Hosomaki Bar: un viaje sensorial de cocina, cócteles y vida nocturna”</span></a>, <span class="nw">19 Feb 2026</span></span><span class="vh"> · </span><span>Also featured in: Marie Claire · Revista Diners</span></dd></div>
           <div><dt>Casa Salvaje launch press</dt><dd>ACPR Global</dd></div>
-          <div><dt>Interviews and features</dt><dd><a class="tl" href="/contact.html?reason=press">Write to us <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></dd></div>
+          <div><dt>Interviews and features</dt><dd><span><a class="tl" href="mailto:jaimeloralondono@gmail.com?subject=Press%20enquiry">jaimeloralondono@<wbr>gmail.com</a></span><span class="vh"> or </span><a class="tl" href="/contact.html?reason=press">Write to us <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></dd></div>
         </dl>
       </div>
-      <!-- OWNER: slvj-salon and kanibal-salon join the press kit once their image releases are confirmed (brief §6.4) -->
       <table class="kit">
-        <caption>Web resolution; high-res on request.</caption>
+        <caption>Web resolution; high-res on request. Images: courtesy of Grupo&nbsp;ONO.</caption>
         <thead><tr><th scope="col">File</th><th scope="col">What</th><th scope="col">Format</th><th scope="col">Pixels</th><th scope="col">Size</th><th scope="col">Download</th></tr></thead>
         <tbody>
       <tr><td>logo-grupo-ono.svg</td><td>Grupo ONO logo, outlined</td><td>SVG</td><td>vector</td><td>6.0&nbsp;KB</td><td><a href="/img/logo-grupo-ono.svg" download>Download<span class="vh"> logo-grupo-ono.svg</span></a></td></tr>
@@ -313,6 +317,8 @@
       <tr><td>logo-ono.png</td><td>ONO Hosomaki Bar logo</td><td>PNG</td><td>200×200</td><td>13&nbsp;KB</td><td><a href="/img/logo-ono.png" download>Download<span class="vh"> logo-ono.png</span></a></td></tr>
       <tr><td>logo-salvaje-oro.png</td><td>Casa Salvaje logo, gold</td><td>PNG</td><td>500×650</td><td>69&nbsp;KB</td><td><a href="/img/logo-salvaje-oro.png" download>Download<span class="vh"> logo-salvaje-oro.png</span></a></td></tr>
       <tr><td>puerta.jpg</td><td>Casa Salvaje's door, Calle Santa Teresa</td><td>JPG</td><td>800×1000</td><td>149&nbsp;KB</td><td><a href="/img/puerta.jpg" download>Download<span class="vh"> puerta.jpg</span></a></td></tr>
+      <tr><td>slvj-salon.jpg</td><td>The SLVJ dining room at night</td><td>JPG</td><td>1536×1024</td><td>241&nbsp;KB</td><td><a href="/img/slvj-salon.jpg" download>Download<span class="vh"> slvj-salon.jpg</span></a></td></tr>
+      <tr><td>kanibal-salon.jpg</td><td>The Kanibal dining room, full</td><td>JPG</td><td>1000×666</td><td>111&nbsp;KB</td><td><a href="/img/kanibal-salon.jpg" download>Download<span class="vh"> kanibal-salon.jpg</span></a></td></tr>
       <tr><td>camp-ono-rojo.jpg</td><td>ONO Cartagena campaign: red Oni mask</td><td>JPG</td><td>800×1000</td><td>134&nbsp;KB</td><td><a href="/img/camp-ono-rojo.jpg" download>Download<span class="vh"> camp-ono-rojo.jpg</span></a></td></tr>
       <tr><td>ono-anatomia-oni-tuna.jpg</td><td>Anatomy of a roll · ONO</td><td>JPG</td><td>560×700</td><td>54&nbsp;KB</td><td><a href="/img/art/ono-anatomia-oni-tuna.jpg" download>Download<span class="vh"> ono-anatomia-oni-tuna.jpg</span></a></td></tr>
       <tr><td>ono-oni-green-oni.jpg</td><td>ONO Cartagena campaign: Unmask your Oni</td><td>JPG</td><td>560×700</td><td>82&nbsp;KB</td><td><a href="/img/art/ono-oni-green-oni.jpg" download>Download<span class="vh"> ono-oni-green-oni.jpg</span></a></td></tr>
@@ -333,12 +339,12 @@
         <p class="label">Doors</p>
         <h2 class="h2" id="h-work">Work with us.</h2>
       </div>
-      <p class="guest">Booking a table? Book with the house: Casa Salvaje on <a href="https://wa.me/573108286602">WhatsApp <span class="nw">+57 310 828 6602</span></a>, ONO Bogotá on <a href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a>.</p>
+      <p class="guest">Booking a table? Book with the house: Casa Salvaje on <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a>, ONO Bogotá <a href="https://restaurante.covermanager.com/ono/">online</a> or on <a href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a>.</p>
       <ul class="doors-type">
         <li>
           <p class="label">Careers</p>
           <h3>People make the night.</h3>
-          <p>Kitchen, bar, floor, hosts, office, events and marketing, in Bogotá and Cartagena. Hiring ahead of the ONO Cartagena opening.</p>
+          <p>Kitchen, bar, floor, hosts, office, events and marketing, in Bogotá and Cartagena. We're always hiring, and now also for the ONO Cartagena opening.</p>
           <a class="tl" href="/careers.html">Send your CV <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
         </li>
         <li>
@@ -376,9 +382,10 @@
       <div>
         <p class="foot-h" id="f-bog">Bogotá</p>
         <ul aria-labelledby="f-bog">
-          <li><a href="https://www.instagram.com/ono.culto/">ONO Hosomaki Bar</a></li>
+          <li><a href="https://onoculto.com/">ONO Hosomaki Bar</a></li>
           <li>Hosomaki bar and night club</li>
-          <!-- OWNER: ONO Bogotá street address (not provided; do not invent) -->
+          <li>Calle 84A <span class="nw">#9-11</span></li>
+          <li><a href="https://restaurante.covermanager.com/ono/">Book ONO Bogotá</a></li>
         </ul>
       </div>
       <div>
@@ -386,15 +393,18 @@
         <ul aria-labelledby="f-ctg">
           <li><a href="https://www.casa-salvaje.com/">Casa Salvaje</a></li>
           <li>Calle Santa Teresa <span class="nw">#32-41</span>, Old City</li>
-          <li>Reservations: <a href="https://wa.me/573108286602">WhatsApp <span class="nw">+57 310 828 6602</span></a></li>
+          <li>Reservations: <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a></li>
           <li><a href="https://www.casa-salvaje.com/ono.html">ONO Cartagena, <span class="nw">Nov–Dec 2026</span></a><!-- REVIEW 2026-12-31: opening window --></li>
         </ul>
       </div>
       <div>
         <p class="foot-h" id="f-follow">Follow</p>
         <ul aria-labelledby="f-follow">
+          <li><a href="https://www.instagram.com/grupo.ono/">@grupo.ono</a></li>
           <li><a href="https://www.instagram.com/ono.culto/">@ono.culto</a></li>
           <li><a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a></li>
+          <li><a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a></li>
+          <li><a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a></li>
           <li><a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a></li>
           <li><a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></li>
         </ul>

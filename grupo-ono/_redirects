@@ -1,9 +1,13 @@
 /thanks  /thanks.html  200
 
+# Press-kit links shared from the earlier version of the site (/press/…) land on the press row.
+/press/*  /contact.html#press  301
+
 # Internal files ship with the site (publish = "."), so answer them with the 404 page.
 # The "!" forces the rule; without it Netlify serves any file that exists at the path.
 /tools/*    /404.html  404!
 /README.md  /404.html  404!
 
-# At launch (see README): set the primary domain in Netlify, then uncomment and fill in:
-# https://<site>.netlify.app/*  https://www.<domain>/:splat  301!
+# At launch (see README §2): uncomment this only once grupo-ono.com is attached in Netlify
+# as the primary domain. Replace <site> with the Netlify site name.
+# https://<site>.netlify.app/*  https://grupo-ono.com/:splat  301!
