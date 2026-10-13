@@ -4,6 +4,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { FICHA } from "../lib/ficha.mjs";
 import { PLAN_REGLAS, limpiarPlan, pedidoPlan } from "../lib/plan.mjs";
+import { agendaDeLaWeb } from "../lib/agenda.mjs";
 
 const texto = (t, status) => new Response(t, { status, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" } });
 
@@ -22,14 +23,15 @@ export default async (req) => {
   const sel = limpiarPlan(cuerpo?.plan);
   if (!sel) return texto("Falta el plan", 400);
 
+  const agenda = await agendaDeLaWeb(process.env.URL || new URL(req.url).origin);
   const client = new Anthropic();
   const stream = client.beta.messages.stream({
     model: "claude-opus-5-5",
-    max_tokens: 8000,
+    max_tokens: 16000,
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
-    output_config: { effort: "low" },
-    system: [{ type: "text", text: FICHA + PLAN_REGLAS, cache_control: { type: "ephemeral" } }],
+    output_config: { effort: "medium" },
+    system: [{ type: "text", text: FICHA + PLAN_REGLAS, cache_control: { type: "ephemeral" } }, ...(agenda ? [{ type: "text", text: agenda }] : [])],
     messages: [{ role: "user", content: pedidoPlan(sel, hoyCartagena()) }],
   });
 

@@ -3,6 +3,7 @@
 // Necesita ANTHROPIC_API_KEY en las variables de entorno de Netlify; sin ella responde 503 y la página ofrece WhatsApp.
 import Anthropic from "@anthropic-ai/sdk";
 import { FICHA_WEB } from "../lib/ficha.mjs";
+import { agendaDeLaWeb } from "../lib/agenda.mjs";
 
 const MAX_TURNOS = 20, MAX_LARGO = 1500;
 
@@ -27,14 +28,15 @@ export default async (req) => {
   const ultimo = limpios[limpios.length - 1];
   ultimo.content = `[Ahora en Cartagena: ${ahoraCartagena()}]\n${ultimo.content}`;
 
+  const agenda = await agendaDeLaWeb(process.env.URL || new URL(req.url).origin);
   const client = new Anthropic();
   const stream = client.beta.messages.stream({
     model: "claude-opus-5-5",
-    max_tokens: 4000,
+    max_tokens: 12000,
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
-    output_config: { effort: "low" },
-    system: [{ type: "text", text: FICHA_WEB, cache_control: { type: "ephemeral" } }],
+    output_config: { effort: "medium" },   // piensa antes de responder; "low" era más rápido pero más plano
+    system: [{ type: "text", text: FICHA_WEB, cache_control: { type: "ephemeral" } }, ...(agenda ? [{ type: "text", text: agenda }] : [])],
     messages: limpios,
   });
 

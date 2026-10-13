@@ -12,6 +12,7 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import Anthropic from "@anthropic-ai/sdk";
 import { FICHA_WHATSAPP } from "../lib/ficha.mjs";
+import { agendaDeLaWeb } from "../lib/agenda.mjs";
 
 const HORAS_SILENCIO = 6;   // si alguien del equipo escribió desde la app en estas horas, el bot no se mete
 const ETIQUETA = { name: "origen", value: "concierge-bot" };
@@ -79,14 +80,15 @@ export default async (req) => {
   const nombre = huesped.display_name ? ` El huésped se llama ${huesped.display_name} en WhatsApp.` : "";
   turnos[turnos.length - 1] = { role: "user", content: `[Ahora en Cartagena: ${ahoraCartagena()}.${nombre}]\n${turnos[turnos.length - 1].content}` };
 
+  const agenda = await agendaDeLaWeb(process.env.URL || "https://www.casa-salvaje.com");
   const client = new Anthropic();
   const resp = await client.beta.messages.create({
     model: "claude-opus-5-5",
-    max_tokens: 4000,
+    max_tokens: 12000,
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
-    output_config: { effort: "low" },
-    system: [{ type: "text", text: FICHA_WHATSAPP, cache_control: { type: "ephemeral" } }],
+    output_config: { effort: "high" },   // en WhatsApp nadie espera en pantalla: que piense a fondo
+    system: [{ type: "text", text: FICHA_WHATSAPP, cache_control: { type: "ephemeral" } }, ...(agenda ? [{ type: "text", text: agenda }] : [])],
     messages: turnos,
   });
   if (resp.stop_reason === "refusal") return;   // que lo atienda una persona
