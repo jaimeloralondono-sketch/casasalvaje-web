@@ -20,38 +20,43 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
 <link rel="stylesheet" href="site.css">
 <style>.brandsec h1.h2{font-size:clamp(1.8rem,4.6vw,3rem);line-height:1.05}</style>
 </head>
-<body class="themed t-domenica">
+<body class="themed t-domenica" data-musica="76tbLKDtkmBI7TKAKvq69o 2Z1xo4UHXeZO3rb2n2DRaY">
 <header class="nav">
   <div class="wrap">
     <a class="bmark" href="domenica.html"><span class="script">La Domenica</span></a><a class="house" href="index.html">Casa Salvaje</a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html" aria-current="page">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Hintergründe</span></a>
+      <a href="blog/">Blog</a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista</span><span class="fr">Liste</span><span class="it">Lista</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Firmen</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html" aria-current="page">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="blog/">Blog</a>
   </div></nav>
 </header>
 
@@ -64,17 +69,17 @@
       <div class="head">
         <div>
           <div class="lg"><span class="script">La Domenica</span></div>
-          <span class="soon"><span class="es">Próximamente en la casa</span><span class="en">Coming soon to the house</span></span>
+          <span class="soon"><span class="es">Próximamente en la casa</span><span class="en">Coming soon to the house</span><span class="pt">Em breve na casa</span><span class="fr">Bientôt dans la maison</span><span class="it">Presto nella casa</span><span class="de">Bald im Haus</span></span>
           <div class="eyebrow">Caffè · Pizza · Aperitivo</div>
-          <h1 class="h2" style="margin-top:10px"><span class="es">Domingo, todos los días.</span><span class="en">Endless Sunday.</span></h1>
+          <h1 class="h2" style="margin-top:10px"><span class="es">Domingo, todos los días.</span><span class="en">Endless Sunday.</span><span class="pt">Domingo, todos os dias.</span><span class="fr">Dimanche, tous les jours.</span><span class="it">Domenica, tutti i giorni.</span><span class="de">Sonntag, jeden Tag.</span></h1>
           <div class="meta">
-            <span><b><span class="es">Mañana y tarde</span><span class="en">Morning &amp; afternoon</span></b> · <span class="es">horario por confirmar</span><span class="en">hours to be confirmed</span></span>
+            <span><b><span class="es">Mañana y tarde</span><span class="en">Morning &amp; afternoon</span><span class="pt">Manhã e tarde</span><span class="fr">Matin et après-midi</span><span class="it">Mattina e pomeriggio</span><span class="de">Vormittag &amp; Nachmittag</span></b> · <span class="es">horario por confirmar</span><span class="en">hours to be confirmed</span><span class="pt">horário a confirmar</span><span class="fr">horaires à confirmer</span><span class="it">orari da confermare</span><span class="de">Öffnungszeiten folgen</span></span>
           </div>
         </div>
         <div>
           <p class="lead es">Café al despertar, pizza para un almuerzo muy largo y aperitivo cuando cae la tarde. Salón terracota, cestas en la pared, mesas de latón y ningún plan: eso es La Domenica.</p>
-          <p class="lead en">Coffee when you wake, pizza for a very long lunch and aperitivo as the afternoon fades. A terracotta room, baskets on the wall, brass tables and no plans at all: that's La Domenica.</p>
-          <div class="cta"><a class="btn solid wa" data-evento="La Domenica" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span></a></div>
+          <p class="lead en">Coffee when you wake, pizza for a very long lunch and aperitivo as the afternoon fades. A terracotta room, baskets on the wall, brass tables and no plans at all: that's La Domenica.</p><p class="lead pt">Café ao acordar, pizza para um almoço bem longo e aperitivo quando a tarde cai. Salão terracota, cestos na parede, mesas de latão e nenhum plano: isso é La Domenica.</p><p class="lead fr">Un café au réveil, une pizza pour un très long déjeuner et l'aperitivo quand l'après-midi s'étire. Une salle terracotta, des paniers aux murs, des tables en laiton et aucun programme : voilà La Domenica.</p><p class="lead it">Caffè appena svegli, pizza per un pranzo lunghissimo e aperitivo quando il pomeriggio scivola via. Una sala color terracotta, cesti alle pareti, tavolini in ottone e nessun programma: questa è La Domenica.</p><p class="lead de">Kaffee zum Aufwachen, Pizza für ein sehr langes Mittagessen und Aperitivo, wenn der Nachmittag ausklingt. Ein terrakottafarbener Raum, Körbe an der Wand, Messingtische und kein einziger Plan: Das ist La Domenica.</p>
+          <div class="cta"><a class="btn solid wa" data-evento="La Domenica" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span><span class="pt">Reservar mesa</span><span class="fr">Réserver une table</span><span class="it">Prenota un tavolo</span><span class="de">Tisch reservieren</span></a></div>
         </div>
       </div>
       <div class="feat">
@@ -94,15 +99,132 @@
     </div>
   </section>
 
+  <section id="blog" class="delblog">
+    <div class="wrap">
+      <div class="eyebrow">Blog</div>
+      <h2><span class="es">Notas desde la casa</span><span class="en">Notes from the house</span><span class="pt">Notas da casa</span><span class="fr">Notes de la maison</span><span class="it">Note dalla casa</span><span class="de">Notizen aus dem Haus</span></h2>
+      <div class="posts">
+      <a class="post-card es" href="blog/aperitivo-italiano-cartagena-la-domenica.html" lang="es">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo en La Domenica frente a un toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>El aperitivo a la italiana llega a Cartagena: así será La Domenica</h3>
+        <p>Un spritz, unas aceitunas y ninguna prisa. La costumbre italiana que pronto tendrá casa en Cartagena.</p>
+      </a>
+      <a class="post-card es" href="blog/plan-de-domingo-cartagena.html" lang="es">
+        <img src="img/dom-lunch.jpg" alt="Almuerzo largo en La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>Plan de domingo en Cartagena: café, almuerzo largo y tarde en el Centro</h3>
+        <p>El domingo en Cartagena pide calma: un buen café, una mesa larga y nada de prisa.</p>
+      </a>
+      <a class="post-card es" href="blog/cafes-centro-historico-cartagena.html" lang="es">
+        <img src="img/dom-cafe.jpg" alt="Una taza de café frente a un toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>Café de especialidad en Cartagena: Época, Ábaco y otros cafés del Centro Histórico</h3>
+        <p>El día en la ciudad amurallada empieza con un buen café. Estos son los que recomendamos antes de caminar el Centro.</p>
+      </a>
+      <a class="post-card en" href="blog/italian-aperitivo-cartagena-la-domenica.html" lang="en">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo at La Domenica in front of a toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>Italian aperitivo comes to Cartagena: meet La Domenica</h3>
+        <p>A spritz, some olives and no rush. The Italian habit that will soon have a home in Cartagena.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/italian-aperitivo-cartagena-la-domenica.html" lang="pt">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo em La Domenica diante de um toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>O aperitivo italiano chega a Cartagena: conheça La Domenica</h3>
+        <p>Um spritz, algumas azeitonas e nenhuma pressa. O costume italiano que logo terá casa em Cartagena.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/italian-aperitivo-cartagena-la-domenica.html" lang="fr">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo à La Domenica devant une toile de Jouy" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>L'aperitivo à l'italienne arrive à Cartagena : voici La Domenica</h3>
+        <p>Un spritz, quelques olives et aucune hâte. Le rituel italien qui aura bientôt sa maison à Cartagena.</p>
+      </a>
+      <a class="post-card it" href="blog/it/italian-aperitivo-cartagena-la-domenica.html" lang="it">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo a La Domenica davanti a una toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>L'aperitivo all'italiana arriva a Cartagena: ecco La Domenica</h3>
+        <p>Uno spritz, qualche oliva e nessuna fretta. L'abitudine italiana che presto avrà casa a Cartagena.</p>
+      </a>
+      <a class="post-card de" href="blog/de/italian-aperitivo-cartagena-la-domenica.html" lang="de">
+        <img src="img/dom-aperitivo.jpg" alt="Aperitivo in La Domenica vor einer Toile-Tapete" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Italienischer Aperitivo in Cartagena: Willkommen bei La Domenica</h3>
+        <p>Ein Spritz, ein paar Oliven und keine Eile. Die italienische Gewohnheit, die bald in Cartagena ein Zuhause hat.</p>
+      </a>
+      <a class="post-card en" href="blog/sunday-in-cartagena.html" lang="en">
+        <img src="img/dom-lunch.jpg" alt="A long lunch at La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>A Sunday in Cartagena: coffee, a long lunch and an afternoon in the Old City</h3>
+        <p>Sunday in Cartagena calls for calm: good coffee, a long table and no rush.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/sunday-in-cartagena.html" lang="pt">
+        <img src="img/dom-lunch.jpg" alt="Um almoço longo em La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Um domingo em Cartagena: café, almoço longo e uma tarde no Centro Histórico</h3>
+        <p>O domingo em Cartagena pede calma: um bom café, uma mesa longa e nenhuma pressa.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/sunday-in-cartagena.html" lang="fr">
+        <img src="img/dom-lunch.jpg" alt="Un long déjeuner à La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Un dimanche à Cartagena : café, long déjeuner et après-midi dans la vieille ville</h3>
+        <p>Le dimanche à Cartagena appelle au calme : un bon café, une longue table et aucune hâte.</p>
+      </a>
+      <a class="post-card it" href="blog/it/sunday-in-cartagena.html" lang="it">
+        <img src="img/dom-lunch.jpg" alt="Un pranzo lungo a La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Una domenica a Cartagena: caffè, pranzo lungo e un pomeriggio nel centro storico</h3>
+        <p>La domenica a Cartagena chiede calma: un buon caffè, una tavola lunga e nessuna fretta.</p>
+      </a>
+      <a class="post-card de" href="blog/de/sunday-in-cartagena.html" lang="de">
+        <img src="img/dom-lunch.jpg" alt="Ein langes Mittagessen in La Domenica" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Ein Sonntag in Cartagena: Kaffee, ein langes Mittagessen und ein Nachmittag in der Altstadt</h3>
+        <p>Der Sonntag in Cartagena verlangt nach Ruhe: guter Kaffee, eine lange Tafel und keine Eile.</p>
+      </a>
+      <a class="post-card en" href="blog/coffee-shops-cartagena-old-city.html" lang="en">
+        <img src="img/dom-cafe.jpg" alt="A cup of coffee in front of a toile print" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>Specialty coffee in Cartagena: Época, Ábaco and other Old City cafés</h3>
+        <p>A day in the walled city starts with good coffee. These are the cafés we recommend before you walk the Old City.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/coffee-shops-cartagena-old-city.html" lang="pt">
+        <img src="img/dom-cafe.jpg" alt="Uma xícara de café diante de uma estampa toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Cafés especiais em Cartagena: Época, Ábaco e outros cafés do Centro Histórico</h3>
+        <p>O dia na cidade murada começa com um bom café. Estes são os que recomendamos antes de explorar o Centro Histórico.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/coffee-shops-cartagena-old-city.html" lang="fr">
+        <img src="img/dom-cafe.jpg" alt="Une tasse de café devant une toile de Jouy" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Café de spécialité à Cartagena : Época, Ábaco et d'autres cafés de la vieille ville</h3>
+        <p>Une journée dans la ville fortifiée commence par un bon café. Voici ceux que nous recommandons avant de flâner dans la vieille ville.</p>
+      </a>
+      <a class="post-card it" href="blog/it/coffee-shops-cartagena-old-city.html" lang="it">
+        <img src="img/dom-cafe.jpg" alt="Una tazza di caffè davanti a una stampa toile" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Caffè specialty a Cartagena: Época, Ábaco e altri caffè del centro storico</h3>
+        <p>La giornata nella città murata comincia con un buon caffè. Ecco quelli che consigliamo prima di passeggiare per il centro storico.</p>
+      </a>
+      <a class="post-card de" href="blog/de/coffee-shops-cartagena-old-city.html" lang="de">
+        <img src="img/dom-cafe.jpg" alt="Eine Tasse Kaffee vor einem Toile-Muster" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Spezialitätenkaffee in Cartagena: Época, Ábaco und weitere Cafés der Altstadt</h3>
+        <p>Ein Tag in der ummauerten Stadt beginnt mit gutem Kaffee. Diese Cafés empfehlen wir, bevor Sie durch die Altstadt spazieren.</p>
+      </a>
+      </div>
+      <a class="btn ghost" href="blog/"><span class="es">Ver todo el blog</span><span class="en">See the whole blog</span><span class="pt">Ver o blog completo</span><span class="fr">Voir tout le blog</span><span class="it">Vedi tutto il blog</span><span class="de">Zum ganzen Blog</span></a>
+    </div>
+  </section>
   <section class="next">
     <div class="wrap">
-      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span></div>
+      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span><span class="pt">Os outros mundos da casa</span><span class="fr">Les autres mondes de la maison</span><span class="it">Gli altri mondi della casa</span><span class="de">Die anderen Welten des Hauses</span></div>
       <div class="doors" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span></span></div></a>
-        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span></span></div></a>
-        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
+        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span><span class="pt">Fogo · Instinto</span><span class="fr">Feu · Instinct</span><span class="it">Fuoco · Istinto</span><span class="de">Feuer · Instinkt</span></span></div></a>
+        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span><span class="pt">Banquete · Club</span><span class="fr">Festin · Club</span><span class="it">Banchetto · Club</span><span class="de">Festmahl · Club</span></span></div></a>
+        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
       </div>
-      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span></a></div>
+      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span><span class="pt">Voltar à Casa Salvaje</span><span class="fr">Retour à Casa Salvaje</span><span class="it">Torna a Casa Salvaje</span><span class="de">Zurück zu Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span><span class="pt">Entrar na lista</span><span class="fr">Rejoindre la liste</span><span class="it">Entra in lista</span><span class="de">Auf die Gästeliste</span></a><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span><span class="pt">Eventos para empresas</span><span class="fr">Événements d'entreprise</span><span class="it">Eventi aziendali</span><span class="de">Firmenevents</span></a></div>
     </div>
   </section>
 </main>
@@ -111,9 +233,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa de La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Privacidade</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 

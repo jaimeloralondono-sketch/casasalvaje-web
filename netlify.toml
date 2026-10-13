@@ -1,2 +1,8 @@
 [build]
   publish = "."
+
+# Tarjetas de miembro: funciones en netlify/functions, imágenes del pase de Apple en netlify/pase.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["netlify/pase/**"]

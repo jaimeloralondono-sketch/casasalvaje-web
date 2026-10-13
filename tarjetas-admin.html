@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tarjetas de miembro · Casa Salvaje</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+    </div>
+  </div>
+  <nav class="worlds" aria-label="Mundos"><div class="wrap">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+  </div></nav>
+</header>
+
+<main id="top">
+<section class="admin">
+    <div class="wrap">
+      <div class="eyebrow">Uso interno</div>
+      <h2 style="margin-top:14px;color:var(--cobalt)">Tarjetas de miembro</h2>
+      <p class="nota">Crea el enlace de la tarjeta y envíaselo al miembro por WhatsApp. Desde ese enlace la guarda en Apple Wallet o Google Wallet.</p>
+      <form id="crear" autocomplete="off">
+        <label class="full">Clave del panel<input type="password" name="clave" required></label>
+        <label>Nombre en la tarjeta<input name="nombre" maxlength="40" required></label>
+        <label>Número de miembro<input name="numero" maxlength="12" pattern="[A-Za-z0-9\-]{1,12}" required placeholder="0001"></label>
+        <label>Nivel<input name="nivel" maxlength="24" list="niveles" value="Miembro"></label>
+        <label>Miembro desde<input type="month" name="desde" required placeholder="2026-10"></label>
+        <label class="full">WhatsApp del miembro (opcional)<input type="tel" name="tel" placeholder="57 300 000 0000"></label>
+        <div class="full"><button class="btn solid" type="submit">Crear tarjeta</button></div>
+      </form>
+      <datalist id="niveles"><option value="Miembro"><option value="Fundador"><option value="Socio"></datalist>
+      <div class="resultado" id="resultado" hidden>
+        <p class="error" id="error" hidden></p>
+        <div id="listo" hidden>
+          <label>Enlace de la tarjeta<input id="enlace" readonly></label>
+          <div class="cta">
+            <a class="btn solid" id="enviar" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            <button class="btn ghost" type="button" id="copiar">Copiar enlace</button>
+            <a class="btn ghost" id="ver" target="_blank" rel="noopener">Ver tarjeta</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="marcas">
+      <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+    </div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+  var f = document.getElementById("crear"), res = document.getElementById("resultado"), err = document.getElementById("error"), ok = document.getElementById("listo");
+  f.desde.value = new Date().toISOString().slice(0, 7);
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var btn = f.querySelector("button[type=submit]"); btn.disabled = true;
+    var datos = { clave: f.clave.value, nombre: f.nombre.value, numero: f.numero.value, nivel: f.nivel.value, desde: f.desde.value };
+    fetch("/api/tarjeta/crear", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(datos) })
+      .then(function(r){ return r.json().catch(function(){ return { error: "Error " + r.status }; }); })
+      .then(function(j){
+        res.hidden = false; err.hidden = !j.error; ok.hidden = !!j.error;
+        if(j.error){ err.textContent = j.error; return; }
+        var msg = "Hola " + datos.nombre.split(" ")[0] + ", bienvenido a Casa Salvaje. Aquí está tu tarjeta de miembro para guardarla en el wallet de tu teléfono: " + j.url;
+        var tel = f.tel.value.replace(/\D/g, "");
+        document.getElementById("enlace").value = j.url;
+        document.getElementById("ver").href = j.url;
+        document.getElementById("enviar").href = "https://wa.me/" + tel + "?text=" + encodeURIComponent(msg);
+      })
+      .catch(function(){ res.hidden = false; ok.hidden = true; err.hidden = false; err.textContent = "No se pudo conectar. Intenta de nuevo."; })
+      .then(function(){ btn.disabled = false; });
+  });
+  document.getElementById("copiar").addEventListener("click", function(){
+    var i = document.getElementById("enlace"); i.select();
+    try{ navigator.clipboard.writeText(i.value); }catch(e){ document.execCommand("copy"); }
+    this.textContent = "Copiado";
+  });
+})();
+</script>
+
+</body></html>

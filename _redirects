@@ -1,2 +1,7 @@
 /gracias  /gracias.html  200
+/tarjeta  /tarjeta.html  200
+/tarjetas/admin  /tarjetas-admin.html  200
+/empresas  /empresas.html  200
 /grupo-ono/*  /  301!
+/grupo-ono-src/*  /  301!
+/blog/metricas  /metricas.html  200

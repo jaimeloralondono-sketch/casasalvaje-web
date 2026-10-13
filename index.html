@@ -20,37 +20,43 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
 <link rel="stylesheet" href="site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","@id":"https://www.casa-salvaje.com/#casa","name":"Casa Salvaje","url":"https://www.casa-salvaje.com/","image":"https://www.casa-salvaje.com/img/og-casa.jpg","description":"One colonial house in Cartagena's old city, four worlds: La Domenica, Kanibal, SLVJ and ONO.","telephone":"+573108286602","address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41, Centro Histórico","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"},"acceptsReservations":true,"sameAs":["https://www.instagram.com/casasalvaje.ctg"],"department":[{"@type":"Restaurant","@id":"https://www.casa-salvaje.com/kanibal.html#restaurant","name":"Kanibal","url":"https://www.casa-salvaje.com/kanibal.html","servesCuisine":["Grill","Steakhouse"],"menu":"https://menupp.co/casasalvaje/venue/074bf116-285a-4494-8dfc-2e05f296f282","acceptsReservations":true,"telephone":"+573108286602","address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41, Centro Histórico","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"},"sameAs":["https://www.instagram.com/kanibal.ctg"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"19:00"}]},{"@type":"Restaurant","@id":"https://www.casa-salvaje.com/slvj.html#restaurant","name":"SLVJ","url":"https://www.casa-salvaje.com/slvj.html","servesCuisine":["Japanese","Sushi"],"menu":"https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb","acceptsReservations":true,"telephone":"+573108286602","address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41, Centro Histórico","addressLocality":"Cartagena de Indias","addressRegion":"Bolívar","addressCountry":"CO"},"sameAs":["https://www.instagram.com/slvj.ctg"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday"],"opens":"19:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday"],"opens":"19:00","closes":"03:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"19:00"}]}]}</script>
 </head>
-<body>
+<body data-musica="4rJWajJ3o7B3Or3NhSilIN">
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html" aria-current="page"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html" aria-current="page"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
-      <a href="#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+      <a href="#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Wallpaper</span></a>
+      <a href="blog/">Blog</a>
+      <a href="#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Unternehmen</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html" aria-current="page"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html" aria-current="page"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
+      <a href="#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="blog/">Blog</a>
   </div></nav>
 </header>
 
@@ -60,11 +66,11 @@
       <div>
         <img class="logo" src="img/logo-salvaje-oro.png" alt="Casa Salvaje: jaguar entre dos palmas">
         <div class="eyebrow">Centro Histórico · Cartagena de Indias</div>
-        <h1 style="margin-top:14px"><span class="es">El cielo tiene lista de invitados.</span><span class="en">Heaven has a guest list.</span></h1>
+        <h1 style="margin-top:14px"><span class="es">Heaven has a guest list.</span><span class="en">Heaven has a guest list.</span><span class="pt">Heaven has a guest list.</span><span class="fr">Heaven has a guest list.</span><span class="it">Heaven has a guest list.</span><span class="de">Heaven has a guest list.</span></h1>
         <p class="sub">For gods, mortals &amp; other guests.</p>
         <div class="cta">
-          <a class="btn solid wa" href="#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span></a>
-          <a class="btn ghost" href="#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span></a>
+          <a class="btn solid wa" href="#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span><span class="pt">Reservar pelo WhatsApp</span><span class="fr">Réserver sur WhatsApp</span><span class="it">Prenota su WhatsApp</span><span class="de">Per WhatsApp reservieren</span></a>
+          <a class="btn ghost" href="#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span><span class="pt">Entrar na lista</span><span class="fr">Rejoindre la liste</span><span class="it">Entra in lista</span><span class="de">Auf die Gästeliste</span></a>
         </div>
       </div>
       <div class="arch"><img src="img/slvj-salon.jpg" alt="Salón de SLVJ lleno de comensales bajo las lámparas de fibra y el neón"></div>
@@ -72,12 +78,12 @@
   </section>
 <div class="strip" aria-hidden="true">
     <div class="row">
-      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span>
-      <span class="es">Santos en la cena, dioses después</span><span class="en">Saints at dinner, gods after dark</span>
-      <span class="es">Por placer, sobre todo</span><span class="en">For pleasure, mostly</span>
-      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span>
-      <span class="es">Santos en la cena, dioses después</span><span class="en">Saints at dinner, gods after dark</span>
-      <span class="es">Por placer, sobre todo</span><span class="en">For pleasure, mostly</span>
+      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span><span class="pt">Maus hábitos, companhia divina</span><span class="fr">Mauvaises habitudes, divine compagnie</span><span class="it">Cattive abitudini, compagnia divina</span><span class="de">Schlechte Angewohnheiten, göttliche Gesellschaft</span>
+      <span class="es">Santos en la cena, dioses después</span><span class="en">Saints at dinner, gods after dark</span><span class="pt">Santos no jantar, deuses depois</span><span class="fr">Des saints au dîner, des dieux à la nuit tombée</span><span class="it">Santi a cena, dèi dopo il tramonto</span><span class="de">Heilige beim Dinner, Götter nach Einbruch der Nacht</span>
+      <span class="es">Por placer, sobre todo</span><span class="en">For pleasure, mostly</span><span class="pt">Por prazer, sobretudo</span><span class="fr">Pour le plaisir, surtout</span><span class="it">Per piacere, soprattutto</span><span class="de">Vor allem zum Vergnügen</span>
+      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span><span class="pt">Maus hábitos, companhia divina</span><span class="fr">Mauvaises habitudes, divine compagnie</span><span class="it">Cattive abitudini, compagnia divina</span><span class="de">Schlechte Angewohnheiten, göttliche Gesellschaft</span>
+      <span class="es">Santos en la cena, dioses después</span><span class="en">Saints at dinner, gods after dark</span><span class="pt">Santos no jantar, deuses depois</span><span class="fr">Des saints au dîner, des dieux à la nuit tombée</span><span class="it">Santi a cena, dèi dopo il tramonto</span><span class="de">Heilige beim Dinner, Götter nach Einbruch der Nacht</span>
+      <span class="es">Por placer, sobre todo</span><span class="en">For pleasure, mostly</span><span class="pt">Por prazer, sobretudo</span><span class="fr">Pour le plaisir, surtout</span><span class="it">Per piacere, soprattutto</span><span class="de">Vor allem zum Vergnügen</span>
     </div>
   </div>
 
@@ -86,19 +92,23 @@
     <div class="wrap">
       <div class="two">
         <div>
-          <div class="num"><span class="n">01</span><span class="eyebrow"><span class="es">La casa</span><span class="en">The house</span></span></div>
-          <h2><span class="es">Una casa para el banquete, el deseo y las noches largas.</span><span class="en">A house for feasting, desire &amp; late nights.</span></h2>
+          <div class="num"><span class="n">01</span><span class="eyebrow"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></span></div>
+          <h2><span class="es">Una casa para el banquete, el deseo y las noches largas.</span><span class="en">A house for feasting, desire &amp; late nights.</span><span class="pt">Uma casa para o banquete, o desejo e as noites longas.</span><span class="fr">Une maison pour le festin, le désir et les nuits longues.</span><span class="it">Una casa per il banchetto, il desiderio e le notti lunghe.</span><span class="de">Ein Haus für Festmahl, Begehren und lange Nächte.</span></h2>
         </div>
         <div>
           <p class="lead es" style="color:var(--ink-soft)">Cuatro mundos comparten una casa colonial en el Centro Histórico. El día empieza con café y aperitivo en La Domenica, sigue con el fuego de Kanibal, se viste para el banquete de SLVJ y termina cuando la noche decide. Entras por una puerta; lo que pasa adentro depende de a qué mundo le respondas.</p>
           <p class="lead en" style="color:var(--ink-soft)">Four worlds share one historic house in the old city. The day opens with coffee and aperitivo at La Domenica, moves into the fire of Kanibal, dresses up for the feast at SLVJ and ends whenever the night says so. You come in through one door; what happens inside depends on which world calls you.</p>
+          <p class="lead pt" style="color:var(--ink-soft)">Quatro mundos dividem uma casa colonial no Centro Histórico. O dia começa com café e aperitivo no La Domenica, segue para o fogo do Kanibal, se veste para o banquete do SLVJ e termina quando a noite decide. Você entra por uma porta; o que acontece lá dentro depende de qual mundo te chama.</p>
+          <p class="lead fr" style="color:var(--ink-soft)">Quatre mondes partagent une maison coloniale de la vieille ville. La journée s'ouvre sur un café et un aperitivo chez La Domenica, passe au feu de Kanibal, se met sur son trente-et-un pour le festin de SLVJ et s'achève quand la nuit le décide. On entre par une seule porte&nbsp;; ce qui se passe à l'intérieur dépend du monde qui vous appelle.</p>
+          <p class="lead it" style="color:var(--ink-soft)">Quattro mondi condividono una casa coloniale nel centro storico. La giornata si apre con caffè e aperitivo da La Domenica, passa al fuoco di Kanibal, si veste per il banchetto di SLVJ e finisce quando lo decide la notte. Si entra da una sola porta; quello che succede dentro dipende dal mondo che ti chiama.</p>
+          <p class="lead de" style="color:var(--ink-soft)">Vier Welten teilen sich ein Kolonialhaus in der Altstadt. Der Tag beginnt mit Kaffee und Aperitivo im La Domenica, zieht weiter ans Feuer von Kanibal, macht sich schön für das Festmahl im SLVJ und endet, wann die Nacht es will. Sie kommen durch eine Tür; was drinnen geschieht, hängt davon ab, welche Welt Sie ruft.</p>
         </div>
       </div>
       <div class="doors">
-        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
-        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span></span></div></a>
-        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span></span></div></a>
-        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
+        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
+        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span><span class="pt">Fogo · Instinto</span><span class="fr">Feu · Instinct</span><span class="it">Fuoco · Istinto</span><span class="de">Feuer · Instinkt</span></span></div></a>
+        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span><span class="pt">Banquete · Club</span><span class="fr">Festin · Club</span><span class="it">Banchetto · Club</span><span class="de">Festmahl · Club</span></span></div></a>
+        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
       </div>
       <div class="look">
         <a href="fondos.html#mosaico"><figure><img src="img/fondos/t/mosaico-jaguar.jpg" alt="Jaguar en mosaico sobre azulejo verde con una copa" loading="lazy" decoding="async"><figcaption>Ritual &amp; Desire</figcaption></figure></a>
@@ -106,13 +116,13 @@
         <a href="fondos.html#miniatura"><figure><img src="img/fondos/t/miniatura-the-coupe.jpg" alt="Una fiesta diminuta dentro de una copa gigante" loading="lazy" decoding="async"><figcaption>The House in Miniature</figcaption></figure></a>
         <a href="fondos.html#guest-list"><figure><img src="img/fondos/t/guest-list-heaven-has-a-guest-list.jpg" alt="Ilustración azul: Heaven has a guest list" loading="lazy" decoding="async"><figcaption>Heaven Has a Guest List</figcaption></figure></a>
       </div>
-      <div class="look-more"><a class="btn ghost" href="fondos.html"><span class="es">Descarga los 156 fondos</span><span class="en">Download all 156 wallpapers</span></a></div>
+      <div class="look-more"><a class="btn ghost" href="fondos.html"><span class="es">Descarga los 149 fondos</span><span class="en">Download all 149 wallpapers</span><span class="pt">Baixe os 149 papéis de parede</span><span class="fr">Téléchargez les 149 fonds d'écran</span><span class="it">Scarica tutti i 149 sfondi</span><span class="de">Alle 149 Wallpaper herunterladen</span></a></div>
     </div>
   </section>
 <section class="rules">
     <div class="wrap">
-      <h2><span class="es">En la cena, compórtate.</span><span class="en">At dinner, behave.</span></h2>
-      <h2 style="margin-top:8px"><span class="es">Después, lo que sea.</span><span class="en">After dinner, anything.</span></h2>
+      <h2><span class="es">En la cena, compórtate.</span><span class="en">At dinner, behave.</span><span class="pt">No jantar, comporte-se.</span><span class="fr">Au dîner, tenez-vous bien.</span><span class="it">A cena, comportati bene.</span><span class="de">Beim Dinner: Haltung bewahren.</span></h2>
+      <h2 style="margin-top:8px"><span class="es">Después, lo que sea.</span><span class="en">After dinner, anything.</span><span class="pt">Depois, vale tudo.</span><span class="fr">Après, tout est permis.</span><span class="it">Dopo, tutto è permesso.</span><span class="de">Danach: alles erlaubt.</span></h2>
       <p class="cap">For gods, mortals &amp; other guests.</p>
     </div>
   </section>
@@ -120,24 +130,85 @@
 
   <section id="casa-imagenes" class="casa-tex">
     <div class="wrap">
-      <div class="eyebrow"><span class="es">La casa en imágenes</span><span class="en">The house in pictures</span></div>
-      <h2 style="margin-top:10px"><span class="es">Lo que pasa adentro.</span><span class="en">What happens inside.</span></h2>
-      <div class="gal">
-        <img src="img/tipo-bad.jpg" alt="Tipografía roja Bad habits con una serpiente y un halo" loading="lazy" decoding="async">
-        <img src="img/puerta.jpg" alt="Puerta de madera de Casa Salvaje con la placa del jaguar" loading="lazy" decoding="async">
-        <img src="img/slvj-grupo.jpg" alt="Un grupo de invitados posa en SLVJ" loading="lazy" decoding="async">
-        <img src="img/tipo-pleasure.jpg" alt="Tipografía roja For pleasure con un jaguar recostado" loading="lazy" decoding="async">
-        <img src="img/letrero-slvj.jpg" alt="Letrero de azulejos de SLVJ en la fachada rosada con horarios" loading="lazy" decoding="async">
-        <img src="img/tipo-after.jpg" alt="Tipografía roja After dinner con una serpiente en una copa" loading="lazy" decoding="async">
-        <img src="img/kanibal-salon.jpg" alt="Salón de Kanibal lleno, bajo las lámparas de papel" loading="lazy" decoding="async">
-        <img src="img/domenica-limones.jpg" alt="Cabeza de cerámica coronada de limones" loading="lazy" decoding="async">
-        <img src="img/tipo-divine.jpg" alt="Tipografía roja Divine company con una serpiente" loading="lazy" decoding="async">
-        <img src="img/camp-serpiente.jpg" alt="Serpiente verde con una perla sobre terciopelo" loading="lazy" decoding="async">
-        <img src="img/letrero-kanibal.jpg" alt="Letrero de azulejos de Kanibal junto a la puerta" loading="lazy" decoding="async">
-        <img src="img/dom-nowhere.jpg" alt="Mujer caminando con una taza de café: Nowhere to be" loading="lazy" decoding="async">
-        <img src="img/slvj-mesa.jpg" alt="Mesa de SLVJ con platos ilustrados" loading="lazy" decoding="async">
-        <img src="img/sal-cebra.jpg" alt="Tela de cebra con unos ojos escondidos" loading="lazy" decoding="async">
-        <img src="img/kanibal-cena.jpg" alt="Cena en Kanibal vista desde arriba" loading="lazy" decoding="async">
+      <div class="eyebrow"><span class="es">La casa en imágenes</span><span class="en">The house in pictures</span><span class="pt">A casa em imagens</span><span class="fr">La maison en images</span><span class="it">La casa per immagini</span><span class="de">Das Haus in Bildern</span></div>
+      <h2 style="margin-top:10px"><span class="es">Lo que pasa adentro.</span><span class="en">What happens inside.</span><span class="pt">O que acontece lá dentro.</span><span class="fr">Ce qui se passe à l'intérieur.</span><span class="it">Quello che succede dentro.</span><span class="de">Was drinnen geschieht.</span></h2>
+      <div class="gal" data-pool="gal-pool.json">
+        <img src="img/tipo-bad.jpg" width="562" height="1000" alt="Tipografía roja Bad habits con una serpiente y un halo" loading="lazy" decoding="async">
+        <img src="img/puerta.jpg" width="800" height="1000" alt="Puerta de madera de Casa Salvaje con la placa del jaguar" loading="lazy" decoding="async">
+        <img src="img/slvj-grupo.jpg" width="1000" height="665" alt="Un grupo de invitados posa en SLVJ" loading="lazy" decoding="async">
+        <img src="img/tipo-pleasure.jpg" width="562" height="1000" alt="Tipografía roja For pleasure con un jaguar recostado" loading="lazy" decoding="async">
+        <img src="img/letrero-slvj.jpg" width="800" height="1000" alt="Letrero de azulejos de SLVJ en la fachada rosada con horarios" loading="lazy" decoding="async">
+        <img src="img/tipo-after.jpg" width="562" height="1000" alt="Tipografía roja After dinner con una serpiente en una copa" loading="lazy" decoding="async">
+        <img src="img/kanibal-salon.jpg" width="1000" height="666" alt="Salón de Kanibal lleno, bajo las lámparas de papel" loading="lazy" decoding="async">
+        <img src="img/domenica-limones.jpg" width="800" height="1000" alt="Cabeza de cerámica coronada de limones" loading="lazy" decoding="async">
+        <img src="img/tipo-divine.jpg" width="562" height="1000" alt="Tipografía roja Divine company con una serpiente" loading="lazy" decoding="async">
+        <img src="img/camp-serpiente.jpg" width="562" height="1000" alt="Serpiente verde con una perla sobre terciopelo" loading="lazy" decoding="async">
+        <img src="img/letrero-kanibal.jpg" width="800" height="1000" alt="Letrero de azulejos de Kanibal junto a la puerta" loading="lazy" decoding="async">
+        <img src="img/dom-nowhere.jpg" width="800" height="1000" alt="Mujer caminando con una taza de café: Nowhere to be" loading="lazy" decoding="async">
+        <img src="img/slvj-mesa.jpg" width="750" height="1000" alt="Mesa de SLVJ con platos ilustrados" loading="lazy" decoding="async">
+        <img src="img/sal-cebra.jpg" width="800" height="1000" alt="Tela de cebra con unos ojos escondidos" loading="lazy" decoding="async">
+        <img src="img/kanibal-cena.jpg" width="750" height="1000" alt="Cena en Kanibal vista desde arriba" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </section>
+
+
+  <section id="ubicacion" class="where ubicacion">
+    <div class="wrap">
+      <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></span></div>
+      <h2><span class="es">Donde Baloco se encuentra con Santa Teresa.</span><span class="en">Where Baloco meets Santa Teresa.</span><span class="pt">Onde a Baloco encontra a Santa Teresa.</span><span class="fr">Là où Baloco rencontre Santa Teresa.</span><span class="it">Dove Baloco incontra Santa Teresa.</span><span class="de">Wo Baloco auf Santa Teresa trifft.</span></h2>
+      <div class="ubi-grid">
+        <div class="mapa"><img src="img/mapa.jpg" alt="Mapa ilustrado en azul: Casa Salvaje entre Calle Baloco y Calle Santa Teresa, cerca de la Plaza Santo Domingo" loading="lazy" decoding="async"></div>
+        <div class="ubi-side">
+          <div class="gmap"><iframe src="https://www.google.com/maps?q=Calle+Santa+Teresa+32-41,+Cartagena,+Bol%C3%ADvar&amp;output=embed" title="Mapa de Google: Casa Salvaje, Calle Santa Teresa #32-41, Cartagena" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <div class="card" style="margin-top:22px">
+          <div class="addr">Calle Santa Teresa #32-41<br>Centro Histórico, Cartagena de Indias</div>
+          <div class="meta es">A dos cuadras de la Plaza Santo Domingo. A dos horas de Barranquilla por carretera; desde Medellín y Bogotá, vuelo directo y 15 minutos del aeropuerto a la puerta.</div>
+          <div class="meta en">Two blocks from Plaza Santo Domingo. Two hours by road from Barranquilla; from Medellín and Bogotá, a direct flight and 15 minutes from the airport to our door.</div>
+          <div class="meta pt">A duas quadras da Plaza Santo Domingo. A duas horas de Barranquilla de carro; de Medellín e Bogotá, voo direto e 15 minutos do aeroporto até a porta.</div>
+          <div class="meta fr">À deux rues de la Plaza Santo Domingo. À deux heures de route de Barranquilla&nbsp;; depuis Medellín et Bogotá, un vol direct puis 15 minutes de l'aéroport à notre porte.</div>
+          <div class="meta it">A due isolati da Plaza Santo Domingo. A due ore di strada da Barranquilla; da Medellín e Bogotá, volo diretto e 15 minuti dall'aeroporto alla nostra porta.</div>
+          <div class="meta de">Zwei Blocks von der Plaza Santo Domingo. Zwei Autostunden von Barranquilla; von Medellín und Bogotá ein Direktflug und 15 Minuten vom Flughafen bis vor unsere Tür.</div>
+          <div class="links">
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Calle+Santa+Teresa+32-41+Cartagena" target="_blank" rel="noopener"><span class="es">Abrir en Maps</span><span class="en">Open in Maps</span><span class="pt">Abrir no Maps</span><span class="fr">Ouvrir dans Maps</span><span class="it">Apri in Maps</span><span class="de">In Maps öffnen</span></a>
+            <a class="btn ghost" href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">@casasalvaje.ctg</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div id="horarios" class="horarios">
+      <h3 class="hr-title"><span class="es">Cuándo abre cada mundo.</span><span class="en">When each world is open.</span><span class="pt">Quando cada mundo abre.</span><span class="fr">Quand chaque monde ouvre ses portes.</span><span class="it">Quando apre ogni mondo.</span><span class="de">Wann jede Welt geöffnet hat.</span></h3>
+      <p class="intro"><span class="es">Todas las horas son de Cartagena (GMT−5). La fila de hoy va marcada y cada mundo te dice si está abierto ahora mismo.</span><span class="en">All times are Cartagena time (GMT−5). Today's row is highlighted and each world tells you whether it's open right now.</span><span class="pt">Todos os horários são de Cartagena (GMT−5). A linha de hoje vem destacada e cada mundo mostra se está aberto agora.</span><span class="fr">Tous les horaires sont à l'heure de Cartagena (GMT−5). La ligne du jour est mise en évidence et chaque monde indique s'il est ouvert en ce moment.</span><span class="it">Tutti gli orari sono nell'ora di Cartagena (GMT−5). La riga di oggi è evidenziata e ogni mondo ti dice se è aperto in questo momento.</span><span class="de">Alle Zeiten in Ortszeit Cartagena (GMT−5). Die heutige Zeile ist hervorgehoben, und jede Welt zeigt, ob sie gerade geöffnet hat.</span></p>
+      <div class="hr-grid">
+        <article class="hr-card" data-hours='{"1":[[720,1440]],"2":[[720,1440]],"3":[[720,1440]],"4":[[720,1440]],"5":[[720,1440]],"6":[[720,1440]],"0":[[660,1140]],"f":[[660,1440]]}'>
+          <div class="top"><h3><a href="kanibal.html">Kanibal</a><small><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span><span class="pt">Fogo · Instinto</span><span class="fr">Feu · Instinct</span><span class="it">Fuoco · Istinto</span><span class="de">Feuer · Instinkt</span></small></h3><span class="hr-status" aria-live="polite"></span></div>
+          <dl class="hr-rows">
+            <div data-days="1,2,3,4,5,6"><dt><span class="es">Lunes a sábado</span><span class="en">Monday to Saturday</span><span class="pt">Segunda a sábado</span><span class="fr">Du lundi au samedi</span><span class="it">Dal lunedì al sabato</span><span class="de">Montag bis Samstag</span></dt><dd>12 pm – 12 am</dd></div>
+            <div data-days="0"><dt><span class="es">Domingo</span><span class="en">Sunday</span><span class="pt">Domingo</span><span class="fr">Dimanche</span><span class="it">Domenica</span><span class="de">Sonntag</span></dt><dd>11 am – 7 pm</dd></div>
+            <div data-days="f"><dt><span class="es">Domingo antes de festivo</span><span class="en">Sunday before a holiday</span><span class="pt">Domingo véspera de feriado</span><span class="fr">Dimanche veille de jour férié</span><span class="it">Domenica prefestiva</span><span class="de">Sonntag vor einem Feiertag</span></dt><dd>11 am – 12 am</dd></div>
+          </dl>
+          <p class="hr-note"><span class="es">Última comanda: 11 pm de lunes a sábado, 6 pm el domingo. Última reserva: 10:30 pm.</span><span class="en">Last order: 11 pm Monday to Saturday, 6 pm on Sunday. Last booking: 10:30 pm.</span><span class="pt">Último pedido: 11 pm de segunda a sábado, 6 pm no domingo. Última reserva: 10:30 pm.</span><span class="fr">Dernière commande&nbsp;: 11 pm du lundi au samedi, 6 pm le dimanche. Dernière réservation&nbsp;: 10:30 pm.</span><span class="it">Ultima comanda: 11 pm dal lunedì al sabato, 6 pm la domenica. Ultima prenotazione: 10:30 pm.</span><span class="de">Letzte Bestellung: 11 pm Montag bis Samstag, 6 pm am Sonntag. Letzte Reservierung: 10:30 pm.</span></p>
+        </article>
+        <article class="hr-card" data-hours='{"1":[[720,900],[1140,1440]],"2":[[720,900],[1140,1440]],"3":[[720,900],[1140,1440]],"4":[[720,900],[1140,1620]],"5":[[720,900],[1140,1620]],"6":[[720,900],[1140,1620]],"0":[[660,1140]],"f":[[660,1440]]}'>
+          <div class="top"><h3><a href="slvj.html">SLVJ</a><small><span class="es">Banquete · Club</span><span class="en">Feast · Club</span><span class="pt">Banquete · Club</span><span class="fr">Festin · Club</span><span class="it">Banchetto · Club</span><span class="de">Festmahl · Club</span></small></h3><span class="hr-status" aria-live="polite"></span></div>
+          <dl class="hr-rows">
+            <div data-days="1,2,3"><dt><span class="es">Lunes a miércoles</span><span class="en">Monday to Wednesday</span><span class="pt">Segunda a quarta</span><span class="fr">Du lundi au mercredi</span><span class="it">Dal lunedì al mercoledì</span><span class="de">Montag bis Mittwoch</span></dt><dd>12 – 3 pm · 7 pm – 12 am</dd></div>
+            <div data-days="4,5,6"><dt><span class="es">Jueves a sábado</span><span class="en">Thursday to Saturday</span><span class="pt">Quinta a sábado</span><span class="fr">Du jeudi au samedi</span><span class="it">Dal giovedì al sabato</span><span class="de">Donnerstag bis Samstag</span></dt><dd>12 – 3 pm · 7 pm – 12 am<small><span class="es">después, club hasta las 3 am</span><span class="en">then club until 3 am</span><span class="pt">depois, club até as 3 am</span><span class="fr">puis club jusqu'à 3 am</span><span class="it">poi club fino alle 3 am</span><span class="de">danach Club bis 3 am</span></small></dd></div>
+            <div data-days="0"><dt><span class="es">Domingo</span><span class="en">Sunday</span><span class="pt">Domingo</span><span class="fr">Dimanche</span><span class="it">Domenica</span><span class="de">Sonntag</span></dt><dd>11 am – 7 pm</dd></div>
+            <div data-days="f"><dt><span class="es">Domingo antes de festivo</span><span class="en">Sunday before a holiday</span><span class="pt">Domingo véspera de feriado</span><span class="fr">Dimanche veille de jour férié</span><span class="it">Domenica prefestiva</span><span class="de">Sonntag vor einem Feiertag</span></dt><dd>11 am – 12 am</dd></div>
+          </dl>
+          <p class="hr-note"><span class="es">Última comanda de la noche: 11 pm. Última reserva: 10:30 pm.</span><span class="en">Last evening order: 11 pm. Last booking: 10:30 pm.</span><span class="pt">Último pedido da noite: 11 pm. Última reserva: 10:30 pm.</span><span class="fr">Dernière commande du soir&nbsp;: 11 pm. Dernière réservation&nbsp;: 10:30 pm.</span><span class="it">Ultima comanda della sera: 11 pm. Ultima prenotazione: 10:30 pm.</span><span class="de">Letzte Bestellung am Abend: 11 pm. Letzte Reservierung: 10:30 pm.</span></p>
+        </article>
+        <article class="hr-card">
+          <div class="top"><h3><a href="domenica.html">La Domenica</a><small><span class="es">Café · Pizza · Aperitivo</span><span class="en">Coffee · Pizza · Aperitivo</span><span class="pt">Café · Pizza · Aperitivo</span><span class="fr">Café · Pizza · Aperitivo</span><span class="it">Caffè · Pizza · Aperitivo</span><span class="de">Kaffee · Pizza · Aperitivo</span></small></h3><span class="hr-status"><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div>
+          <p class="soonline"><span class="es">Abrirá de mañana y tarde. Horario por confirmar: entra a la lista y te avisamos.</span><span class="en">Mornings and afternoons. Hours to be confirmed: join the list and we'll let you know.</span><span class="pt">Vai abrir de manhã e à tarde. Horário a confirmar: entre na lista e avisamos você.</span><span class="fr">Ouverture le matin et l'après-midi. Horaires à confirmer&nbsp;: rejoignez la liste et nous vous préviendrons.</span><span class="it">Aprirà mattina e pomeriggio. Orari da confermare: entra in lista e ti avvisiamo.</span><span class="de">Geöffnet vormittags und nachmittags. Zeiten folgen: Tragen Sie sich in die Liste ein, wir sagen Ihnen Bescheid.</span></p>
+        </article>
+        <article class="hr-card">
+          <div class="top"><h3><a href="ono.html">ONO</a><small>Hosomaki bar</small></h3><span class="hr-status"><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div>
+          <p class="soonline"><span class="es">Apertura entre noviembre y diciembre de 2026. Horario por anunciar en la lista.</span><span class="en">Opening November – December 2026. Hours announced to the list first.</span><span class="pt">Abertura entre novembro e dezembro de 2026. Horários anunciados primeiro na lista.</span><span class="fr">Ouverture entre novembre et décembre 2026. Horaires annoncés d'abord à la liste.</span><span class="it">Apertura tra novembre e dicembre 2026. Orari annunciati prima a chi è in lista.</span><span class="de">Eröffnung zwischen November und Dezember 2026. Die Zeiten erfährt zuerst die Liste.</span></p>
+        </article>
+      </div>
+      <p class="hr-foot"><span class="es">Festivos y fechas especiales pueden cambiar el horario. Si vas con el tiempo justo, </span><span class="en">Holidays and special dates can change these hours. If you're cutting it close, </span><span class="pt">Feriados e datas especiais podem alterar os horários. Se estiver em cima da hora, </span><span class="fr">Les jours fériés et les dates spéciales peuvent modifier ces horaires. Si vous arrivez à la dernière minute, </span><span class="it">Festivi e date speciali possono cambiare gli orari. Se sei al limite, </span><span class="de">Feiertage und besondere Termine können die Zeiten ändern. Wenn es knapp wird, </span><a class="wa" href="#lista"><span class="es">escríbenos por WhatsApp</span><span class="en">message us on WhatsApp</span><span class="pt">fale com a gente no WhatsApp</span><span class="fr">écrivez-nous sur WhatsApp</span><span class="it">scrivici su WhatsApp</span><span class="de">schreiben Sie uns auf WhatsApp</span></a>.</p>
       </div>
     </div>
   </section>
@@ -145,63 +216,171 @@
 
   <section id="agenda" style="padding-top:0">
     <div class="wrap">
-      <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Agenda</span><span class="en">What's on</span></span></div>
-      <h2><span class="es">Fechas con cupo. Reserva antes de que se acaben.</span><span class="en">Dates with limited seats. Book before they go.</span></h2>
+      <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></span></div>
+      <h2><span class="es">Fechas con cupo. Reserva antes de que se acaben.</span><span class="en">Dates with limited seats. Book before they go.</span><span class="pt">Datas com vagas limitadas. Reserve antes que acabem.</span><span class="fr">Des dates à places limitées. Réservez avant qu'elles ne partent.</span><span class="it">Date a posti limitati. Prenota prima che finiscano.</span><span class="de">Termine mit begrenzten Plätzen. Reservieren Sie, bevor sie weg sind.</span></h2>
       <ul class="agenda">
-        <li><div class="d"><span class="es">Último martes</span><span class="en">Last Tuesday</span><small><span class="es">cada mes</span><span class="en">monthly</span></small></div><div class="t"><b>Omakase</b><span class="es">En la barra de sushi de SLVJ, cupo limitado. Próxima fecha por anunciar en la lista.</span><span class="en">At the SLVJ sushi bar, limited seats. Next date announced to the list first.</span></div><a class="btn solid wa" data-evento="Omakase" href="#lista"><span class="es">Quiero cupo</span><span class="en">Save me a seat</span></a></li>
-        <li><div class="d">30 oct – 1 nov<small>Halloween</small></div><div class="t"><b><span class="es">Tres noches de Halloween</span><span class="en">Three nights of Halloween</span></b><span class="es">Cena en la casa y la fiesta después en SLVJ. Programa y precios pronto.</span><span class="en">Dinner in the house, the party after at SLVJ. Programme and prices soon.</span></div><a class="btn solid" data-book="club" data-evento="Halloween" href="#lista"><span class="es">Reservar</span><span class="en">Book</span></a></li>
-        <li><div class="d"><span class="es">Todos los días</span><span class="en">Every day</span><small><span class="es">cocina hasta la 1 am</span><span class="en">kitchen until 1 am</span></small></div><div class="t"><b><span class="es">Almuerzo y cena tardía</span><span class="en">Lunch and late dinner</span></b><span class="es">La Domenica, Kanibal y SLVJ de día. Cocina abierta hasta la 1 de la mañana.</span><span class="en">La Domenica, Kanibal and SLVJ by day. Kitchen open until 1 am.</span></div><a class="btn solid" data-book="casa" data-evento="Almuerzo" href="#lista"><span class="es">Reservar</span><span class="en">Book</span></a></li>
+        <li><div class="d"><span class="es">Último martes</span><span class="en">Last Tuesday</span><span class="pt">Última terça</span><span class="fr">Dernier mardi</span><span class="it">Ultimo martedì</span><span class="de">Letzter Dienstag</span><small><span class="es">cada mes</span><span class="en">monthly</span><span class="pt">de cada mês</span><span class="fr">du mois</span><span class="it">del mese</span><span class="de">im Monat</span></small></div><div class="t"><b>Omakase</b><span class="es">En la barra de sushi de SLVJ, cupo limitado. Próxima fecha por anunciar en la lista.</span><span class="en">At the SLVJ sushi bar, limited seats. Next date announced to the list first.</span><span class="pt">No balcão de sushi do SLVJ, vagas limitadas. Próxima data anunciada primeiro na lista.</span><span class="fr">Au comptoir à sushis de SLVJ, places limitées. Prochaine date annoncée d'abord à la liste.</span><span class="it">Al banco sushi di SLVJ, posti limitati. Prossima data annunciata prima a chi è in lista.</span><span class="de">An der Sushi-Bar im SLVJ, begrenzte Plätze. Den nächsten Termin erfährt zuerst die Liste.</span></div><a class="btn solid wa" data-evento="Omakase" href="#lista"><span class="es">Quiero cupo</span><span class="en">Save me a seat</span><span class="pt">Quero um lugar</span><span class="fr">Gardez-moi une place</span><span class="it">Tienimi un posto</span><span class="de">Platz sichern</span></a></li>
+        <li><div class="d">30 oct – 1 nov<small>Halloween</small></div><div class="t"><b><span class="es">Tres noches de Halloween</span><span class="en">Three nights of Halloween</span><span class="pt">Três noites de Halloween</span><span class="fr">Trois nuits d'Halloween</span><span class="it">Tre notti di Halloween</span><span class="de">Drei Halloween-Nächte</span></b><span class="es">Cena en la casa y la fiesta después en SLVJ. Programa y precios pronto.</span><span class="en">Dinner in the house, the party after at SLVJ. Programme and prices soon.</span><span class="pt">Jantar na casa e a festa depois no SLVJ. Programação e preços em breve.</span><span class="fr">Dîner dans la maison, puis la fête au SLVJ. Programme et tarifs bientôt.</span><span class="it">Cena in casa e poi la festa da SLVJ. Programma e prezzi a breve.</span><span class="de">Dinner im Haus, danach die Party im SLVJ. Programm und Preise folgen in Kürze.</span></div><a class="btn solid" data-book="club" data-evento="Halloween" href="#lista"><span class="es">Reservar</span><span class="en">Book</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a></li>
+        <li><div class="d"><span class="es">Lunes a sábado</span><span class="en">Monday to Saturday</span><span class="pt">Segunda a sábado</span><span class="fr">Du lundi au samedi</span><span class="it">Dal lunedì al sabato</span><span class="de">Montag bis Samstag</span><small><span class="es">última comanda 11 pm</span><span class="en">last order 11 pm</span><span class="pt">último pedido 11 pm</span><span class="fr">dernière commande 11 pm</span><span class="it">ultima comanda 11 pm</span><span class="de">letzte Bestellung 11 pm</span></small></div><div class="t"><b><span class="es">Almuerzo y cena</span><span class="en">Lunch and dinner</span><span class="pt">Almoço e jantar</span><span class="fr">Déjeuner et dîner</span><span class="it">Pranzo e cena</span><span class="de">Mittag- und Abendessen</span></b><span class="es">Kanibal y SLVJ. Última comanda a las 11 pm y última reserva a las 10:30 pm.</span><span class="en">Kanibal and SLVJ. Last order at 11 pm, last booking at 10:30 pm.</span><span class="pt">Kanibal e SLVJ. Último pedido às 11 pm e última reserva às 10:30 pm.</span><span class="fr">Kanibal et SLVJ. Dernière commande à 11 pm, dernière réservation à 10:30 pm.</span><span class="it">Kanibal e SLVJ. Ultima comanda alle 11 pm, ultima prenotazione alle 10:30 pm.</span><span class="de">Kanibal und SLVJ. Letzte Bestellung um 11 pm, letzte Reservierung um 10:30 pm.</span></div><a class="btn solid" data-book="casa" data-evento="Almuerzo" href="#lista"><span class="es">Reservar</span><span class="en">Book</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a></li>
       </ul>
+      <div class="cta" style="margin-top:28px;align-items:center"><span class="lead" style="color:var(--ink-soft);margin-right:6px"><span class="es">¿Vienes con tu empresa o con un congreso? Cenas de grupo, clausuras y afters.</span><span class="en">Here with your company or a conference? Group dinners, closing nights and afters.</span><span class="pt">Vem com sua empresa ou com um congresso? Jantares de grupo, encerramentos e afters.</span><span class="fr">Vous venez avec votre entreprise ou pour un congrès&nbsp;? Dîners de groupe, soirées de clôture et afters.</span><span class="it">Vieni con la tua azienda o per un congresso? Cene di gruppo, serate di chiusura e after.</span><span class="de">Mit Ihrem Unternehmen oder einem Kongress hier? Gruppendinner, Abschlussabende und Afterpartys.</span></span><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span><span class="pt">Eventos para empresas</span><span class="fr">Événements d'entreprise</span><span class="it">Eventi aziendali</span><span class="de">Firmenevents</span></a></div>
     </div>
   </section>
 
 
-  <section id="donde" class="where" style="padding-top:0">
-    <div class="wrap two">
-      <div>
-        <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Cómo llegar</span><span class="en">Find us</span></span></div>
-        <h2><span class="es">Donde Baloco se encuentra con Santa Teresa.</span><span class="en">Where Baloco meets Santa Teresa.</span></h2>
-        <div class="card" style="margin-top:22px">
-          <div class="addr">Calle Santa Teresa #32-41<br>Centro Histórico, Cartagena de Indias</div>
-          <div class="meta es">A dos cuadras de la Plaza Santo Domingo. A dos horas de Barranquilla por carretera; desde Medellín y Bogotá, vuelo directo y 15 minutos del aeropuerto a la puerta.</div>
-          <div class="meta en">Two blocks from Plaza Santo Domingo. Two hours by road from Barranquilla; from Medellín and Bogotá, a direct flight and 15 minutes from the airport to our door.</div>
-          <div class="links">
-            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Calle+Santa+Teresa+32-41+Cartagena" target="_blank" rel="noopener"><span class="es">Abrir en Maps</span><span class="en">Open in Maps</span></a>
-            <a class="btn ghost" href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">@casasalvaje.ctg</a>
-          </div>
-        </div>
+  <section id="blog" class="delblog">
+    <div class="wrap">
+      <div class="eyebrow">Blog</div>
+      <h2><span class="es">Notas desde la casa</span><span class="en">Notes from the house</span><span class="pt">Notas da casa</span><span class="fr">Notes de la maison</span><span class="it">Note dalla casa</span><span class="de">Notizen aus dem Haus</span></h2>
+      <div class="posts">
+      <a class="post-card es" href="blog/musica-casa-salvaje-playlists-spotify.html" lang="es">
+        <img src="img/blog-musica-card.jpg" alt="Leopardo rojo de Casa Salvaje con la frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 oct 2026</time>
+        <h3>La música de Casa Salvaje: una playlist para cada mundo</h3>
+        <p>Cinco mundos, cinco sonidos. Todas nuestras playlists están en Spotify para que la casa suene donde estés.</p>
+      </a>
+      <a class="post-card es" href="blog/cenar-y-salir-de-fiesta-cartagena.html" lang="es">
+        <img src="img/slvj-fiesta.jpg" alt="Gente bailando en SLVJ bajo las lámparas de fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>Cenar y salir de fiesta en Cartagena sin cambiar de casa</h3>
+        <p>En la cena, compórtate. Después, lo que sea. Así funciona una noche en SLVJ.</p>
+      </a>
+      <a class="post-card es" href="blog/donde-comer-centro-historico-cartagena.html" lang="es">
+        <img src="img/slvj-salon.jpg" alt="Salón de SLVJ lleno de comensales bajo las lámparas de fibra y el neón" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>Dónde comer en el Centro Histórico de Cartagena: una casa, cuatro mundos</h3>
+        <p>Almuerzo largo, cena tardía o una noche que no termina: todo cabe en una casa colonial a dos cuadras de la Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card en" href="blog/casa-salvaje-music-spotify-playlists.html" lang="en">
+        <img src="img/blog-musica-card.jpg" alt="Casa Salvaje red leopard with the line The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 Oct 2026</time>
+        <h3>The music of Casa Salvaje: a playlist for every world</h3>
+        <p>Five worlds, five sounds. All our playlists are on Spotify, so the house plays wherever you are.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/casa-salvaje-music-spotify-playlists.html" lang="pt">
+        <img src="img/blog-musica-card.jpg" alt="Leopardo vermelho da Casa Salvaje com a frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 out 2026</time>
+        <h3>A música da Casa Salvaje: uma playlist para cada mundo</h3>
+        <p>Cinco mundos, cinco sons. Todas as nossas playlists estão no Spotify, para a casa tocar onde você estiver.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/casa-salvaje-music-spotify-playlists.html" lang="fr">
+        <img src="img/blog-musica-card.jpg" alt="Le léopard rouge de Casa Salvaje avec la phrase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 oct. 2026</time>
+        <h3>La musique de Casa Salvaje&nbsp;: une playlist pour chaque monde</h3>
+        <p>Cinq mondes, cinq sons. Toutes nos playlists sont sur Spotify&nbsp;: la maison vous suit partout.</p>
+      </a>
+      <a class="post-card it" href="blog/it/casa-salvaje-music-spotify-playlists.html" lang="it">
+        <img src="img/blog-musica-card.jpg" alt="Il leopardo rosso di Casa Salvaje con la frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 ott 2026</time>
+        <h3>La musica di Casa Salvaje: una playlist per ogni mondo</h3>
+        <p>Cinque mondi, cinque suoni. Tutte le nostre playlist sono su Spotify, così la casa suona ovunque tu sia.</p>
+      </a>
+      <a class="post-card de" href="blog/de/casa-salvaje-music-spotify-playlists.html" lang="de">
+        <img src="img/blog-musica-card.jpg" alt="Der rote Leopard von Casa Salvaje mit dem Satz The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13. Okt. 2026</time>
+        <h3>Die Musik von Casa Salvaje: eine Playlist für jede Welt</h3>
+        <p>Fünf Welten, fünf Sounds. Alle unsere Playlists sind auf Spotify – so spielt das Haus, wo immer Sie sind.</p>
+      </a>
+      <a class="post-card en" href="blog/dinner-and-nightlife-cartagena.html" lang="en">
+        <img src="img/slvj-fiesta.jpg" alt="Guests dancing at SLVJ under the fibre lamps" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>Dinner and dancing in Cartagena without changing venues</h3>
+        <p>At dinner, behave. After dinner, anything. Here&#x27;s how a night at SLVJ works.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/dinner-and-nightlife-cartagena.html" lang="pt">
+        <img src="img/slvj-fiesta.jpg" alt="Convidados dançando no SLVJ sob as luminárias de fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out 2026</time>
+        <h3>Jantar e dançar em Cartagena sem trocar de lugar</h3>
+        <p>No jantar, comporte-se. Depois, vale tudo. Veja como funciona uma noite no SLVJ.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/dinner-and-nightlife-cartagena.html" lang="fr">
+        <img src="img/slvj-fiesta.jpg" alt="Des invités dansent au SLVJ sous les lampes en fibre" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Dîner et danser à Cartagena sans changer d'adresse</h3>
+        <p>Au dîner, tenez-vous bien. Après, tout est permis. Voici comment se déroule une soirée au SLVJ.</p>
+      </a>
+      <a class="post-card it" href="blog/it/dinner-and-nightlife-cartagena.html" lang="it">
+        <img src="img/slvj-fiesta.jpg" alt="Ospiti che ballano da SLVJ sotto le lampade in fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Cena e balli a Cartagena senza cambiare locale</h3>
+        <p>A cena, comportati bene. Dopo, tutto è permesso. Ecco come funziona una notte da SLVJ.</p>
+      </a>
+      <a class="post-card de" href="blog/de/dinner-and-nightlife-cartagena.html" lang="de">
+        <img src="img/slvj-fiesta.jpg" alt="Gäste tanzen im SLVJ unter den Faserleuchten" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Dinner und Tanz in Cartagena, ohne die Location zu wechseln</h3>
+        <p>Beim Dinner: Haltung bewahren. Danach: alles erlaubt. So läuft eine Nacht im SLVJ ab.</p>
+      </a>
+      <a class="post-card en" href="blog/where-to-eat-cartagena-old-city.html" lang="en">
+        <img src="img/slvj-salon.jpg" alt="SLVJ&#x27;s dining room full of guests under fibre lamps and neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>Where to eat in Cartagena&#x27;s Old City: one house, four worlds</h3>
+        <p>A long lunch, a late dinner or a night that refuses to end: it all fits inside one colonial house two blocks from Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/where-to-eat-cartagena-old-city.html" lang="pt">
+        <img src="img/slvj-salon.jpg" alt="Salão do SLVJ cheio de clientes sob as luminárias de fibra e o neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out 2026</time>
+        <h3>Onde comer no Centro Histórico de Cartagena: uma casa, quatro mundos</h3>
+        <p>Almoço longo, jantar tardio ou uma noite que não quer acabar: tudo cabe numa casa colonial a duas quadras da Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/where-to-eat-cartagena-old-city.html" lang="fr">
+        <img src="img/slvj-salon.jpg" alt="La salle de SLVJ pleine de convives sous les lampes en fibre et le néon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Où manger dans la vieille ville de Cartagena&nbsp;: une maison, quatre mondes</h3>
+        <p>Un long déjeuner, un dîner tardif ou une nuit qui refuse de finir&nbsp;: tout tient dans une maison coloniale à deux rues de la Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card it" href="blog/it/where-to-eat-cartagena-old-city.html" lang="it">
+        <img src="img/slvj-salon.jpg" alt="La sala di SLVJ piena di ospiti sotto le lampade in fibra e il neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Dove mangiare nel centro storico di Cartagena: una casa, quattro mondi</h3>
+        <p>Un pranzo lungo, una cena tardi o una notte che non vuole finire: tutto sta in una casa coloniale a due isolati da Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card de" href="blog/de/where-to-eat-cartagena-old-city.html" lang="de">
+        <img src="img/slvj-salon.jpg" alt="Der Speisesaal des SLVJ voller Gäste unter Faserleuchten und Neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Essen in der Altstadt von Cartagena: ein Haus, vier Welten</h3>
+        <p>Ein langes Mittagessen, ein spätes Dinner oder eine Nacht, die nicht enden will: Alles passt in ein Kolonialhaus zwei Blocks von der Plaza Santo Domingo entfernt.</p>
+      </a>
       </div>
-      <div class="mapa"><img src="img/mapa.jpg" alt="Mapa ilustrado en azul: Casa Salvaje entre Calle Baloco y Calle Santa Teresa, cerca de la Plaza Santo Domingo" loading="lazy" decoding="async"></div>
+      <a class="btn ghost" href="blog/"><span class="es">Ver todo el blog</span><span class="en">See the whole blog</span><span class="pt">Ver todo o blog</span><span class="fr">Voir tout le blog</span><span class="it">Vedi tutto il blog</span><span class="de">Zum ganzen Blog</span></a>
     </div>
   </section>
 
 
   <section id="lista" class="guest">
     <div class="wrap">
-      <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span></span></div>
-      <h2><span class="es">Deja tu nombre en la puerta.</span><span class="en">Leave your name at the door.</span></h2>
+      <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></span></div>
+      <h2><span class="es">Deja tu nombre en la puerta.</span><span class="en">Leave your name at the door.</span><span class="pt">Deixe seu nome na porta.</span><span class="fr">Laissez votre nom à la porte.</span><span class="it">Lascia il tuo nome alla porta.</span><span class="de">Hinterlassen Sie Ihren Namen an der Tür.</span></h2>
       <p class="lead es" style="margin-top:12px;color:var(--ink-soft)">Para reservar mesa hoy, escríbenos por WhatsApp. Para invitaciones, fiestas, experiencias con cupo y la apertura de ONO, entra a la lista.</p>
       <p class="lead en" style="margin-top:12px;color:var(--ink-soft)">To book a table today, message us on WhatsApp. For invitations, parties, limited-seat experiences and the opening of ONO, join the list.</p>
-      <div class="cta"><a class="btn solid wa" href="#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span></a></div>
+      <p class="lead pt" style="margin-top:12px;color:var(--ink-soft)">Para reservar mesa hoje, fale com a gente no WhatsApp. Para convites, festas, experiências com vagas limitadas e a abertura do ONO, entre na lista.</p>
+      <p class="lead fr" style="margin-top:12px;color:var(--ink-soft)">Pour réserver une table aujourd'hui, écrivez-nous sur WhatsApp. Pour les invitations, les fêtes, les expériences à places limitées et l'ouverture d'ONO, rejoignez la liste.</p>
+      <p class="lead it" style="margin-top:12px;color:var(--ink-soft)">Per prenotare un tavolo oggi, scrivici su WhatsApp. Per inviti, feste, esperienze a posti limitati e l'apertura di ONO, entra in lista.</p>
+      <p class="lead de" style="margin-top:12px;color:var(--ink-soft)">Für einen Tisch heute schreiben Sie uns auf WhatsApp. Für Einladungen, Partys, Erlebnisse mit begrenzten Plätzen und die Eröffnung von ONO tragen Sie sich in die Liste ein.</p>
+      <div class="cta"><a class="btn solid wa" href="#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span><span class="pt">Reservar pelo WhatsApp</span><span class="fr">Réserver sur WhatsApp</span><span class="it">Prenota su WhatsApp</span><span class="de">Per WhatsApp reservieren</span></a></div>
       <form id="guestlist" name="lista-de-invitados" method="POST" data-netlify="true" netlify-honeypot="empresa2" action="/gracias.html">
         <input type="hidden" name="form-name" value="lista-de-invitados">
         <input type="hidden" name="origen" id="origen" value="directo">
         <input type="hidden" name="idioma" id="idioma" value="en">
         <p hidden><label>Empresa 2 <input name="empresa2"></label></p>
-        <label><span class="es">Nombre completo</span><span class="en">Full name</span><input id="f-nombre" name="nombre" required autocomplete="name"></label>
-        <label><span class="es">Correo</span><span class="en">Email</span><input id="f-correo" name="email" type="email" required autocomplete="email"></label>
+        <label><span class="es">Nombre completo</span><span class="en">Full name</span><span class="pt">Nome completo</span><span class="fr">Nom complet</span><span class="it">Nome e cognome</span><span class="de">Vollständiger Name</span><input id="f-nombre" name="nombre" required autocomplete="name"></label>
+        <label><span class="es">Correo</span><span class="en">Email</span><span class="pt">E-mail</span><span class="fr">E-mail</span><span class="it">Email</span><span class="de">E-Mail</span><input id="f-correo" name="email" type="email" required autocomplete="email"></label>
         <label>WhatsApp<input id="f-wa" name="whatsapp" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+57 300 000 0000"></label>
-        <label><span class="es">Fecha de nacimiento</span><span class="en">Date of birth</span><input id="f-nac" name="nacimiento" type="date" required min="1910-01-01" autocomplete="bday"></label>
+        <label><span class="es">Fecha de nacimiento</span><span class="en">Date of birth</span><span class="pt">Data de nascimento</span><span class="fr">Date de naissance</span><span class="it">Data di nascita</span><span class="de">Geburtsdatum</span><input id="f-nac" name="nacimiento" type="date" required min="1910-01-01" autocomplete="bday"></label>
         <label>Instagram @<input id="f-ig" name="instagram" autocomplete="off" placeholder="@"></label>
-        <label><span class="es">Ciudad</span><span class="en">City</span><select id="f-ciudad" name="ciudad" required><option value="">—</option><option>Cartagena</option><option>Barranquilla</option><option>Medellín</option><option>Bogotá</option><option value="otra">Otra / Other</option></select></label>
-        <label><span class="es">¿Qué mundo te llama?</span><span class="en">Which world calls you?</span><select id="f-mundo" name="mundo" required><option value="">—</option><option>La Domenica</option><option>Kanibal</option><option>SLVJ</option><option>ONO</option></select></label>
-        <label class="full"><span class="es">Empresa (opcional)</span><span class="en">Company (optional)</span><input id="f-empresa" name="empresa" autocomplete="organization"></label>
-        <label class="full check"><input id="f-consent" name="autorizacion" type="checkbox" required value="si"><span class="es">Autorizo a Grupo Ono a tratar mis datos para enviarme invitaciones y novedades de Casa Salvaje, según su política de datos personales. Puedo pedir que me retiren cuando quiera.</span><span class="en">I authorise Grupo Ono to use my details to send me Casa Salvaje invitations and news, under its personal data policy. I can ask to be removed at any time.</span></label>
-        <div class="full"><button class="btn solid" type="submit" id="submit"><span class="es">Ponme en la lista</span><span class="en">Put me on the list</span></button></div>
+        <label><span class="es">Ciudad</span><span class="en">City</span><span class="pt">Cidade</span><span class="fr">Ville</span><span class="it">Città</span><span class="de">Stadt</span><select id="f-ciudad" name="ciudad" required><option value="">—</option><option>Cartagena</option><option>Barranquilla</option><option>Medellín</option><option>Bogotá</option><option value="otra">Otra / Other</option></select></label>
+        <label><span class="es">¿Qué mundo te llama?</span><span class="en">Which world calls you?</span><span class="pt">Qual mundo te chama?</span><span class="fr">Quel monde vous appelle&nbsp;?</span><span class="it">Quale mondo ti chiama?</span><span class="de">Welche Welt ruft Sie?</span><select id="f-mundo" name="mundo" required><option value="">—</option><option>La Domenica</option><option>Kanibal</option><option>SLVJ</option><option>ONO</option></select></label>
+        <label class="full"><span class="es">Empresa (opcional)</span><span class="en">Company (optional)</span><span class="pt">Empresa (opcional)</span><span class="fr">Entreprise (facultatif)</span><span class="it">Azienda (facoltativo)</span><span class="de">Unternehmen (optional)</span><input id="f-empresa" name="empresa" autocomplete="organization"></label>
+        <label class="full check"><input id="f-consent" name="autorizacion" type="checkbox" required value="si"><span class="es">Autorizo a Grupo Ono a tratar mis datos para enviarme invitaciones y novedades de Casa Salvaje, según su política de datos personales. Puedo pedir que me retiren cuando quiera.</span><span class="en">I authorise Grupo Ono to use my details to send me Casa Salvaje invitations and news, under its personal data policy. I can ask to be removed at any time.</span><span class="pt">Autorizo o Grupo Ono a tratar meus dados para me enviar convites e novidades da Casa Salvaje, de acordo com sua política de dados pessoais. Posso pedir a remoção quando quiser.</span><span class="fr">J'autorise Grupo Ono à traiter mes données pour m'envoyer les invitations et actualités de Casa Salvaje, conformément à sa politique de données personnelles. Je peux demander à être retiré(e) à tout moment.</span><span class="it">Autorizzo Grupo Ono a trattare i miei dati per inviarmi inviti e novità di Casa Salvaje, secondo la sua informativa sui dati personali. Posso chiedere di essere rimosso in qualsiasi momento.</span><span class="de">Ich willige ein, dass Grupo Ono meine Daten gemäß seiner Datenschutzrichtlinie verwendet, um mir Einladungen und Neuigkeiten von Casa Salvaje zu senden. Ich kann jederzeit meine Löschung verlangen.</span></label>
+        <div class="full"><button class="btn solid" type="submit" id="submit"><span class="es">Ponme en la lista</span><span class="en">Put me on the list</span><span class="pt">Me coloque na lista</span><span class="fr">Inscrivez-moi sur la liste</span><span class="it">Mettimi in lista</span><span class="de">Setzen Sie mich auf die Liste</span></button></div>
         <p class="note full es">Entrar a la lista no confirma reserva ni entrada.</p>
         <p class="note full en">Joining the list does not confirm a reservation or entry.</p>
+        <p class="note full pt">Entrar na lista não confirma reserva nem entrada.</p>
+        <p class="note full fr">L'inscription sur la liste ne confirme ni réservation ni entrée.</p>
+        <p class="note full it">Entrare in lista non conferma prenotazione né ingresso.</p>
+        <p class="note full de">Der Eintrag in die Liste bestätigt weder Reservierung noch Einlass.</p>
       </form>
-      <div class="ok" id="ok" hidden><b class="es">Quedaste en la lista.</b><b class="en">You're on the list.</b> <span class="es">Te escribimos por WhatsApp antes de cada fecha con cupo.</span><span class="en">We'll message you on WhatsApp before each limited-seat date.</span></div>
+      <div class="ok" id="ok" hidden><b class="es">Quedaste en la lista.</b><b class="en">You're on the list.</b><b class="pt">Você está na lista.</b><b class="fr">Vous êtes sur la liste.</b><b class="it">Sei in lista.</b><b class="de">Sie stehen auf der Liste.</b> <span class="es">Te escribimos por WhatsApp antes de cada fecha con cupo.</span><span class="en">We'll message you on WhatsApp before each limited-seat date.</span><span class="pt">Vamos te escrever no WhatsApp antes de cada data com vagas limitadas.</span><span class="fr">Nous vous écrirons sur WhatsApp avant chaque date à places limitées.</span><span class="it">Ti scriviamo su WhatsApp prima di ogni data a posti limitati.</span><span class="de">Wir schreiben Ihnen vor jedem Termin mit begrenzten Plätzen auf WhatsApp.</span></div>
     </div>
   </section>
 </main>
@@ -210,9 +389,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa do La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ und ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Política de dados</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 
