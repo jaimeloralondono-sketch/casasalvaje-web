@@ -520,3 +520,58 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .mu-now{min-width:0;display:flex;flex-direction:column;gap:4px}
 .mu-now b{font:500 1.05rem/1.2 var(--disp,var(--display));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:none}
 .mu-now span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+/* Horarios: una tarjeta por mundo, la fila de hoy marcada y el estado en vivo (hora de Cartagena) */
+.horarios .intro{margin-top:12px;color:var(--ink-soft);max-width:62ch}
+.hr-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+@media (min-width:760px){.hr-grid{grid-template-columns:repeat(2,1fr)}}
+.hr-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px;display:grid;gap:12px;align-content:start}
+.hr-card .top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px}
+.hr-card h3{font-family:var(--display);font-size:1.7rem;font-weight:500;line-height:1;text-transform:none;letter-spacing:0}
+.hr-card h3 a{text-decoration:none}
+.hr-card h3 small{display:block;font-family:var(--body);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+.hr-status{font-size:0.78rem;font-weight:600;letter-spacing:0.04em;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);color:var(--ink-soft);white-space:nowrap}
+.hr-status::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:8px;vertical-align:1px}
+.hr-status.open{color:#2F6B3A;border-color:#2F6B3A}
+.hr-status.closed{color:var(--terra-cs)}
+.hr-status:empty{display:none}
+.hr-rows{margin:0;display:grid;border-top:1px solid var(--line)}
+.hr-rows div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:11px 8px;border-bottom:1px solid var(--line);align-items:baseline}
+.hr-rows dt{font-weight:600}
+.hr-rows dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}
+.hr-rows dd small{display:block;color:var(--ink-soft);font-size:0.8rem}
+.hr-rows .today{background:var(--cream);border-radius:8px}
+.hr-rows .today dt::after{content:attr(data-hoy);margin-left:8px;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--olive-cs);font-weight:600}
+.hr-card .soonline{color:var(--ink-soft);font-size:0.95rem}
+.hr-foot{margin-top:18px;font-size:0.88rem;color:var(--ink-soft);max-width:70ch}
+.hr-foot a{color:var(--ink);font-weight:600}
+
+/* Blog */
+.blog-head{padding-block:56px 16px}
+.blog-head h1{color:var(--terra-cs);font-weight:500;text-transform:none;letter-spacing:0;max-width:18ch}
+.posts{display:grid;grid-template-columns:1fr;gap:28px;margin-top:8px;padding-bottom:72px}
+@media (min-width:760px){.posts{grid-template-columns:repeat(3,1fr)}}
+.post-card{text-decoration:none;color:inherit;display:grid;gap:10px;align-content:start}
+.post-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;transition:transform .3s ease}
+.post-card:hover img{transform:translateY(-2px)}
+.post-card h2{font-size:1.45rem;line-height:1.15;text-transform:none;letter-spacing:0;font-weight:500}
+.post-card p{color:var(--ink-soft);font-size:0.95rem}
+.post-card time,.post-meta{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--olive-cs);font-weight:600}
+.post{padding-block:48px 72px}
+.post .wrap{max-width:760px}
+.post h1{font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.04;color:var(--terra-cs);font-weight:500;text-transform:none;letter-spacing:0;margin-top:12px}
+.post .dek{font-family:var(--display);font-style:italic;font-size:1.35rem;line-height:1.35;margin-top:16px;color:var(--ink-soft)}
+.post .cover{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px;display:block;margin:28px 0}
+.post .body{font-size:1.06rem;line-height:1.7}
+.post .body h2{font-size:clamp(1.5rem,3.6vw,2rem);line-height:1.15;text-transform:none;letter-spacing:0;font-weight:500;margin:40px 0 12px}
+.post .body p,.post .body ul{margin:0 0 16px}
+.post .body ul{padding-left:1.2em}
+.post .body li{margin-bottom:6px}
+.post .body a{color:var(--olive-cs);font-weight:600}
+.post .box{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:28px 0}
+.post .box b{display:block;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--olive-cs);margin-bottom:8px}
+.post .alt{display:inline-block;margin-top:14px;font-size:0.85rem;font-weight:600;color:var(--ink)}
+.post .more{border-top:1px solid var(--line);margin-top:48px;padding-top:28px}
+.post .more ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
+.post .more a{font-family:var(--display);font-size:1.25rem;text-decoration:none}
+.post .more a:hover{text-decoration:underline}
+.hr-note{font-size:0.85rem;color:var(--ink-soft);margin:0}
