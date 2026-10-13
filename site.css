@@ -61,7 +61,7 @@ img{max-width:100%}
 
 /* Franja */
 .strip{background:var(--cobalt);color:var(--white);overflow:hidden}
-.strip .row{display:flex;gap:48px;white-space:nowrap;padding:14px 0;font-family:var(--display);font-size:1.15rem;letter-spacing:0.14em;text-transform:uppercase;animation:slide 20s linear infinite}
+.strip .row{display:flex;gap:48px;white-space:nowrap;padding:14px 0;font-family:var(--display);font-size:1.15rem;letter-spacing:0.14em;text-transform:uppercase;animation:slide 12s linear infinite}
 .strip .row span::after{content:"◆";margin-left:48px;font-size:0.6rem;vertical-align:middle;opacity:.7}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.strip .row{animation:none;white-space:normal;flex-wrap:wrap;gap:12px 28px;padding:14px 20px}}
