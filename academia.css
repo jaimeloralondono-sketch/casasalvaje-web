@@ -15,7 +15,7 @@
 .acad .btn.sol{background:var(--sol);border-color:var(--sol);color:var(--cobalt-deep)}
 .acad .btn.linea{color:var(--sol)}
 
-.acad .strip{background:var(--sol);color:var(--cobalt-deep)}
+body .acad .strip{background:var(--sol);color:var(--cobalt-deep)}
 
 /* Progreso */
 .acad .progreso{display:flex;align-items:center;gap:14px;margin-top:22px;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
@@ -98,3 +98,34 @@
   .acad .cert,.acad .cert *{visibility:visible}
   .acad .cert{position:fixed;inset:0;border-radius:0;aspect-ratio:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+
+/* Concierge: los mundos, el flujo, la tabla de puertas, la biblioteca, simulacros y el tablero */
+.acad .mundos{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:760px){.acad .mundos{grid-template-columns:1fr 1fr}}
+.acad .mundos > div{background:var(--cream);border-radius:14px;padding:18px 20px;display:grid;gap:6px;align-content:start;font-size:0.95rem}
+.acad .mundos b{font-family:"Hanken Grotesk",var(--body);font-size:1.5rem;letter-spacing:-0.03em;color:var(--cobalt);line-height:1}
+.acad .mundos i{font-style:normal;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
+.acad .mundos a{font-weight:600;color:var(--cobalt);text-decoration:none;margin-top:4px}
+.acad .flujo{list-style:none;counter-reset:f;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:760px){.acad .flujo{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.acad .flujo li{counter-increment:f;background:var(--cream);border-radius:14px;padding:16px 18px;display:grid;gap:4px;font-size:0.92rem;color:var(--ink-soft)}
+.acad .flujo li::before{content:counter(f);font-family:"Hanken Grotesk",var(--body);font-weight:700;font-size:2rem;line-height:1;color:var(--cobalt);letter-spacing:-0.04em}
+.acad .flujo b{color:var(--ink);font-size:1rem}
+.acad .tabla{display:grid;border-top:1px solid var(--line)}
+.acad .tabla div{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:0.95rem}
+.acad .tabla b{flex:none;background:var(--cobalt);color:var(--sol);border-radius:99px;padding:5px 12px;font-size:0.78rem;letter-spacing:0.04em}
+.acad .biblio{display:flex;flex-wrap:wrap;gap:8px}
+.acad .biblio a{border:1.5px solid var(--cobalt);color:var(--cobalt);border-radius:99px;padding:8px 14px;text-decoration:none;font-weight:600;font-size:0.88rem}
+.acad .biblio a:hover{background:var(--cobalt);color:var(--sol)}
+.acad .simulacro{border:1.5px solid var(--cobalt);border-radius:14px;overflow:hidden}
+.acad .simulacro summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--cobalt);list-style:none;display:flex;gap:10px}
+.acad .simulacro summary::before{content:"▶";font-size:0.7rem;margin-top:5px;transition:transform .2s}
+.acad .simulacro[open] summary::before{transform:rotate(90deg)}
+.acad .simulacro summary::-webkit-details-marker{display:none}
+.acad .simulacro p{padding:0 18px 16px 38px;font-size:0.95rem}
+.acad .tablero{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px}
+@media (min-width:760px){.acad .tablero{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.acad .herr{background:var(--cobalt);color:var(--sol);border-radius:16px;padding:18px;text-decoration:none;display:grid;gap:6px;align-content:space-between;min-height:118px;transition:transform .15s}
+.acad .herr:hover{transform:translateY(-2px)}
+.acad .herr b{font-family:"Hanken Grotesk",var(--body);font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:-0.03em;line-height:1.05}
+.acad .herr > span{font-size:0.8rem;opacity:.85}
