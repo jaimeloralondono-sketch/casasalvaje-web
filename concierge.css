@@ -35,7 +35,7 @@ body .cc-hero .eyebrow{color:#C9A46A}
 @media (min-width:760px){.puertas{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .puerta{display:grid;gap:6px;text-decoration:none;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;padding-bottom:18px;transition:transform .15s ease}
 .puerta:hover{transform:translateY(-2px)}
-.puerta img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:8px}
+.puerta img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;margin-bottom:8px}
 .puerta b,.puerta > span{padding-inline:18px}
 .puerta b{font-family:var(--display);font-size:1.5rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--cobalt);line-height:1.05}
 .puerta > span{font-size:0.92rem;color:var(--ink-soft)}
