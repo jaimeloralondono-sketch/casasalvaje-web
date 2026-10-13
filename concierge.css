@@ -74,6 +74,22 @@ body .cc-hero .eyebrow{color:#C9A46A}
 .tile[aria-pressed="true"] > span{color:var(--cream)}
 .tile[aria-pressed="true"] svg{background:rgba(251,247,239,.14);stroke:var(--gold)}
 .tile[aria-pressed="true"]::after{border-color:var(--gold);background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.6 2.5L13 6.5' fill='none' stroke='%23141B3A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat}
+.tile.destacada{grid-column:1/-1;grid-template-columns:1fr;grid-template-rows:none;padding:0;overflow:hidden;row-gap:6px;align-content:start}
+.tile.destacada img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin-bottom:8px}
+.tile.destacada .sello,.tile.destacada b,.tile.destacada > span:last-child{margin-inline:18px}
+.tile.destacada > span:last-child{margin-bottom:18px;max-width:46ch}
+.tile.destacada b{font-size:1.7rem;text-transform:uppercase;letter-spacing:0.04em}
+.tile .sello{justify-self:start;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;color:var(--ink);background:var(--gold);border-radius:99px;padding:4px 10px}
+.tile.destacada::after{background-color:var(--white)}
+.tile.destacada[aria-pressed="true"]::after{background-color:var(--gold)}
+@media (min-width:760px){
+  .tile.destacada{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:1fr auto auto auto 1fr;column-gap:26px;row-gap:8px}
+  .tile.destacada img{grid-column:1;grid-row:1 / -1;height:100%;min-height:260px;aspect-ratio:auto;margin:0}
+  .tile.destacada .sello,.tile.destacada b,.tile.destacada > span:last-child{grid-column:2;margin:0 22px 0 0}
+  .tile.destacada .sello{grid-row:2}
+  .tile.destacada b{grid-row:3}
+  .tile.destacada > span:last-child{grid-row:4}
+}
 .tile:focus-visible,.ocasiones button:focus-visible,.stepper button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .plan-nota{display:grid;gap:8px;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;color:var(--ink-soft)}
 .plan-nota textarea{font:inherit;font-size:1rem;letter-spacing:0;text-transform:none;font-weight:400;color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;resize:vertical;min-height:64px;width:100%}

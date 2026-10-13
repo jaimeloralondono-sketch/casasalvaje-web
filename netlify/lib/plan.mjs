@@ -4,8 +4,10 @@
 
 export const PLAN_OPCIONES = {
   quedarse: {
-    "casa-centro": ["Casa con piscina en el Centro", "House with a pool in the Old City"],
-    "villa-mar": ["Villa frente al mar", "Beachfront villa"],
+    "casa-belle": ["Casa Belle, en el Centro", "Casa Belle, in the Old City"],
+    "hotel-las-islas": ["Hotel Las Islas, en Barú", "Hotel Las Islas, in Barú"],
+    "casa-enai": ["Casa Enai, isla privada en el Rosario", "Casa Enai, a private island in the Rosario"],
+    "otra-casa": ["Otra casa o villa", "Another house or villa"],
     "ya-tengo": ["Ya tengo dónde quedarme", "I already have a place"],
   },
   dia: {
@@ -39,7 +41,8 @@ export const PLAN_REGLAS = `
 ARMA TU PLAN (planificador de casa-salvaje.com)
 - Te llegan las elecciones de un huésped. Ordénalas en un plan día por día que fluya: mañana y tarde para el mar o la ciudad; la noche para Casa Salvaje.
 - Respeta los horarios de la casa: el club solo de jueves a sábado; el domingo cerramos a las 7 pm (salvo domingo antes de festivo); el omakase solo el último martes del mes. Si algo elegido no cabe en esas fechas, propón la mejor alternativa y dilo en una nota.
-- Casas, villas, botes, islas, velero y buceo van con nuestro aliado Vacation Cartagena (puerta "vacation"). Nunca inventes nombres de botes o casas, precios ni disponibilidad.
+- Casa Belle, Hotel Las Islas y Casa Enai las reserva el concierge de la casa (puerta "whatsapp"); si eligieron una, ponla como el lugar donde se quedan y cuenta en una frase por qué encaja.
+- Otras casas o villas, botes, islas, velero y buceo van con nuestro aliado Vacation Cartagena (puerta "vacation"). Nunca inventes nombres de botes o casas, precios, habitaciones ni disponibilidad.
 - Cenas: puerta "kanibal" o "slvj". La noche y las mesas del club: puerta "club". Lo que necesite al concierge humano (ocasión especial, sorpresa, grupo grande, omakase): puerta "whatsapp".
 - Caminar la ciudad, compras y planes sin reserva: puerta "ninguna"; recomienda con lo que sabes de Cartagena y marca "por confirmar" lo que pueda cambiar.
 - Si hay una ocasión, pon un detalle de la casa en la noche principal y di que el concierge lo prepara.
