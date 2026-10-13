@@ -1,11 +1,37 @@
+// Idiomas del sitio. Las páginas traen el texto en <span class="es|en|pt|fr|it|de">; estos son los textos que arma site.js.
+var CS_LANGS = ["es", "en", "pt", "fr", "it", "de"];
+var CS_T = {
+  es: { hi: "Hola Casa Salvaje, quiero reservar una mesa", at: " en ", blog: function(t){ return " Vi en su blog «" + t + "»."; }, ageChk: "Revisa la fecha de nacimiento.", age18: "La lista es solo para mayores de 18 años.",
+        today: "hoy", tomorrow: "mañana", on: "el ", Today: "Hoy", openNow: "Abierto ahora · cierra a las ", closed: "Cerrado", closedOpens: function(w, h){ return "Cerrado · abre " + w + " a las " + h; },
+        days: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"], music: "Música", next: "Otra" },
+  en: { hi: "Hi Casa Salvaje, I'd like to book a table", at: " at ", blog: function(t){ return " I saw “" + t + "” on your blog."; }, ageChk: "Please check your date of birth.", age18: "The guest list is for over-18s only.",
+        today: "today", tomorrow: "tomorrow", on: "", Today: "Today", openNow: "Open now · closes at ", closed: "Closed", closedOpens: function(w, h){ return "Closed · opens " + w + " at " + h; },
+        days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], music: "Music", next: "Next" },
+  pt: { hi: "Olá Casa Salvaje, gostaria de reservar uma mesa", at: " em ", blog: function(t){ return " Vi no blog de vocês “" + t + "”."; }, ageChk: "Confira a data de nascimento.", age18: "A lista é só para maiores de 18 anos.",
+        today: "hoje", tomorrow: "amanhã", on: "", Today: "Hoje", openNow: "Aberto agora · fecha às ", closed: "Fechado", closedOpens: function(w, h){ return "Fechado · abre " + w + " às " + h; },
+        days: ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"], music: "Música", next: "Outra" },
+  fr: { hi: "Bonjour Casa Salvaje, je voudrais réserver une table", at: " pour ", blog: function(t){ return " J'ai lu « " + t + " » sur votre blog."; }, ageChk: "Vérifiez la date de naissance.", age18: "La liste est réservée aux plus de 18 ans.",
+        today: "aujourd'hui", tomorrow: "demain", on: "", Today: "Aujourd'hui", openNow: "Ouvert · ferme à ", closed: "Fermé", closedOpens: function(w, h){ return "Fermé · ouvre " + w + " à " + h; },
+        days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"], music: "Musique", next: "Suivante" },
+  it: { hi: "Ciao Casa Salvaje, vorrei prenotare un tavolo", at: " per ", blog: function(t){ return " Ho letto «" + t + "» sul vostro blog."; }, ageChk: "Controlla la data di nascita.", age18: "La lista è solo per maggiorenni.",
+        today: "oggi", tomorrow: "domani", on: "", Today: "Oggi", openNow: "Aperto ora · chiude alle ", closed: "Chiuso", closedOpens: function(w, h){ return "Chiuso · apre " + w + " alle " + h; },
+        days: ["domenica", "lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato"], music: "Musica", next: "Un'altra" },
+  de: { hi: "Hallo Casa Salvaje, ich möchte einen Tisch reservieren", at: " für ", blog: function(t){ return " Ich habe „" + t + "“ in eurem Blog gelesen."; }, ageChk: "Bitte das Geburtsdatum prüfen.", age18: "Die Gästeliste ist nur für Personen ab 18 Jahren.",
+        today: "heute", tomorrow: "morgen", on: "am ", Today: "Heute", openNow: "Jetzt geöffnet · schließt um ", closed: "Geschlossen", closedOpens: function(w, h){ return "Geschlossen · öffnet " + w + " um " + h; },
+        days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"], music: "Musik", next: "Weiter" }
+};
+function csLang(){ var l = document.documentElement.getAttribute("data-lang"); return CS_T[l] ? l : "en"; }
+function csT(){ return CS_T[csLang()]; }
+
 // Blog: recuerda el último artículo leído (30 días) para saber qué reservas, WhatsApps y registros
 // en la lista llegan por el blog. Se cuentan en /api/blog/clic y se ven en /blog/metricas.
 var CS_BLOG = (function(){
-  var m = location.pathname.match(/\/blog\/([a-z0-9-]+?)(\.html)?$/), now = Date.now(), b = null;
+  var m = location.pathname.match(/\/blog\/(?:(pt|fr|it|de)\/)?([a-z0-9-]+?)(\.html)?$/), now = Date.now(), b = null;
   try{ b = JSON.parse(localStorage.getItem("cs-blog") || "null"); }catch(e){}
-  if(m && m[1] !== "index" && m[1] !== "metricas"){
+  if(m && m[2] !== "index" && m[2] !== "metricas"){
     var h1 = document.querySelector("h1");
-    b = { a: m[1], t: h1 ? h1.textContent.trim() : m[1], ts: now };
+    var key = (m[1] ? m[1] + "-" : "") + m[2];
+    b = { a: key, t: h1 ? h1.textContent.trim() : key, ts: now };
     try{ localStorage.setItem("cs-blog", JSON.stringify(b)); }catch(e){}
     csSend("vista", b.a);
   }
@@ -28,7 +54,7 @@ document.addEventListener("click", function(e){
   var root = document.documentElement;
   function setLang(l){
     root.setAttribute("data-lang", l); root.setAttribute("lang", l);
-    document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.set === l)); });
+    document.querySelectorAll(".lang select").forEach(function(sel){ sel.value = l; });
     var idi = document.getElementById("idioma"); if(idi) idi.value = l;
     try{ localStorage.setItem("cs-lang", l); }catch(e){}
     wireWhatsApp(); wireBooking();
@@ -57,24 +83,24 @@ document.addEventListener("click", function(e){
     var l = root.getAttribute("data-lang") || "es";
     document.querySelectorAll("a.wa").forEach(function(a){
       if(!WHATSAPP){ a.setAttribute("href", "#lista"); return; }
-      var ev = a.dataset.evento ? (l === "en" ? " at " : " en ") + a.dataset.evento : "";
-      var msg = l === "en" ? "Hi Casa Salvaje, I'd like to book a table" + ev + "." : "Hola Casa Salvaje, quiero reservar una mesa" + ev + ".";
-      if(CS_BLOG) msg += l === "en" ? " I saw \u201c" + CS_BLOG.t + "\u201d on your blog." : " Vi en su blog \u00ab" + CS_BLOG.t + "\u00bb.";
+      var L = csT(), ev = a.dataset.evento ? L.at + a.dataset.evento : "";
+      var msg = L.hi + ev + ".";
+      if(CS_BLOG) msg += L.blog(CS_BLOG.t);
       a.setAttribute("href", "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg));
       a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
     });
   }
-  var start = "en";
-  try{ var saved = localStorage.getItem("cs-lang"); if(saved === "en" || saved === "es") start = saved; }catch(e){}
-  if(location.hash === "#en") start = "en"; if(location.hash === "#es") start = "es";
+  var start = root.getAttribute("data-lang") || "en";
+  try{ var saved = localStorage.getItem("cs-lang"); if(CS_T[saved]) start = saved; }catch(e){}
+  var hl = location.hash.slice(1); if(CS_T[hl]) start = hl;
   // Artículos del blog: cada idioma tiene su propia URL; el botón de idioma lleva a la traducción.
   var fixed = root.getAttribute("data-fixed");
   if(fixed) start = fixed;
   setLang(start);
-  document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){
-    var alt = fixed && b.dataset.set !== fixed && document.querySelector('link[rel="alternate"][hreflang="' + b.dataset.set + '"]');
-    if(alt){ try{ localStorage.setItem("cs-lang", b.dataset.set); }catch(e){} location.href = new URL(alt.getAttribute("href")).pathname; return; }
-    setLang(b.dataset.set);
+  document.querySelectorAll(".lang select").forEach(function(sel){ sel.addEventListener("change", function(){
+    var v = sel.value, alt = fixed && v !== fixed && document.querySelector('link[rel="alternate"][hreflang="' + v + '"]');
+    if(alt){ try{ localStorage.setItem("cs-lang", v); }catch(e){} location.href = new URL(alt.getAttribute("href")).pathname; return; }
+    setLang(v);
   }); });
   try{
     var q = new URLSearchParams(location.search);
@@ -92,9 +118,9 @@ document.addEventListener("click", function(e){
     if(!nac.value) return;
     var d = new Date(nac.value + "T00:00:00"), t = new Date();
     var age = t.getFullYear() - d.getFullYear() - ((t.getMonth() < d.getMonth() || (t.getMonth() === d.getMonth() && t.getDate() < d.getDate())) ? 1 : 0);
-    var es = (root.getAttribute("data-lang") || "en") === "es";
-    if(isNaN(age) || age > 110) nac.setCustomValidity(es ? "Revisa la fecha de nacimiento." : "Please check your date of birth.");
-    else if(age < 18) nac.setCustomValidity(es ? "La lista es solo para mayores de 18 años." : "The guest list is for over-18s only.");
+    var L = csT();
+    if(isNaN(age) || age > 110) nac.setCustomValidity(L.ageChk);
+    else if(age < 18) nac.setCustomValidity(L.age18);
   }
   if(nac){
     var mx = new Date(); mx.setFullYear(mx.getFullYear() - 18);
@@ -287,14 +313,16 @@ document.addEventListener("click", function(e){
     box.innerHTML =
       '<div class="mu-panel off"><div class="mu-top">' +
         (groups.length > 1 ? '<div class="mu-sets">' + groups.map(function(g, i){ return '<button type="button" data-i="' + i + '">' + g.name + '</button>'; }).join("") + '</div>' : '<span></span>') +
-        '<span class="mu-act"><button type="button" class="mu-next"><span class="es">Otra</span><span class="en">Next</span> &#8635;</button>' +
+        '<span class="mu-act"><button type="button" class="mu-next"><span class="mu-next-t"></span> &#8635;</button>' +
         '<button type="button" class="mu-x" aria-label="Cerrar / Close">&#215;</button></span></div>' +
         (mode === "mp3"
           ? '<div class="mu-own"><button type="button" class="mu-pp" aria-label="Play / Pausa"></button><div class="mu-now"><b></b><span></span></div></div>'
           : '<div class="mu-frame"><div></div></div>') +
       '</div>' +
-      '<button type="button" class="mu-btn" aria-expanded="false"><span class="mu-eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="es">Música</span><span class="en">Music</span></button>';
+      '<button type="button" class="mu-btn" aria-expanded="false"><span class="mu-eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="mu-t"></span></button>';
     document.body.appendChild(box);
+    function labels(){ var L = csT(); box.querySelector(".mu-t").textContent = L.music; box.querySelector(".mu-next-t").textContent = L.next; }
+    labels(); document.addEventListener("cs-lang", labels);
     var panel = box.querySelector(".mu-panel"), btn = box.querySelector(".mu-btn");
     function on(v){ box.classList.toggle("on", v); }
     function mark(){ box.querySelectorAll(".mu-sets button").forEach(function(b){ b.setAttribute("aria-pressed", String(groups[b.dataset.i] === cur)); }); }
@@ -437,14 +465,14 @@ document.addEventListener("click", function(e){
     return h12 + (mm ? ":" + (mm < 10 ? "0" : "") + mm : "") + (h < 12 ? " am" : " pm");
   }
   function render(){
-    var es = (root.getAttribute("data-lang") || "en") === "es", t = now(), key = eve(t.day) ? "f" : String(wd(t.day));
+    var L = csT(), t = now(), key = eve(t.day) ? "f" : String(wd(t.day));
     cards.forEach(function(card){
       var H; try{ H = JSON.parse(card.dataset.hours); }catch(e){ return; }
       var k0 = H[key] ? key : String(wd(t.day));
       card.querySelectorAll(".hr-rows > div").forEach(function(row){
         var on = row.dataset.days.split(",").indexOf(k0) > -1;
         row.classList.toggle("today", on);
-        row.querySelector("dt").setAttribute("data-hoy", on ? (es ? "Hoy" : "Today") : "");
+        row.querySelector("dt").setAttribute("data-hoy", on ? L.Today : "");
       });
       // Abierto ahora: tramos de hoy, o el tramo de ayer que pasa de medianoche.
       var close = null;
@@ -452,17 +480,17 @@ document.addEventListener("click", function(e){
       hoursOn(H, t.day - DAY).forEach(function(r){ if(r[1] > 1440 && t.m < r[1] - 1440) close = r[1]; });
       var el = card.querySelector(".hr-status"), txt;
       if(close !== null){
-        txt = es ? "Abierto ahora · cierra a las " + clock(close) : "Open now · closes at " + clock(close);
+        txt = L.openNow + clock(close);
         el.className = "hr-status open";
       } else {
         var next = null;
         for(var k = 0; k < 8 && next === null; k++){
           hoursOn(H, t.day + k * DAY).forEach(function(r){ if(next === null && (k > 0 || r[0] > t.m)) next = { k: k, d: wd(t.day + k * DAY), m: r[0] }; });
         }
-        if(!next) txt = es ? "Cerrado" : "Closed";
+        if(!next) txt = L.closed;
         else {
-          var when = next.k === 0 ? (es ? "hoy" : "today") : next.k === 1 ? (es ? "mañana" : "tomorrow") : (es ? "el " : "") + DAYS[es ? "es" : "en"][next.d];
-          txt = es ? "Cerrado · abre " + when + " a las " + clock(next.m) : "Closed · opens " + when + " at " + clock(next.m);
+          var when = next.k === 0 ? L.today : next.k === 1 ? L.tomorrow : L.on + L.days[next.d];
+          txt = L.closedOpens(when, clock(next.m));
         }
         el.className = "hr-status closed";
       }
