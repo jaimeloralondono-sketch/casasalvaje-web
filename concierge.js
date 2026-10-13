@@ -1,7 +1,7 @@
 // Chat del concierge: conversa con /api/concierge (Claude) y pasa a WhatsApp cuando hace falta una persona.
 // La conversación vive en esta pestaña (sessionStorage); el servidor no guarda nada.
 (function(){
-  var WHATSAPP = "573108286602", KEY = "cs-concierge";
+  var WHATSAPP = "573108286602", CONCIERGE = "573182824124", KEY = "cs-concierge";
   var root = document.documentElement, log = document.getElementById("log"), form = document.getElementById("form");
   var q = document.getElementById("q"), enviar = document.getElementById("enviar"), chips = document.getElementById("chips");
   var turnos = [], ocupado = false;
@@ -11,12 +11,12 @@
   function placeholder(){ q.placeholder = es() ? q.dataset.phEs : q.dataset.phEn; }
   document.addEventListener("cs-lang", placeholder); placeholder();
 
-  function wa(texto){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto); }
-  // Pinta texto seguro: enlaces http(s) clicables y la marca [[WHATSAPP: ...]] como botón.
+  function wa(texto, numero){ return "https://wa.me/" + (numero || WHATSAPP) + "?text=" + encodeURIComponent(texto); }
+  // Pinta texto seguro: enlaces http(s) clicables y las marcas [[WHATSAPP: ...]] (la casa) y [[CONCIERGE: ...]] (el concierge) como botón.
   function pintar(p, texto, final){
-    var pedido = null;
+    var pedido = null, alConcierge = false;
     if(!final){ var corte = texto.indexOf("[["); if(corte >= 0) texto = texto.slice(0, corte); }   // no mostrar marcas a medio escribir
-    texto = texto.replace(/\[\[WHATSAPP:\s*([\s\S]*?)\]\]/g, function(_, r){ pedido = r.trim(); return ""; });
+    texto = texto.replace(/\[\[(WHATSAPP|CONCIERGE):\s*([\s\S]*?)\]\]/g, function(_, m, r){ pedido = r.trim(); alConcierge = m === "CONCIERGE"; return ""; });
     texto = texto.replace(/\[\[(REFUSAL|ERROR)\]\]/g, "").trim();
     p.textContent = "";
     texto.split(/(https?:\/\/[^\s<>()]+[^\s<>().,;:!?¡¿"'])/g).forEach(function(trozo, i){
@@ -25,8 +25,8 @@
     });
     var caja = p.parentNode, viejo = caja.querySelector(".wa-btn"); if(viejo) viejo.remove();
     if(final && pedido){
-      var b = document.createElement("a"); b.className = "wa-btn"; b.href = wa(pedido); b.target = "_blank"; b.rel = "noopener";
-      b.textContent = t("Seguir por WhatsApp con el concierge", "Continue on WhatsApp with the concierge");
+      var b = document.createElement("a"); b.className = "wa-btn"; b.href = wa(pedido, alConcierge ? CONCIERGE : WHATSAPP); b.target = "_blank"; b.rel = "noopener";
+      b.textContent = alConcierge ? t("Seguir por WhatsApp con el concierge", "Continue on WhatsApp with the concierge") : t("Seguir por WhatsApp con la casa", "Continue on WhatsApp with the house");
       caja.appendChild(b);
     }
   }

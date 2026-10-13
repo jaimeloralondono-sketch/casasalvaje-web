@@ -2,7 +2,7 @@
 // CSPlan.montar({ pedir, alChat }) — `pedir(sel)` devuelve una promesa con el texto (JSON) del plan; `alChat(pedido, plan)` lo pasa al chat.
 // La web usa /api/plan; la vista previa del concierge usa Claude desde el artifact. El dibujo y las reglas son los mismos.
 (function(){
-  var WHATSAPP = "573108286602";
+  var WHATSAPP = "573182824124";   // el concierge: casas, yates, planes y extras
   var UTM = "utm_source=casasalvaje&utm_medium=concierge&utm_campaign=arma-tu-plan";
   var PUERTAS = {
     kanibal: ["Reservar en Kanibal", "Book Kanibal", "https://restaurante.covermanager.com/kanibal-cartagena/?" + UTM],
@@ -143,7 +143,7 @@
       salida.textContent = "";
       var caja = el("div", "plan-hoja fallo");
       caja.appendChild(el("p", null, motivo || t("No pude armar el plan esta vez. Mándale tu idea al concierge y te lo arma una persona.", "I couldn't build the plan this time. Send your idea to the concierge and a person will put it together.")));
-      caja.appendChild(enlace("wa-btn grande", t("Mandar mi idea por WhatsApp", "Send my idea on WhatsApp"), wa(resumen(sel))));
+      caja.appendChild(enlace("wa-btn grande", t("Mandar mi idea al concierge", "Send my idea to the concierge"), wa(resumen(sel))));
       salida.appendChild(caja);
     }
 
