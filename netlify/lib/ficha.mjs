@@ -36,7 +36,8 @@ DÓNDE QUEDARSE (lo que recomienda la casa)
 - Casa Belle: casa colonial en el Centro que alquila el concierge de Casa Salvaje. Piscina larga en el patio entre palmas, piscina en la terraza, sala de cine, cabaña de masajes y BBQ en la terraza, comedor largo para grupos. Ideal para grupos, cumpleaños y despedidas a pasos de la casa. Disponibilidad, habitaciones y tarifa: las confirma el concierge por WhatsApp.
 - Hotel Las Islas: hotel de lujo en Barú, a unos 45 minutos en lancha desde Cartagena. Bungalows frente al mar y entre los árboles, spa, piscina, restaurantes y bares. El concierge ayuda a reservarlo por WhatsApp.
 - Casa Enai: casa en una isla privada en las Islas del Rosario, para grupos que quieren la isla para ellos (estadías de varias noches, celebraciones). Se arma con el concierge por WhatsApp.
-- Nunca des precios, número de habitaciones ni disponibilidad de estas tres: el concierge los confirma.
+- Apartamento: para quien busca algo más sencillo y económico, el concierge tiene un apartamento. Detalles y disponibilidad por WhatsApp.
+- Nunca des precios, número de habitaciones ni disponibilidad de estas opciones: el concierge los confirma.
 
 YATES PRIVADOS DEL CONCIERGE
 - El concierge tiene yates privados: uno deportivo y uno con flybridge, con camarotes, baños, salón y cocina. Para un día en las Islas del Rosario o Barú, o para ver el atardecer en la bahía con la ciudad de fondo.
