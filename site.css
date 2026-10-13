@@ -593,3 +593,4 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .met th{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft)}
 .met td a{color:var(--ink)}
 .met tfoot td{font-weight:600;border-bottom:0}
+.post .body h3{font-family:var(--display);font-size:1.35rem;font-weight:500;text-transform:none;letter-spacing:0;margin:24px 0 8px}
