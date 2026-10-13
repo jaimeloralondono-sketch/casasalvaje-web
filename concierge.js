@@ -91,5 +91,28 @@
   form.addEventListener("submit", function(e){ e.preventDefault(); var v = q.value; q.value = ""; q.style.height = ""; preguntar(v); });
   q.addEventListener("keydown", function(e){ if(e.key === "Enter" && !e.shiftKey && !e.isComposing){ e.preventDefault(); form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); } });
   q.addEventListener("input", function(){ q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 140) + "px"; });
-  chips.querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ preguntar(es() ? b.dataset.es : b.dataset.en); }); });
+  chips.querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){
+    if(b.dataset.ir){ var destino = document.getElementById(b.dataset.ir); if(destino) destino.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    preguntar(es() ? b.dataset.es : b.dataset.en);
+  }); });
+
+  // Arma tu plan: pide el plan a /api/plan y, si el huésped quiere, lo sigue en este chat.
+  if(window.CSPlan) CSPlan.montar({
+    pedir: function(sel){
+      return fetch("/api/plan", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ plan: sel }) })
+        .then(function(r){
+          if(r.status === 503) throw { mensaje: t("El planificador se está preparando. Mientras tanto, nuestro equipo te arma el plan por WhatsApp.", "The planner is getting ready. Meanwhile, our team will build your plan on WhatsApp.") };
+          if(!r.ok) throw {};
+          return r.text();
+        })
+        .then(function(x){ if(/\[\[(ERROR|REFUSAL)\]\]/.test(x)) throw {}; return x; });
+    },
+    alChat: function(pedido, plan){
+      var cierre = plan + "\n\n" + t("¿Qué le cambiamos?", "What should we change?");
+      turnos.push({ role: "user", content: pedido }, { role: "assistant", content: cierre }); guardar();
+      chips.hidden = true;
+      burbuja("user", pedido); burbuja("assistant", cierre, true);
+      document.getElementById("chat").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 })();

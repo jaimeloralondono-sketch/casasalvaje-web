@@ -51,6 +51,7 @@ Están en `index.html#horarios`. Cada tarjeta tiene el texto visible y, en `data
 - Para activarlo: en Netlify, Site configuration → Environment variables, crear `ANTHROPIC_API_KEY` con una clave de la consola de Claude (platform.claude.com). Sin la clave, el chat ofrece WhatsApp.
 - La ficha de la casa está en `netlify/lib/ficha.mjs` y la usan la web y el WhatsApp. Si cambia un horario o una regla, se cambia ahí.
 - La conversación vive solo en la pestaña del huésped; el servidor no guarda nada.
+- **Arma tu plan** (`concierge-plan.js`): el huésped elige fechas, personas, dónde quedarse, qué hacer de día (botes, islas, velero, buceo, ciudad) y de noche (Kanibal, SLVJ, club, omakase). `POST /api/plan` (`netlify/functions/plan.mjs`) lo ordena día por día con la ficha de la casa; cada momento trae su botón (CoverManager, Fourvenues, Vacation Cartagena o WhatsApp) y el plan completo se manda al concierge por WhatsApp. Las opciones y las reglas del plan están en `netlify/lib/plan.mjs`.
 
 ## WhatsApp con Claude (vía Bird)
 `POST /api/whatsapp` (`netlify/functions/whatsapp-background.mjs`) recibe de Bird cada mensaje que llega al WhatsApp de la casa y responde con Claude, con la misma ficha que la web. Es una función *background*: Netlify le contesta a Bird al instante y la respuesta se piensa después.
