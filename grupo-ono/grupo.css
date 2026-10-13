@@ -193,7 +193,7 @@ figcaption{font:var(--t-cap);color:var(--ink-2);margin-top:8px}
 .door .fit img{object-fit:contain}
 .plate{display:grid;align-content:start;gap:4px;padding:12px 12px 14px}
 .desc{font:var(--t-small);color:var(--accent,var(--plate-ink))}
-:is(.desc,.lead,blockquote) .nw,a.nw{display:inline-block;white-space:normal}
+:is(.desc,.lead,blockquote) .nw,.ml{display:inline-block;white-space:normal}
 .door:hover h4{text-decoration-line:underline}
 .door:hover img{transform:scale(1.03)}
 @media (max-width:399px){:is(.w-ono,.w-cs) .ledger{grid-template-columns:1fr}}
