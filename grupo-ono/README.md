@@ -10,7 +10,7 @@ The brief asks for one `grupo.css` of at most 20 KB (6 KB gzip). The full compon
 
 - `grupo.css`: tokens, base, header, footer, elevation and every home-page component, plus reduced-motion and forced-colours rules. Every page loads it. Keep it at or under 20,480 bytes raw (`wc -c grupo-ono/grupo.css`).
 - `pages.css`: the inner-page parts (page heads, prose, side columns, the thanks and 404 layouts, and the C20 form system). Only careers, contact, privacy, thanks and 404 load it, after `grupo.css`.
-- `print.css`: the print fact sheet (brief 8.3), linked on every page with `media="print"`, so it never blocks rendering. The desktop grid in `grupo.css` and `pages.css` is declared for `(min-width:900px), print`, so paper reuses the desktop columns. On paper the home page leaves out the navigation, the hero Key, photos and posters (with their captions), the press-kit table (its download links cannot be followed on paper) and the CTA buttons (their links repeat the directory). It prints on 3 A4 or Letter pages.
+- `print.css`: the print fact sheet (brief 8.3), linked on every page with `media="print"`, so it never blocks rendering. The desktop grid in `grupo.css` and `pages.css` is declared for `(min-width:900px), print`, so paper reuses the desktop columns. On paper the home page leaves out the navigation, the hero Key, photos and posters (with their captions), the press-kit table (its download links cannot be followed on paper) and the CTA buttons (their links repeat the directory). It prints on 4 A4 pages (5 on Letter), with no text under 7.5 pt.
 
 ### Images
 
