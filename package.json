@@ -5,6 +5,7 @@
   "description": "Sitio de Casa Salvaje y funciones de Netlify para las tarjetas de miembro en Apple Wallet y Google Wallet.",
   "dependencies": {
     "@anthropic-ai/sdk": "0.130.0",
+    "@netlify/blobs": "10.0.0",
     "passkit-generator": "3.6.1"
   }
 }

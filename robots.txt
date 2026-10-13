@@ -1,5 +1,9 @@
 User-agent: *
 Disallow: /gracias
 Disallow: /gracias.html
+Disallow: /historias/
+Disallow: /metricas
+Disallow: /metricas.html
+Disallow: /blog/metricas
 
 Sitemap: https://www.casa-salvaje.com/sitemap.xml

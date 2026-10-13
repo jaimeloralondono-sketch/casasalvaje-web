@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -33,31 +33,32 @@
   <div class="wrap">
     <a class="bmark" href="slvj.html"><span class="caps">SLVJ</span></a><a class="house" href="index.html">Casa Salvaje</a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html" aria-current="page">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#horarios"><span class="es">Horarios</span><span class="en">Hours</span></a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Hintergründe</span></a>
       <a href="blog/">Blog</a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
-      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista</span><span class="fr">Liste</span><span class="it">Lista</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Firmen</span></a>
       <a href="concierge.html">Concierge</a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html" aria-current="page">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#horarios"><span class="es">Horarios</span><span class="en">Hours</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="blog/">Blog</a>
   </div></nav>
 </header>
 
@@ -71,20 +72,20 @@
       <div class="head">
         <div>
           <div class="lg"><span class="caps">SLVJ</span></div>
-          <div class="eyebrow"><span class="es">Banquete · Espectáculo · Club</span><span class="en">Feast · Spectacle · Club</span></div>
-          <h1 class="h2" style="margin-top:10px"><span class="es">Un banquete para dioses terrenales.</span><span class="en">A feast for earthly gods.</span></h1>
+          <div class="eyebrow"><span class="es">Banquete · Espectáculo · Club</span><span class="en">Feast · Spectacle · Club</span><span class="pt">Banquete · Espetáculo · Club</span><span class="fr">Festin · Spectacle · Club</span><span class="it">Banchetto · Spettacolo · Club</span><span class="de">Festmahl · Spektakel · Club</span></div>
+          <h1 class="h2" style="margin-top:10px"><span class="es">Un banquete para dioses terrenales.</span><span class="en">A feast for earthly gods.</span><span class="pt">Um banquete para deuses terrenos.</span><span class="fr">Un festin pour dieux terrestres.</span><span class="it">Un banchetto per dèi terreni.</span><span class="de">Ein Festmahl für irdische Götter.</span></h1>
           <div class="meta">
-            <span><b><span class="es">Lun – Sáb</span><span class="en">Mon – Sat</span></b> 12 – 3 pm · 7 pm – 12 am</span>
-            <span><b><span class="es">Dom</span><span class="en">Sun</span></b> 11 am – 7 pm</span>
-            <span><b><span class="es">Dom antes de festivo</span><span class="en">Sun before a holiday</span></b> 11 am – 12 am</span>
-            <span><b><span class="es">Club jue – sáb</span><span class="en">Club Thu – Sat</span></b> <span class="es">hasta las 3 am</span><span class="en">until 3 am</span></span>
+            <span><b><span class="es">Lun – Sáb</span><span class="en">Mon – Sat</span><span class="pt">Seg – Sáb</span><span class="fr">Lun – Sam</span><span class="it">Lun – Sab</span><span class="de">Mo – Sa</span></b> 12 – 3 pm · 7 pm – 12 am</span>
+            <span><b><span class="es">Dom</span><span class="en">Sun</span><span class="pt">Dom</span><span class="fr">Dim</span><span class="it">Dom</span><span class="de">So</span></b> 11 am – 7 pm</span>
+            <span><b><span class="es">Dom antes de festivo</span><span class="en">Sun before a holiday</span><span class="pt">Dom antes de feriado</span><span class="fr">Dim veille de jour férié</span><span class="it">Dom prima di un festivo</span><span class="de">So vor Feiertagen</span></b> 11 am – 12 am</span>
+            <span><b><span class="es">Club jue – sáb</span><span class="en">Club Thu – Sat</span><span class="pt">Club qui – sáb</span><span class="fr">Club jeu – sam</span><span class="it">Club gio – sab</span><span class="de">Club Do – Sa</span></b> <span class="es">hasta las 3 am</span><span class="en">until 3 am</span><span class="pt">até as 3 da manhã</span><span class="fr">jusqu'à 3 h</span><span class="it">fino alle 3</span><span class="de">bis 3 Uhr</span></span>
             <a href="https://www.instagram.com/slvj.ctg" target="_blank" rel="noopener">@slvj.ctg</a>
           </div>
         </div>
         <div>
           <p class="lead es">Piedra, terciopelo, luz ámbar y una barra de sushi para empezar la noche. Después de la cena, el salón se enciende: de jueves a sábado el club va hasta las tres de la mañana con sonido Funktion-One.</p>
-          <p class="lead en">Stone, velvet, amber light and a sushi bar to open the night. After dinner the room lights up: Thursday to Saturday the club runs until 3 am on a Funktion-One sound system.</p>
-          <div class="cta"><a class="btn solid" data-book="slvj" data-evento="SLVJ" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span></a><a class="btn ghost" data-book="club" data-evento="el club de SLVJ" href="index.html#lista"><span class="es">Mesa en el club</span><span class="en">Club table</span></a><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb" target="_blank" rel="noopener"><span class="es">Ver menú</span><span class="en">See the menu</span></a></div>
+          <p class="lead en">Stone, velvet, amber light and a sushi bar to open the night. After dinner the room lights up: Thursday to Saturday the club runs until 3 am on a Funktion-One sound system.</p><p class="lead pt">Pedra, veludo, luz âmbar e um balcão de sushi para abrir a noite. Depois do jantar, o salão se acende: de quinta a sábado o club vai até as 3 da manhã com som Funktion-One.</p><p class="lead fr">Pierre, velours, lumière ambrée et un comptoir à sushis pour ouvrir la nuit. Après le dîner, la salle s'embrase : du jeudi au samedi, le club vibre jusqu'à 3 h sur un système son Funktion-One.</p><p class="lead it">Pietra, velluto, luce ambrata e un banco sushi per aprire la notte. Dopo cena la sala si accende: dal giovedì al sabato il club va avanti fino alle 3 su un impianto Funktion-One.</p><p class="lead de">Stein, Samt, bernsteinfarbenes Licht und eine Sushi-Bar zum Auftakt der Nacht. Nach dem Dinner erwacht der Raum: Donnerstag bis Samstag läuft der Club bis 3 Uhr auf einem Funktion-One-Soundsystem.</p>
+          <div class="cta"><a class="btn solid" data-book="slvj" data-evento="SLVJ" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span><span class="pt">Reservar mesa</span><span class="fr">Réserver une table</span><span class="it">Prenota un tavolo</span><span class="de">Tisch reservieren</span></a><a class="btn ghost" data-book="club" data-evento="el club de SLVJ" href="index.html#lista"><span class="es">Mesa en el club</span><span class="en">Club table</span><span class="pt">Mesa no club</span><span class="fr">Table au club</span><span class="it">Tavolo al club</span><span class="de">Tisch im Club</span></a><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb" target="_blank" rel="noopener"><span class="es">Ver menú</span><span class="en">See the menu</span><span class="pt">Ver o cardápio</span><span class="fr">Voir la carte</span><span class="it">Vedi il menù</span><span class="de">Zur Speisekarte</span></a></div>
         </div>
       </div>
       <div class="feat">
@@ -94,43 +95,43 @@
         <img src="img/slvj-grupo.jpg" alt="Un grupo de invitados posa en SLVJ" loading="lazy" decoding="async">
       </div>
       <div class="platos">
-        <h2 class="h3"><span class="es">En la mesa</span><span class="en">On the table</span></h2>
-        <p class="lead"><span class="es">Fuego, humo y pescado crudo. Algunos de los platos que salen de la cocina de SLVJ.</span><span class="en">Fire, smoke and raw fish. A few of the plates that leave the SLVJ kitchen.</span></p>
+        <h2 class="h3"><span class="es">En la mesa</span><span class="en">On the table</span><span class="pt">Na mesa</span><span class="fr">À table</span><span class="it">In tavola</span><span class="de">Auf dem Tisch</span></h2>
+        <p class="lead"><span class="es">Fuego, humo y pescado crudo. Algunos de los platos que salen de la cocina de SLVJ.</span><span class="en">Fire, smoke and raw fish. A few of the plates that leave the SLVJ kitchen.</span><span class="pt">Fogo, fumaça e peixe cru. Alguns dos pratos que saem da cozinha do SLVJ.</span><span class="fr">Feu, fumée et poisson cru. Quelques-uns des plats qui sortent de la cuisine du SLVJ.</span><span class="it">Fuoco, fumo e pesce crudo. Alcuni dei piatti che escono dalla cucina del SLVJ.</span><span class="de">Feuer, Rauch und roher Fisch. Einige der Teller, die die Küche des SLVJ verlassen.</span></p>
         <div class="platos-row">
-          <figure><img src="img/slvj-plato-salmon-flameado.jpg" width="643" height="900" alt="Salmón flameado con soplete sobre una hoja" loading="lazy" decoding="async"><figcaption><span class="es">Salmón flameado</span><span class="en">Flamed salmon</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-nigiris.jpg" width="600" height="900" alt="Nigiris de salmón, atún y hamachi en el aire" loading="lazy" decoding="async"><figcaption><span class="es">Nigiris</span><span class="en">Nigiri</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-entrana.jpg" width="643" height="900" alt="Entraña en tajadas sobre una tabla" loading="lazy" decoding="async"><figcaption><span class="es">Entraña</span><span class="en">Skirt steak</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-salmon-flameado.jpg" width="643" height="900" alt="Salmón flameado con soplete sobre una hoja" loading="lazy" decoding="async"><figcaption><span class="es">Salmón flameado</span><span class="en">Flamed salmon</span><span class="pt">Salmão maçaricado</span><span class="fr">Saumon flambé</span><span class="it">Salmone fiammato</span><span class="de">Abgeflämmter Lachs</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-nigiris.jpg" width="600" height="900" alt="Nigiris de salmón, atún y hamachi en el aire" loading="lazy" decoding="async"><figcaption><span class="es">Nigiris</span><span class="en">Nigiri</span><span class="pt">Nigiris</span><span class="fr">Nigiris</span><span class="it">Nigiri</span><span class="de">Nigiri</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-entrana.jpg" width="643" height="900" alt="Entraña en tajadas sobre una tabla" loading="lazy" decoding="async"><figcaption><span class="es">Entraña</span><span class="en">Skirt steak</span><span class="pt">Fraldinha</span><span class="fr">Onglet</span><span class="it">Diaframma</span><span class="de">Skirt Steak</span></figcaption></figure>
           <figure><img src="img/slvj-plato-rainbow.jpg" width="900" height="900" alt="Rainbow roll con ikura" loading="lazy" decoding="async"><figcaption>Rainbow roll</figcaption></figure>
-          <figure><img src="img/slvj-plato-salmon-humo.jpg" width="643" height="900" alt="Salmón sellado entre humo" loading="lazy" decoding="async"><figcaption><span class="es">Salmón con humo</span><span class="en">Smoked salmon</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-aguacate.jpg" width="643" height="900" alt="Aguacate a la brasa sobre un konro" loading="lazy" decoding="async"><figcaption><span class="es">Aguacate a la brasa</span><span class="en">Grilled avocado</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-otoro.jpg" width="643" height="900" alt="Nigiri de otoro con caviar" loading="lazy" decoding="async"><figcaption><span class="es">Otoro con caviar</span><span class="en">Otoro & caviar</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-short-rib.jpg" width="720" height="900" alt="Bun de short rib glaseado" loading="lazy" decoding="async"><figcaption><span class="es">Bun de short rib</span><span class="en">Short rib bun</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-ahumado.jpg" width="600" height="900" alt="Plato servido con humo" loading="lazy" decoding="async"><figcaption><span class="es">Bajo la campana</span><span class="en">Under the cloche</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-salmon-humo.jpg" width="643" height="900" alt="Salmón sellado entre humo" loading="lazy" decoding="async"><figcaption><span class="es">Salmón con humo</span><span class="en">Smoked salmon</span><span class="pt">Salmão defumado</span><span class="fr">Saumon fumé</span><span class="it">Salmone affumicato</span><span class="de">Geräucherter Lachs</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-aguacate.jpg" width="643" height="900" alt="Aguacate a la brasa sobre un konro" loading="lazy" decoding="async"><figcaption><span class="es">Aguacate a la brasa</span><span class="en">Grilled avocado</span><span class="pt">Abacate na brasa</span><span class="fr">Avocat à la braise</span><span class="it">Avocado alla brace</span><span class="de">Avocado von der Glut</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-otoro.jpg" width="643" height="900" alt="Nigiri de otoro con caviar" loading="lazy" decoding="async"><figcaption><span class="es">Otoro con caviar</span><span class="en">Otoro & caviar</span><span class="pt">Otoro com caviar</span><span class="fr">Otoro et caviar</span><span class="it">Otoro e caviale</span><span class="de">Otoro &amp; Kaviar</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-short-rib.jpg" width="720" height="900" alt="Bun de short rib glaseado" loading="lazy" decoding="async"><figcaption><span class="es">Bun de short rib</span><span class="en">Short rib bun</span><span class="pt">Bun de short rib</span><span class="fr">Bun au short rib</span><span class="it">Bun di short rib</span><span class="de">Short-Rib-Bun</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-ahumado.jpg" width="600" height="900" alt="Plato servido con humo" loading="lazy" decoding="async"><figcaption><span class="es">Bajo la campana</span><span class="en">Under the cloche</span><span class="pt">Sob a cúpula</span><span class="fr">Sous la cloche</span><span class="it">Sotto la campana</span><span class="de">Unter der Glocke</span></figcaption></figure>
           <figure><img src="img/slvj-plato-sashimi.jpg" width="1350" height="900" alt="Sashimi con flores comestibles" loading="lazy" decoding="async"><figcaption>Sashimi</figcaption></figure>
-          <figure><img src="img/slvj-plato-donburi.jpg" width="1346" height="900" alt="Bowl de arroz con res, huevo e ikura" loading="lazy" decoding="async"><figcaption><span class="es">Donburi de res</span><span class="en">Beef donburi</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-donburi.jpg" width="1346" height="900" alt="Bowl de arroz con res, huevo e ikura" loading="lazy" decoding="async"><figcaption><span class="es">Donburi de res</span><span class="en">Beef donburi</span><span class="pt">Donburi de carne</span><span class="fr">Donburi de bœuf</span><span class="it">Donburi di manzo</span><span class="de">Rindfleisch-Donburi</span></figcaption></figure>
           <figure><img src="img/slvj-plato-fuji.jpg" width="720" height="900" alt="Fuji roll de cerca" loading="lazy" decoding="async"><figcaption>Fuji roll</figcaption></figure>
-          <figure><img src="img/slvj-plato-salmon-konro.jpg" width="1350" height="900" alt="Salmón al fuego sobre un konro" loading="lazy" decoding="async"><figcaption><span class="es">Salmón al konro</span><span class="en">Konro salmon</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-crispy-rice.jpg" width="918" height="900" alt="Crispy rice de salmón con ikura" loading="lazy" decoding="async"><figcaption><span class="es">Crispy rice de salmón</span><span class="en">Salmon crispy rice</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-salmon-konro.jpg" width="1350" height="900" alt="Salmón al fuego sobre un konro" loading="lazy" decoding="async"><figcaption><span class="es">Salmón al konro</span><span class="en">Konro salmon</span><span class="pt">Salmão no konro</span><span class="fr">Saumon au konro</span><span class="it">Salmone al konro</span><span class="de">Lachs vom Konro</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-crispy-rice.jpg" width="918" height="900" alt="Crispy rice de salmón con ikura" loading="lazy" decoding="async"><figcaption><span class="es">Crispy rice de salmón</span><span class="en">Salmon crispy rice</span><span class="pt">Crispy rice de salmão</span><span class="fr">Crispy rice au saumon</span><span class="it">Crispy rice al salmone</span><span class="de">Crispy Rice mit Lachs</span></figcaption></figure>
           <figure><img src="img/slvj-plato-sushi.jpg" width="643" height="900" alt="Piezas de sushi vistas desde arriba" loading="lazy" decoding="async"><figcaption>Sushi</figcaption></figure>
-          <figure><img src="img/slvj-plato-nigiris-salmon.jpg" width="639" height="900" alt="Nigiris de salmón flameado en el aire" loading="lazy" decoding="async"><figcaption><span class="es">Nigiris de salmón</span><span class="en">Salmon nigiri</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-coco.jpg" width="1350" height="900" alt="Coco tres leches sobre hielo" loading="lazy" decoding="async"><figcaption><span class="es">Coco tres leches</span><span class="en">Coconut tres leches</span></figcaption></figure>
-          <figure><img src="img/slvj-plato-chocolate.jpg" width="1350" height="900" alt="Postre de chocolate amazónico con frutas y flores" loading="lazy" decoding="async"><figcaption><span class="es">Chocolate amazónico</span><span class="en">Amazonian chocolate</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-nigiris-salmon.jpg" width="639" height="900" alt="Nigiris de salmón flameado en el aire" loading="lazy" decoding="async"><figcaption><span class="es">Nigiris de salmón</span><span class="en">Salmon nigiri</span><span class="pt">Nigiris de salmão</span><span class="fr">Nigiris au saumon</span><span class="it">Nigiri di salmone</span><span class="de">Lachs-Nigiri</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-coco.jpg" width="1350" height="900" alt="Coco tres leches sobre hielo" loading="lazy" decoding="async"><figcaption><span class="es">Coco tres leches</span><span class="en">Coconut tres leches</span><span class="pt">Tres leches de coco</span><span class="fr">Tres leches à la noix de coco</span><span class="it">Tres leches al cocco</span><span class="de">Kokos-Tres-Leches</span></figcaption></figure>
+          <figure><img src="img/slvj-plato-chocolate.jpg" width="1350" height="900" alt="Postre de chocolate amazónico con frutas y flores" loading="lazy" decoding="async"><figcaption><span class="es">Chocolate amazónico</span><span class="en">Amazonian chocolate</span><span class="pt">Chocolate amazônico</span><span class="fr">Chocolat amazonien</span><span class="it">Cioccolato amazzonico</span><span class="de">Amazonas-Schokolade</span></figcaption></figure>
         </div>
-        <div class="cta"><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb" target="_blank" rel="noopener"><span class="es">Ver el menú completo</span><span class="en">See the full menu</span></a></div>
+        <div class="cta"><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/c534f79a-9b25-4ef3-8664-f61bff1a42fb" target="_blank" rel="noopener"><span class="es">Ver el menú completo</span><span class="en">See the full menu</span><span class="pt">Ver o cardápio completo</span><span class="fr">Voir toute la carte</span><span class="it">Vedi il menù completo</span><span class="de">Zur ganzen Speisekarte</span></a></div>
       </div>
       <div class="mesas" id="mesas">
         <div class="mesas-txt">
-          <div class="eyebrow"><span class="es">Mapa de mesas</span><span class="en">Table map</span></div>
-          <h2 class="h3"><span class="es">Elige tu mesa.</span><span class="en">Choose your table.</span></h2>
-          <p class="lead"><span class="es">Diecisiete mesas alrededor de la barra y la cabina del DJ. Busca el número de la que quieres y pídela al reservar: la asignamos según disponibilidad.</span><span class="en">Seventeen tables around the bar and the DJ booth. Find the number you want and ask for it when you book: tables are assigned subject to availability.</span></p>
+          <div class="eyebrow"><span class="es">Mapa de mesas</span><span class="en">Table map</span><span class="pt">Mapa de mesas</span><span class="fr">Plan des tables</span><span class="it">Mappa dei tavoli</span><span class="de">Tischplan</span></div>
+          <h2 class="h3"><span class="es">Elige tu mesa.</span><span class="en">Choose your table.</span><span class="pt">Escolha sua mesa.</span><span class="fr">Choisissez votre table.</span><span class="it">Scegli il tuo tavolo.</span><span class="de">Wählen Sie Ihren Tisch.</span></h2>
+          <p class="lead"><span class="es">Diecisiete mesas alrededor de la barra y la cabina del DJ. Busca el número de la que quieres y pídela al reservar: la asignamos según disponibilidad.</span><span class="en">Seventeen tables around the bar and the DJ booth. Find the number you want and ask for it when you book: tables are assigned subject to availability.</span><span class="pt">Dezessete mesas ao redor do bar e da cabine do DJ. Encontre o número que você quer e peça na hora de reservar: as mesas são atribuídas conforme a disponibilidade.</span><span class="fr">Dix-sept tables autour du bar et de la cabine du DJ. Repérez le numéro qui vous plaît et demandez-le en réservant : les tables sont attribuées selon disponibilité.</span><span class="it">Diciassette tavoli intorno al bancone e alla consolle del DJ. Trova il numero che preferisci e chiedilo quando prenoti: i tavoli vengono assegnati in base alla disponibilità.</span><span class="de">Siebzehn Tische rund um die Bar und das DJ-Pult. Suchen Sie sich Ihre Nummer aus und nennen Sie sie bei der Reservierung: Die Tische werden je nach Verfügbarkeit vergeben.</span></p>
           <dl class="mesas-cifras">
-            <div><dt>17</dt><dd><span class="es">mesas</span><span class="en">tables</span></dd></div>
-            <div><dt>114</dt><dd><span class="es">puestos</span><span class="en">seats</span></dd></div>
-            <div><dt>9</dt><dd><span class="es">mesas VIP</span><span class="en">VIP tables</span></dd></div>
+            <div><dt>17</dt><dd><span class="es">mesas</span><span class="en">tables</span><span class="pt">mesas</span><span class="fr">tables</span><span class="it">tavoli</span><span class="de">Tische</span></dd></div>
+            <div><dt>114</dt><dd><span class="es">puestos</span><span class="en">seats</span><span class="pt">lugares</span><span class="fr">places</span><span class="it">posti</span><span class="de">Plätze</span></dd></div>
+            <div><dt>9</dt><dd><span class="es">mesas VIP</span><span class="en">VIP tables</span><span class="pt">mesas VIP</span><span class="fr">tables VIP</span><span class="it">tavoli VIP</span><span class="de">VIP-Tische</span></dd></div>
           </dl>
-          <div class="cta"><a class="btn solid" data-book="slvj" data-evento="SLVJ" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span></a><a class="btn ghost wa" data-evento="SLVJ" href="index.html#lista"><span class="es">Pedir mesa por WhatsApp</span><span class="en">Ask on WhatsApp</span></a></div>
+          <div class="cta"><a class="btn solid" data-book="slvj" data-evento="SLVJ" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span><span class="pt">Reservar mesa</span><span class="fr">Réserver une table</span><span class="it">Prenota un tavolo</span><span class="de">Tisch reservieren</span></a><a class="btn ghost wa" data-evento="SLVJ" href="index.html#lista"><span class="es">Pedir mesa por WhatsApp</span><span class="en">Ask on WhatsApp</span><span class="pt">Pedir mesa pelo WhatsApp</span><span class="fr">Demander sur WhatsApp</span><span class="it">Chiedi su WhatsApp</span><span class="de">Per WhatsApp anfragen</span></a></div>
           <details class="mesas-lista">
-            <summary><span class="es">Ver la lista de mesas</span><span class="en">See the list of tables</span></summary>
+            <summary><span class="es">Ver la lista de mesas</span><span class="en">See the list of tables</span><span class="pt">Ver a lista de mesas</span><span class="fr">Voir la liste des tables</span><span class="it">Vedi l'elenco dei tavoli</span><span class="de">Liste der Tische ansehen</span></summary>
             <ul>
               <li><b>401</b> 8 pax</li>
               <li><b>402</b> 8 pax · <i>VIP</i></li>
@@ -150,12 +151,12 @@
               <li><b>420</b> 8 pax</li>
               <li><b>421</b> 6 pax</li>
             </ul>
-            <p class="note"><span class="es">Pax: personas por mesa.</span><span class="en">Pax: guests per table.</span></p>
+            <p class="note"><span class="es">Pax: personas por mesa.</span><span class="en">Pax: guests per table.</span><span class="pt">Pax: pessoas por mesa.</span><span class="fr">Pax : couverts par table.</span><span class="it">Pax: persone per tavolo.</span><span class="de">Pax: Gäste pro Tisch.</span></p>
           </details>
         </div>
         <figure class="mesas-mapa">
           <a href="img/slvj-mapa-mesas-grande.jpg" target="_blank" rel="noopener"><img src="img/slvj-mapa-mesas.jpg" srcset="img/slvj-mapa-mesas-760.jpg 760w, img/slvj-mapa-mesas.jpg 1200w" sizes="(min-width:540px) 500px, calc(100vw - 40px)" width="1200" height="1500" alt="Mapa de mesas de SLVJ: 17 mesas (401 a 406, 408 a 410 y 414 a 421) alrededor de la barra y la cabina del DJ, con sus puestos y cuáles son VIP. Se abre en grande en otra pestaña." loading="lazy" decoding="async"></a>
-          <figcaption><span class="es">Toca el mapa para verlo en grande.</span><span class="en">Tap the map to see it full size.</span></figcaption>
+          <figcaption><span class="es">Toca el mapa para verlo en grande.</span><span class="en">Tap the map to see it full size.</span><span class="pt">Toque no mapa para vê-lo em tamanho grande.</span><span class="fr">Touchez le plan pour l'agrandir.</span><span class="it">Tocca la mappa per vederla in grande.</span><span class="de">Tippen Sie auf den Plan, um ihn groß zu sehen.</span></figcaption>
         </figure>
       </div>
       <div class="row4">
@@ -171,15 +172,132 @@
     </div>
   </section>
 
+  <section id="blog" class="delblog">
+    <div class="wrap">
+      <div class="eyebrow">Blog</div>
+      <h2><span class="es">Notas desde la casa</span><span class="en">Notes from the house</span><span class="pt">Notas da casa</span><span class="fr">Notes de la maison</span><span class="it">Note dalla casa</span><span class="de">Notizen aus dem Haus</span></h2>
+      <div class="posts">
+      <a class="post-card es" href="blog/sonido-funktion-one-slvj-cartagena.html" lang="es">
+        <img src="img/slvj-fiesta.jpg" alt="Gente bailando en SLVJ bajo las lámparas de fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>El sonido de SLVJ: por qué el club de Cartagena suena con Funktion-One</h3>
+        <p>La música no solo se oye: se siente en el pecho. Por qué elegimos Funktion-One para el club.</p>
+      </a>
+      <a class="post-card es" href="blog/musica-casa-salvaje-playlists-spotify.html" lang="es">
+        <img src="img/blog-musica-card.jpg" alt="Leopardo rojo de Casa Salvaje con la frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 oct 2026</time>
+        <h3>La música de Casa Salvaje: una playlist para cada mundo</h3>
+        <p>Cinco mundos, cinco sonidos. Todas nuestras playlists están en Spotify para que la casa suene donde estés.</p>
+      </a>
+      <a class="post-card es" href="blog/sushi-omakase-cartagena.html" lang="es">
+        <img src="img/ono-barra.jpg" alt="Barra de sushi en rojo y ámbar, con hosomaki en primer plano" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct 2026</time>
+        <h3>Sushi y omakase en Cartagena: la barra de SLVJ y lo que viene con ONO</h3>
+        <p>Una barra para empezar la noche, un omakase al mes con cupo limitado y un hosomaki bar en camino.</p>
+      </a>
+      <a class="post-card en" href="blog/funktion-one-sound-slvj-cartagena.html" lang="en">
+        <img src="img/slvj-fiesta.jpg" alt="People dancing at SLVJ under the fibre lamps" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>The sound of SLVJ: why Cartagena&#x27;s club runs on Funktion-One</h3>
+        <p>Music isn&#x27;t just heard: it&#x27;s felt in your chest. Why we chose Funktion-One for the club.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/funktion-one-sound-slvj-cartagena.html" lang="pt">
+        <img src="img/slvj-fiesta.jpg" alt="Gente dançando no SLVJ sob as luminárias de fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>O som do SLVJ: por que o club de Cartagena toca em Funktion-One</h3>
+        <p>A música não se ouve apenas: se sente no peito. Por que escolhemos Funktion-One para o club.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/funktion-one-sound-slvj-cartagena.html" lang="fr">
+        <img src="img/slvj-fiesta.jpg" alt="Des gens qui dansent au SLVJ sous les lampes en fibres" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Le son du SLVJ : pourquoi le club de Cartagena vibre sur Funktion-One</h3>
+        <p>La musique ne s'écoute pas seulement : elle se ressent dans la poitrine. Pourquoi nous avons choisi Funktion-One pour le club.</p>
+      </a>
+      <a class="post-card it" href="blog/it/funktion-one-sound-slvj-cartagena.html" lang="it">
+        <img src="img/slvj-fiesta.jpg" alt="Gente che balla al SLVJ sotto le lampade in fibra" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Il suono del SLVJ: perché il club di Cartagena suona su Funktion-One</h3>
+        <p>La musica non si ascolta soltanto: si sente nel petto. Perché abbiamo scelto Funktion-One per il club.</p>
+      </a>
+      <a class="post-card de" href="blog/de/funktion-one-sound-slvj-cartagena.html" lang="de">
+        <img src="img/slvj-fiesta.jpg" alt="Tanzende Menschen im SLVJ unter den Faserlampen" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Der Sound des SLVJ: Warum Cartagenas Club auf Funktion-One setzt</h3>
+        <p>Musik hört man nicht nur: Man spürt sie in der Brust. Warum wir uns für den Club für Funktion-One entschieden haben.</p>
+      </a>
+      <a class="post-card en" href="blog/casa-salvaje-music-spotify-playlists.html" lang="en">
+        <img src="img/blog-musica-card.jpg" alt="Casa Salvaje red leopard with the line The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 Oct 2026</time>
+        <h3>The music of Casa Salvaje: a playlist for every world</h3>
+        <p>Five worlds, five sounds. All our playlists are on Spotify, so the house plays wherever you are.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/casa-salvaje-music-spotify-playlists.html" lang="pt">
+        <img src="img/blog-musica-card.jpg" alt="Leopardo vermelho da Casa Salvaje com a frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 out. 2026</time>
+        <h3>A música da Casa Salvaje: uma playlist para cada mundo</h3>
+        <p>Cinco mundos, cinco sons. Todas as nossas playlists estão no Spotify, para a casa tocar onde você estiver.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/casa-salvaje-music-spotify-playlists.html" lang="fr">
+        <img src="img/blog-musica-card.jpg" alt="Léopard rouge de Casa Salvaje avec la phrase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 oct. 2026</time>
+        <h3>La musique de Casa Salvaje : une playlist pour chaque monde</h3>
+        <p>Cinq mondes, cinq sons. Toutes nos playlists sont sur Spotify, pour que la maison joue où que vous soyez.</p>
+      </a>
+      <a class="post-card it" href="blog/it/casa-salvaje-music-spotify-playlists.html" lang="it">
+        <img src="img/blog-musica-card.jpg" alt="Leopardo rosso di Casa Salvaje con la frase The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13 ott 2026</time>
+        <h3>La musica di Casa Salvaje: una playlist per ogni mondo</h3>
+        <p>Cinque mondi, cinque suoni. Tutte le nostre playlist sono su Spotify, così la casa suona ovunque tu sia.</p>
+      </a>
+      <a class="post-card de" href="blog/de/casa-salvaje-music-spotify-playlists.html" lang="de">
+        <img src="img/blog-musica-card.jpg" alt="Roter Leopard von Casa Salvaje mit dem Satz The house comes alive" loading="lazy" decoding="async">
+        <time datetime="2026-10-13">13. Okt. 2026</time>
+        <h3>Die Musik von Casa Salvaje: eine Playlist für jede Welt</h3>
+        <p>Fünf Welten, fünf Sounds. Alle unsere Playlists sind auf Spotify, damit das Haus überall spielt, wo Sie gerade sind.</p>
+      </a>
+      <a class="post-card en" href="blog/sushi-and-omakase-in-cartagena.html" lang="en">
+        <img src="img/ono-barra.jpg" alt="Sushi bar in red and amber, with hosomaki in the foreground" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 Oct 2026</time>
+        <h3>Sushi and omakase in Cartagena: the SLVJ bar and what&#x27;s coming with ONO</h3>
+        <p>A bar to open the night, one limited-seat omakase a month and a hosomaki bar on its way.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/sushi-and-omakase-in-cartagena.html" lang="pt">
+        <img src="img/ono-barra.jpg" alt="Balcão de sushi em vermelho e âmbar, com hosomaki em primeiro plano" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Sushi e omakase em Cartagena: o balcão do SLVJ e o que vem com o ONO</h3>
+        <p>Um balcão para abrir a noite, um omakase com lugares limitados por mês e um hosomaki bar a caminho.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/sushi-and-omakase-in-cartagena.html" lang="fr">
+        <img src="img/ono-barra.jpg" alt="Comptoir à sushis rouge et ambre, avec des hosomaki au premier plan" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Sushi et omakase à Cartagena : le comptoir du SLVJ et ce qui arrive avec ONO</h3>
+        <p>Un comptoir pour ouvrir la nuit, un omakase à places limitées chaque mois et un bar à hosomaki en route.</p>
+      </a>
+      <a class="post-card it" href="blog/it/sushi-and-omakase-in-cartagena.html" lang="it">
+        <img src="img/ono-barra.jpg" alt="Banco sushi in rosso e ambra, con hosomaki in primo piano" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Sushi e omakase a Cartagena: il banco del SLVJ e cosa arriva con ONO</h3>
+        <p>Un banco per aprire la notte, un omakase a posti limitati al mese e un hosomaki bar in arrivo.</p>
+      </a>
+      <a class="post-card de" href="blog/de/sushi-and-omakase-in-cartagena.html" lang="de">
+        <img src="img/ono-barra.jpg" alt="Sushi-Bar in Rot und Bernstein, mit Hosomaki im Vordergrund" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Sushi und Omakase in Cartagena: die Bar des SLVJ und was mit ONO kommt</h3>
+        <p>Eine Bar zum Auftakt der Nacht, ein Omakase mit begrenzten Plätzen pro Monat und eine Hosomaki-Bar, die schon unterwegs ist.</p>
+      </a>
+      </div>
+      <a class="btn ghost" href="blog/"><span class="es">Ver todo el blog</span><span class="en">See the whole blog</span><span class="pt">Ver o blog completo</span><span class="fr">Voir tout le blog</span><span class="it">Vedi tutto il blog</span><span class="de">Zum ganzen Blog</span></a>
+    </div>
+  </section>
   <section class="next">
     <div class="wrap">
-      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span></div>
+      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span><span class="pt">Os outros mundos da casa</span><span class="fr">Les autres mondes de la maison</span><span class="it">Gli altri mondi della casa</span><span class="de">Die anderen Welten des Hauses</span></div>
       <div class="doors" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
-        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span></span></div></a>
-        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
+        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
+        <a class="door" href="kanibal.html"><img src="img/kan-steak.jpg" alt="Corte de carne con glifos rojos, Kanibal" loading="lazy" decoding="async"><div class="cap"><b>Kanibal</b><span><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span><span class="pt">Fogo · Instinto</span><span class="fr">Feu · Instinct</span><span class="it">Fuoco · Istinto</span><span class="de">Feuer · Instinkt</span></span></div></a>
+        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
       </div>
-      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span></a><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span></a></div>
+      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span><span class="pt">Voltar à Casa Salvaje</span><span class="fr">Retour à Casa Salvaje</span><span class="it">Torna a Casa Salvaje</span><span class="de">Zurück zu Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span><span class="pt">Entrar na lista</span><span class="fr">Rejoindre la liste</span><span class="it">Entra in lista</span><span class="de">Auf die Gästeliste</span></a><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span><span class="pt">Eventos para empresas</span><span class="fr">Événements d'entreprise</span><span class="it">Eventi aziendali</span><span class="de">Firmenevents</span></a></div>
     </div>
   </section>
 </main>
@@ -188,9 +306,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa de La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Privacidade</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 

@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -19,22 +19,22 @@
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Wallpaper</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
@@ -46,28 +46,28 @@
 <section class="hero">
     <div class="wrap">
       <div>
-        <div class="eyebrow"><span class="es">Miembro de la casa</span><span class="en">House member</span></div>
-        <h1 style="margin-top:14px"><span class="es">Tu tarjeta.</span><span class="en">Your card.</span></h1>
-        <p class="sub" id="saludo"><span class="es">Guárdala en el wallet de tu teléfono.</span><span class="en">Keep it in your phone's wallet.</span></p>
+        <div class="eyebrow"><span class="es">Miembro de la casa</span><span class="en">House member</span><span class="pt">Membro da casa</span><span class="fr">Membre de la maison</span><span class="it">Membro della casa</span><span class="de">Mitglied des Hauses</span></div>
+        <h1 style="margin-top:14px"><span class="es">Tu tarjeta.</span><span class="en">Your card.</span><span class="pt">Seu cartão.</span><span class="fr">Votre carte.</span><span class="it">La tua tessera.</span><span class="de">Ihre Karte.</span></h1>
+        <p class="sub" id="saludo"><span class="es">Guárdala en el wallet de tu teléfono.</span><span class="en">Keep it in your phone's wallet.</span><span class="pt">Guarde no wallet do seu celular.</span><span class="fr">Gardez-la dans le wallet de votre téléphone.</span><span class="it">Salvala nel wallet del tuo telefono.</span><span class="de">Speichern Sie sie im Wallet Ihres Telefons.</span></p>
         <div id="botones">
           <div class="wallet">
-            <a class="btn" id="apple" href="#"><span class="es">Añadir a Apple Wallet</span><span class="en">Add to Apple Wallet</span></a>
-            <a class="btn" id="google" href="#"><span class="es">Añadir a Google Wallet</span><span class="en">Add to Google Wallet</span></a>
+            <a class="btn" id="apple" href="#"><span class="es">Añadir a Apple Wallet</span><span class="en">Add to Apple Wallet</span><span class="pt">Adicionar à Apple Wallet</span><span class="fr">Ajouter à Apple Wallet</span><span class="it">Aggiungi a Apple Wallet</span><span class="de">Zu Apple Wallet hinzufügen</span></a>
+            <a class="btn" id="google" href="#"><span class="es">Añadir a Google Wallet</span><span class="en">Add to Google Wallet</span><span class="pt">Adicionar à Google Wallet</span><span class="fr">Ajouter à Google Wallet</span><span class="it">Aggiungi a Google Wallet</span><span class="de">Zu Google Wallet hinzufügen</span></a>
           </div>
-          <p class="nota"><span class="es">En iPhone ábrela desde Safari. Muéstrala al llegar: es personal e intransferible.</span><span class="en">On iPhone, open this link in Safari. Show it when you arrive: it's personal and non-transferable.</span></p>
+          <p class="nota"><span class="es">En iPhone ábrela desde Safari. Muéstrala al llegar: es personal e intransferible.</span><span class="en">On iPhone, open this link in Safari. Show it when you arrive: it's personal and non-transferable.</span><span class="pt">No iPhone, abra este link no Safari. Mostre ao chegar: é pessoal e intransferível.</span><span class="fr">Sur iPhone, ouvrez ce lien dans Safari. Présentez-la à votre arrivée&nbsp;: elle est personnelle et incessible.</span><span class="it">Su iPhone, apri questo link in Safari. Mostrala all'arrivo: è personale e non cedibile.</span><span class="de">Öffnen Sie diesen Link auf dem iPhone in Safari. Zeigen Sie die Karte bei Ihrer Ankunft: Sie ist persönlich und nicht übertragbar.</span></p>
         </div>
         <div id="invalido" hidden>
-          <p class="nota"><span class="es">Este enlace no es válido o está incompleto. Escríbenos y te lo enviamos de nuevo.</span><span class="en">This link is invalid or incomplete. Message us and we'll send it again.</span></p>
-          <div class="cta"><a class="btn solid wa" href="index.html"><span class="es">Escribir por WhatsApp</span><span class="en">Message us on WhatsApp</span></a></div>
+          <p class="nota"><span class="es">Este enlace no es válido o está incompleto. Escríbenos y te lo enviamos de nuevo.</span><span class="en">This link is invalid or incomplete. Message us and we'll send it again.</span><span class="pt">Este link é inválido ou está incompleto. Fale com a gente e enviamos de novo.</span><span class="fr">Ce lien est invalide ou incomplet. Écrivez-nous et nous vous le renverrons.</span><span class="it">Questo link non è valido o è incompleto. Scrivici e te lo rimandiamo.</span><span class="de">Dieser Link ist ungültig oder unvollständig. Schreiben Sie uns, und wir senden ihn erneut.</span></p>
+          <div class="cta"><a class="btn solid wa" href="index.html"><span class="es">Escribir por WhatsApp</span><span class="en">Message us on WhatsApp</span><span class="pt">Falar pelo WhatsApp</span><span class="fr">Écrire sur WhatsApp</span><span class="it">Scrivici su WhatsApp</span><span class="de">Per WhatsApp schreiben</span></a></div>
         </div>
       </div>
       <div class="pase" id="pase" aria-label="Vista previa de la tarjeta">
-        <div class="top"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"><div><span><span class="es">Nivel</span><span class="en">Tier</span></span><b id="p-nivel">Miembro</b></div></div>
+        <div class="top"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"><div><span><span class="es">Nivel</span><span class="en">Tier</span><span class="pt">Nível</span><span class="fr">Niveau</span><span class="it">Livello</span><span class="de">Stufe</span></span><b id="p-nivel">Miembro</b></div></div>
         <img class="tira" src="img/tarjeta/hero.jpg" alt="">
         <dl>
-          <div class="nombre"><dt><span class="es">Miembro</span><span class="en">Member</span></dt><dd id="p-nombre">—</dd></div>
+          <div class="nombre"><dt><span class="es">Miembro</span><span class="en">Member</span><span class="pt">Membro</span><span class="fr">Membre</span><span class="it">Membro</span><span class="de">Mitglied</span></dt><dd id="p-nombre">—</dd></div>
           <div><dt>Nº</dt><dd id="p-numero">—</dd></div>
-          <div class="der"><dt><span class="es">Desde</span><span class="en">Since</span></dt><dd id="p-desde">—</dd></div>
+          <div class="der"><dt><span class="es">Desde</span><span class="en">Since</span><span class="pt">Desde</span><span class="fr">Depuis</span><span class="it">Dal</span><span class="de">Seit</span></dt><dd id="p-desde">—</dd></div>
         </dl>
       </div>
     </div>
@@ -78,9 +78,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa do La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ und ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Política de dados</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 

@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -32,29 +32,30 @@
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
-      <a href="empresas.html" aria-current="page"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Wallpaper</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html" aria-current="page"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Unternehmen</span></a>
       <a href="concierge.html">Concierge</a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" href="#cotizar"><span class="es">Cotizar</span><span class="en">Get a quote</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" href="#cotizar"><span class="es">Cotizar</span><span class="en">Get a quote</span><span class="pt">Pedir orçamento</span><span class="fr">Demander un devis</span><span class="it">Richiedi un preventivo</span><span class="de">Angebot anfragen</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="empresas.html" aria-current="page"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="empresas.html" aria-current="page"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Unternehmen</span></a>
+      <a href="blog/">Blog</a>
   </div></nav>
 </header>
 
@@ -62,12 +63,12 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <div class="eyebrow"><span class="es">Empresas, congresos y agencias</span><span class="en">Companies, conferences &amp; agencies</span></div>
-        <h1 style="margin-top:14px"><span class="es">El cielo tiene lista de invitados. Tu equipo está en ella.</span><span class="en">Heaven has a guest list. Your team is on it.</span></h1>
-        <p class="sub"><span class="es">Cenas de equipo, clausuras de congreso, lanzamientos y afters en una casa colonial del Centro Histórico, con cuatro mundos bajo un mismo techo.</span><span class="en">Team dinners, conference closing nights, launches and afters in a colonial house in the old city, with four worlds under one roof.</span></p>
+        <div class="eyebrow"><span class="es">Empresas, congresos y agencias</span><span class="en">Companies, conferences &amp; agencies</span><span class="pt">Empresas, congressos e agências</span><span class="fr">Entreprises, congrès et agences</span><span class="it">Aziende, congressi e agenzie</span><span class="de">Unternehmen, Kongresse und Agenturen</span></div>
+        <h1 style="margin-top:14px"><span class="es">Heaven has a guest list. Tu equipo está en ella.</span><span class="en">Heaven has a guest list. Your team is on it.</span><span class="pt">Heaven has a guest list. Sua equipe está nela.</span><span class="fr">Heaven has a guest list. Votre équipe y figure.</span><span class="it">Heaven has a guest list. Il tuo team c'è.</span><span class="de">Heaven has a guest list. Ihr Team steht drauf.</span></h1>
+        <p class="sub"><span class="es">Cenas de equipo, clausuras de congreso, lanzamientos y afters en una casa colonial del Centro Histórico, con cuatro mundos bajo un mismo techo.</span><span class="en">Team dinners, conference closing nights, launches and afters in a colonial house in the old city, with four worlds under one roof.</span><span class="pt">Jantares de equipe, encerramentos de congresso, lançamentos e afters numa casa colonial do Centro Histórico, com quatro mundos sob o mesmo teto.</span><span class="fr">Dîners d'équipe, soirées de clôture de congrès, lancements et afters dans une maison coloniale de la vieille ville, avec quatre mondes sous un même toit.</span><span class="it">Cene di team, serate di chiusura di congressi, lanci e after in una casa coloniale del centro storico, con quattro mondi sotto lo stesso tetto.</span><span class="de">Teamdinner, Kongress-Abschlussabende, Launches und Afterpartys in einem Kolonialhaus in der Altstadt – vier Welten unter einem Dach.</span></p>
         <div class="cta">
-          <a class="btn solid" href="#cotizar"><span class="es">Cuéntanos tu evento</span><span class="en">Tell us about your event</span></a>
-          <a class="btn ghost" data-wa-es="Hola Casa Salvaje, quiero cotizar un evento para mi empresa." data-wa-en="Hi Casa Salvaje, I'd like a quote for a company event." href="#cotizar"><span class="es">Escribir por WhatsApp</span><span class="en">Message us on WhatsApp</span></a>
+          <a class="btn solid" href="#cotizar"><span class="es">Cuéntanos tu evento</span><span class="en">Tell us about your event</span><span class="pt">Conte sobre seu evento</span><span class="fr">Parlez-nous de votre événement</span><span class="it">Raccontaci il tuo evento</span><span class="de">Erzählen Sie uns von Ihrem Event</span></a>
+          <a class="btn ghost" data-wa-es="Hola Casa Salvaje, quiero cotizar un evento para mi empresa." data-wa-en="Hi Casa Salvaje, I'd like a quote for a company event." href="#cotizar"><span class="es">Escribir por WhatsApp</span><span class="en">Message us on WhatsApp</span><span class="pt">Falar pelo WhatsApp</span><span class="fr">Écrire sur WhatsApp</span><span class="it">Scrivici su WhatsApp</span><span class="de">Per WhatsApp schreiben</span></a>
         </div>
       </div>
       <div class="arch"><img src="img/after-dinner.jpg" width="800" height="1000" alt="Mesa de Kanibal frente al arco verde con el letrero After dinner, anything"></div>
@@ -76,75 +77,75 @@
 
   <div class="strip" aria-hidden="true">
     <div class="row">
-      <span class="es">En la cena, compórtate</span><span class="en">At dinner, behave</span>
-      <span class="es">Después, lo que sea</span><span class="en">After dinner, anything</span>
-      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span>
-      <span class="es">En la cena, compórtate</span><span class="en">At dinner, behave</span>
-      <span class="es">Después, lo que sea</span><span class="en">After dinner, anything</span>
-      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span>
+      <span class="es">En la cena, compórtate</span><span class="en">At dinner, behave</span><span class="pt">No jantar, comporte-se</span><span class="fr">Au dîner, tenez-vous bien</span><span class="it">A cena, comportati bene</span><span class="de">Beim Dinner: Haltung bewahren</span>
+      <span class="es">Después, lo que sea</span><span class="en">After dinner, anything</span><span class="pt">Depois, vale tudo</span><span class="fr">Après, tout est permis</span><span class="it">Dopo, tutto è permesso</span><span class="de">Danach: alles erlaubt</span>
+      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span><span class="pt">Maus hábitos, companhia divina</span><span class="fr">Mauvaises habitudes, divine compagnie</span><span class="it">Cattive abitudini, compagnia divina</span><span class="de">Schlechte Angewohnheiten, göttliche Gesellschaft</span>
+      <span class="es">En la cena, compórtate</span><span class="en">At dinner, behave</span><span class="pt">No jantar, comporte-se</span><span class="fr">Au dîner, tenez-vous bien</span><span class="it">A cena, comportati bene</span><span class="de">Beim Dinner: Haltung bewahren</span>
+      <span class="es">Después, lo que sea</span><span class="en">After dinner, anything</span><span class="pt">Depois, vale tudo</span><span class="fr">Après, tout est permis</span><span class="it">Dopo, tutto è permesso</span><span class="de">Danach: alles erlaubt</span>
+      <span class="es">Malos hábitos, divina compañía</span><span class="en">Bad habits, divine company</span><span class="pt">Maus hábitos, companhia divina</span><span class="fr">Mauvaises habitudes, divine compagnie</span><span class="it">Cattive abitudini, compagnia divina</span><span class="de">Schlechte Angewohnheiten, göttliche Gesellschaft</span>
     </div>
   </div>
 
   <section id="formatos">
     <div class="wrap">
-      <div class="num"><span class="n">01</span><span class="eyebrow"><span class="es">Formatos</span><span class="en">Formats</span></span></div>
-      <h2><span class="es">Un formato para cada agenda.</span><span class="en">A format for every agenda.</span></h2>
-      <p class="lead intro"><span class="es">Desde una mesa larga para doce hasta una noche para todo el congreso. Armamos el menú, las bebidas y la música según la hora, el grupo y lo que haya que celebrar.</span><span class="en">From a long table for twelve to a night for the whole conference. We shape the menu, the drinks and the music around the time, the group and whatever needs celebrating.</span></p>
+      <div class="num"><span class="n">01</span><span class="eyebrow"><span class="es">Formatos</span><span class="en">Formats</span><span class="pt">Formatos</span><span class="fr">Formats</span><span class="it">Formati</span><span class="de">Formate</span></span></div>
+      <h2><span class="es">Un formato para cada agenda.</span><span class="en">A format for every agenda.</span><span class="pt">Um formato para cada agenda.</span><span class="fr">Un format pour chaque agenda.</span><span class="it">Un formato per ogni agenda.</span><span class="de">Ein Format für jede Agenda.</span></h2>
+      <p class="lead intro"><span class="es">Desde una mesa larga para doce hasta una noche para todo el congreso. Armamos el menú, las bebidas y la música según la hora, el grupo y lo que haya que celebrar.</span><span class="en">From a long table for twelve to a night for the whole conference. We shape the menu, the drinks and the music around the time, the group and whatever needs celebrating.</span><span class="pt">De uma mesa longa para doze a uma noite para o congresso inteiro. Montamos o menu, as bebidas e a música conforme o horário, o grupo e o que houver para celebrar.</span><span class="fr">D'une grande tablée de douze à une soirée pour tout le congrès. Nous composons le menu, les boissons et la musique selon l'heure, le groupe et ce qu'il y a à célébrer.</span><span class="it">Da una tavolata per dodici a una serata per l'intero congresso. Costruiamo menu, drink e musica in base all'orario, al gruppo e a ciò che c'è da festeggiare.</span><span class="de">Von der langen Tafel für zwölf bis zur Nacht für den ganzen Kongress. Menü, Drinks und Musik stimmen wir auf Uhrzeit, Gruppe und Anlass ab.</span></p>
       <div class="ev-grid">
         <article class="ev-card">
           <img src="img/kanibal-mesa.jpg" width="750" height="1000" alt="Mesa de Kanibal vista desde arriba con platos para compartir" loading="lazy" decoding="async">
           <div class="tx">
             <span class="tag">Kanibal · SLVJ</span>
-            <h3><span class="es">Cena de equipo o de clientes</span><span class="en">Team or client dinner</span></h3>
-            <p><span class="es">Mesa larga, platos al centro para compartir y bebidas a la medida del grupo. Para cerrar un trato o celebrar un trimestre.</span><span class="en">A long table, plates in the middle to share and drinks to suit the group. To close a deal or toast a quarter.</span></p>
+            <h3><span class="es">Cena de equipo o de clientes</span><span class="en">Team or client dinner</span><span class="pt">Jantar de equipe ou de clientes</span><span class="fr">Dîner d'équipe ou de clients</span><span class="it">Cena di team o con clienti</span><span class="de">Team- oder Kundendinner</span></h3>
+            <p><span class="es">Mesa larga, platos al centro para compartir y bebidas a la medida del grupo. Para cerrar un trato o celebrar un trimestre.</span><span class="en">A long table, plates in the middle to share and drinks to suit the group. To close a deal or toast a quarter.</span><span class="pt">Mesa longa, pratos no centro para compartilhar e bebidas sob medida para o grupo. Para fechar um negócio ou celebrar um trimestre.</span><span class="fr">Une grande table, des plats au centre à partager et des boissons à la mesure du groupe. Pour conclure un accord ou fêter un trimestre.</span><span class="it">Una tavolata, piatti al centro da condividere e drink su misura per il gruppo. Per chiudere un affare o brindare a un trimestre.</span><span class="de">Eine lange Tafel, Teller zum Teilen in der Mitte und Drinks passend zur Gruppe. Um einen Deal zu besiegeln oder auf ein Quartal anzustoßen.</span></p>
           </div>
         </article>
         <article class="ev-card">
           <img src="img/slvj-salon.jpg" width="1536" height="1024" alt="Salón de SLVJ lleno de comensales bajo las lámparas de fibra y el neón" loading="lazy" decoding="async">
           <div class="tx">
-            <span class="tag"><span class="es">SLVJ · la casa</span><span class="en">SLVJ · the house</span></span>
-            <h3><span class="es">Cena de clausura o de gala</span><span class="en">Closing or gala dinner</span></h3>
-            <p><span class="es">La casa vestida para el banquete: menú de varios tiempos, música y brindis para cerrar el congreso o la convención.</span><span class="en">The house dressed for the feast: a menu in several courses, music and toasts to close the conference or convention.</span></p>
+            <span class="tag"><span class="es">SLVJ · la casa</span><span class="en">SLVJ · the house</span><span class="pt">SLVJ · a casa</span><span class="fr">SLVJ · la maison</span><span class="it">SLVJ · la casa</span><span class="de">SLVJ · das Haus</span></span>
+            <h3><span class="es">Cena de clausura o de gala</span><span class="en">Closing or gala dinner</span><span class="pt">Jantar de encerramento ou de gala</span><span class="fr">Dîner de clôture ou de gala</span><span class="it">Cena di chiusura o di gala</span><span class="de">Abschluss- oder Galadinner</span></h3>
+            <p><span class="es">La casa vestida para el banquete: menú de varios tiempos, música y brindis para cerrar el congreso o la convención.</span><span class="en">The house dressed for the feast: a menu in several courses, music and toasts to close the conference or convention.</span><span class="pt">A casa vestida para o banquete: menu de vários tempos, música e brindes para encerrar o congresso ou a convenção.</span><span class="fr">La maison parée pour le festin&nbsp;: un menu en plusieurs services, de la musique et des toasts pour clore le congrès ou la convention.</span><span class="it">La casa vestita per il banchetto: menu in più portate, musica e brindisi per chiudere il congresso o la convention.</span><span class="de">Das Haus festlich gedeckt: ein Menü in mehreren Gängen, Musik und Toasts zum Abschluss von Kongress oder Tagung.</span></p>
           </div>
         </article>
         <article class="ev-card">
           <img src="img/slvj-fiesta.jpg" width="1000" height="666" alt="Gente bailando en SLVJ bajo las lámparas de fibra" loading="lazy" decoding="async">
           <div class="tx">
-            <span class="tag"><span class="es">El club de SLVJ</span><span class="en">The SLVJ club</span></span>
-            <h3><span class="es">After del congreso</span><span class="en">Conference after-party</span></h3>
-            <p><span class="es">Cuando termina la última sesión empieza la noche: DJ y sonido Funktion-One de jueves a sábado hasta las 3 de la mañana, con lista para tus invitados.</span><span class="en">When the last session ends, the night begins: DJs and a Funktion-One sound system Thursday to Saturday until 3 am, with a guest list for your people.</span></p>
+            <span class="tag"><span class="es">El club de SLVJ</span><span class="en">The SLVJ club</span><span class="pt">O club do SLVJ</span><span class="fr">Le club de SLVJ</span><span class="it">Il club di SLVJ</span><span class="de">Der SLVJ-Club</span></span>
+            <h3><span class="es">After del congreso</span><span class="en">Conference after-party</span><span class="pt">After do congresso</span><span class="fr">After du congrès</span><span class="it">After del congresso</span><span class="de">Kongress-Afterparty</span></h3>
+            <p><span class="es">Cuando termina la última sesión empieza la noche: DJ y sonido Funktion-One de jueves a sábado hasta las 3 de la mañana, con lista para tus invitados.</span><span class="en">When the last session ends, the night begins: DJs and a Funktion-One sound system Thursday to Saturday until 3 am, with a guest list for your people.</span><span class="pt">Quando termina a última sessão, começa a noite: DJs e som Funktion-One de quinta a sábado até as 3 da manhã, com lista para seus convidados.</span><span class="fr">Quand la dernière session se termine, la nuit commence&nbsp;: DJ et système son Funktion-One du jeudi au samedi jusqu'à 3 heures du matin, avec une liste pour vos invités.</span><span class="it">Quando finisce l'ultima sessione, comincia la notte: DJ e impianto Funktion-One dal giovedì al sabato fino alle 3 del mattino, con lista per i tuoi ospiti.</span><span class="de">Wenn die letzte Session endet, beginnt die Nacht: DJs und Funktion-One-Soundsystem donnerstags bis samstags bis 3 Uhr morgens, mit Gästeliste für Ihre Leute.</span></p>
           </div>
         </article>
         <article class="ev-card">
           <img src="img/kanibal-salon.jpg" width="1000" height="666" alt="Salón de Kanibal lleno, bajo las lámparas de papel" loading="lazy" decoding="async">
           <div class="tx">
             <span class="tag">Kanibal · SLVJ</span>
-            <h3><span class="es">Almuerzo de trabajo</span><span class="en">Working lunch</span></h3>
-            <p><span class="es">Entre sesiones, un menú cerrado para grupos que sale a tiempo para volver a la tarde del congreso.</span><span class="en">Between sessions, a set menu for groups that's served in time to get back for the afternoon programme.</span></p>
+            <h3><span class="es">Almuerzo de trabajo</span><span class="en">Working lunch</span><span class="pt">Almoço de trabalho</span><span class="fr">Déjeuner de travail</span><span class="it">Pranzo di lavoro</span><span class="de">Arbeitslunch</span></h3>
+            <p><span class="es">Entre sesiones, un menú cerrado para grupos que sale a tiempo para volver a la tarde del congreso.</span><span class="en">Between sessions, a set menu for groups that's served in time to get back for the afternoon programme.</span><span class="pt">Entre sessões, um menu fechado para grupos servido a tempo de voltar para a tarde do congresso.</span><span class="fr">Entre deux sessions, un menu fixe pour les groupes, servi à temps pour le programme de l'après-midi.</span><span class="it">Tra una sessione e l'altra, un menu fisso per gruppi servito in tempo per tornare al programma del pomeriggio.</span><span class="de">Zwischen den Sessions ein festes Gruppenmenü, rechtzeitig serviert für das Nachmittagsprogramm.</span></p>
           </div>
         </article>
         <article class="ev-card">
           <img src="img/ono-barra.jpg" width="800" height="1000" alt="Barra de sushi de SLVJ en rojo y ámbar, con hosomaki en primer plano" loading="lazy" decoding="async">
           <div class="tx">
-            <span class="tag"><span class="es">Barra de sushi de SLVJ</span><span class="en">SLVJ sushi bar</span></span>
-            <h3><span class="es">Omakase privado</span><span class="en">Private omakase</span></h3>
-            <p><span class="es">La barra para un grupo pequeño: el chef decide, ustedes conversan. Para juntas directivas, conferencistas y clientes clave.</span><span class="en">The bar for a small group: the chef decides, you talk. For boards, speakers and key clients.</span></p>
+            <span class="tag"><span class="es">Barra de sushi de SLVJ</span><span class="en">SLVJ sushi bar</span><span class="pt">Balcão de sushi do SLVJ</span><span class="fr">Comptoir à sushis de SLVJ</span><span class="it">Banco sushi di SLVJ</span><span class="de">Sushi-Bar im SLVJ</span></span>
+            <h3><span class="es">Omakase privado</span><span class="en">Private omakase</span><span class="pt">Omakase privado</span><span class="fr">Omakase privé</span><span class="it">Omakase privato</span><span class="de">Privates Omakase</span></h3>
+            <p><span class="es">La barra para un grupo pequeño: el chef decide, ustedes conversan. Para juntas directivas, conferencistas y clientes clave.</span><span class="en">The bar for a small group: the chef decides, you talk. For boards, speakers and key clients.</span><span class="pt">O balcão para um grupo pequeno: o chef decide, vocês conversam. Para diretorias, palestrantes e clientes-chave.</span><span class="fr">Le comptoir pour un petit groupe&nbsp;: le chef décide, vous conversez. Pour les conseils d'administration, les intervenants et les clients clés.</span><span class="it">Il banco per un piccolo gruppo: decide lo chef, voi conversate. Per consigli di amministrazione, relatori e clienti chiave.</span><span class="de">Die Theke für eine kleine Gruppe: Der Chef entscheidet, Sie unterhalten sich. Für Vorstände, Speaker und Schlüsselkunden.</span></p>
           </div>
         </article>
         <article class="ev-card">
           <img src="img/slvj-grupo.jpg" width="1000" height="665" alt="Un grupo de invitados posa en SLVJ" loading="lazy" decoding="async">
           <div class="tx">
-            <span class="tag"><span class="es">La casa</span><span class="en">The house</span></span>
-            <h3><span class="es">Lanzamientos y activaciones</span><span class="en">Launches &amp; brand activations</span></h3>
-            <p><span class="es">La casa como escenario para presentar un producto, recibir a la prensa o reunir a tus clientes en Cartagena.</span><span class="en">The house as a stage to unveil a product, host the press or bring your clients together in Cartagena.</span></p>
+            <span class="tag"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></span>
+            <h3><span class="es">Lanzamientos y activaciones</span><span class="en">Launches &amp; brand activations</span><span class="pt">Lançamentos e ativações</span><span class="fr">Lancements et activations de marque</span><span class="it">Lanci e attivazioni di brand</span><span class="de">Launches und Markenaktivierungen</span></h3>
+            <p><span class="es">La casa como escenario para presentar un producto, recibir a la prensa o reunir a tus clientes en Cartagena.</span><span class="en">The house as a stage to unveil a product, host the press or bring your clients together in Cartagena.</span><span class="pt">A casa como palco para apresentar um produto, receber a imprensa ou reunir seus clientes em Cartagena.</span><span class="fr">La maison comme scène pour dévoiler un produit, recevoir la presse ou réunir vos clients à Cartagena.</span><span class="it">La casa come palcoscenico per presentare un prodotto, ricevere la stampa o riunire i tuoi clienti a Cartagena.</span><span class="de">Das Haus als Bühne, um ein Produkt zu präsentieren, die Presse zu empfangen oder Ihre Kunden in Cartagena zu versammeln.</span></p>
           </div>
         </article>
         <article class="ev-card wide">
           <img src="img/slvj-baile.jpg" width="1000" height="666" alt="Una invitada baila en SLVJ" loading="lazy" decoding="async">
           <div class="tx">
-            <span class="tag"><span class="es">Diciembre</span><span class="en">December</span></span>
-            <h3><span class="es">Fiesta de fin de año</span><span class="en">Year-end party</span></h3>
-            <p><span class="es">Cena y fiesta para el equipo en la temporada en que la ciudad está más viva. Las fechas de diciembre se llenan primero.</span><span class="en">Dinner and a party for the team in the season when the city is at its liveliest. December dates fill first.</span></p>
+            <span class="tag"><span class="es">Diciembre</span><span class="en">December</span><span class="pt">Dezembro</span><span class="fr">Décembre</span><span class="it">Dicembre</span><span class="de">Dezember</span></span>
+            <h3><span class="es">Fiesta de fin de año</span><span class="en">Year-end party</span><span class="pt">Festa de fim de ano</span><span class="fr">Fête de fin d'année</span><span class="it">Festa di fine anno</span><span class="de">Jahresendfeier</span></h3>
+            <p><span class="es">Cena y fiesta para el equipo en la temporada en que la ciudad está más viva. Las fechas de diciembre se llenan primero.</span><span class="en">Dinner and a party for the team in the season when the city is at its liveliest. December dates fill first.</span><span class="pt">Jantar e festa para a equipe na época em que a cidade está mais viva. As datas de dezembro lotam primeiro.</span><span class="fr">Dîner et fête pour l'équipe à la saison où la ville est la plus vivante. Les dates de décembre partent en premier.</span><span class="it">Cena e festa per il team nella stagione in cui la città è più viva. Le date di dicembre si riempiono per prime.</span><span class="de">Dinner und Party für das Team in der Saison, in der die Stadt am lebendigsten ist. Die Dezembertermine sind zuerst ausgebucht.</span></p>
           </div>
         </article>
       </div>
@@ -154,50 +155,50 @@
   <section id="organizadores" class="ev-org">
     <div class="wrap two">
       <div>
-        <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Organizadores, agencias y hoteles</span><span class="en">Organisers, agencies &amp; hotels</span></span></div>
-        <h2><span class="es">¿Organizas un congreso en Cartagena?</span><span class="en">Running a conference in Cartagena?</span></h2>
+        <div class="num"><span class="n">02</span><span class="eyebrow"><span class="es">Organizadores, agencias y hoteles</span><span class="en">Organisers, agencies &amp; hotels</span><span class="pt">Organizadores, agências e hotéis</span><span class="fr">Organisateurs, agences et hôtels</span><span class="it">Organizzatori, agenzie e hotel</span><span class="de">Veranstalter, Agenturen und Hotels</span></span></div>
+        <h2><span class="es">¿Organizas un congreso en Cartagena?</span><span class="en">Running a conference in Cartagena?</span><span class="pt">Organiza um congresso em Cartagena?</span><span class="fr">Vous organisez un congrès à Cartagena&nbsp;?</span><span class="it">Organizzi un congresso a Cartagena?</span><span class="de">Sie organisieren einen Kongress in Cartagena?</span></h2>
       </div>
       <div>
-        <p class="lead"><span class="es">Tus asistentes van a salir a cenar de todas formas. Que lo hagan en la mejor casa del Centro, con todo resuelto antes de que lleguen.</span><span class="en">Your attendees are going out to dinner anyway. Let it be the best house in the old city, with everything sorted before they land.</span></p>
+        <p class="lead"><span class="es">Tus asistentes van a salir a cenar de todas formas. Que lo hagan en la mejor casa del Centro, con todo resuelto antes de que lleguen.</span><span class="en">Your attendees are going out to dinner anyway. Let it be the best house in the old city, with everything sorted before they land.</span><span class="pt">Seus participantes vão sair para jantar de qualquer jeito. Que seja na melhor casa do Centro, com tudo resolvido antes de chegarem.</span><span class="fr">Vos participants iront dîner dehors de toute façon. Autant que ce soit dans la plus belle maison de la vieille ville, avec tout réglé avant leur arrivée.</span><span class="it">I tuoi partecipanti usciranno a cena comunque. Che sia nella casa migliore del centro storico, con tutto organizzato prima che arrivino.</span><span class="de">Ihre Teilnehmer gehen ohnehin essen. Dann doch im besten Haus der Altstadt – mit allem geregelt, bevor sie landen.</span></p>
         <ul class="ev-list">
-          <li><b><span class="es">Cenas para juntas, patrocinadores y conferencistas</span><span class="en">Dinners for boards, sponsors and speakers</span></b><span class="es">Menú cerrado, mesa lista a la hora que diga tu agenda.</span><span class="en">A set menu and a table ready at the time your agenda says.</span></span></li>
-          <li><b><span class="es">After de clausura</span><span class="en">Closing-night after-party</span></b><span class="es">Lista de invitados con el nombre de tu congreso en la puerta.</span><span class="en">A guest list with your conference's name at the door.</span></span></li>
-          <li><b><span class="es">Reservas para los asistentes</span><span class="en">Bookings for attendees</span></b><span class="es">Un código del congreso para que tu gente reserve durante la semana del evento.</span><span class="en">A conference code so your people can book during event week.</span></span></li>
-          <li><b><span class="es">Una sola persona de contacto</span><span class="en">One point of contact</span></b><span class="es">Coordinamos contigo, con tu agencia o con el hotel del grupo.</span><span class="en">We coordinate with you, your agency or the group's hotel.</span></span></li>
+          <li><b><span class="es">Cenas para juntas, patrocinadores y conferencistas</span><span class="en">Dinners for boards, sponsors and speakers</span><span class="pt">Jantares para diretoria, patrocinadores e palestrantes</span><span class="fr">Dîners pour conseils, sponsors et intervenants</span><span class="it">Cene per board, sponsor e relatori</span><span class="de">Dinner für Vorstände, Sponsoren und Speaker</span></b><span class="es">Menú cerrado, mesa lista a la hora que diga tu agenda.</span><span class="en">A set menu and a table ready at the time your agenda says.</span><span class="pt">Menu fechado e mesa pronta na hora que sua agenda mandar.</span><span class="fr">Un menu fixe et une table prête à l'heure que fixe votre agenda.</span><span class="it">Menu fisso e tavolo pronto all'ora che dice la tua agenda.</span><span class="de">Ein festes Menü und ein Tisch, bereit zur Uhrzeit Ihrer Agenda.</span></span></li>
+          <li><b><span class="es">After de clausura</span><span class="en">Closing-night after-party</span><span class="pt">After de encerramento</span><span class="fr">After de clôture</span><span class="it">After di chiusura</span><span class="de">Afterparty zum Abschluss</span></b><span class="es">Lista de invitados con el nombre de tu congreso en la puerta.</span><span class="en">A guest list with your conference's name at the door.</span><span class="pt">Lista de convidados com o nome do seu congresso na porta.</span><span class="fr">Une liste d'invités au nom de votre congrès à la porte.</span><span class="it">Lista ospiti con il nome del tuo congresso alla porta.</span><span class="de">Eine Gästeliste mit dem Namen Ihres Kongresses an der Tür.</span></span></li>
+          <li><b><span class="es">Reservas para los asistentes</span><span class="en">Bookings for attendees</span><span class="pt">Reservas para os participantes</span><span class="fr">Réservations pour les participants</span><span class="it">Prenotazioni per i partecipanti</span><span class="de">Reservierungen für Teilnehmer</span></b><span class="es">Un código del congreso para que tu gente reserve durante la semana del evento.</span><span class="en">A conference code so your people can book during event week.</span><span class="pt">Um código do congresso para seu pessoal reservar durante a semana do evento.</span><span class="fr">Un code congrès pour que vos participants réservent pendant la semaine de l'événement.</span><span class="it">Un codice del congresso perché i tuoi possano prenotare durante la settimana dell'evento.</span><span class="de">Ein Kongress-Code, mit dem Ihre Leute in der Eventwoche reservieren können.</span></span></li>
+          <li><b><span class="es">Una sola persona de contacto</span><span class="en">One point of contact</span><span class="pt">Um único contato</span><span class="fr">Un seul interlocuteur</span><span class="it">Un unico referente</span><span class="de">Ein Ansprechpartner</span></b><span class="es">Coordinamos contigo, con tu agencia o con el hotel del grupo.</span><span class="en">We coordinate with you, your agency or the group's hotel.</span><span class="pt">Coordenamos com você, com sua agência ou com o hotel do grupo.</span><span class="fr">Nous coordonnons avec vous, votre agence ou l'hôtel du groupe.</span><span class="it">Coordiniamo con te, con la tua agenzia o con l'hotel del gruppo.</span><span class="de">Wir koordinieren mit Ihnen, Ihrer Agentur oder dem Gruppenhotel.</span></span></li>
         </ul>
-        <div class="cta"><a class="btn solid" href="#cotizar"><span class="es">Hablemos de tu congreso</span><span class="en">Let's talk about your event</span></a></div>
+        <div class="cta"><a class="btn solid" href="#cotizar"><span class="es">Hablemos de tu congreso</span><span class="en">Let's talk about your event</span><span class="pt">Vamos falar do seu evento</span><span class="fr">Parlons de votre événement</span><span class="it">Parliamo del tuo evento</span><span class="de">Sprechen wir über Ihr Event</span></a></div>
       </div>
     </div>
   </section>
 
   <section id="como" class="ev-steps">
     <div class="wrap">
-      <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Cómo funciona</span><span class="en">How it works</span></span></div>
-      <h2><span class="es">Tres pasos y la mesa está puesta.</span><span class="en">Three steps and the table is set.</span></h2>
+      <div class="num"><span class="n">03</span><span class="eyebrow"><span class="es">Cómo funciona</span><span class="en">How it works</span><span class="pt">Como funciona</span><span class="fr">Comment ça marche</span><span class="it">Come funziona</span><span class="de">So funktioniert's</span></span></div>
+      <h2><span class="es">Tres pasos y la mesa está puesta.</span><span class="en">Three steps and the table is set.</span><span class="pt">Três passos e a mesa está posta.</span><span class="fr">Trois étapes et la table est dressée.</span><span class="it">Tre passi e la tavola è apparecchiata.</span><span class="de">Drei Schritte, und der Tisch ist gedeckt.</span></h2>
       <ol class="steps">
-        <li><b><span class="es">Nos cuentas</span><span class="en">You tell us</span></b><span class="es">Fecha, número de personas, formato y, si aplica, el congreso al que vienen.</span><span class="en">Date, number of guests, format and, if relevant, the conference they're here for.</span></li>
-        <li><b><span class="es">Te proponemos</span><span class="en">We propose</span></b><span class="es">Te escribimos para afinar detalles y te enviamos una propuesta con menú, bebidas y montaje.</span><span class="en">We get in touch to fine-tune the details and send you a proposal with menu, drinks and set-up.</span></li>
-        <li><b><span class="es">Llegan y la casa se encarga</span><span class="en">You arrive, the house takes over</span></b><span class="es">Tu grupo entra por una puerta; lo que pasa adentro depende de a qué mundo le respondan.</span><span class="en">Your group comes in through one door; what happens inside depends on which world calls them.</span></li>
+        <li><b><span class="es">Nos cuentas</span><span class="en">You tell us</span><span class="pt">Você nos conta</span><span class="fr">Vous nous racontez</span><span class="it">Ci racconti</span><span class="de">Sie erzählen uns</span></b><span class="es">Fecha, número de personas, formato y, si aplica, el congreso al que vienen.</span><span class="en">Date, number of guests, format and, if relevant, the conference they're here for.</span><span class="pt">Data, número de pessoas, formato e, se for o caso, o congresso de onde vêm.</span><span class="fr">Date, nombre de personnes, format et, le cas échéant, le congrès qui les amène.</span><span class="it">Data, numero di persone, formato e, se serve, il congresso per cui sono qui.</span><span class="de">Datum, Personenzahl, Format und gegebenenfalls der Kongress, für den sie hier sind.</span></li>
+        <li><b><span class="es">Te proponemos</span><span class="en">We propose</span><span class="pt">Nós propomos</span><span class="fr">Nous proposons</span><span class="it">Ti proponiamo</span><span class="de">Wir schlagen vor</span></b><span class="es">Te escribimos para afinar detalles y te enviamos una propuesta con menú, bebidas y montaje.</span><span class="en">We get in touch to fine-tune the details and send you a proposal with menu, drinks and set-up.</span><span class="pt">Entramos em contato para ajustar os detalhes e enviamos uma proposta com menu, bebidas e montagem.</span><span class="fr">Nous vous contactons pour affiner les détails et vous envoyons une proposition avec menu, boissons et mise en place.</span><span class="it">Ti contattiamo per definire i dettagli e ti mandiamo una proposta con menu, drink e allestimento.</span><span class="de">Wir melden uns, um die Details abzustimmen, und schicken Ihnen ein Angebot mit Menü, Drinks und Aufbau.</span></li>
+        <li><b><span class="es">Llegan y la casa se encarga</span><span class="en">You arrive, the house takes over</span><span class="pt">Vocês chegam e a casa cuida do resto</span><span class="fr">Vous arrivez, la maison s'occupe du reste</span><span class="it">Arrivate, e la casa pensa a tutto</span><span class="de">Sie kommen an, das Haus übernimmt</span></b><span class="es">Tu grupo entra por una puerta; lo que pasa adentro depende de a qué mundo le respondan.</span><span class="en">Your group comes in through one door; what happens inside depends on which world calls them.</span><span class="pt">Seu grupo entra por uma porta; o que acontece lá dentro depende de qual mundo os chama.</span><span class="fr">Votre groupe entre par une seule porte&nbsp;; ce qui se passe à l'intérieur dépend du monde qui l'appelle.</span><span class="it">Il tuo gruppo entra da una sola porta; quello che succede dentro dipende dal mondo che lo chiama.</span><span class="de">Ihre Gruppe kommt durch eine Tür; was drinnen geschieht, hängt davon ab, welche Welt sie ruft.</span></li>
       </ol>
     </div>
   </section>
 
   <section id="cotizar" class="guest">
     <div class="wrap">
-      <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Cotizar</span><span class="en">Get a quote</span></span></div>
-      <h2><span class="es">Cuéntanos tu evento.</span><span class="en">Tell us about your event.</span></h2>
-      <p class="lead" style="margin-top:12px;color:var(--ink-soft)"><span class="es">Entre más nos cuentes, más precisa la propuesta. Si es para esta semana, mejor escríbenos por WhatsApp.</span><span class="en">The more you tell us, the sharper the proposal. If it's for this week, message us on WhatsApp instead.</span></p>
+      <div class="num"><span class="n">04</span><span class="eyebrow"><span class="es">Cotizar</span><span class="en">Get a quote</span><span class="pt">Pedir orçamento</span><span class="fr">Demander un devis</span><span class="it">Richiedi un preventivo</span><span class="de">Angebot anfragen</span></span></div>
+      <h2><span class="es">Cuéntanos tu evento.</span><span class="en">Tell us about your event.</span><span class="pt">Conte sobre seu evento.</span><span class="fr">Parlez-nous de votre événement.</span><span class="it">Raccontaci il tuo evento.</span><span class="de">Erzählen Sie uns von Ihrem Event.</span></h2>
+      <p class="lead" style="margin-top:12px;color:var(--ink-soft)"><span class="es">Entre más nos cuentes, más precisa la propuesta. Si es para esta semana, mejor escríbenos por WhatsApp.</span><span class="en">The more you tell us, the sharper the proposal. If it's for this week, message us on WhatsApp instead.</span><span class="pt">Quanto mais você contar, mais precisa a proposta. Se for para esta semana, melhor falar pelo WhatsApp.</span><span class="fr">Plus vous nous en dites, plus la proposition est précise. Si c'est pour cette semaine, écrivez-nous plutôt sur WhatsApp.</span><span class="it">Più ci racconti, più precisa sarà la proposta. Se è per questa settimana, scrivici piuttosto su WhatsApp.</span><span class="de">Je mehr Sie uns erzählen, desto genauer das Angebot. Wenn es diese Woche sein soll, schreiben Sie uns lieber auf WhatsApp.</span></p>
       <form id="eventos" name="eventos-empresariales" method="POST" data-netlify="true" netlify-honeypot="empresa2" action="/gracias.html">
         <input type="hidden" name="form-name" value="eventos-empresariales">
         <input type="hidden" name="origen" id="ev-origen" value="directo">
         <input type="hidden" name="idioma" id="ev-idioma" value="en">
         <p hidden><label>Empresa 2 <input name="empresa2"></label></p>
-        <label><span class="es">Nombre completo</span><span class="en">Full name</span><input name="nombre" required autocomplete="name"></label>
-        <label><span class="es">Empresa u organización</span><span class="en">Company or organisation</span><input name="empresa" required autocomplete="organization"></label>
-        <label><span class="es">Cargo</span><span class="en">Role</span><input name="cargo" autocomplete="organization-title"></label>
-        <label><span class="es">Correo</span><span class="en">Email</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span class="es">Nombre completo</span><span class="en">Full name</span><span class="pt">Nome completo</span><span class="fr">Nom complet</span><span class="it">Nome e cognome</span><span class="de">Vollständiger Name</span><input name="nombre" required autocomplete="name"></label>
+        <label><span class="es">Empresa u organización</span><span class="en">Company or organisation</span><span class="pt">Empresa ou organização</span><span class="fr">Entreprise ou organisation</span><span class="it">Azienda o organizzazione</span><span class="de">Unternehmen oder Organisation</span><input name="empresa" required autocomplete="organization"></label>
+        <label><span class="es">Cargo</span><span class="en">Role</span><span class="pt">Cargo</span><span class="fr">Fonction</span><span class="it">Ruolo</span><span class="de">Position</span><input name="cargo" autocomplete="organization-title"></label>
+        <label><span class="es">Correo</span><span class="en">Email</span><span class="pt">E-mail</span><span class="fr">E-mail</span><span class="it">Email</span><span class="de">E-Mail</span><input name="email" type="email" required autocomplete="email"></label>
         <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" required autocomplete="tel" placeholder="+57 300 000 0000"></label>
-        <label><span class="es">Tipo de evento</span><span class="en">Type of event</span><select name="tipo" required>
+        <label><span class="es">Tipo de evento</span><span class="en">Type of event</span><span class="pt">Tipo de evento</span><span class="fr">Type d'événement</span><span class="it">Tipo di evento</span><span class="de">Art des Events</span><select name="tipo" required>
           <option value="">—</option>
           <option value="cena-equipo" data-es="Cena de equipo o de clientes">Team or client dinner</option>
           <option value="clausura" data-es="Cena de clausura o de gala">Closing or gala dinner</option>
@@ -208,8 +209,8 @@
           <option value="fin-de-ano" data-es="Fiesta de fin de año">Year-end party</option>
           <option value="otro" data-es="Otro">Other</option>
         </select></label>
-        <label><span class="es">Fecha tentativa</span><span class="en">Tentative date</span><input name="fecha" type="date"></label>
-        <label><span class="es">Personas</span><span class="en">Guests</span><select name="personas" required>
+        <label><span class="es">Fecha tentativa</span><span class="en">Tentative date</span><span class="pt">Data provável</span><span class="fr">Date envisagée</span><span class="it">Data indicativa</span><span class="de">Voraussichtliches Datum</span><input name="fecha" type="date"></label>
+        <label><span class="es">Personas</span><span class="en">Guests</span><span class="pt">Pessoas</span><span class="fr">Personnes</span><span class="it">Persone</span><span class="de">Personen</span><select name="personas" required>
           <option value="">—</option>
           <option>8–15</option>
           <option>16–30</option>
@@ -217,29 +218,37 @@
           <option>61–120</option>
           <option value="120+">120+</option>
         </select></label>
-        <label class="full"><span class="es">¿Viene con un congreso o convención? ¿Cuál?</span><span class="en">Is it part of a conference or convention? Which one?</span><input name="congreso" autocomplete="off"></label>
-        <label class="full"><span class="es">Lo que tienes en mente</span><span class="en">What you have in mind</span><textarea name="mensaje" rows="4"></textarea></label>
-        <label class="full check"><input name="autorizacion" type="checkbox" required value="si"><span class="es">Autorizo a Grupo Ono a tratar mis datos para responder esta solicitud y enviarme propuestas de Casa Salvaje, según su política de datos personales. Puedo pedir que me retiren cuando quiera.</span><span class="en">I authorise Grupo Ono to use my details to answer this request and send me Casa Salvaje proposals, under its personal data policy. I can ask to be removed at any time.</span></label>
-        <div class="full"><button class="btn solid" type="submit" id="ev-submit"><span class="es">Enviar solicitud</span><span class="en">Send request</span></button></div>
+        <label class="full"><span class="es">¿Viene con un congreso o convención? ¿Cuál?</span><span class="en">Is it part of a conference or convention? Which one?</span><span class="pt">Faz parte de um congresso ou convenção? Qual?</span><span class="fr">Est-ce lié à un congrès ou une convention&nbsp;? Lequel&nbsp;?</span><span class="it">Fa parte di un congresso o di una convention? Quale?</span><span class="de">Gehört es zu einem Kongress oder einer Tagung? Welcher?</span><input name="congreso" autocomplete="off"></label>
+        <label class="full"><span class="es">Lo que tienes en mente</span><span class="en">What you have in mind</span><span class="pt">O que você tem em mente</span><span class="fr">Ce que vous avez en tête</span><span class="it">Cosa hai in mente</span><span class="de">Was Sie sich vorstellen</span><textarea name="mensaje" rows="4"></textarea></label>
+        <label class="full check"><input name="autorizacion" type="checkbox" required value="si"><span class="es">Autorizo a Grupo Ono a tratar mis datos para responder esta solicitud y enviarme propuestas de Casa Salvaje, según su política de datos personales. Puedo pedir que me retiren cuando quiera.</span><span class="en">I authorise Grupo Ono to use my details to answer this request and send me Casa Salvaje proposals, under its personal data policy. I can ask to be removed at any time.</span><span class="pt">Autorizo o Grupo Ono a tratar meus dados para responder a esta solicitação e me enviar propostas da Casa Salvaje, de acordo com sua política de dados pessoais. Posso pedir a remoção quando quiser.</span><span class="fr">J'autorise Grupo Ono à traiter mes données pour répondre à cette demande et m'envoyer des propositions de Casa Salvaje, conformément à sa politique de données personnelles. Je peux demander à être retiré(e) à tout moment.</span><span class="it">Autorizzo Grupo Ono a trattare i miei dati per rispondere a questa richiesta e inviarmi proposte di Casa Salvaje, secondo la sua informativa sui dati personali. Posso chiedere di essere rimosso in qualsiasi momento.</span><span class="de">Ich willige ein, dass Grupo Ono meine Daten gemäß seiner Datenschutzrichtlinie verwendet, um diese Anfrage zu beantworten und mir Angebote von Casa Salvaje zu senden. Ich kann jederzeit meine Löschung verlangen.</span></label>
+        <div class="full"><button class="btn solid" type="submit" id="ev-submit"><span class="es">Enviar solicitud</span><span class="en">Send request</span><span class="pt">Enviar solicitação</span><span class="fr">Envoyer la demande</span><span class="it">Invia richiesta</span><span class="de">Anfrage senden</span></button></div>
         <p class="note full es">Enviar la solicitud no confirma la reserva: la fecha queda tomada cuando la confirmamos contigo.</p>
         <p class="note full en">Sending this request doesn't confirm a booking: the date is held once we confirm it with you.</p>
+        <p class="note full pt">Enviar a solicitação não confirma a reserva: a data fica garantida quando a confirmamos com você.</p>
+        <p class="note full fr">L'envoi de cette demande ne confirme pas la réservation&nbsp;: la date est retenue une fois que nous l'avons confirmée avec vous.</p>
+        <p class="note full it">Inviare la richiesta non conferma la prenotazione: la data è bloccata quando la confermiamo con te.</p>
+        <p class="note full de">Das Senden der Anfrage ist keine Buchungsbestätigung: Das Datum ist reserviert, sobald wir es mit Ihnen bestätigt haben.</p>
       </form>
-      <div class="ok" id="ev-ok" hidden><b class="es">Recibimos tu solicitud.</b><b class="en">We've got your request.</b> <span class="es">Te escribimos pronto para afinar los detalles.</span><span class="en">We'll be in touch soon to fine-tune the details.</span></div>
+      <div class="ok" id="ev-ok" hidden><b class="es">Recibimos tu solicitud.</b><b class="en">We've got your request.</b><b class="pt">Recebemos sua solicitação.</b><b class="fr">Nous avons bien reçu votre demande.</b><b class="it">Abbiamo ricevuto la tua richiesta.</b><b class="de">Wir haben Ihre Anfrage erhalten.</b> <span class="es">Te escribimos pronto para afinar los detalles.</span><span class="en">We'll be in touch soon to fine-tune the details.</span><span class="pt">Entraremos em contato em breve para ajustar os detalhes.</span><span class="fr">Nous revenons vers vous très vite pour affiner les détails.</span><span class="it">Ti scriviamo presto per definire i dettagli.</span><span class="de">Wir melden uns bald, um die Details abzustimmen.</span></div>
     </div>
   </section>
 
   <section id="donde" class="where">
     <div class="wrap two">
       <div>
-        <div class="num"><span class="n">05</span><span class="eyebrow"><span class="es">Dónde</span><span class="en">Where</span></span></div>
-        <h2><span class="es">En el corazón del Centro Histórico.</span><span class="en">In the heart of the old city.</span></h2>
+        <div class="num"><span class="n">05</span><span class="eyebrow"><span class="es">Dónde</span><span class="en">Where</span><span class="pt">Onde</span><span class="fr">Où</span><span class="it">Dove</span><span class="de">Wo</span></span></div>
+        <h2><span class="es">En el corazón del Centro Histórico.</span><span class="en">In the heart of the old city.</span><span class="pt">No coração do Centro Histórico.</span><span class="fr">Au cœur de la vieille ville.</span><span class="it">Nel cuore del centro storico.</span><span class="de">Im Herzen der Altstadt.</span></h2>
         <div class="card" style="margin-top:22px">
           <div class="addr">Calle Santa Teresa #32-41<br>Centro Histórico, Cartagena de Indias</div>
           <div class="meta es">A dos cuadras de la Plaza Santo Domingo, dentro de la ciudad amurallada: tu grupo llega caminando desde los hoteles del Centro y en pocos minutos desde Getsemaní y Bocagrande.</div>
           <div class="meta en">Two blocks from Plaza Santo Domingo, inside the walled city: your group can walk over from the old-city hotels and it's a short ride from Getsemaní and Bocagrande.</div>
+          <div class="meta pt">A duas quadras da Plaza Santo Domingo, dentro da cidade murada: seu grupo chega a pé dos hotéis do Centro e em poucos minutos de Getsemaní e Bocagrande.</div>
+          <div class="meta fr">À deux rues de la Plaza Santo Domingo, dans la ville fortifiée&nbsp;: votre groupe vient à pied depuis les hôtels de la vieille ville, et en quelques minutes depuis Getsemaní et Bocagrande.</div>
+          <div class="meta it">A due isolati da Plaza Santo Domingo, dentro la città murata: il tuo gruppo arriva a piedi dagli hotel del centro storico e in pochi minuti da Getsemaní e Bocagrande.</div>
+          <div class="meta de">Zwei Blocks von der Plaza Santo Domingo, mitten in der ummauerten Stadt: Ihre Gruppe kommt zu Fuß von den Altstadthotels und ist in wenigen Minuten von Getsemaní und Bocagrande aus da.</div>
           <div class="links">
-            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Calle+Santa+Teresa+32-41+Cartagena" target="_blank" rel="noopener"><span class="es">Abrir en Maps</span><span class="en">Open in Maps</span></a>
-            <a class="btn ghost" href="index.html"><span class="es">Conocer la casa</span><span class="en">See the house</span></a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Calle+Santa+Teresa+32-41+Cartagena" target="_blank" rel="noopener"><span class="es">Abrir en Maps</span><span class="en">Open in Maps</span><span class="pt">Abrir no Maps</span><span class="fr">Ouvrir dans Maps</span><span class="it">Apri in Maps</span><span class="de">In Maps öffnen</span></a>
+            <a class="btn ghost" href="index.html"><span class="es">Conocer la casa</span><span class="en">See the house</span><span class="pt">Conhecer a casa</span><span class="fr">Découvrir la maison</span><span class="it">Scopri la casa</span><span class="de">Das Haus entdecken</span></a>
           </div>
         </div>
       </div>
@@ -252,9 +261,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa do La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ und ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Política de dados</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 

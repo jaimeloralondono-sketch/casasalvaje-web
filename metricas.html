@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Blog: reservas por artículo · Casa Salvaje</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
+    </nav>
+    <div class="right">
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+    </div>
+  </div>
+  <nav class="worlds" aria-label="Mundos"><div class="wrap">
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="domenica.html">La Domenica</a>
+      <a href="kanibal.html">Kanibal</a>
+      <a href="slvj.html">SLVJ</a>
+      <a href="ono.html">ONO</a>
+  </div></nav>
+</header>
+
+<main id="top">
+<section class="admin">
+    <div class="wrap">
+      <div class="eyebrow">Uso interno</div>
+      <h2 style="margin-top:14px;color:var(--cobalt)">Reservas que llegan por el blog</h2>
+      <p class="nota">Por cada artículo: cuántas veces lo abrieron y cuántas personas, después de leerlo (hasta 30 días después), tocaron Reservar, escribieron por WhatsApp o se anotaron en la lista. Son clics hacia la reserva: la reserva confirmada se ve en CoverManager o Fourvenues, que reciben la etiqueta <code>utm_campaign</code> con el nombre del artículo.</p>
+      <form id="ver" autocomplete="off">
+        <label class="full">Clave del panel<input type="password" name="clave" required></label>
+        <div class="full"><button class="btn solid" type="submit">Ver números</button></div>
+      </form>
+      <p class="error" id="error" hidden></p>
+      <div id="datos" hidden>
+        <div class="cta" id="meses" style="margin-top:28px"></div>
+        <div class="met-wrap"><table class="met"><thead><tr><th>Artículo</th><th>Visitas</th><th>Reservar</th><th>WhatsApp</th><th>Lista</th><th>Total</th><th>Conversión</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="marcas">
+      <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+    </div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+  var f = document.getElementById("ver"), err = document.getElementById("error"), box = document.getElementById("datos");
+  var meses = {}, titulos = {}, enlaces = {}, actual = "todo";
+  fetch("/blog/").then(function(r){ return r.text(); }).then(function(h){
+    new DOMParser().parseFromString(h, "text/html").querySelectorAll(".post-card").forEach(function(a){
+      var h = a.getAttribute("href"), k = h.replace(/\.html$/, "").replace("/", "-"); var t = a.querySelector("h2"); if(t){ titulos[k] = t.textContent.trim() + (a.lang && a.lang !== "es" ? " (" + a.lang.toUpperCase() + ")" : ""); enlaces[k] = h; }
+    });
+    if(box.hidden === false) pintar();
+  }).catch(function(){});
+  function n(x){ return x || 0; }
+  function pintar(){
+    var filas = {}, keys = actual === "todo" ? Object.keys(meses) : [actual];
+    keys.forEach(function(m){ Object.keys(meses[m] || {}).forEach(function(a){
+      var r = filas[a] = filas[a] || { vista: 0, reserva: 0, whatsapp: 0, lista: 0 }, d = meses[m][a];
+      ["vista", "reserva", "whatsapp", "lista"].forEach(function(t){ r[t] += n(d[t]); });
+    }); });
+    var tot = { vista: 0, reserva: 0, whatsapp: 0, lista: 0 };
+    var lista = Object.keys(filas).map(function(a){ var r = filas[a]; r.a = a; r.total = r.reserva + r.whatsapp + r.lista; Object.keys(tot).forEach(function(t){ tot[t] += r[t]; }); return r; })
+      .sort(function(x, y){ return y.total - x.total || y.vista - x.vista; });
+    function fila(nombre, r){ var tt = r.reserva + r.whatsapp + r.lista; return "<td>" + nombre + "</td><td>" + r.vista + "</td><td>" + r.reserva + "</td><td>" + r.whatsapp + "</td><td>" + r.lista + "</td><td><b>" + tt + "</b></td><td>" + (r.vista ? Math.round(tt / r.vista * 100) + "%" : "–") + "</td>"; }
+    box.querySelector("tbody").innerHTML = lista.length ? lista.map(function(r){
+      var t = titulos[r.a] || r.a; return "<tr>" + fila('<a href="/blog/' + (enlaces[r.a] || r.a + '.html') + '" target="_blank" rel="noopener">' + t.replace(/</g, "&lt;") + "</a>", r) + "</tr>";
+    }).join("") : '<tr><td colspan="7">Todavía no hay datos.</td></tr>';
+    box.querySelector("tfoot").innerHTML = lista.length ? "<tr>" + fila("Total", tot) + "</tr>" : "";
+    var ms = Object.keys(meses).sort().reverse();
+    document.getElementById("meses").innerHTML = ['<button type="button" class="btn ' + (actual === "todo" ? "solid" : "ghost") + '" data-m="todo">Todo</button>'].concat(ms.map(function(m){
+      return '<button type="button" class="btn ' + (actual === m ? "solid" : "ghost") + '" data-m="' + m + '">' + new Date(m + "-15").toLocaleDateString("es-CO", { month: "long", year: "numeric" }) + "</button>";
+    })).join("");
+  }
+  document.getElementById("meses").addEventListener("click", function(e){ var b = e.target.closest("[data-m]"); if(b){ actual = b.dataset.m; pintar(); } });
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var btn = f.querySelector("button[type=submit]"); btn.disabled = true;
+    fetch("/api/blog/metricas", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ clave: f.clave.value }) })
+      .then(function(r){ return r.json().catch(function(){ return { error: "Error " + r.status }; }); })
+      .then(function(j){
+        err.hidden = !j.error; box.hidden = !!j.error;
+        if(j.error){ err.textContent = j.error; return; }
+        meses = j.meses || {}; pintar();
+      })
+      .catch(function(){ err.hidden = false; err.textContent = "No se pudo conectar. Intenta de nuevo."; })
+      .then(function(){ btn.disabled = false; });
+  });
+})();
+</script>
+
+</body></html>
