@@ -60,7 +60,7 @@
       var oc = form.querySelector('.ocasiones [aria-pressed="true"]');
       return {
         llegada: llegada.value || "", noches: cuenta.noches, personas: cuenta.personas,
-        quedarse: elegidos("quedarse"), dia: elegidos("dia"), noche: elegidos("noche"),
+        quedarse: elegidos("quedarse"), dia: elegidos("dia"), noche: elegidos("noche"), extras: elegidos("extras"),
         ocasion: oc ? oc.dataset.id : "ninguna", nota: nota.value.trim().slice(0, 300),
         idioma: root.getAttribute("data-lang") || "es"
       };
@@ -68,7 +68,7 @@
     // Resumen en palabras del huésped: para WhatsApp si algo falla y para el chat.
     function resumen(sel){
       var partes = [t("Quiero armar un plan en Cartagena", "I'd like to plan my time in Cartagena") + ": " + sel.personas + " " + t("personas", "people") + ", " + sel.noches + " " + t("noches", "nights") + (sel.llegada ? " " + t("desde el", "from") + " " + sel.llegada : "") + "."];
-      [["quedarse", t("Dónde quedarnos", "Where to stay")], ["dia", t("De día", "By day")], ["noche", t("De noche", "At night")]].forEach(function(g){
+      [["quedarse", t("Dónde quedarnos", "Where to stay")], ["dia", t("De día", "By day")], ["noche", t("De noche", "At night")], ["extras", t("Extras", "Extras")]].forEach(function(g){
         var ids = sel[g[0]]; if(ids.length) partes.push(g[1] + ": " + ids.map(function(id){ return nombre(g[0], id); }).join(", ") + ".");
       });
       if(sel.ocasion !== "ninguna"){ var o = form.querySelector('.ocasiones [data-id="' + sel.ocasion + '"]'); partes.push(t("Ocasión", "Occasion") + ": " + (o ? visible(o) : sel.ocasion) + "."); }
@@ -151,7 +151,7 @@
       e.preventDefault();
       if(ocupado) return;
       var sel = seleccion();
-      if(!sel.quedarse.length && !sel.dia.length && !sel.noche.length && !sel.nota){
+      if(!sel.quedarse.length && !sel.dia.length && !sel.noche.length && !sel.extras.length && !sel.nota){
         aviso.textContent = t("Elige al menos una cosa: una casa, un bote o una noche.", "Pick at least one thing: a house, a boat or a night out.");
         return;
       }

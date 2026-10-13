@@ -26,6 +26,16 @@ export const PLAN_OPCIONES = {
     "club": ["El club SLVJ", "The SLVJ club"],
     "omakase": ["Omakase en la barra", "Omakase at the bar"],
   },
+  extras: {
+    "chef": ["Chef privado en la casa o en el yate", "Private chef at the house or on the yacht"],
+    "sonido": ["Parlantes, sonido y DJ", "Speakers, sound and a DJ"],
+    "traslados": ["Traslados (aeropuerto, muelle, cenas)", "Transfers (airport, marina, dinners)"],
+    "mercado": ["Mercado y licor para la casa", "Groceries and drinks stocked at the house"],
+    "decoracion": ["Decoración y torta", "Decoration and cake"],
+    "masajes": ["Masajes a domicilio", "In-house massages"],
+    "maquillaje": ["Maquillaje y peinado", "Hair and makeup"],
+    "seguridad": ["Seguridad", "Security"],
+  },
   ocasion: {
     "ninguna": ["Solo porque sí", "Just because"],
     "cumple": ["Cumpleaños", "Birthday"],
@@ -47,6 +57,7 @@ ARMA TU PLAN (planificador de casa-salvaje.com)
 - Otras casas o villas, botes, islas, velero y buceo van con nuestro aliado Vacation Cartagena (puerta "vacation"). Nunca inventes nombres de botes o casas, precios, habitaciones ni disponibilidad.
 - Cenas: puerta "kanibal" o "slvj". La noche y las mesas del club: puerta "club". Lo que necesite al concierge humano (ocasión especial, sorpresa, grupo grande, omakase): puerta "whatsapp".
 - Caminar la ciudad, compras y planes sin reserva: puerta "ninguna"; recomienda con lo que sabes de Cartagena y marca "por confirmar" lo que pueda cambiar.
+- Los extras (chef, parlantes y DJ, traslados, mercado y licor, decoración y torta, masajes, maquillaje, seguridad) los arma el concierge (puerta "whatsapp"). Ubícalos donde tienen sentido: el chef en una noche en la casa o en el yate, el sonido en la fiesta, los traslados al llegar y a las cenas, la decoración en la celebración.
 - Si hay una ocasión, pon un detalle de la casa en la noche principal y di que el concierge lo prepara.
 - Si van al club, en notas: cover de $50.000 COP por persona, 25 años mínimo y vestimenta elegante (bermuda de lino sí, chanclas no).
 - Como mucho 3 momentos por día. El detalle de cada momento, una o dos frases. Tono de la casa: cálido, seguro, frases cortas.
@@ -55,7 +66,7 @@ FORMATO: responde SOLO con un objeto JSON, sin texto antes ni después, con esta
 {"titulo": "máx. 6 palabras", "intro": "una o dos frases", "dias": [{"fecha": "ej. Jueves 15 de octubre", "momentos": [{"momento": "Mañana | Tarde | Noche | Madrugada", "plan": "título corto", "detalle": "una o dos frases", "puerta": "kanibal | slvj | club | vacation | whatsapp | ninguna"}]}], "notas": ["máx. 3 notas prácticas"], "whatsapp": "el mensaje que el huésped le manda al concierge para reservar todo: en primera persona, en su idioma, con fechas, personas y lo elegido; máx. 700 caracteres"}
 Todo el texto va en el idioma que se indica en el pedido; los valores de "puerta" van tal cual.`;
 
-const lista = (v, grupo) => (Array.isArray(v) ? v : []).map(String).filter((k) => k in PLAN_OPCIONES[grupo]).slice(0, 6);
+const lista = (v, grupo) => (Array.isArray(v) ? v : []).map(String).filter((k) => k in PLAN_OPCIONES[grupo]).slice(0, 8);
 const entero = (v, min, max, def) => { const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : def; };
 
 // Deja solo lo que el planificador ofrece. Devuelve null si no eligieron nada.
@@ -68,11 +79,12 @@ export function limpiarPlan(p) {
     quedarse: lista(p.quedarse, "quedarse"),
     dia: lista(p.dia, "dia"),
     noche: lista(p.noche, "noche"),
+    extras: lista(p.extras, "extras"),
     ocasion: String(p.ocasion || "ninguna") in PLAN_OPCIONES.ocasion ? String(p.ocasion || "ninguna") : "ninguna",
     nota: String(p.nota || "").replace(/\s+/g, " ").trim().slice(0, 300),
     idioma: String(p.idioma || "es") in IDIOMAS ? String(p.idioma || "es") : "es",
   };
-  return sel.quedarse.length || sel.dia.length || sel.noche.length || sel.nota ? sel : null;
+  return sel.quedarse.length || sel.dia.length || sel.noche.length || sel.extras.length || sel.nota ? sel : null;
 }
 
 // Los días del viaje con lo que importa para la casa: club, domingo, omakase.
@@ -105,6 +117,7 @@ export function pedidoPlan(sel, hoy) {
     `Dónde quedarse: ${nombres("quedarse")}.`,
     `De día: ${nombres("dia")}.`,
     `De noche: ${nombres("noche")}.`,
+    `Extras: ${nombres("extras")}.`,
     `Ocasión: ${PLAN_OPCIONES.ocasion[sel.ocasion][0]}.`,
     sel.nota ? `Algo más que pidió el huésped: """${sel.nota}"""` : "",
   ].filter(Boolean).join("\n");
