@@ -11,6 +11,7 @@ export const PLAN_OPCIONES = {
     "ya-tengo": ["Ya tengo dónde quedarme", "I already have a place"],
   },
   dia: {
+    "yate-privado": ["Yate privado del concierge", "The concierge's private yacht"],
     "bote-islas": ["Bote a las Islas del Rosario", "Boat to the Rosario Islands"],
     "baru": ["Día de playa en Barú", "Beach day in Barú"],
     "atardecer": ["Atardecer en velero", "Sunset sail"],
@@ -41,7 +42,7 @@ export const PLAN_REGLAS = `
 ARMA TU PLAN (planificador de casa-salvaje.com)
 - Te llegan las elecciones de un huésped. Ordénalas en un plan día por día que fluya: mañana y tarde para el mar o la ciudad; la noche para Casa Salvaje.
 - Respeta los horarios de la casa: el club solo de jueves a sábado; el domingo cerramos a las 7 pm (salvo domingo antes de festivo); el omakase solo el último martes del mes. Si algo elegido no cabe en esas fechas, propón la mejor alternativa y dilo en una nota.
-- Casa Belle, Hotel Las Islas y Casa Enai las reserva el concierge de la casa (puerta "whatsapp"); si eligieron una, ponla como el lugar donde se quedan y cuenta en una frase por qué encaja.
+- Casa Belle, Hotel Las Islas, Casa Enai y el yate privado los reserva el concierge de la casa (puerta "whatsapp"); si eligieron una casa, ponla como el lugar donde se quedan y cuenta en una frase por qué encaja. El yate privado sirve para el día en las islas o para el atardecer.
 - Otras casas o villas, botes, islas, velero y buceo van con nuestro aliado Vacation Cartagena (puerta "vacation"). Nunca inventes nombres de botes o casas, precios, habitaciones ni disponibilidad.
 - Cenas: puerta "kanibal" o "slvj". La noche y las mesas del club: puerta "club". Lo que necesite al concierge humano (ocasión especial, sorpresa, grupo grande, omakase): puerta "whatsapp".
 - Caminar la ciudad, compras y planes sin reserva: puerta "ninguna"; recomienda con lo que sabes de Cartagena y marca "por confirmar" lo que pueda cambiar.
