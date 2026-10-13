@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -29,7 +29,7 @@
       <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
       <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
     </div>
   </div>
@@ -75,10 +75,10 @@
 <script>
 (function(){
   var f = document.getElementById("ver"), err = document.getElementById("error"), box = document.getElementById("datos");
-  var meses = {}, titulos = {}, actual = "todo";
+  var meses = {}, titulos = {}, enlaces = {}, actual = "todo";
   fetch("/blog/").then(function(r){ return r.text(); }).then(function(h){
     new DOMParser().parseFromString(h, "text/html").querySelectorAll(".post-card").forEach(function(a){
-      var k = a.getAttribute("href").replace(/\.html$/, ""); var t = a.querySelector("h2"); if(t) titulos[k] = t.textContent.trim() + (a.lang === "en" ? " (EN)" : "");
+      var h = a.getAttribute("href"), k = h.replace(/\.html$/, "").replace("/", "-"); var t = a.querySelector("h2"); if(t){ titulos[k] = t.textContent.trim() + (a.lang && a.lang !== "es" ? " (" + a.lang.toUpperCase() + ")" : ""); enlaces[k] = h; }
     });
     if(box.hidden === false) pintar();
   }).catch(function(){});
@@ -94,7 +94,7 @@
       .sort(function(x, y){ return y.total - x.total || y.vista - x.vista; });
     function fila(nombre, r){ var tt = r.reserva + r.whatsapp + r.lista; return "<td>" + nombre + "</td><td>" + r.vista + "</td><td>" + r.reserva + "</td><td>" + r.whatsapp + "</td><td>" + r.lista + "</td><td><b>" + tt + "</b></td><td>" + (r.vista ? Math.round(tt / r.vista * 100) + "%" : "–") + "</td>"; }
     box.querySelector("tbody").innerHTML = lista.length ? lista.map(function(r){
-      var t = titulos[r.a] || r.a; return "<tr>" + fila('<a href="/blog/' + r.a + '.html" target="_blank" rel="noopener">' + t.replace(/</g, "&lt;") + "</a>", r) + "</tr>";
+      var t = titulos[r.a] || r.a; return "<tr>" + fila('<a href="/blog/' + (enlaces[r.a] || r.a + '.html') + '" target="_blank" rel="noopener">' + t.replace(/</g, "&lt;") + "</a>", r) + "</tr>";
     }).join("") : '<tr><td colspan="7">Todavía no hay datos.</td></tr>';
     box.querySelector("tfoot").innerHTML = lista.length ? "<tr>" + fila("Total", tot) + "</tr>" : "";
     var ms = Object.keys(meses).sort().reverse();

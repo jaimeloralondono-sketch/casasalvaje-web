@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -33,30 +33,30 @@
   <div class="wrap">
     <a class="bmark" href="kanibal.html"><img src="img/logo-kanibal-t.png" alt="Kanibal"></a><a class="house" href="index.html">Casa Salvaje</a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html" aria-current="page">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span></a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Hintergründe</span></a>
       <a href="blog/">Blog</a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
-      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista</span><span class="fr">Liste</span><span class="it">Lista</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Firmen</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html" aria-current="page">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
       <a href="blog/">Blog</a>
   </div></nav>
 </header>
@@ -70,19 +70,19 @@
       <div class="head">
         <div>
           <div class="lg"><img src="img/logo-kanibal-t.png" alt="Kanibal, feast for the senses"></div>
-          <div class="eyebrow"><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span></div>
-          <h1 class="h2" style="margin-top:10px"><span class="es">Apetito sin disculpas.</span><span class="en">Appetite without apology.</span></h1>
+          <div class="eyebrow"><span class="es">Fuego · Instinto</span><span class="en">Fire · Instinct</span><span class="pt">Fogo · Instinto</span><span class="fr">Feu · Instinct</span><span class="it">Fuoco · Istinto</span><span class="de">Feuer · Instinkt</span></div>
+          <h1 class="h2" style="margin-top:10px"><span class="es">Apetito sin disculpas.</span><span class="en">Appetite without apology.</span><span class="pt">Apetite sem desculpas.</span><span class="fr">L'appétit, sans excuses.</span><span class="it">Appetito senza scuse.</span><span class="de">Appetit ohne Entschuldigung.</span></h1>
           <div class="meta">
-            <span><b><span class="es">Lun – Sáb</span><span class="en">Mon – Sat</span></b> 12 pm – 12 am</span>
-            <span><b><span class="es">Dom</span><span class="en">Sun</span></b> 11 am – 7 pm</span>
-            <span><b><span class="es">Dom antes de festivo</span><span class="en">Sun before a holiday</span></b> 11 am – 12 am</span>
+            <span><b><span class="es">Lun – Sáb</span><span class="en">Mon – Sat</span><span class="pt">Seg – Sáb</span><span class="fr">Lun – Sam</span><span class="it">Lun – Sab</span><span class="de">Mo – Sa</span></b> 12 pm – 12 am</span>
+            <span><b><span class="es">Dom</span><span class="en">Sun</span><span class="pt">Dom</span><span class="fr">Dim</span><span class="it">Dom</span><span class="de">So</span></b> 11 am – 7 pm</span>
+            <span><b><span class="es">Dom antes de festivo</span><span class="en">Sun before a holiday</span><span class="pt">Dom antes de feriado</span><span class="fr">Dim veille de jour férié</span><span class="it">Dom prima di un festivo</span><span class="de">So vor Feiertagen</span></b> 11 am – 12 am</span>
             <a href="https://www.instagram.com/kanibal.ctg" target="_blank" rel="noopener">@kanibal.ctg</a>
           </div>
         </div>
         <div>
           <p class="lead es">Carne al fuego, vegetales a la brasa y un trago que se sirve sin preguntar. Cada plato lleva su marca: los glifos rojos son el alfabeto de la casa.</p>
-          <p class="lead en">Meat over fire, vegetables off the coals and a drink poured without asking. Every dish carries its mark: the red glyphs are the house alphabet.</p>
-          <div class="cta"><a class="btn solid" data-book="kanibal" data-evento="Kanibal" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span></a><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/074bf116-285a-4494-8dfc-2e05f296f282" target="_blank" rel="noopener"><span class="es">Ver menú</span><span class="en">See the menu</span></a></div>
+          <p class="lead en">Meat over fire, vegetables off the coals and a drink poured without asking. Every dish carries its mark: the red glyphs are the house alphabet.</p><p class="lead pt">Carne no fogo, legumes saídos da brasa e um drinque servido sem pedir. Cada prato leva sua marca: os glifos vermelhos são o alfabeto da casa.</p><p class="lead fr">De la viande sur le feu, des légumes tirés des braises et un verre servi sans qu'on le demande. Chaque plat porte sa marque : les glyphes rouges sont l'alphabet de la maison.</p><p class="lead it">Carne sul fuoco, verdure dalla brace e un drink versato senza chiedere. Ogni piatto porta il suo segno: i glifi rossi sono l'alfabeto della casa.</p><p class="lead de">Fleisch über dem Feuer, Gemüse aus der Glut und ein Drink, eingeschenkt, ohne zu fragen. Jedes Gericht trägt sein Zeichen: Die roten Glyphen sind das Alphabet des Hauses.</p>
+          <div class="cta"><a class="btn solid" data-book="kanibal" data-evento="Kanibal" href="index.html#lista"><span class="es">Reservar mesa</span><span class="en">Book a table</span><span class="pt">Reservar mesa</span><span class="fr">Réserver une table</span><span class="it">Prenota un tavolo</span><span class="de">Tisch reservieren</span></a><a class="btn ghost" href="https://menupp.co/casasalvaje/venue/074bf116-285a-4494-8dfc-2e05f296f282" target="_blank" rel="noopener"><span class="es">Ver menú</span><span class="en">See the menu</span><span class="pt">Ver o cardápio</span><span class="fr">Voir la carte</span><span class="it">Vedi il menù</span><span class="de">Zur Speisekarte</span></a></div>
         </div>
       </div>
       <div class="feat trio">
@@ -104,12 +104,12 @@
     <div class="wrap">
       <div class="head">
         <div>
-          <div class="eyebrow"><span class="es">La cocina · Fermín Azkue</span><span class="en">The kitchen · Fermín Azkue</span></div>
-          <h2 class="h2" style="margin-top:10px"><span class="es">Del corte al fuego.</span><span class="en">From the cut to the fire.</span></h2>
+          <div class="eyebrow"><span class="es">La cocina · Fermín Azkue</span><span class="en">The kitchen · Fermín Azkue</span><span class="pt">A cozinha · Fermín Azkue</span><span class="fr">La cuisine · Fermín Azkue</span><span class="it">La cucina · Fermín Azkue</span><span class="de">Die Küche · Fermín Azkue</span></div>
+          <h2 class="h2" style="margin-top:10px"><span class="es">Del corte al fuego.</span><span class="en">From the cut to the fire.</span><span class="pt">Do corte ao fogo.</span><span class="fr">De la découpe au feu.</span><span class="it">Dal taglio al fuoco.</span><span class="de">Vom Schnitt ins Feuer.</span></h2>
         </div>
         <div>
           <p class="lead es">La carne madura en cámara con su etiqueta y su fecha, el pescado cuelga hasta estar listo y todo termina sobre la brasa. Así trabaja la cocina de Fermín Azkue: paciencia primero, fuego después.</p>
-          <p class="lead en">Meat ages in the chamber with its tag and its date, fish hangs until it is ready, and everything ends over the coals. That is how Fermín Azkue's kitchen works: patience first, fire after.</p>
+          <p class="lead en">Meat ages in the chamber with its tag and its date, fish hangs until it is ready, and everything ends over the coals. That is how Fermín Azkue's kitchen works: patience first, fire after.</p><p class="lead pt">A carne matura na câmara com sua etiqueta e sua data, o peixe fica pendurado até o ponto certo e tudo termina na brasa. Assim funciona a cozinha de Fermín Azkue: primeiro a paciência, depois o fogo.</p><p class="lead fr">La viande mature en chambre avec son étiquette et sa date, le poisson est suspendu jusqu'à être prêt, et tout finit sur les braises. Ainsi travaille la cuisine de Fermín Azkue : la patience d'abord, le feu ensuite.</p><p class="lead it">La carne frolla in cella con la sua etichetta e la sua data, il pesce resta appeso finché non è pronto, e tutto finisce sulla brace. Così lavora la cucina di Fermín Azkue: prima la pazienza, poi il fuoco.</p><p class="lead de">Das Fleisch reift in der Kammer mit Etikett und Datum, der Fisch hängt, bis er so weit ist, und alles endet über der Glut. So arbeitet die Küche von Fermín Azkue: erst Geduld, dann Feuer.</p>
         </div>
       </div>
       <div class="feat">
@@ -136,7 +136,7 @@
   <section id="blog" class="delblog">
     <div class="wrap">
       <div class="eyebrow">Blog</div>
-      <h2><span class="es">Notas desde la casa</span><span class="en">Notes from the house</span></h2>
+      <h2><span class="es">Notas desde la casa</span><span class="en">Notes from the house</span><span class="pt">Notas da casa</span><span class="fr">Notes de la maison</span><span class="it">Note dalla casa</span><span class="de">Notizen aus dem Haus</span></h2>
       <div class="posts">
       <a class="post-card es" href="blog/restaurantes-imperdibles-cartagena.html" lang="es">
         <img src="img/kanibal-salon.jpg" alt="Salón de Kanibal lleno, bajo las lámparas de papel" loading="lazy" decoding="async">
@@ -162,11 +162,59 @@
         <h3>Must-try restaurants in Cartagena: from the Old City to Getsemaní</h3>
         <p>Chef-driven Caribbean cooking, legendary ceviche and walled-city classics: a list for eating well in Cartagena.</p>
       </a>
+      <a class="post-card pt" href="blog/pt/best-restaurants-cartagena.html" lang="pt">
+        <img src="img/kanibal-salon.jpg" alt="O salão do Kanibal lotado sob lanternas de papel" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Restaurantes imperdíveis em Cartagena: do Centro Histórico a Getsemaní</h3>
+        <p>Cozinha caribenha autoral, ceviches lendários e clássicos da cidade murada: uma lista para comer bem em Cartagena.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/best-restaurants-cartagena.html" lang="fr">
+        <img src="img/kanibal-salon.jpg" alt="La salle de Kanibal pleine sous des lanternes en papier" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Les restaurants incontournables de Cartagena : de la vieille ville à Getsemaní</h3>
+        <p>Cuisine caribéenne d'auteur, ceviches légendaires et classiques de la ville fortifiée : une liste pour bien manger à Cartagena.</p>
+      </a>
+      <a class="post-card it" href="blog/it/best-restaurants-cartagena.html" lang="it">
+        <img src="img/kanibal-salon.jpg" alt="La sala di Kanibal piena sotto lanterne di carta" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Ristoranti imperdibili a Cartagena: dal centro storico a Getsemaní</h3>
+        <p>Cucina caraibica d'autore, ceviche leggendari e classici della città murata: una lista per mangiare bene a Cartagena.</p>
+      </a>
+      <a class="post-card de" href="blog/de/best-restaurants-cartagena.html" lang="de">
+        <img src="img/kanibal-salon.jpg" alt="Der volle Gastraum von Kanibal unter Papierlaternen" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Restaurants in Cartagena, die man nicht verpassen sollte: von der Altstadt bis Getsemaní</h3>
+        <p>Karibische Autorenküche, legendäre Ceviches und Klassiker der ummauerten Stadt: eine Liste, um in Cartagena gut zu essen.</p>
+      </a>
       <a class="post-card en" href="blog/birthday-dinner-cartagena.html" lang="en">
         <img src="img/slvj-grupo.jpg" alt="A group of guests posing at SLVJ" loading="lazy" decoding="async">
         <time datetime="2026-10-12">12 Oct 2026</time>
         <h3>Where to celebrate a birthday in Cartagena: dinner and a party under one roof</h3>
         <p>A long table, a toast and, at the weekend, the club until 3 am. Without changing venues.</p>
+      </a>
+      <a class="post-card pt" href="blog/pt/birthday-dinner-cartagena.html" lang="pt">
+        <img src="img/slvj-grupo.jpg" alt="Um grupo de convidados posando no SLVJ" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Onde comemorar aniversário em Cartagena: jantar e festa sob o mesmo teto</h3>
+        <p>Uma mesa longa, um brinde e, no fim de semana, o club até as 3 da manhã. Sem trocar de lugar.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/birthday-dinner-cartagena.html" lang="fr">
+        <img src="img/slvj-grupo.jpg" alt="Un groupe d'invités qui pose au SLVJ" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Où fêter un anniversaire à Cartagena : dîner et fête sous le même toit</h3>
+        <p>Une longue table, un toast et, le week-end, le club jusqu'à 3 h. Sans changer d'adresse.</p>
+      </a>
+      <a class="post-card it" href="blog/it/birthday-dinner-cartagena.html" lang="it">
+        <img src="img/slvj-grupo.jpg" alt="Un gruppo di ospiti in posa al SLVJ" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Dove festeggiare un compleanno a Cartagena: cena e festa sotto lo stesso tetto</h3>
+        <p>Una tavola lunga, un brindisi e, nel fine settimana, il club fino alle 3. Senza cambiare locale.</p>
+      </a>
+      <a class="post-card de" href="blog/de/birthday-dinner-cartagena.html" lang="de">
+        <img src="img/slvj-grupo.jpg" alt="Eine Gruppe von Gästen posiert im SLVJ" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Wo man in Cartagena Geburtstag feiert: Dinner und Party unter einem Dach</h3>
+        <p>Eine lange Tafel, ein Toast und am Wochenende der Club bis 3 Uhr. Ohne die Location zu wechseln.</p>
       </a>
       <a class="post-card en" href="blog/where-to-eat-cartagena-old-city.html" lang="en">
         <img src="img/slvj-salon.jpg" alt="SLVJ&#x27;s dining room full of guests under fibre lamps and neon" loading="lazy" decoding="async">
@@ -174,19 +222,43 @@
         <h3>Where to eat in Cartagena&#x27;s Old City: one house, four worlds</h3>
         <p>A long lunch, a late dinner or a night that refuses to end: it all fits inside one colonial house two blocks from Plaza Santo Domingo.</p>
       </a>
+      <a class="post-card pt" href="blog/pt/where-to-eat-cartagena-old-city.html" lang="pt">
+        <img src="img/slvj-salon.jpg" alt="O salão do SLVJ cheio de convidados sob luminárias de fibra e neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 out. 2026</time>
+        <h3>Onde comer no Centro Histórico de Cartagena: uma casa, quatro mundos</h3>
+        <p>Um almoço longo, um jantar tardio ou uma noite que não quer acabar: tudo cabe numa casa colonial a duas quadras da Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card fr" href="blog/fr/where-to-eat-cartagena-old-city.html" lang="fr">
+        <img src="img/slvj-salon.jpg" alt="La salle du SLVJ remplie d'invités sous des lampes en fibres et des néons" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 oct. 2026</time>
+        <h3>Où manger dans la vieille ville de Cartagena : une maison, quatre mondes</h3>
+        <p>Un long déjeuner, un dîner tardif ou une nuit qui refuse de finir : tout tient dans une maison coloniale à deux rues de la Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card it" href="blog/it/where-to-eat-cartagena-old-city.html" lang="it">
+        <img src="img/slvj-salon.jpg" alt="La sala del SLVJ piena di ospiti sotto lampade in fibra e neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12 ott 2026</time>
+        <h3>Dove mangiare nel centro storico di Cartagena: una casa, quattro mondi</h3>
+        <p>Un pranzo lungo, una cena tardiva o una notte che non vuole finire: tutto sta in una casa coloniale a due isolati da Plaza Santo Domingo.</p>
+      </a>
+      <a class="post-card de" href="blog/de/where-to-eat-cartagena-old-city.html" lang="de">
+        <img src="img/slvj-salon.jpg" alt="Der Gastraum des SLVJ voller Gäste unter Faserlampen und Neon" loading="lazy" decoding="async">
+        <time datetime="2026-10-12">12. Okt. 2026</time>
+        <h3>Essen in Cartagenas Altstadt: ein Haus, vier Welten</h3>
+        <p>Ein langes Mittagessen, ein spätes Dinner oder eine Nacht, die nicht enden will: Alles passt in ein Kolonialhaus zwei Blocks von der Plaza Santo Domingo.</p>
+      </a>
       </div>
-      <a class="btn ghost" href="blog/"><span class="es">Ver todo el blog</span><span class="en">See the whole blog</span></a>
+      <a class="btn ghost" href="blog/"><span class="es">Ver todo el blog</span><span class="en">See the whole blog</span><span class="pt">Ver o blog completo</span><span class="fr">Voir tout le blog</span><span class="it">Vedi tutto il blog</span><span class="de">Zum ganzen Blog</span></a>
     </div>
   </section>
   <section class="next">
     <div class="wrap">
-      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span></div>
+      <div class="eyebrow"><span class="es">Los otros mundos de la casa</span><span class="en">The other worlds in the house</span><span class="pt">Os outros mundos da casa</span><span class="fr">Les autres mondes de la maison</span><span class="it">Gli altri mondi della casa</span><span class="de">Die anderen Welten des Hauses</span></div>
       <div class="doors" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
-        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
-        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span></span></div></a>
-        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span></span></div></a>
+        <a class="door" href="domenica.html"><img src="img/dom-galgo2.jpg" alt="Galgo negro sobre fondo rojo, La Domenica" loading="lazy" decoding="async"><div class="cap"><b>La Domenica</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
+        <a class="door" href="slvj.html"><img src="img/slvj-neon.jpg" alt="SLVJ de noche con el neón al fondo" loading="lazy" decoding="async"><div class="cap"><b>SLVJ</b><span><span class="es">Banquete · Club</span><span class="en">Feast · Club</span><span class="pt">Banquete · Club</span><span class="fr">Festin · Club</span><span class="it">Banchetto · Club</span><span class="de">Festmahl · Club</span></span></div></a>
+        <a class="door" href="ono.html"><img src="img/ono-atun.jpg" alt="Atún tatuado con olas y palmas, ONO Cartagena" loading="lazy" decoding="async"><div class="cap"><b>ONO</b><span><span class="es">Próximamente</span><span class="en">Coming soon</span><span class="pt">Em breve</span><span class="fr">Bientôt</span><span class="it">Prossimamente</span><span class="de">Demnächst</span></span></div></a>
       </div>
-      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span></a><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span></a></div>
+      <div class="cta"><a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span><span class="pt">Voltar à Casa Salvaje</span><span class="fr">Retour à Casa Salvaje</span><span class="it">Torna a Casa Salvaje</span><span class="de">Zurück zu Casa Salvaje</span></a><a class="btn solid" href="index.html#lista"><span class="es">Entrar a la lista</span><span class="en">Join the guest list</span><span class="pt">Entrar na lista</span><span class="fr">Rejoindre la liste</span><span class="it">Entra in lista</span><span class="de">Auf die Gästeliste</span></a><a class="btn ghost" href="empresas.html"><span class="es">Eventos para empresas</span><span class="en">Company events</span><span class="pt">Eventos para empresas</span><span class="fr">Événements d'entreprise</span><span class="it">Eventi aziendali</span><span class="de">Firmenevents</span></a></div>
     </div>
   </section>
 </main>
@@ -195,9 +267,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa de La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Privacidade</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 

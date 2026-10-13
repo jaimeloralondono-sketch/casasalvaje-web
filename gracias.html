@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<script>try{var l=localStorage.getItem("cs-lang");if(location.hash=="#es")l="es";else if(location.hash=="#en")l="en";l=l==="es"?"es":"en";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
+<script>try{var C=["es","en","pt","fr","it","de"],l=localStorage.getItem("cs-lang"),h=location.hash.slice(1);if(C.indexOf(h)>-1)l=h;if(C.indexOf(l)<0){var n=(navigator.language||"en").slice(0,2).toLowerCase();l=C.indexOf(n)>-1?n:"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l}catch(e){}</script>
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Marcellus+SC&family=Jost:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
@@ -18,30 +18,30 @@
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Casa Salvaje"><img src="img/logo-salvaje-oro.png" alt="Casa Salvaje"></a>
     <nav class="menu" aria-label="Secciones">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span></a>
-      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span></a>
-      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
+      <a href="index.html#agenda"><span class="es">Agenda</span><span class="en">What's on</span><span class="pt">Agenda</span><span class="fr">Agenda</span><span class="it">In programma</span><span class="de">Programm</span></a>
+      <a href="fondos.html"><span class="es">Fondos</span><span class="en">Wallpapers</span><span class="pt">Papéis de parede</span><span class="fr">Fonds d'écran</span><span class="it">Sfondi</span><span class="de">Wallpaper</span></a>
       <a href="blog/">Blog</a>
-      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span></a>
-      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span></a>
+      <a href="index.html#lista"><span class="es">Lista</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></a>
+      <a href="empresas.html"><span class="es">Empresas</span><span class="en">Companies</span><span class="pt">Empresas</span><span class="fr">Entreprises</span><span class="it">Aziende</span><span class="de">Unternehmen</span></a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-set="en" aria-pressed="true">EN</button><button type="button" data-set="es" aria-pressed="false">ES</button></div>
-      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span></a>
+      <div class="lang"><select aria-label="Idioma / Language"><option value="es">ES</option><option value="en">EN</option><option value="pt">PT</option><option value="fr">FR</option><option value="it">IT</option><option value="de">DE</option></select></div>
+      <a class="btn solid" data-book="casa" href="index.html#lista"><span class="es">Reservar</span><span class="en">Reserve</span><span class="pt">Reservar</span><span class="fr">Réserver</span><span class="it">Prenota</span><span class="de">Reservieren</span></a>
     </div>
   </div>
   <nav class="worlds" aria-label="Mundos"><div class="wrap">
-      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span></a>
+      <a href="index.html"><span class="es">La casa</span><span class="en">The house</span><span class="pt">A casa</span><span class="fr">La maison</span><span class="it">La casa</span><span class="de">Das Haus</span></a>
       <a href="domenica.html">La Domenica</a>
       <a href="kanibal.html">Kanibal</a>
       <a href="slvj.html">SLVJ</a>
       <a href="ono.html">ONO</a>
-      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span></a>
+      <a href="index.html#ubicacion"><span class="es">Ubicación</span><span class="en">Location</span><span class="pt">Localização</span><span class="fr">Localisation</span><span class="it">Dove siamo</span><span class="de">Standort</span></a>
       <a href="blog/">Blog</a>
   </div></nav>
 </header>
@@ -51,12 +51,12 @@
     <div class="wrap">
       <div>
         <img class="logo" src="img/logo-salvaje-oro.png" alt="Casa Salvaje: jaguar entre dos palmas">
-        <div class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span></div>
-        <h1 style="margin-top:14px"><span class="es">Quedaste en la lista.</span><span class="en">You're on the list.</span></h1>
-        <p class="sub"><span class="es">Te escribimos por WhatsApp antes de cada fecha con cupo.</span><span class="en">We'll message you on WhatsApp before each limited-seat date.</span></p>
+        <div class="eyebrow"><span class="es">Lista de invitados</span><span class="en">Guest list</span><span class="pt">Lista de convidados</span><span class="fr">Liste d'invités</span><span class="it">Lista ospiti</span><span class="de">Gästeliste</span></div>
+        <h1 style="margin-top:14px"><span class="es">Quedaste en la lista.</span><span class="en">You're on the list.</span><span class="pt">Você está na lista.</span><span class="fr">Vous êtes sur la liste.</span><span class="it">Sei in lista.</span><span class="de">Sie stehen auf der Liste.</span></h1>
+        <p class="sub"><span class="es">Te escribimos por WhatsApp antes de cada fecha con cupo.</span><span class="en">We'll message you on WhatsApp before each limited-seat date.</span><span class="pt">Vamos te escrever no WhatsApp antes de cada data com vagas limitadas.</span><span class="fr">Nous vous écrirons sur WhatsApp avant chaque date à places limitées.</span><span class="it">Ti scriviamo su WhatsApp prima di ogni data a posti limitati.</span><span class="de">Wir schreiben Ihnen vor jedem Termin mit begrenzten Plätzen auf WhatsApp.</span></p>
         <div class="cta">
-          <a class="btn solid wa" href="index.html#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span></a>
-          <a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span></a>
+          <a class="btn solid wa" href="index.html#lista"><span class="es">Reservar por WhatsApp</span><span class="en">Book on WhatsApp</span><span class="pt">Reservar pelo WhatsApp</span><span class="fr">Réserver sur WhatsApp</span><span class="it">Prenota su WhatsApp</span><span class="de">Per WhatsApp reservieren</span></a>
+          <a class="btn ghost" href="index.html"><span class="es">Volver a Casa Salvaje</span><span class="en">Back to Casa Salvaje</span><span class="pt">Voltar para a Casa Salvaje</span><span class="fr">Retour à Casa Salvaje</span><span class="it">Torna a Casa Salvaje</span><span class="de">Zurück zu Casa Salvaje</span></a>
         </div>
       </div>
       <div class="arch"><img src="img/slvj-salon.jpg" alt="Salón de SLVJ lleno de comensales bajo las lámparas de fibra y el neón"></div>
@@ -68,9 +68,9 @@
   <div class="wrap">
     <div class="marcas">
       <img src="img/logo-grupo-ono.png" alt="Grupo Ono">
-      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span>
+      <span class="es">Casa de La Domenica, Kanibal, SLVJ y ONO. By Grupo ONO.</span><span class="en">Home to La Domenica, Kanibal, SLVJ &amp; ONO. By Grupo ONO.</span><span class="pt">Casa do La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="fr">La maison de La Domenica, Kanibal, SLVJ et ONO. By Grupo ONO.</span><span class="it">Casa di La Domenica, Kanibal, SLVJ e ONO. By Grupo ONO.</span><span class="de">Zuhause von La Domenica, Kanibal, SLVJ und ONO. By Grupo ONO.</span>
     </div>
-    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span></a></div>
+    <div><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">Instagram</a> · <a href="blog/">Blog</a> · <a href="index.html#lista"><span class="es">Política de datos</span><span class="en">Privacy</span><span class="pt">Política de dados</span><span class="fr">Confidentialité</span><span class="it">Privacy</span><span class="de">Datenschutz</span></a></div>
   </div>
 </footer>
 
