@@ -626,3 +626,15 @@ body:not(.themed) .arch{background:var(--cobalt)}
 .post .langs a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
 .post .langs a:hover{border-bottom-color:currentColor}
 .post .langs span[aria-current]{color:var(--terra-cs)}
+
+/* Concierge en la portada: banda oliva con el arco de la casa y el yate adentro */
+.concierge-home{background:var(--olive-cs);color:var(--cream);padding-block:64px}
+.concierge-home .wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center}
+.concierge-home h2{margin-top:12px;max-width:13ch}
+.concierge-home .lead{margin-top:18px;color:rgba(230,221,205,.88)}
+body:not(.themed) .concierge-home .eyebrow{color:#D9B97F}
+body:not(.themed) .concierge-home .btn.solid{background:var(--cream);border-color:var(--cream);color:var(--ink)}
+body:not(.themed) .concierge-home .btn.ghost{color:var(--cream)}
+.concierge-home .arch{justify-self:center;width:min(100%,360px)}
+.concierge-home .arch img{object-position:62% 50%}
+@media (min-width:860px){.concierge-home{padding-block:88px}.concierge-home .wrap{grid-template-columns:1.1fr 0.9fr;gap:64px}.concierge-home .arch{justify-self:end;width:min(100%,400px)}}

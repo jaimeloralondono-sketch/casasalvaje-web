@@ -48,6 +48,7 @@ Están en `index.html#horarios`. Cada tarjeta tiene el texto visible y, en `data
 ## Concierge para huéspedes
 `concierge` (`concierge.html`, `concierge.css`, `concierge.js`): página pública con el chat del concierge. El chat llama a `POST /api/concierge` (`netlify/functions/concierge.mjs`), que responde con Claude usando la ficha de la casa escrita en la función (horarios, reservas, guías del blog y el aliado Vacation Cartagena para casas, botes y tours). Cuando hace falta una persona, la respuesta trae un botón a WhatsApp con el pedido ya escrito.
 
+- Se llega desde el botón Concierge del menú en todas las páginas y el blog (también en el menú de celular) y desde la banda Concierge de la portada (`index.html#concierge`, estilos `.concierge-home` en `site.css`).
 - Para activarlo: en Netlify, Site configuration → Environment variables, crear `ANTHROPIC_API_KEY` con una clave de la consola de Claude (platform.claude.com). Sin la clave, el chat ofrece WhatsApp.
 - La ficha de la casa está en `netlify/lib/ficha.mjs` y la usan la web y el WhatsApp. Si cambia un horario o una regla, se cambia ahí.
 - La conversación vive solo en la pestaña del huésped; el servidor no guarda nada.
