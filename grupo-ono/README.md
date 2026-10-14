@@ -63,9 +63,9 @@ The report lists every placeholder and every OWNER or LEGAL note with its file a
 The site can run on a preview URL until all of these are answered. Run `--pre` to see exactly where each one sits.
 
 1. **ONO Bogotá photos:** 3–5 photos at least 2000px on the long edge. They replace the left hero window and the ONO chapter panel.
-2. **Legal:** company legal name(s) and NIT, registered address, data-rights email, phone, notification inbox or provider, CV and message retention in months, effective date, database validity, and whether each venue is a separate legal entity. These fill `privacy.html`, the consent text on both forms, the contact routing and the footer legal line. `privacy.html` also needs legal sign-off from Juan David Castro.
+2. **Legal (answered 14 Oct 2026, see below; legal sign-off from Juan David Castro still pending):** company legal name(s) and NIT, registered address, data-rights email, phone, notification inbox or provider, CV and message retention in months, effective date, database validity, and whether each venue is a separate legal entity. These fill `privacy.html`, the consent text on both forms, the contact routing and the footer legal line. `privacy.html` also needs legal sign-off from Juan David Castro.
 3. **People:** confirm that the Finance (Sebastián Patiño) and Legal (Juan David Castro) names may be published.
-4. **Group partnerships and investors email:** none has been provided yet (`contact.html#investors`). The temporary press address below is not for this row, nor for data-rights requests.
+4. **Group partnerships and investors email (answered 14 Oct 2026):** the client chose the temporary press Gmail for this row and for data-rights requests too, until an address on grupo-ono.com exists.
 5. **ONO Cartagena opening team:** the confirmed roles (`careers.html`). Hiring itself is confirmed (always hiring, and now for the ONO Cartagena opening); no specific role is.
 6. **Hosomaki list:** bring back "Tuna, eel, salmon, hamachi and wagyu" only if it is confirmed for Bogotá.
 7. **High-res images:** originals of `slvj-salon` and `puerta` at 2560px or wider, and the original campaign files.
@@ -88,6 +88,13 @@ Fill each `<mark class="todo">` with the confirmed fact, then delete the mark an
 - Guest photo releases: `slvj-salon` and `kanibal-salon` are in the press kit, credited "Images: courtesy of Grupo ONO."
 - Instagram: @grupo.ono, @ladomenica.ctg and @kanibal.ctg join the other accounts.
 - Press coverage: AXXIS (19 Feb 2026); also Marie Claire and Revista Diners.
+
+**Answered on 14 Oct 2026.** Jaime's answers, now on the pages (published before the lawyer's review, at his request):
+
+- Data controller for the whole group (ONO and Casa Salvaje): ONOCULTO S.A.S., NIT 901.958.901-1, Calle 84A #9-11, Bogotá D.C. Footer line: "© 2026 ONOCULTO S.A.S. · NIT 901.958.901-1".
+- Data-rights and investors/partnerships email: jaimeloralondono@gmail.com (temporary, like press). Phone: +57 318 282 4124.
+- Retention: CVs 12 months, messages 24 months. The databases stay in force while ONOCULTO S.A.S. operates. Effective date: 14 Oct 2026.
+- Form notifications go to that Gmail (Google LLC, United States), set up as in section 3.
 
 ## 2. Domain and launch
 
