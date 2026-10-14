@@ -8,6 +8,10 @@
     html.lang = l;
     btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.set === l ? 'true' : 'false'); });
     try { localStorage.setItem('ono-lang', l); } catch (e) {}
+    document.querySelectorAll('a[data-en]').forEach(function (a) {
+      if (!a.dataset.es) a.dataset.es = a.getAttribute('href');
+      a.setAttribute('href', l === 'en' ? a.dataset.en : a.dataset.es);
+    });
   }
   btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.set); }); });
   setLang(html.getAttribute('data-lang') || 'es');

@@ -208,3 +208,35 @@ footer .hrs{color:var(--mute);font-size:.8rem}
 .ov-foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
 body.locked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.overlay.open .ov-links a{animation:none}}
+
+/* Prensa */
+.prensa{border-top:1px solid var(--line)}
+.prensa .head,.blog .head{margin-bottom:clamp(36px,5vw,60px);display:grid;gap:18px}
+.feature{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;text-decoration:none;border:1px solid var(--line);background:var(--ink2);transition:border-color .3s,background .3s}
+.feature:hover{border-color:var(--red2);background:var(--ink3)}
+.feature .mast{display:flex;align-items:center;justify-content:center;padding:clamp(40px,6vw,80px) 24px;background:var(--red);color:#fff;font:400 clamp(4rem,10vw,8.5rem)/1 var(--display);letter-spacing:.06em}
+.feature .body{display:grid;align-content:center;gap:20px;padding:clamp(28px,4vw,56px)}
+.feature .meta{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--red2)}
+.feature .q{font:400 clamp(2rem,3.6vw,3.2rem)/1.02 var(--display);text-transform:uppercase;color:#fff}
+.feature .more{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone2)}
+.feature:hover .more{color:#fff}
+@media (max-width:760px){.feature{grid-template-columns:1fr}}
+.also{display:flex;flex-wrap:wrap;align-items:center;gap:18px 40px;margin-top:2px;padding:30px clamp(20px,3vw,40px);border:1px solid var(--line);border-top:0}
+.also .lbl{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.also .logos{display:flex;flex-wrap:wrap;gap:14px 44px;align-items:baseline}
+.also .mc{font:italic 600 clamp(1.8rem,3vw,2.6rem)/1 Didot,"Bodoni 72","Playfair Display",Georgia,serif;color:var(--bone)}
+.also .dn{font:400 clamp(1.8rem,3vw,2.6rem)/1 var(--display);letter-spacing:.12em;color:var(--bone)}
+.press-contact{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;color:var(--bone2)}
+
+/* Blog */
+.blog{background:var(--ink2);border-top:1px solid var(--line)}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.post{display:grid;align-content:start;gap:12px;text-decoration:none}
+.post img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s;filter:saturate(.9)}
+.post:hover img{filter:saturate(1.15)}
+.post .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red2);margin-top:6px}
+.post h3{font-size:clamp(1.9rem,2.6vw,2.4rem);color:#fff;transition:color .2s}
+.post:hover h3{color:var(--red2)}
+.post p{color:var(--bone2);font-size:.9rem}
+.more-blog{display:inline-block;margin-top:clamp(36px,5vw,56px)}
+@media (max-width:860px){.posts{grid-template-columns:1fr}.post img{aspect-ratio:16/10}}
