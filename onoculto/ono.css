@@ -79,7 +79,7 @@ section{position:relative}
 .energy{background:var(--ink2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .energy .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
 .energy figure{margin:0;position:relative}
-.energy figure img{width:100%;aspect-ratio:1147/1018;object-fit:cover}
+.energy figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}
 .energy figure .jp{position:absolute;right:-14px;bottom:-30px;font-size:clamp(5rem,10vw,8rem);line-height:1;color:var(--red2);text-shadow:0 0 50px rgba(224,27,27,.45)}
 .energy .txt{display:grid;gap:26px;justify-items:start}
 .energy .txt p{color:var(--bone2);text-transform:uppercase;letter-spacing:.1em;font-size:.88rem;line-height:1.95}
