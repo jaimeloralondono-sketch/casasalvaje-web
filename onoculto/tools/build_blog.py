@@ -49,7 +49,7 @@ def link_target(lang, target):
     return by_key(target)[lang]["slug"]
 
 
-def render_body(lang, body):
+def render_body(lang, body, self_key=None):
     out = []
     links = sorted(LINKS[lang], key=lambda x: -len(x[0]))
     used = set()
@@ -62,7 +62,7 @@ def render_body(lang, body):
         text = E(b[2:] if quote else b)
         for phrase, target in links:
             p = E(phrase)
-            if p in text and phrase not in used:
+            if p in text and phrase not in used and target != self_key:
                 href = link_target(lang, target)
                 ext = ' target="_blank" rel="noopener"' if href.startswith("http") else ""
                 text = text.replace(p, f'<a href="{E(href)}"{ext}>{p}</a>', 1)
@@ -174,7 +174,7 @@ def build_post(lang, p):
             {"@type": "ListItem", "position": 2, "name": "Blog", "item": url(lang)},
             {"@type": "ListItem", "position": 3, "name": c["title"], "item": canon}]
     }]
-    more = [q for q in POSTS if q is not p][:3]
+    more = sorted((q for q in POSTS if q is not p), key=lambda q: q[lang]['tag'] != c['tag'])[:3]
     cards = "\n        ".join(card(lang, q, up, q[lang]["slug"]) for q in more)
     page = head(lang, c["seo_title"] + " · ONO", c["desc"], canon, alt, p["img"], c["alt"], "article", ld, up)
     page += "\n" + header(lang, alt_href, up) + f"""
@@ -188,7 +188,7 @@ def build_post(lang, p):
     </header>
     <figure class="post-hero wrap"><img src="{up}img/{p['img']}" width="{p['img_w']}" height="{p['img_h']}" alt="{E(c['alt'])}" fetchpriority="high"></figure>
     <div class="post-body wrap">
-        {render_body(lang, c['body'])}
+        {render_body(lang, c['body'], p['key'])}
     </div>
     <aside class="post-cta wrap">
       <div>
