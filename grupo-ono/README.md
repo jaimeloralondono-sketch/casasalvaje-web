@@ -63,8 +63,8 @@ The report lists every placeholder and every OWNER or LEGAL note with its file a
 The site can run on a preview URL until all of these are answered. Run `--pre` to see exactly where each one sits.
 
 1. **ONO Bogotá photos:** 3–5 photos at least 2000px on the long edge. They replace the left hero window and the ONO chapter panel.
-2. **Legal (answered 14 Oct 2026, see below; legal sign-off from Juan David Castro still pending):** company legal name(s) and NIT, registered address, data-rights email, phone, notification inbox or provider, CV and message retention in months, effective date, database validity, and whether each venue is a separate legal entity. These fill `privacy.html`, the consent text on both forms, the contact routing and the footer legal line. `privacy.html` also needs legal sign-off from Juan David Castro.
-3. **People:** confirm that the Finance (Sebastián Patiño) and Legal (Juan David Castro) names may be published.
+2. **Legal (answered 14 Oct 2026, see below; the lawyer's sign-off still pending):** company legal name(s) and NIT, registered address, data-rights email, phone, notification inbox or provider, CV and message retention in months, effective date, database validity, and whether each venue is a separate legal entity. These fill `privacy.html`, the consent text on both forms, the contact routing and the footer legal line. `privacy.html` also needs the lawyer's sign-off.
+3. **People (answered 14 Oct 2026):** Jaime asked not to publish the Finance and Legal names, so the People box lists only the founders and the direction. Don't add them back without his OK.
 4. **Group partnerships and investors email (answered 14 Oct 2026):** the client chose the temporary press Gmail for this row and for data-rights requests too, until an address on grupo-ono.com exists.
 5. **ONO Cartagena opening team:** the confirmed roles (`careers.html`). Hiring itself is confirmed (always hiring, and now for the ONO Cartagena opening); no specific role is.
 6. **Hosomaki list:** bring back "Tuna, eel, salmon, hamachi and wagyu" only if it is confirmed for Bogotá.
