@@ -153,11 +153,11 @@ La fundaron en 1992 Tony Andrews y John Newsham, los mismos ingenieros que antes
 
 ## Cómo suena ONO
 
-ONO cambia de piel a lo largo de la noche. De 7 a 11 pm, con la cena, la música acompaña: ritmos envolventes, volumen de conversación. A partir de las 11, la luz baja y el sonido sube: deep house con voz, urbano suave y electrónica tribal, mezclados para que la mesa se vuelva pista sin que nadie se mueva de su sitio.
+ONO cambia de piel a lo largo de la noche. De 7 a 11 pm, con la cena, la música acompaña: ritmos envolventes, volumen de conversación. A partir de las 11, la luz baja y el sonido sube. Martes y miércoles suena electrónica; de jueves a sábado, reguetón. La mesa se vuelve pista sin que nadie se mueva de su sitio.
 
 ## Escúchalo antes de venir
 
-La música de ONO también suena fuera del salón: la playlist de ONO está en Spotify. Y si quieres vivirla en persona, la noche más fuerte es el sábado: lee cómo es la fiesta de los sábados en ONO.
+La música de ONO también suena fuera del salón: la playlist de ONO está en Spotify. Y si quieres vivirla en persona, lee cómo es la fiesta de martes a sábado en ONO.
 
 ONO abre de martes a sábado, de 7 pm a 3 am, para mayores de 25, en la Calle 84A #9-11, Bogotá."""
  },
@@ -181,11 +181,11 @@ It was founded in 1992 by Tony Andrews and John Newsham, the same engineers who 
 
 ## How ONO sounds
 
-ONO sheds its skin through the night. From 7 to 11 pm, over dinner, the music keeps you company: enveloping rhythms at conversation level. From 11, the lights drop and the sound rises: vocal deep house, soft urban and tribal electronic, mixed so the table becomes a dance floor without anyone leaving their seat.
+ONO sheds its skin through the night. From 7 to 11 pm, over dinner, the music keeps you company: enveloping rhythms at conversation level. From 11, the lights drop and the sound rises. Tuesday and Wednesday it's electronic; Thursday to Saturday, reggaeton. The table becomes a dance floor without anyone leaving their seat.
 
 ## Listen before you come
 
-ONO's music plays outside the room too: the ONO playlist is on Spotify. And to live it in person, the biggest night is Saturday: read what Saturday night is like at ONO.
+ONO's music plays outside the room too: the ONO playlist is on Spotify. And to live it in person, read what the party is like at ONO, Tuesday to Saturday.
 
 ONO is open Tuesday to Saturday, 7 pm to 3 am, for guests 25 and over, at Calle 84A #9-11, Bogotá."""
  }
@@ -194,60 +194,64 @@ ONO is open Tuesday to Saturday, 7 pm to 3 am, for guests 25 and over, at Calle 
  "key": "sabados",
  "img": "a-pista.jpg", "img_w": 1067, "img_h": 1600,
  "es": {
-  "slug": "fiesta-sabados-bogota.html",
-  "title": "Fiesta los sábados en Bogotá: así es la noche en ONO",
-  "seo_title": "Fiesta los sábados en Bogotá: cena, música y pista en ONO",
-  "desc": "Planes para un sábado en Bogotá: cena japonesa, cócteles y fiesta hasta las 3 am en ONO Hosomaki Bar, Calle 84A #9-11. Mayores de 25. Cómo es la noche y cómo reservar.",
-  "dek": "Llegas a cenar y te quedas a otra cosa. El sábado, ONO hace lo que mejor sabe: convertir una mesa en una pista.",
+  "slug": "fiesta-bogota-ono.html",
+  "title": "Fiesta en Bogotá de martes a sábado: electrónica y reguetón en ONO",
+  "seo_title": "Fiesta en Bogotá de martes a sábado: electrónica y reguetón en ONO",
+  "desc": "Dónde salir de fiesta en Bogotá entre semana y el fin de semana: ONO Hosomaki Bar, Calle 84A #9-11. Electrónica martes y miércoles, reguetón de jueves a sábado, hasta las 3 am. Mayores de 25.",
+  "dek": "Cinco noches, dos sonidos. Martes y miércoles, electrónica; de jueves a sábado, reguetón. Así se vive la fiesta en ONO.",
   "alt": "La pista de ONO llena, con las manos arriba",
   "tag": "Fiesta",
-  "body": """El sábado es la noche más larga de ONO. Empieza con una cena tranquila, luz baja y una ronda de cócteles, y termina, sin que nadie se dé cuenta de en qué momento, con el salón entero bailando bajo la luz roja de los shoji. Drink. Dance. Feel. Repeat.
+  "body": """En ONO la fiesta no espera al fin de semana. De martes a sábado, la noche empieza con una cena tranquila, luz baja y una ronda de cócteles, y termina, sin que nadie se dé cuenta de en qué momento, con el salón entero bailando bajo la luz roja de los shoji. Drink. Dance. Feel. Repeat.
+
+## La semana en ONO
+
+Martes y miércoles son noches de electrónica: house, deep house y beats para quienes salen entre semana y no quieren una noche cualquiera. De jueves a sábado suena reguetón y la pista se llena desde temprano. Cinco noches, dos sonidos y el mismo salón cambiando de piel.
+
+> Martes y miércoles, electrónica. Jueves, viernes y sábado, reguetón.
 
 ## 7 pm: la cena
 
-La noche arranca en la mesa: hosomaki, nigiri y sashimi para compartir, sake o cócteles de autor, y una música que acompaña sin interrumpir. Es la hora de llegar con calma, pedir de todo un poco y dejarse llevar. Si no sabes por dónde empezar, lee nuestra guía de sushi en Bogotá.
+La noche arranca en la mesa: hosomaki, nigiri y sashimi para compartir, sake o cócteles de autor, y una música que acompaña sin interrumpir. Es la hora de llegar con calma y pedir de todo un poco. Si no sabes por dónde empezar, lee nuestra guía de sushi en Bogotá.
 
 ## 11 pm: el ritual
 
-A las once la luz baja, el sonido sube y el bar se vuelve club. Deep house con voz, urbano suave, electrónica tribal, todo sonando en un sistema Funktion-One pensado para bailar hasta tarde sin salir con los oídos destrozados. Las mesas se vuelven puntos de encuentro y la pista se llena sola.
+A las once la luz baja, el sonido sube y el bar se vuelve club, todo sonando en un sistema Funktion-One pensado para bailar hasta tarde sin salir con los oídos destrozados. Las mesas se vuelven puntos de encuentro y la pista se llena sola.
 
 > Lo que pasa en ONO se queda en ONO.
 
 ## Antes de ir
 
-ONO es solo para mayores de 25 y se pide documento en la puerta. Abre de martes a sábado, de 7 pm a 3 am, en la Calle 84A #9-11, Bogotá. Para el sábado conviene reservar con tiempo: puedes reservar la cena en línea y, para mesas de fiesta, grupos o celebraciones, escribirnos por Instagram a @ono.culto.
-
-## Escucha la noche desde ya
-
-La playlist de ONO está en Spotify para que llegues en el mood. Y si te interesa el porqué del sonido, lee el cuerpo también escucha: el sonido Funktion-One de ONO."""
+ONO es solo para mayores de 25 y se pide documento en la puerta. Abre de martes a sábado, de 7 pm a 3 am, en la Calle 84A #9-11, Bogotá. Para jueves, viernes y sábado conviene reservar con tiempo: puedes reservar la cena en línea y, para mesas de fiesta, grupos o celebraciones, escribirnos por Instagram a @ono.culto. La playlist de ONO está en Spotify para que llegues en el mood, y si te interesa el porqué del sonido, lee el cuerpo también escucha: el sonido Funktion-One de ONO."""
  },
  "en": {
-  "slug": "saturday-party-bogota.html",
-  "title": "Saturday night in Bogotá: this is a party at ONO",
-  "seo_title": "Saturday night party in Bogotá: dinner, music and dancing at ONO",
-  "desc": "Saturday plans in Bogotá: Japanese dinner, cocktails and a party until 3 am at ONO Hosomaki Bar, Calle 84A #9-11. Guests 25 and over. What the night is like and how to book.",
-  "dek": "You come for dinner and stay for something else. On Saturday, ONO does what it does best: turn a table into a dance floor.",
+  "slug": "party-bogota-ono.html",
+  "title": "Partying in Bogotá, Tuesday to Saturday: electronic and reggaeton at ONO",
+  "seo_title": "Nightlife in Bogotá, Tuesday to Saturday: electronic and reggaeton at ONO",
+  "desc": "Where to go out in Bogotá on weeknights and weekends: ONO Hosomaki Bar, Calle 84A #9-11. Electronic music Tuesday and Wednesday, reggaeton Thursday to Saturday, until 3 am. Guests 25 and over.",
+  "dek": "Five nights, two sounds. Tuesday and Wednesday, electronic; Thursday to Saturday, reggaeton. This is a night out at ONO.",
   "alt": "ONO's packed dance floor, hands in the air",
   "tag": "Party",
-  "body": """Saturday is ONO's longest night. It starts with a calm dinner, low light and a round of cocktails, and ends, without anyone noticing exactly when, with the whole room dancing under the red glow of the shoji. Drink. Dance. Feel. Repeat.
+  "body": """At ONO the party doesn't wait for the weekend. Tuesday to Saturday, the night starts with a calm dinner, low light and a round of cocktails, and ends, without anyone noticing exactly when, with the whole room dancing under the red glow of the shoji. Drink. Dance. Feel. Repeat.
+
+## The week at ONO
+
+Tuesday and Wednesday are electronic nights: house, deep house and beats for people who go out midweek and don't want just any night. Thursday to Saturday it's reggaeton, and the floor fills early. Five nights, two sounds, and the same room shedding its skin.
+
+> Tuesday and Wednesday, electronic. Thursday, Friday and Saturday, reggaeton.
 
 ## 7 pm: dinner
 
-The night begins at the table: hosomaki, nigiri and sashimi to share, sake or signature cocktails, and music that keeps you company without interrupting. It's the hour to arrive slowly, order a little of everything and let go. If you don't know where to start, read our guide to sushi in Bogotá.
+The night begins at the table: hosomaki, nigiri and sashimi to share, sake or signature cocktails, and music that keeps you company without interrupting. It's the hour to arrive slowly and order a little of everything. If you don't know where to start, read our guide to sushi in Bogotá.
 
 ## 11 pm: the ritual
 
-At eleven the lights drop, the sound rises and the bar becomes a club. Vocal deep house, soft urban, tribal electronic, all playing on a Funktion-One system built for dancing late without ruining your ears. Tables become meeting points and the floor fills on its own.
+At eleven the lights drop, the sound rises and the bar becomes a club, all playing on a Funktion-One system built for dancing late without ruining your ears. Tables become meeting points and the floor fills on its own.
 
 > What happens at ONO stays at ONO.
 
 ## Before you go
 
-ONO is for guests 25 and over, and ID is checked at the door. It's open Tuesday to Saturday, 7 pm to 3 am, at Calle 84A #9-11, Bogotá. For Saturday, book ahead: you can book dinner online and, for party tables, groups or celebrations, message us on Instagram at @ono.culto.
-
-## Hear the night already
-
-The ONO playlist is on Spotify so you arrive in the mood. And if you're curious about the sound, read the body listens too: ONO's Funktion-One sound."""
+ONO is for guests 25 and over, and ID is checked at the door. It's open Tuesday to Saturday, 7 pm to 3 am, at Calle 84A #9-11, Bogotá. For Thursday, Friday and Saturday, book ahead: you can book dinner online and, for party tables, groups or celebrations, message us on Instagram at @ono.culto. The ONO playlist is on Spotify so you arrive in the mood, and if you're curious about the sound, read the body listens too: ONO's Funktion-One sound."""
  }
 },
 {
@@ -279,7 +283,7 @@ Precisión, porque cada nigiri, cada trago y cada sonido se hacen con intención
 
 ## Ven a conocerlo
 
-ONO Hosomaki Bar está en la Calle 84A #9-11, Bogotá, de martes a sábado, de 7 pm a 3 am, para mayores de 25. Si es tu primera vez, lee nuestra guía de sushi en Bogotá o cómo es la fiesta de los sábados, y reserva tu mesa."""
+ONO Hosomaki Bar está en la Calle 84A #9-11, Bogotá, de martes a sábado, de 7 pm a 3 am, para mayores de 25. Si es tu primera vez, lee nuestra guía de sushi en Bogotá o cómo es la fiesta de martes a sábado, y reserva tu mesa."""
  },
  "en": {
   "slug": "tokyo-spirit-bogota-soul.html",
@@ -307,7 +311,7 @@ Precision, because every nigiri, every drink and every sound is made with intent
 
 ## Come and see it
 
-ONO Hosomaki Bar is at Calle 84A #9-11, Bogotá, Tuesday to Saturday, 7 pm to 3 am, for guests 25 and over. If it's your first time, read our guide to sushi in Bogotá or what Saturday night is like, and book your table."""
+ONO Hosomaki Bar is at Calle 84A #9-11, Bogotá, Tuesday to Saturday, 7 pm to 3 am, for guests 25 and over. If it's your first time, read our guide to sushi in Bogotá or what the party is like, and book your table."""
  }
 },
 ]
@@ -315,7 +319,7 @@ ONO Hosomaki Bar is at Calle 84A #9-11, Bogotá, Tuesday to Saturday, 7 pm to 3 
 # Frases del cuerpo que se convierten en enlaces internos: (texto exacto, clave del artículo destino o URL)
 LINKS = {
  "es": [("lee qué es un hosomaki", "hosomaki"), ("nuestra guía de sushi en Bogotá", "sushi"),
-        ("cómo es la fiesta de los sábados en ONO", "sabados"), ("cómo es la fiesta de los sábados", "sabados"),
+        ("cómo es la fiesta de martes a sábado en ONO", "sabados"), ("cómo es la fiesta de martes a sábado", "sabados"),
         ("el cuerpo también escucha: el sonido Funktion-One de ONO", "funktion"),
         ("la playlist de ONO está en Spotify", "https://open.spotify.com/playlist/475mlQSTVBA7feZYBj5Mlt"),
         ("La playlist de ONO está en Spotify", "https://open.spotify.com/playlist/475mlQSTVBA7feZYBj5Mlt"),
@@ -325,7 +329,7 @@ LINKS = {
         ("reserva tu mesa", "https://restaurante.covermanager.com/ono/"),
         ("@ono.culto", "https://www.instagram.com/ono.culto/")],
  "en": [("read what is hosomaki", "hosomaki"), ("our guide to sushi in Bogotá", "sushi"),
-        ("read what Saturday night is like at ONO", "sabados"), ("what Saturday night is like", "sabados"),
+        ("read what the party is like at ONO, Tuesday to Saturday", "sabados"), ("what the party is like", "sabados"),
         ("the body listens too: ONO's Funktion-One sound", "funktion"),
         ("the ONO playlist is on Spotify", "https://open.spotify.com/playlist/475mlQSTVBA7feZYBj5Mlt"),
         ("The ONO playlist is on Spotify", "https://open.spotify.com/playlist/475mlQSTVBA7feZYBj5Mlt"),
