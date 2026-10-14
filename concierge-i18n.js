@@ -198,11 +198,11 @@ window.CS_CONCIERGE_TR = {
 "it": "Dove dormire",
 "de": "Wo übernachten"
 },
-"Our own": {
-"pt": "Da casa",
-"fr": "De la maison",
-"it": "Della casa",
-"de": "Vom Haus"
+"Our pick": {
+"pt": "Recomendação",
+"fr": "Coup de cœur",
+"it": "Il nostro consiglio",
+"de": "Empfehlung"
 },
 "A colonial house in the Old City, steps from us: a courtyard pool and a rooftop pool, a cinema room and a rooftop BBQ.": {
 "pt": "Casa colonial no Centro, a poucos passos de nós: piscina no pátio e no terraço, sala de cinema e churrasco no rooftop.",
