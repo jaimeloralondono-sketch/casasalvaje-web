@@ -59,3 +59,10 @@ Están en `index.html#horarios`. Cada tarjeta tiene el texto visible y, en `data
 - El bot no responde si alguien del equipo escribió en esa conversación en las últimas 6 horas (desde la app del celular o desde Bird), ni después de pasar la conversación al equipo (`[[HUMANO: ...]]`). Tampoco atiende grupos.
 - Variables en Netlify: `ANTHROPIC_API_KEY`, `BIRD_API_KEY` (Bird → Developers → API keys, con permiso de WhatsApp) y `BIRD_WEBHOOK_SECRET` (el `whsec_...` que Bird muestra una vez al crear el webhook). Opcionales: `WHATSAPP_PRUEBA` (números separados por coma: solo a esos responde, para probar) y `WHATSAPP_APAGADO=1` (apaga el bot sin tocar nada más).
 - En Bird: conectar el número del concierge (+57 318 282 4124) con coexistencia (WhatsApp → Numbers → New number → Keep using the Business app) y crear un webhook a `https://www.casa-salvaje.com/api/whatsapp` con el evento `whatsapp.received`.
+
+### Reservas por el WhatsApp de la casa
+En la línea de reservas (+57 310 828 6602) el bot solo toma reservas de mesa en Kanibal, SLVJ y el club. Pide lugar, fecha, hora, personas y nombre. Cuando tiene todo, deja la solicitud como **pendiente** en Netlify Blobs (`reservas`) y le pasa la conversación al equipo, que confirma por ese mismo chat. Lo demás (cambios, cancelaciones, quejas, grupos grandes) también pasa al equipo, y casas, yates y planes los manda al concierge.
+- Para activarlo: en Netlify, `WHATSAPP_RESERVAS=+573108286602`. En Bird, conectar ese número con coexistencia, igual que el del concierge, y sumarlo al mismo webhook. Sin esa variable, el bot no toma reservas en ninguna línea.
+- Panel del equipo: `/reservas/admin` (`reservas.html`, con la clave `ADMIN_KEY`). Ahí se ven las solicitudes y se marcan como confirmada, en CoverManager o cancelada.
+- Las reglas del bot están en `FICHA_RESERVAS` (`netlify/lib/ficha.mjs`).
+- Cuando haya acceso a la API de CoverManager, la reserva se podrá crear directo allá en vez de quedar pendiente.
