@@ -5,10 +5,13 @@
   var root = document.documentElement, log = document.getElementById("log"), form = document.getElementById("form");
   var q = document.getElementById("q"), enviar = document.getElementById("enviar"), chips = document.getElementById("chips");
   var turnos = [], ocupado = false;
-  function es(){ return root.getAttribute("data-lang") === "es"; }
-  function t(esTx, enTx){ return es() ? esTx : enTx; }
+  var TR = window.CS_CONCIERGE_TR || {};
+  function lang(){ return root.getAttribute("data-lang") || "en"; }
+  function cap(l){ return l.charAt(0).toUpperCase() + l.slice(1); }
+  // Español e inglés vienen en cada llamada; los otros idiomas salen del diccionario, por el texto en inglés.
+  function t(esTx, enTx){ var l = lang(); if(l === "es") return esTx; if(l === "en") return enTx; return (TR[enTx] && TR[enTx][l]) || enTx; }
 
-  function placeholder(){ q.placeholder = es() ? q.dataset.phEs : q.dataset.phEn; }
+  function placeholder(){ q.placeholder = q.dataset["ph" + cap(lang())] || q.dataset.phEn; }
   document.addEventListener("cs-lang", placeholder); placeholder();
 
   function wa(texto, numero){ return "https://wa.me/" + (numero || WHATSAPP) + "?text=" + encodeURIComponent(texto); }
@@ -93,7 +96,7 @@
   q.addEventListener("input", function(){ q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 140) + "px"; });
   chips.querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){
     if(b.dataset.ir){ var destino = document.getElementById(b.dataset.ir); if(destino) destino.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
-    preguntar(es() ? b.dataset.es : b.dataset.en);
+    preguntar(b.dataset[lang()] || b.dataset.en);
   }); });
 
   // Arma tu plan: pide el plan a /api/plan y, si el huésped quiere, lo sigue en este chat.

@@ -12,12 +12,15 @@
     whatsapp: ["Lo prepara el concierge", "The concierge arranges it", null]
   };
   var root = document.documentElement;
-  function es(){ return root.getAttribute("data-lang") === "es"; }
-  function t(a, b){ return es() ? a : b; }
+  var TR = window.CS_CONCIERGE_TR || {};
+  function lang(){ return root.getAttribute("data-lang") || "en"; }
+  function cap(l){ return l.charAt(0).toUpperCase() + l.slice(1); }
+  // Español e inglés vienen en cada llamada; los otros idiomas salen del diccionario, por el texto en inglés.
+  function t(a, b){ var l = lang(); if(l === "es") return a; if(l === "en") return b; return (TR[b] && TR[b][l]) || b; }
   function wa(texto){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto); }
   function el(tag, cls, txt){ var n = document.createElement(tag); if(cls) n.className = cls; if(txt != null) n.textContent = txt; return n; }
-  // Texto de un botón en el idioma que se ve (los botones traen .es y .en).
-  function visible(n){ var x = n && n.querySelector(es() ? ".es" : ".en"); return (x || n || { textContent: "" }).textContent.trim(); }
+  // Texto de un botón en el idioma que se ve (los botones traen un span por idioma).
+  function visible(n){ var x = n && (n.querySelector("." + lang()) || n.querySelector(".en")); return (x || n || { textContent: "" }).textContent.trim(); }
   function enlace(cls, txt, href){ var a = el("a", cls, txt); a.href = href; a.target = "_blank"; a.rel = "noopener"; return a; }
 
   function montar(opts){
@@ -27,7 +30,7 @@
     var llegada = document.getElementById("pl-llegada"), nota = document.getElementById("pl-nota");
     var cuenta = { noches: 3, personas: 2 }, tocado = {}, ocupado = false;
 
-    function ph(){ nota.placeholder = es() ? nota.dataset.phEs : nota.dataset.phEn; }
+    function ph(){ nota.placeholder = nota.dataset["ph" + cap(lang())] || nota.dataset.phEn; }
     document.addEventListener("cs-lang", ph); ph();
 
     // Fecha mínima: hoy en Cartagena.
