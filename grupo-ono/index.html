@@ -3,182 +3,415 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Grupo ONO · Hospitality in Bogotá and Cartagena</title>
-<meta name="description" content="Grupo ONO is the house behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena: La Domenica, Kanibal, SLVJ and ONO Cartagena (opening late 2026).">
+<title>Grupo ONO · Hospitality group in Bogotá and Cartagena</title>
+<meta name="description" content="Grupo ONO, founded by Jaime Lora and Dilan Carrillo, runs ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena, home to Kanibal and SLVJ, with La Domenica and ONO Cartagena to open.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grupo ONO">
 <meta property="og:title" content="Grupo ONO">
-<meta property="og:description" content="The house behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena.">
-<meta property="og:url" content="https://grupo-ono.com/">
-<link rel="canonical" href="https://grupo-ono.com/">
-<meta property="og:image" content="https://grupo-ono.com/img/og-grupo.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Grupo ONO line logo on black">
+<meta property="og:description" content="The group behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.ico" sizes="32x32">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta name="theme-color" content="#0B0B0B">
-<script>document.documentElement.classList.add("js")</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:wght@500&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Marcellus+SC&family=Instrument+Serif&text=La%20DomenicKblSVJANIB&display=swap">
-<link rel="stylesheet" href="grupo.css">
+<meta name="theme-color" content="#E8E6E1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/archivo-wdth75-100-wght400-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/grupo.css">
+<link rel="stylesheet" href="/print.css" media="print">
+<link rel="canonical" href="https://grupo-ono.com/">
+<meta property="og:url" content="https://grupo-ono.com/">
+<meta property="og:image" content="https://grupo-ono.com/img/og-grupo-ono.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Grupo ONO line logo drawn as a façade, its two O's lit as windows onto ONO and Casa Salvaje">
+<meta name="twitter:image" content="https://grupo-ono.com/img/og-grupo-ono.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://grupo-ono.com/#org","name":"Grupo ONO","url":"https://grupo-ono.com/","logo":"https://grupo-ono.com/img/logo-grupo-ono-512.png",
+  "description":"Hospitality group behind ONO Hosomaki Bar in Bogotá and Casa Salvaje in Cartagena.",
+  "founder":[{"@type":"Person","name":"Jaime Lora"},{"@type":"Person","name":"Dilan Carrillo"}],
+  "sameAs":["https://www.instagram.com/grupo.ono/"],
+  "areaServed":["Bogotá","Cartagena"],"subOrganization":[{"@id":"https://grupo-ono.com/#ono-bogota"},{"@id":"https://grupo-ono.com/#casa-salvaje"}]},
+ {"@type":"Restaurant","@id":"https://grupo-ono.com/#ono-bogota","name":"ONO Hosomaki Bar","url":"https://onoculto.com/","servesCuisine":"Japanese",
+  "slogan":"Tokyo spirit, Bogotá soul.","foundingDate":"2025-11","openingHours":"Tu-Sa 19:00-03:00",
+  "acceptsReservations":"https://restaurante.covermanager.com/ono/",
+  "address":{"@type":"PostalAddress","streetAddress":"Calle 84A #9-11","addressLocality":"Bogotá","addressCountry":"CO"},
+  "sameAs":["https://www.instagram.com/ono.culto/"],"parentOrganization":{"@id":"https://grupo-ono.com/#org"}},
+ {"@type":"FoodEstablishment","@id":"https://grupo-ono.com/#casa-salvaje","name":"Casa Salvaje","url":"https://www.casa-salvaje.com/",
+  "telephone":"+573108286602","foundingDate":"2026-09-25",
+  "acceptsReservations":"https://restaurante.covermanager.com/casa-salvaje-cartagena/",
+  "address":{"@type":"PostalAddress","streetAddress":"Calle Santa Teresa #32-41","addressLocality":"Cartagena","addressRegion":"Bolívar","addressCountry":"CO"},
+  "sameAs":["https://www.instagram.com/casasalvaje.ctg/"],"parentOrganization":{"@id":"https://grupo-ono.com/#org"},
+  "department":[{"@type":"CafeOrCoffeeShop","name":"La Domenica","sameAs":"https://www.instagram.com/ladomenica.ctg/"},
+   {"@type":"Restaurant","name":"Kanibal","acceptsReservations":"https://restaurante.covermanager.com/kanibal-cartagena/","sameAs":["https://www.instagram.com/kanibal.ctg/","https://www.casa-salvaje.com/kanibal.html#restaurant"]},
+   {"@type":["Restaurant","NightClub"],"name":"SLVJ","acceptsReservations":"https://restaurante.covermanager.com/slvj-cartagena/","sameAs":["https://www.instagram.com/slvj.ctg/","https://www.casa-salvaje.com/slvj.html#restaurant"]},
+   {"@type":"Restaurant","name":"ONO Cartagena","servesCuisine":"Japanese","sameAs":"https://www.instagram.com/ono.ctg/"}]}]}
+</script>
 </head>
 <body>
-<header class="nav">
+<a class="skip" href="#main">Skip to content</a>
+<div class="band" aria-hidden="true"></div>
+<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Grupo ONO, home"><svg aria-hidden="true" focusable="false" viewBox="60 214 670 400" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round"><title>Grupo ONO</title><g class="grupo"><path d="M75 260H185M605 260H715"/><path stroke="none" fill="currentColor" d="M253.1 276.6Q248.6 276.6 245.1 275.3Q241.6 274 239.2 271.6Q236.8 269.3 235.5 266.2Q234.2 263.2 234.2 259.7Q234.2 255.8 235.7 252.8Q237.2 249.7 239.9 247.5Q242.6 245.3 246.2 244.1Q249.8 242.9 254 242.9Q256.7 242.9 259.1 243.4Q261.5 243.9 263.1 244.7Q263.6 245 263.6 245.1Q263.7 245.3 263.8 245.9L264.4 252.4Q264.4 252.5 264.2 252.6Q263.9 252.7 263.8 252.4Q263.3 250.8 262.4 249.3Q261.5 247.8 260.2 246.5Q258.8 245.3 257 244.6Q255.1 243.9 252.7 243.9Q248.8 243.9 245.7 245.7Q242.6 247.5 240.8 250.8Q238.9 254.2 238.9 258.8Q238.9 262.2 240 265.2Q241 268.3 242.9 270.7Q244.9 273.1 247.8 274.5Q250.7 275.8 254.4 275.8Q256.8 275.8 258.2 275.2Q259.5 274.6 260.2 273.3Q260.8 271.9 260.8 269.5Q260.8 267 260.5 265.8Q260.2 264.7 259 264.3Q257.8 263.9 255.1 263.9Q254.8 263.9 254.8 263.5Q254.8 263.1 255 263.1Q258.4 263.3 261.2 263.3Q264 263.4 267 263.2Q267.3 263.2 267.3 263.6Q267.3 263.9 267 263.9Q265.9 263.9 265.4 264.3Q264.9 264.7 264.8 266Q264.6 267.3 264.6 270Q264.6 271.7 264.7 272.6Q264.8 273.4 264.9 273.8Q265 274.2 265 274.6Q265 274.9 264.9 275Q264.8 275.1 264.4 275.2Q261.7 275.8 258.7 276.2Q255.7 276.6 253.1 276.6ZM335.4 276Q334.6 276 332.7 274Q330.8 272 328.2 268.3Q325.5 264.6 322.2 259.4L325.7 258.3Q330 264.6 333.1 268.4Q336.1 272.1 338.5 273.7Q340.8 275.4 342.9 275.4Q343.1 275.4 343.1 275.7Q343.1 276 342.9 276Q340 276 338.2 276Q336.3 276 335.4 276ZM323 243.3Q327.3 243.3 329.6 245.2Q332 247 332 250.1Q332 253 330.3 255.3Q328.6 257.6 326 258.9Q323.3 260.2 320.2 260.2Q319.6 260.2 318.9 260.2Q318.2 260.1 317.7 260.1V271.8Q317.7 273.3 317.9 274.1Q318.2 274.9 319.1 275.1Q320.1 275.4 321.9 275.4Q322 275.4 322 275.7Q322 276 321.9 276Q320.6 276 319 275.9Q317.5 275.9 315.6 275.9Q313.8 275.9 312.2 275.9Q310.6 276 309.3 276Q309.1 276 309.1 275.7Q309.1 275.4 309.3 275.4Q311.1 275.4 312 275.1Q312.9 274.9 313.2 274.1Q313.6 273.3 313.6 271.8V247.7Q313.6 246.2 313.2 245.4Q312.9 244.7 312 244.4Q311.2 244.1 309.3 244.1Q309.2 244.1 309.2 243.8Q309.2 243.5 309.3 243.5Q310.6 243.5 312.2 243.6Q313.8 243.7 315.6 243.7Q317.2 243.7 319.3 243.5Q321.4 243.3 323 243.3ZM327.7 251.8Q327.7 248.9 326.9 247.2Q326.1 245.6 324.7 244.9Q323.3 244.2 321.4 244.2Q319.4 244.2 318.5 244.9Q317.7 245.6 317.7 247.8V258.8Q318.4 258.8 319.2 258.9Q320.1 258.9 320.7 258.9Q324.6 258.9 326.1 257.2Q327.7 255.4 327.7 251.8ZM407.5 249.5Q407.5 246.9 406.3 245.5Q405.1 244.1 402.8 244.1Q402.7 244.1 402.7 243.8Q402.7 243.5 402.8 243.5Q404 243.5 405.3 243.6Q406.6 243.7 408.1 243.7Q409.4 243.7 410.7 243.6Q412 243.5 413.1 243.5Q413.2 243.5 413.2 243.8Q413.2 244.1 413.1 244.1Q411 244.1 409.9 245.5Q408.9 246.9 408.9 249.5V264.2Q408.9 268.1 407.3 270.9Q405.7 273.7 402.9 275.2Q400.1 276.7 396.4 276.7Q392.5 276.7 389.6 275.2Q386.7 273.7 385.1 271Q383.5 268.2 383.5 264.4V247.7Q383.5 246.2 383.2 245.4Q382.9 244.7 381.9 244.4Q381 244.1 379.3 244.1Q379.1 244.1 379.1 243.8Q379.1 243.5 379.3 243.5Q380.6 243.5 382.1 243.6Q383.7 243.7 385.5 243.7Q387.4 243.7 389 243.6Q390.6 243.5 391.8 243.5Q391.9 243.5 391.9 243.8Q391.9 244.1 391.8 244.1Q390 244.1 389.1 244.4Q388.2 244.7 387.9 245.5Q387.6 246.3 387.6 247.8V262.6Q387.6 268.8 390.3 271.9Q393 275 397.8 275Q402.4 275 404.9 272.2Q407.5 269.3 407.5 264.2ZM462.5 271.6Q462.5 273.1 462.9 273.9Q463.3 274.8 464.5 275.1Q465.8 275.4 468.3 275.4Q468.4 275.4 468.4 275.7Q468.4 276 468.3 276Q466.6 276 464.7 275.9Q462.7 275.9 460.4 275.9Q458.7 275.9 457.1 275.9Q455.4 276 454.1 276Q454 276 454 275.7Q454 275.4 454.1 275.4Q456 275.4 456.9 275.1Q457.8 274.9 458.1 274.1Q458.4 273.3 458.4 271.8V247.7Q458.4 246.2 458.1 245.4Q457.8 244.7 456.9 244.4Q456 244.1 454.1 244.1Q454 244.1 454 243.8Q454 243.5 454.1 243.5Q455.4 243.5 457.1 243.6Q458.7 243.7 460.4 243.7Q461.7 243.7 463.7 243.5Q465.6 243.3 467.6 243.3Q470.6 243.3 473 244.2Q475.5 245.1 476.9 247Q478.4 248.9 478.4 251.9Q478.4 254.6 477.4 256.6Q476.4 258.5 474.8 259.8Q473.1 261.1 471 261.8Q469 262.4 467 262.4Q466.4 262.4 465.7 262.3Q465.1 262.3 464.5 262.1Q464.3 262.1 464.4 261.7Q464.4 261.4 464.6 261.4Q465.1 261.5 465.6 261.6Q466 261.6 466.4 261.6Q468.4 261.6 470.1 260.7Q471.7 259.8 472.8 257.8Q473.8 255.9 473.8 253Q473.8 250.2 472.8 248.2Q471.9 246.3 470.2 245.3Q468.4 244.2 466.2 244.2Q464.7 244.2 463.9 244.4Q463.1 244.6 462.8 245.4Q462.5 246.2 462.5 247.8ZM537.5 276.6Q533.8 276.6 530.7 275.3Q527.7 274 525.5 271.6Q523.4 269.3 522.2 266.2Q521 263.2 521 259.8Q521 255.6 522.7 252.4Q524.3 249.2 527 247.1Q529.7 245 533 244Q536.2 242.9 539.4 242.9Q543.2 242.9 546.2 244.3Q549.3 245.7 551.4 248Q553.5 250.4 554.7 253.3Q555.8 256.3 555.8 259.4Q555.8 263.1 554.3 266.2Q552.9 269.3 550.4 271.6Q547.8 274 544.5 275.3Q541.2 276.6 537.5 276.6ZM539.4 275.5Q542.6 275.5 545.3 273.8Q548 272.1 549.5 268.9Q551.1 265.6 551.1 260.9Q551.1 256 549.4 252.3Q547.7 248.5 544.6 246.3Q541.5 244.2 537.2 244.2Q531.8 244.2 528.8 247.9Q525.8 251.6 525.8 258Q525.8 261.6 526.7 264.8Q527.7 268 529.5 270.4Q531.3 272.8 533.8 274.2Q536.3 275.5 539.4 275.5Z"/></g><g class="ono"><rect x="65" y="318" width="170" height="282" rx="34"/><path d="M108 318V600M192 318V600M65 360H235M65 560H235M65 460H108M192 460H235"/><path d="M75 328L108 360M225 328L192 360M75 590L108 560M225 590L192 560"/><rect x="275" y="318" width="65" height="282"/><path d="M267 318H348M267 600H348"/><path d="M292 318V600M323 318V600M275 340H340M275 578H340M275 460H292M323 460H340"/><rect x="450" y="318" width="65" height="282"/><path d="M442 318H523M442 600H523"/><path d="M467 318V600M498 318V600M450 340H515M450 578H515M450 460H467M498 460H515"/><path d="M322 326L458 478M322 398L458 552"/><rect x="555" y="318" width="170" height="282" rx="34"/><path d="M598 318V600M682 318V600M555 360H725M555 560H725M555 460H598M682 460H725"/><path d="M565 328L598 360M715 328L682 360M565 590L598 560M715 590L682 560"/></g></svg></a>
-    <nav class="menu" aria-label="Sections">
-      <a href="index.html#about">About</a>
-      <a href="index.html#ono">ONO</a>
-      <a href="index.html#casa-salvaje">Casa Salvaje</a>
-      <a href="careers.html">Careers</a>
-      <a href="contact.html">Contact</a>
+    <a class="mark" href="/" aria-label="Grupo ONO, home"><svg viewBox="60 300 670 314" width="64" height="30" aria-hidden="true" focusable="false"><rect x="65" y="318" width="170" height="282" rx="34"/><rect x="275" y="318" width="65" height="282"/><rect x="450" y="318" width="65" height="282"/><path d="M322 326 458 478M322 398 458 552"/><rect x="555" y="318" width="170" height="282" rx="34"/></svg></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="/#houses">Houses</a></li>
+        <li class="wide"><a href="/#people">People</a></li>
+        <li class="wide"><a href="/#press">Press</a></li>
+        <li><a href="/careers.html">Careers</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
     </nav>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
   </div>
 </header>
-<div id="sheet" class="sheet" hidden>
-  <nav aria-label="Menu">
-    <a href="index.html#about">About</a>
-    <a href="index.html#ono">ONO</a>
-    <a href="index.html#casa-salvaje">Casa Salvaje</a>
-    <a href="careers.html">Careers</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="book">
-    <p class="eyebrow">Book ONO Bogotá <span aria-hidden="true">→</span> <a href="https://restaurante.covermanager.com/ono/" target="_blank" rel="noopener" aria-label="Reserve at ONO Bogotá">Reserve</a></p>
-    <p class="eyebrow">Book Casa Salvaje <span aria-hidden="true">→</span> <a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/" target="_blank" rel="noopener" aria-label="Reserve at Casa Salvaje">Reserve</a></p>
-  </div>
-</div>
 
-<main id="top">
-  <section class="hero" aria-label="Grupo ONO">
-    <img src="img/hero-shoji.jpg" alt="" width="1122" height="1234" fetchpriority="high">
-    <div class="in-hero">
-      <h1 class="logo"><span class="sr-only">Grupo ONO</span><svg aria-hidden="true" focusable="false" viewBox="60 214 670 400" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round"><title>Grupo ONO</title><g class="grupo"><path d="M75 260H185M605 260H715"/><path stroke="none" fill="currentColor" d="M253.1 276.6Q248.6 276.6 245.1 275.3Q241.6 274 239.2 271.6Q236.8 269.3 235.5 266.2Q234.2 263.2 234.2 259.7Q234.2 255.8 235.7 252.8Q237.2 249.7 239.9 247.5Q242.6 245.3 246.2 244.1Q249.8 242.9 254 242.9Q256.7 242.9 259.1 243.4Q261.5 243.9 263.1 244.7Q263.6 245 263.6 245.1Q263.7 245.3 263.8 245.9L264.4 252.4Q264.4 252.5 264.2 252.6Q263.9 252.7 263.8 252.4Q263.3 250.8 262.4 249.3Q261.5 247.8 260.2 246.5Q258.8 245.3 257 244.6Q255.1 243.9 252.7 243.9Q248.8 243.9 245.7 245.7Q242.6 247.5 240.8 250.8Q238.9 254.2 238.9 258.8Q238.9 262.2 240 265.2Q241 268.3 242.9 270.7Q244.9 273.1 247.8 274.5Q250.7 275.8 254.4 275.8Q256.8 275.8 258.2 275.2Q259.5 274.6 260.2 273.3Q260.8 271.9 260.8 269.5Q260.8 267 260.5 265.8Q260.2 264.7 259 264.3Q257.8 263.9 255.1 263.9Q254.8 263.9 254.8 263.5Q254.8 263.1 255 263.1Q258.4 263.3 261.2 263.3Q264 263.4 267 263.2Q267.3 263.2 267.3 263.6Q267.3 263.9 267 263.9Q265.9 263.9 265.4 264.3Q264.9 264.7 264.8 266Q264.6 267.3 264.6 270Q264.6 271.7 264.7 272.6Q264.8 273.4 264.9 273.8Q265 274.2 265 274.6Q265 274.9 264.9 275Q264.8 275.1 264.4 275.2Q261.7 275.8 258.7 276.2Q255.7 276.6 253.1 276.6ZM335.4 276Q334.6 276 332.7 274Q330.8 272 328.2 268.3Q325.5 264.6 322.2 259.4L325.7 258.3Q330 264.6 333.1 268.4Q336.1 272.1 338.5 273.7Q340.8 275.4 342.9 275.4Q343.1 275.4 343.1 275.7Q343.1 276 342.9 276Q340 276 338.2 276Q336.3 276 335.4 276ZM323 243.3Q327.3 243.3 329.6 245.2Q332 247 332 250.1Q332 253 330.3 255.3Q328.6 257.6 326 258.9Q323.3 260.2 320.2 260.2Q319.6 260.2 318.9 260.2Q318.2 260.1 317.7 260.1V271.8Q317.7 273.3 317.9 274.1Q318.2 274.9 319.1 275.1Q320.1 275.4 321.9 275.4Q322 275.4 322 275.7Q322 276 321.9 276Q320.6 276 319 275.9Q317.5 275.9 315.6 275.9Q313.8 275.9 312.2 275.9Q310.6 276 309.3 276Q309.1 276 309.1 275.7Q309.1 275.4 309.3 275.4Q311.1 275.4 312 275.1Q312.9 274.9 313.2 274.1Q313.6 273.3 313.6 271.8V247.7Q313.6 246.2 313.2 245.4Q312.9 244.7 312 244.4Q311.2 244.1 309.3 244.1Q309.2 244.1 309.2 243.8Q309.2 243.5 309.3 243.5Q310.6 243.5 312.2 243.6Q313.8 243.7 315.6 243.7Q317.2 243.7 319.3 243.5Q321.4 243.3 323 243.3ZM327.7 251.8Q327.7 248.9 326.9 247.2Q326.1 245.6 324.7 244.9Q323.3 244.2 321.4 244.2Q319.4 244.2 318.5 244.9Q317.7 245.6 317.7 247.8V258.8Q318.4 258.8 319.2 258.9Q320.1 258.9 320.7 258.9Q324.6 258.9 326.1 257.2Q327.7 255.4 327.7 251.8ZM407.5 249.5Q407.5 246.9 406.3 245.5Q405.1 244.1 402.8 244.1Q402.7 244.1 402.7 243.8Q402.7 243.5 402.8 243.5Q404 243.5 405.3 243.6Q406.6 243.7 408.1 243.7Q409.4 243.7 410.7 243.6Q412 243.5 413.1 243.5Q413.2 243.5 413.2 243.8Q413.2 244.1 413.1 244.1Q411 244.1 409.9 245.5Q408.9 246.9 408.9 249.5V264.2Q408.9 268.1 407.3 270.9Q405.7 273.7 402.9 275.2Q400.1 276.7 396.4 276.7Q392.5 276.7 389.6 275.2Q386.7 273.7 385.1 271Q383.5 268.2 383.5 264.4V247.7Q383.5 246.2 383.2 245.4Q382.9 244.7 381.9 244.4Q381 244.1 379.3 244.1Q379.1 244.1 379.1 243.8Q379.1 243.5 379.3 243.5Q380.6 243.5 382.1 243.6Q383.7 243.7 385.5 243.7Q387.4 243.7 389 243.6Q390.6 243.5 391.8 243.5Q391.9 243.5 391.9 243.8Q391.9 244.1 391.8 244.1Q390 244.1 389.1 244.4Q388.2 244.7 387.9 245.5Q387.6 246.3 387.6 247.8V262.6Q387.6 268.8 390.3 271.9Q393 275 397.8 275Q402.4 275 404.9 272.2Q407.5 269.3 407.5 264.2ZM462.5 271.6Q462.5 273.1 462.9 273.9Q463.3 274.8 464.5 275.1Q465.8 275.4 468.3 275.4Q468.4 275.4 468.4 275.7Q468.4 276 468.3 276Q466.6 276 464.7 275.9Q462.7 275.9 460.4 275.9Q458.7 275.9 457.1 275.9Q455.4 276 454.1 276Q454 276 454 275.7Q454 275.4 454.1 275.4Q456 275.4 456.9 275.1Q457.8 274.9 458.1 274.1Q458.4 273.3 458.4 271.8V247.7Q458.4 246.2 458.1 245.4Q457.8 244.7 456.9 244.4Q456 244.1 454.1 244.1Q454 244.1 454 243.8Q454 243.5 454.1 243.5Q455.4 243.5 457.1 243.6Q458.7 243.7 460.4 243.7Q461.7 243.7 463.7 243.5Q465.6 243.3 467.6 243.3Q470.6 243.3 473 244.2Q475.5 245.1 476.9 247Q478.4 248.9 478.4 251.9Q478.4 254.6 477.4 256.6Q476.4 258.5 474.8 259.8Q473.1 261.1 471 261.8Q469 262.4 467 262.4Q466.4 262.4 465.7 262.3Q465.1 262.3 464.5 262.1Q464.3 262.1 464.4 261.7Q464.4 261.4 464.6 261.4Q465.1 261.5 465.6 261.6Q466 261.6 466.4 261.6Q468.4 261.6 470.1 260.7Q471.7 259.8 472.8 257.8Q473.8 255.9 473.8 253Q473.8 250.2 472.8 248.2Q471.9 246.3 470.2 245.3Q468.4 244.2 466.2 244.2Q464.7 244.2 463.9 244.4Q463.1 244.6 462.8 245.4Q462.5 246.2 462.5 247.8ZM537.5 276.6Q533.8 276.6 530.7 275.3Q527.7 274 525.5 271.6Q523.4 269.3 522.2 266.2Q521 263.2 521 259.8Q521 255.6 522.7 252.4Q524.3 249.2 527 247.1Q529.7 245 533 244Q536.2 242.9 539.4 242.9Q543.2 242.9 546.2 244.3Q549.3 245.7 551.4 248Q553.5 250.4 554.7 253.3Q555.8 256.3 555.8 259.4Q555.8 263.1 554.3 266.2Q552.9 269.3 550.4 271.6Q547.8 274 544.5 275.3Q541.2 276.6 537.5 276.6ZM539.4 275.5Q542.6 275.5 545.3 273.8Q548 272.1 549.5 268.9Q551.1 265.6 551.1 260.9Q551.1 256 549.4 252.3Q547.7 248.5 544.6 246.3Q541.5 244.2 537.2 244.2Q531.8 244.2 528.8 247.9Q525.8 251.6 525.8 258Q525.8 261.6 526.7 264.8Q527.7 268 529.5 270.4Q531.3 272.8 533.8 274.2Q536.3 275.5 539.4 275.5Z"/></g><g class="ono"><rect pathLength="1" x="65" y="318" width="170" height="282" rx="34"/><path pathLength="1" d="M108 318V600M192 318V600M65 360H235M65 560H235M65 460H108M192 460H235"/><path pathLength="1" d="M75 328L108 360M225 328L192 360M75 590L108 560M225 590L192 560"/><rect pathLength="1" x="275" y="318" width="65" height="282"/><path pathLength="1" d="M267 318H348M267 600H348"/><path pathLength="1" d="M292 318V600M323 318V600M275 340H340M275 578H340M275 460H292M323 460H340"/><rect pathLength="1" x="450" y="318" width="65" height="282"/><path pathLength="1" d="M442 318H523M442 600H523"/><path pathLength="1" d="M467 318V600M498 318V600M450 340H515M450 578H515M450 460H467M498 460H515"/><path pathLength="1" d="M322 326L458 478M322 398L458 552"/><rect pathLength="1" x="555" y="318" width="170" height="282" rx="34"/><path pathLength="1" d="M598 318V600M682 318V600M555 360H725M555 560H725M555 460H598M682 460H725"/><path pathLength="1" d="M565 328L598 360M715 328L682 360M565 590L598 560M715 590L682 560"/></g></svg></h1>
-      <p class="tag">Houses for eating, drinking and staying late.</p>
-      <div class="eyebrow">Bogotá · Cartagena</div>
-    </div>
-    <a class="down" href="#about" aria-label="Scroll down"></a>
-  </section>
-
-  <section id="about" class="manifesto">
+<main id="main">
+  <section class="hero" aria-labelledby="h-grupo">
     <div class="wrap">
-      <h2 class="eyebrow rv">About us</h2>
-      <p class="big rv d1">We started in 2025 with a hosomaki bar in Bogotá. In 2026 came a whole house in Cartagena. <em>Always the same idea:</em> that the kitchen, the bar, the music and the service tell one story.</p>
-      <ol class="timeline rv" aria-label="Our openings">
-        <li><time class="yr" datetime="2025-11">2025</time><div><b>ONO Hosomaki Bar</b>Opened in Bogotá in November.</div></li>
-        <li><time class="yr" datetime="2026-09-25">2026</time><div><b>Casa Salvaje</b>Opened in Cartagena’s old city on 25&nbsp;September.</div></li>
-        <li class="next"><time class="yr" datetime="2026">2026</time><div><b>ONO Cartagena</b>Opens inside Casa Salvaje in <span class="nw">November – December</span>.</div></li>
+      <div class="hero-meta label"><span>Hospitality group</span><span>Bogotá · Cartagena</span></div>
+      <div class="elev elev--lit">
+        <h1 class="elev-h1" id="h-grupo"><svg viewBox="60 214 670 400" role="img" aria-label="Grupo ONO" focusable="false"><g id="elev-geo"><g class="gr"><path d="M108 318V600M192 318V600M65 360H235M65 560H235M65 460H108M192 460H235M75 328 108 360M225 328 192 360M75 590 108 560M225 590 192 560M598 318V600M682 318V600M555 360H725M555 560H725M555 460H598M682 460H725M565 328 598 360M715 328 682 360M565 590 598 560M715 590 682 560"/></g><g class="fr"><path d="M75 260H185M605 260H715"/><rect x="65" y="318" width="170" height="282" rx="34"/><path d="M275 318H340V600H275ZM267 318H348M267 600H348M292 318V600M323 318V600M275 340H340M275 578H340M275 460H292M323 460H340M450 318H515V600H450ZM442 318H523M442 600H523M467 318V600M498 318V600M450 340H515M450 578H515M450 460H467M498 460H515M322 326 458 478M322 398 458 552"/><rect x="555" y="318" width="170" height="282" rx="34"/></g><path class="gp" d="M251.7 276.6Q247.2 276.6 243.7 275.3Q240.2 274 237.8 271.6Q235.4 269.3 234.1 266.2Q232.8 263.2 232.8 259.7Q232.8 255.8 234.3 252.8Q235.8 249.7 238.5 247.5Q241.2 245.3 244.8 244.1Q248.4 242.9 252.6 242.9Q255.3 242.9 257.7 243.4Q260.1 243.9 261.7 244.7Q262.2 245 262.3 245.1Q262.3 245.3 262.4 245.9L263 252.4Q263 252.5 262.8 252.6Q262.5 252.7 262.4 252.4Q261.9 250.8 261 249.3Q260.1 247.8 258.8 246.5Q257.4 245.3 255.6 244.6Q253.7 243.9 251.3 243.9Q247.4 243.9 244.3 245.7Q241.2 247.5 239.4 250.8Q237.6 254.2 237.6 258.8Q237.6 262.2 238.6 265.2Q239.6 268.3 241.6 270.7Q243.5 273.1 246.4 274.5Q249.3 275.8 253.1 275.8Q255.4 275.8 256.8 275.2Q258.2 274.6 258.8 273.3Q259.4 271.9 259.4 269.5Q259.4 267 259.1 265.8Q258.8 264.7 257.6 264.3Q256.4 263.9 253.7 263.9Q253.4 263.9 253.4 263.5Q253.4 263.1 253.6 263.1Q257.1 263.3 259.9 263.3Q262.6 263.4 265.6 263.2Q265.9 263.2 265.9 263.6Q265.9 263.9 265.6 263.9Q264.6 263.9 264 264.3Q263.5 264.7 263.4 266Q263.3 267.3 263.3 270Q263.3 271.7 263.4 272.6Q263.5 273.4 263.5 273.8Q263.6 274.2 263.6 274.6Q263.6 274.9 263.5 275Q263.4 275.1 263 275.2Q260.3 275.8 257.4 276.2Q254.4 276.6 251.7 276.6ZM334.1 276Q333.2 276 331.3 274Q329.4 272 326.8 268.3Q324.1 264.6 320.8 259.4L324.3 258.3Q328.7 264.6 331.7 268.4Q334.7 272.1 337.1 273.7Q339.4 275.4 341.6 275.4Q341.7 275.4 341.7 275.7Q341.7 276 341.6 276Q338.6 276 336.8 276Q335 276 334.1 276ZM321.6 243.3Q326 243.3 328.3 245.2Q330.6 247 330.6 250.1Q330.6 253 328.9 255.3Q327.3 257.6 324.6 258.9Q321.9 260.2 318.8 260.2Q318.2 260.2 317.5 260.2Q316.9 260.1 316.3 260.1V271.8Q316.3 273.3 316.6 274.1Q316.9 274.9 317.8 275.1Q318.7 275.4 320.5 275.4Q320.7 275.4 320.7 275.7Q320.7 276 320.5 276Q319.2 276 317.6 275.9Q316.1 275.9 314.2 275.9Q312.4 275.9 310.8 275.9Q309.2 276 307.9 276Q307.8 276 307.8 275.7Q307.8 275.4 307.9 275.4Q309.7 275.4 310.6 275.1Q311.5 274.9 311.8 274.1Q312.2 273.3 312.2 271.8V247.7Q312.2 246.2 311.9 245.4Q311.6 244.7 310.7 244.4Q309.8 244.1 308 244.1Q307.9 244.1 307.9 243.8Q307.9 243.5 308 243.5Q309.3 243.5 310.9 243.6Q312.4 243.7 314.2 243.7Q315.9 243.7 317.9 243.5Q320 243.3 321.6 243.3ZM326.3 251.8Q326.3 248.9 325.5 247.2Q324.8 245.6 323.3 244.9Q321.9 244.2 320 244.2Q318 244.2 317.1 244.9Q316.3 245.6 316.3 247.8V258.8Q317 258.8 317.9 258.9Q318.7 258.9 319.4 258.9Q323.2 258.9 324.8 257.2Q326.3 255.4 326.3 251.8ZM408.8 249.5Q408.8 246.9 407.7 245.5Q406.5 244.1 404.2 244.1Q404 244.1 404 243.8Q404 243.5 404.2 243.5Q405.4 243.5 406.7 243.6Q408 243.7 409.5 243.7Q410.8 243.7 412.1 243.6Q413.4 243.5 414.4 243.5Q414.6 243.5 414.6 243.8Q414.6 244.1 414.4 244.1Q412.4 244.1 411.3 245.5Q410.2 246.9 410.2 249.5V264.2Q410.2 268.1 408.7 270.9Q407.1 273.7 404.3 275.2Q401.5 276.7 397.8 276.7Q393.9 276.7 391 275.2Q388.1 273.7 386.5 271Q384.9 268.2 384.9 264.4V247.7Q384.9 246.2 384.5 245.4Q384.2 244.7 383.3 244.4Q382.4 244.1 380.6 244.1Q380.5 244.1 380.5 243.8Q380.5 243.5 380.6 243.5Q381.9 243.5 383.5 243.6Q385.1 243.7 386.9 243.7Q388.8 243.7 390.3 243.6Q391.9 243.5 393.1 243.5Q393.3 243.5 393.3 243.8Q393.3 244.1 393.1 244.1Q391.4 244.1 390.5 244.4Q389.5 244.7 389.3 245.5Q389 246.3 389 247.8V262.6Q389 268.8 391.7 271.9Q394.4 275 399.2 275Q403.7 275 406.3 272.2Q408.8 269.3 408.8 264.2ZM463.9 271.6Q463.9 273.1 464.3 273.9Q464.7 274.8 465.9 275.1Q467.2 275.4 469.7 275.4Q469.8 275.4 469.8 275.7Q469.8 276 469.7 276Q468 276 466 275.9Q464.1 275.9 461.8 275.9Q460.1 275.9 458.5 275.9Q456.8 276 455.5 276Q455.4 276 455.4 275.7Q455.4 275.4 455.5 275.4Q457.3 275.4 458.2 275.1Q459.2 274.9 459.4 274.1Q459.7 273.3 459.7 271.8V247.7Q459.7 246.2 459.4 245.4Q459.2 244.7 458.2 244.4Q457.3 244.1 455.5 244.1Q455.4 244.1 455.4 243.8Q455.4 243.5 455.5 243.5Q456.8 243.5 458.4 243.6Q460 243.7 461.8 243.7Q463.1 243.7 465.1 243.5Q467 243.3 469 243.3Q472 243.3 474.4 244.2Q476.8 245.1 478.3 247Q479.7 248.9 479.8 251.9Q479.8 254.6 478.8 256.6Q477.8 258.5 476.1 259.8Q474.4 261.1 472.4 261.8Q470.3 262.4 468.4 262.4Q467.7 262.4 467.1 262.3Q466.4 262.3 465.9 262.1Q465.7 262.1 465.7 261.7Q465.8 261.4 466 261.4Q466.4 261.5 466.9 261.6Q467.4 261.6 467.8 261.6Q469.8 261.6 471.4 260.7Q473.1 259.8 474.1 257.8Q475.2 255.9 475.2 253Q475.2 250.2 474.2 248.2Q473.2 246.3 471.5 245.3Q469.8 244.2 467.6 244.2Q466.1 244.2 465.3 244.4Q464.5 244.6 464.2 245.4Q463.9 246.2 463.9 247.8ZM538.9 276.6Q535.2 276.6 532.1 275.3Q529.1 274 526.9 271.6Q524.8 269.3 523.6 266.2Q522.4 263.2 522.4 259.8Q522.4 255.6 524.1 252.4Q525.7 249.2 528.4 247.1Q531.1 245 534.3 244Q537.6 242.9 540.7 242.9Q544.6 242.9 547.6 244.3Q550.7 245.7 552.8 248Q554.9 250.4 556 253.3Q557.2 256.3 557.2 259.4Q557.2 263.1 555.7 266.2Q554.3 269.3 551.7 271.6Q549.2 274 545.9 275.3Q542.6 276.6 538.9 276.6ZM540.7 275.5Q544 275.5 546.7 273.8Q549.4 272.1 550.9 268.9Q552.4 265.6 552.4 260.9Q552.4 256 550.7 252.3Q549.1 248.5 546 246.3Q542.9 244.2 538.6 244.2Q533.1 244.2 530.1 247.9Q527.2 251.6 527.2 258Q527.2 261.6 528.1 264.8Q529.1 268 530.9 270.4Q532.7 272.8 535.2 274.2Q537.7 275.5 540.7 275.5Z"/></g></svg></h1>
+        <a class="win w1" href="#ono" aria-label="ONO Hosomaki Bar, Bogotá"><picture><source type="image/avif" srcset="/img/d/w-ono-240.avif 240w, /img/d/w-ono-320.avif 320w, /img/d/w-ono-434.avif 434w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))"><source type="image/webp" srcset="/img/d/w-ono-240.webp 240w, /img/d/w-ono-320.webp 320w, /img/d/w-ono-434.webp 434w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))"><img src="/img/d/w-ono-434.jpg" srcset="/img/d/w-ono-240.jpg 240w, /img/d/w-ono-320.jpg 320w, /img/d/w-ono-434.jpg 434w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))" width="434" height="720" alt="" fetchpriority="high"></picture></a>
+        <a class="win w2" href="#casa-salvaje" aria-label="Casa Salvaje, Cartagena"><picture><source type="image/avif" srcset="/img/d/w-cs-240.avif 240w, /img/d/w-cs-320.avif 320w, /img/d/w-cs-482.avif 482w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))"><source type="image/webp" srcset="/img/d/w-cs-240.webp 240w, /img/d/w-cs-320.webp 320w, /img/d/w-cs-482.webp 482w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))"><img src="/img/d/w-cs-482.jpg" srcset="/img/d/w-cs-240.jpg 240w, /img/d/w-cs-320.jpg 320w, /img/d/w-cs-482.jpg 482w" sizes="min(24vw, 280px, max(81px, (100vh - 300px) * .425))" width="482" height="800" alt="" fetchpriority="high"></picture></a>
+      </div>
+      <div class="caps">
+        <a class="cap cap1" href="#ono"><span class="label">I · Bogotá</span><span class="cap-name">ONO Hosomaki Bar</span><span class="st st-open">Open</span></a>
+        <a class="cap cap2" href="#casa-salvaje"><span class="label">II · Cartagena</span><span class="cap-name">Casa Salvaje</span><span class="st st-open">Open since <span class="nw">25 Sep 2026</span></span></a>
+      </div>
+      <nav class="key" aria-label="Houses and worlds">
+        <p class="label">Key</p>
+        <ol>
+          <li class="to-ono"><a href="#ono"><span class="no">01</span><span>ONO Hosomaki Bar</span></a></li>
+          <li class="to-cs"><a href="#casa-salvaje"><span class="no">02</span><span>Casa Salvaje</span></a></li>
+          <li class="to-cs"><a href="#la-domenica"><span class="no">02.1</span><span>La Domenica</span></a></li>
+          <li class="to-cs"><a href="#kanibal"><span class="no">02.2</span><span>Kanibal</span></a></li>
+          <li class="to-cs"><a href="#slvj"><span class="no">02.3</span><span>SLVJ</span></a></li>
+          <li class="to-cs"><a href="#ono-cartagena"><span class="no">02.4</span><span>ONO Cartagena</span></a></li>
+        </ol>
+      </nav>
+      <div class="stand-row g12">
+        <p class="stand">Houses for eating, drinking and staying late.</p>
+        <dl class="facts ledger">
+          <div><dt>Hospitality group</dt><dd>Bogotá and Cartagena, Colombia</dd></div>
+          <div><dt>Founded by</dt><dd>Jaime Lora and Dilan Carrillo</dd></div>
+          <div><dt>Still to open</dt><dd><span>La Domenica</span><span class="vh">; </span><span>ONO Cartagena, <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="dir sec" id="houses" aria-labelledby="h-dir">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Directory</p>
+        <h2 class="h2" id="h-dir">Every house, every door.</h2>
+      </div>
+      <ol class="dir-list">
+        <li class="to-ono">
+          <span class="no">01</span>
+          <a class="dir-nm" href="#ono">ONO Hosomaki Bar</a>
+          <span class="dir-pl">Calle 84A <span class="nw">#9-11</span>, Bogotá</span>
+          <span class="dir-wh">Japanese-inspired hosomaki bar and night club</span>
+          <span class="st st-open">Open since <span class="nw">Nov 2025</span></span>
+          <span class="dir-lk"><a href="https://onoculto.com/">onoculto.com</a><span class="vh"> · </span><a href="https://www.instagram.com/ono.culto/">@ono.culto</a><span class="vh"> · </span><a href="https://restaurante.covermanager.com/ono/">Book online</a></span>
+        </li>
+        <li class="to-cs">
+          <span class="no">02</span>
+          <a class="dir-nm" href="#casa-salvaje">Casa Salvaje</a>
+          <span class="dir-pl">Calle Santa Teresa <span class="nw">#32-41</span>, Old City, Cartagena</span>
+          <span class="dir-wh">A colonial house with four worlds under one roof</span>
+          <span class="st st-open">Open since <span class="nw">25 Sep 2026</span></span>
+          <span class="dir-lk"><a href="https://www.casa-salvaje.com/">casa-salvaje.com</a><span class="vh"> · </span><a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a><span class="vh"> · </span><a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a></span>
+          <ol class="sub">
+            <li>
+              <span class="no">02.1</span>
+              <a class="dir-nm" href="#la-domenica">La Domenica</a>
+              <span class="dir-pl">Casa Salvaje</span>
+              <span class="dir-wh">Caffè, pizza and aperitivo</span>
+              <span class="st st-opening">Opening, <span class="nw">date TBC</span></span><!-- OWNER: La Domenica's opening date, once known (also the door plate, the hero and press "Still to open" facts, the Casa Salvaje lead and the boilerplate) -->
+              <span class="dir-lk"><a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/domenica.html"><span class="nw">casa-salvaje.com</span>/<wbr>domenica</a></span>
+            </li>
+            <li>
+              <span class="no">02.2</span>
+              <a class="dir-nm" href="#kanibal">Kanibal</a>
+              <span class="dir-pl">Casa Salvaje</span>
+              <span class="dir-wh">Tropical restaurant and bar, built around fire</span>
+              <span class="st st-open">Open</span>
+              <span class="dir-lk"><a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/kanibal.html"><span class="nw">casa-salvaje.com</span>/<wbr>kanibal</a></span>
+            </li>
+            <li>
+              <span class="no">02.3</span>
+              <a class="dir-nm" href="#slvj">SLVJ</a>
+              <span class="dir-pl">Casa Salvaje</span>
+              <span class="dir-wh">Restaurant, bar and club</span>
+              <span class="st st-open">Open</span>
+              <span class="dir-lk"><a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/slvj.html"><span class="nw">casa-salvaje.com</span>/<wbr>slvj</a></span>
+            </li>
+            <li>
+              <span class="no">02.4</span>
+              <a class="dir-nm" href="#ono-cartagena">ONO Cartagena</a>
+              <span class="dir-pl">Casa Salvaje</span>
+              <span class="dir-wh">Japanese-inspired hosomaki bar</span>
+              <span class="st st-opening">Opening <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window -->
+              <span class="dir-lk"><a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a><span class="vh"> · </span><a href="https://www.casa-salvaje.com/ono.html"><span class="nw">casa-salvaje.com</span>/<wbr>ono</a></span>
+            </li>
+          </ol>
+        </li>
       </ol>
-      <div class="two">
-        <p class="lead rv">Grupo ONO makes places with character. Each brand has its own kitchen, look and rhythm, and behind all of them is one team obsessed with produce and with a night done right.</p>
-        <ul class="values rv d1">
-          <li><i>I</i><div><b>Produce</b>What reaches the plate and the glass starts with what we buy.</div></li>
-          <li><i>II</i><div><b>Character</b>Every place with its own identity, from the menu to the light.</div></li>
-          <li><i>III</i><div><b>People</b>Teams make the night. We train them and look after them.</div></li>
-        </ul>
-      </div>
+      <p class="dir-note">Booking a table? Casa Salvaje takes reservations by WhatsApp on <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table"><span class="nw">+57 310 828 6602</span></a>. Its restaurants also book through <a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/">CoverManager</a> and its nights through <a href="https://site.fourvenues.com/en/casa-salvaje">Fourvenues</a>. For ONO Bogotá, <a href="https://restaurante.covermanager.com/ono/">book online</a> or message <a href="https://www.instagram.com/ono.culto/">@ono.culto</a> on Instagram.</p>
     </div>
   </section>
 
-  <section id="ono" class="chapter ch-ono" aria-label="ONO">
-    <div class="split">
-      <div class="media rv"><img src="img/camp-ono-rojo.jpg" alt="Red Oni mask with a white snake, ONO campaign" loading="lazy" decoding="async"></div>
-      <div class="copy">
-        <div class="mark rv"><img src="img/logo-ono.png" alt="ONO Hosomaki Bar" width="200" height="200" loading="lazy" decoding="async"></div>
-        <div class="eyebrow rv">I · Bogotá · Cartagena</div>
-        <h2 class="rv d1"><span class="sr-only">ONO Hosomaki Bar, Bogotá: </span>Where rituals meet desire.</h2>
-        <p class="lead rv d2">Where the group began: Tokyo spirit, Bogotá soul. Hosomaki and cocktails, Tuesday to Saturday until 3&nbsp;am.</p>
-        <div class="facts rv d2">
-          <div><small>Bogotá</small><b>Since Nov 2025</b></div>
-          <div><small>Tue – Sat</small><b>7&nbsp;pm – 3&nbsp;am</b></div>
-          <div class="wide"><small>Find us</small><b>Calle 84A #9-11, Bogotá</b></div>
+  <section class="w-ono" id="ono" aria-labelledby="h-ono">
+    <svg class="kanji" viewBox="0 0 942 943" aria-hidden="true" focusable="false"><path d="M181 475H749V503H181ZM181 301H749V329H181ZM127 132V83L249 132H752V160H241V526Q241 531 226 540Q212 549 190 556Q168 563 144 563H127ZM695 132H685L739 72L853 158Q848 164 838 170Q827 176 812 179V516Q812 519 796 526Q779 533 756 538Q734 544 714 544H695ZM645 537 766 570Q763 579 754 585Q746 591 729 590Q712 617 686 650Q661 682 632 710H615Q625 673 634 624Q642 575 645 537ZM411 132H522V486H411ZM572 693Q602 692 660 688Q717 685 776 680L778 694Q757 708 724 726Q692 745 646 771Q642 781 636 786Q629 791 622 793ZM723 621Q779 641 805 667Q831 693 834 718Q838 742 826 759Q814 776 794 778Q774 780 754 761Q756 739 750 714Q744 689 734 666Q724 644 712 627ZM408 0 586 31Q579 56 545 57Q528 70 506 88Q484 105 462 122Q440 138 422 150H380Q384 131 389 104Q394 78 400 50Q405 23 408 0ZM452 492H564Q564 501 564 510Q564 520 564 526V803Q564 816 572 820Q579 825 607 825H719Q748 825 773 824Q798 824 811 823Q822 822 828 819Q833 816 839 808Q848 794 860 760Q871 725 886 676H897L900 813Q925 822 934 832Q942 843 942 859Q942 882 924 896Q905 911 854 918Q804 924 708 924H588Q533 924 504 916Q474 908 463 887Q452 866 452 827ZM269 491H397Q393 580 372 652Q350 725 306 781Q261 837 187 878Q113 918 5 943L0 931Q81 894 132 849Q184 804 214 750Q243 695 256 630Q268 566 269 491Z"/></svg>
+    <div class="wrap g12">
+      <figure class="ono-fig">
+        <!-- OWNER: replace with ONO Bogotá photography (room/bar at night), 4:5, ≥1200×1500 -->
+        <div class="shoji"><picture><source type="image/avif" srcset="/img/d/ono-main-448.avif 448w, /img/d/ono-main-560.avif 560w" sizes="(min-width:1280px) 480px, (min-width:900px) 37.5vw, (min-width:512px) 480px, calc(100vw - 32px)"><source type="image/webp" srcset="/img/d/ono-main-448.webp 448w, /img/d/ono-main-560.webp 560w" sizes="(min-width:1280px) 480px, (min-width:900px) 37.5vw, (min-width:512px) 480px, calc(100vw - 32px)"><img src="/img/d/ono-main-560.jpg" srcset="/img/d/ono-main-448.jpg 448w, /img/d/ono-main-560.jpg 560w" sizes="(min-width:1280px) 480px, (min-width:900px) 37.5vw, (min-width:512px) 480px, calc(100vw - 32px)" width="560" height="700" alt="Poster: &quot;Anatomy of a roll. Oni tuna roll.&quot; An exploded roll labelled masago arare, sesame mayo, avocado, and tuna tartare with kimchee, above three avocado-wrapped tuna rolls on a black plate." loading="lazy" decoding="async"></picture></div>
+        <figcaption>Anatomy of a roll · ONO</figcaption>
+      </figure>
+      <div class="ono-copy">
+        <p class="label kick">I · ONO · Hosomaki bar &amp; night club</p>
+        <img class="ono-logo" src="/img/d/logo-ono-bone-192.png" width="96" height="96" alt="ONO Hosomaki Bar" loading="lazy" decoding="async">
+        <h2 id="h-ono"><span class="vh">ONO Hosomaki Bar, Bogotá: </span>Where rituals meet desire.</h2>
+        <p class="lead">Where the group began: a Japanese-inspired hosomaki bar and night club in Bogotá. Hosomaki and cocktails, red light, and the Oni mask after dark. Tokyo spirit, Bogotá soul.</p>
+        <dl class="ledger">
+          <div><dt>Bogotá</dt><dd><span class="st st-open">Open since <span class="nw">Nov 2025</span></span><span class="vh"> · </span><span>ONO Hosomaki Bar</span><span class="vh"> · </span><span class="sm">Calle 84A <span class="nw">#9-11</span></span><span class="vh"> · </span><span class="sm"><span class="nw">Tue–Sat</span> · <span class="nw">7 pm – 3 am</span> · 25+<span class="vh"> (guests 25 and over)</span></span><span class="vh"> · </span><span class="sm"><a href="https://onoculto.com/">onoculto.com</a>&nbsp;· <a href="https://www.instagram.com/ono.culto/">@ono.culto</a></span></dd></div>
+          <div><dt>Cartagena</dt><dd><span class="st st-opening">Opening <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --><span class="vh"> · </span><span>Inside Casa Salvaje, Old City</span><span class="vh"> · </span><span class="sm"><a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></span></dd></div>
+        </dl>
+        <p class="ctas"><a class="btn solid" href="https://restaurante.covermanager.com/ono/">Book ONO Bogotá</a><a class="btn" href="https://www.casa-salvaje.com/ono.html"><span>ONO Cartagena · <span class="nw">Nov–Dec 2026</span></span></a><!-- REVIEW 2026-12-31: opening window --><a class="tl" href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a></p>
+      </div>
+      <div class="campaign g12">
+        <h3 class="label">The ONO Cartagena campaign · 2026</h3>
+        <div class="posters">
+          <figure><picture><source type="image/avif" srcset="/img/d/p-green-oni-280.avif 280w, /img/d/p-green-oni-420.avif 420w, /img/d/p-green-oni-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-green-oni-280.webp 280w, /img/d/p-green-oni-420.webp 420w, /img/d/p-green-oni-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-green-oni-560.jpg" srcset="/img/d/p-green-oni-280.jpg 280w, /img/d/p-green-oni-420.jpg 420w, /img/d/p-green-oni-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="700" alt="Poster: a green Oni mask with gold horns and two koi on the forehead, tongue out. Text: &quot;Unmask your Oni.&quot; ONO Cartagena logo." loading="lazy" decoding="async"></picture><figcaption>Unmask your Oni.</figcaption></figure>
+          <figure><picture><source type="image/avif" srcset="/img/d/p-skin-tuna-280.avif 280w, /img/d/p-skin-tuna-420.avif 420w, /img/d/p-skin-tuna-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-skin-tuna2-280.webp 280w, /img/d/p-skin-tuna2-420.webp 420w, /img/d/p-skin-tuna2-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-skin-tuna-560.jpg" srcset="/img/d/p-skin-tuna-280.jpg 280w, /img/d/p-skin-tuna-420.jpg 420w, /img/d/p-skin-tuna-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="995" alt="Poster: a bluefin tuna tattooed with waves and palm trees. Text: &quot;ONO Cartagena. 01, The Tuna Edition. Beneath the skin. Japanese spirit. Caribbean soul. Tokyo Spirit · Cartagena Soul.&quot;" loading="lazy" decoding="async"></picture><figcaption>Beneath the skin.</figcaption></figure>
+          <figure><picture><source type="image/avif" srcset="/img/d/p-waves-280.avif 280w, /img/d/p-waves-420.avif 420w, /img/d/p-waves-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-waves2-280.webp 280w, /img/d/p-waves2-420.webp 420w, /img/d/p-waves2-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-waves-560.jpg" srcset="/img/d/p-waves-280.jpg 280w, /img/d/p-waves-420.jpg 420w, /img/d/p-waves-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="995" alt="Poster: a Japanese-style engraving of waves, cranes and palm trees before Cartagena's walled city. Text: &quot;ONO Cartagena. Tokyo Spirit · Cartagena Soul.&quot;" loading="lazy" decoding="async"></picture><figcaption>Tokyo Spirit · Cartagena Soul</figcaption></figure>
         </div>
-        <div class="cta rv d3"><a class="btn solid" href="https://restaurante.covermanager.com/ono/" target="_blank" rel="noopener">Book ONO Bogotá</a><a class="btn" href="https://onoculto.com/" target="_blank" rel="noopener">Visit onoculto.com</a></div>
-        <p class="also rv d3">ONO Cartagena opens inside Casa Salvaje in <span class="nw">Nov – Dec 2026</span>. <a href="https://www.casa-salvaje.com/ono.html" target="_blank" rel="noopener">Join the guest list</a></p>
-        <div class="press rv d3"><small>Featured in</small><ul><li>Marie Claire</li><li><a href="https://revistaaxxis.com.co/revistaaxxis/diseno-ono-hosomaki-bar-bogota/" target="_blank" rel="noopener">AXXIS</a></li><li>Revista Diners</li></ul></div>
-      </div>
-    </div>
-    <div class="below">
-      <div class="wrap head"><span class="eyebrow">ONO Cartagena campaign · 2026</span><a href="https://www.casa-salvaje.com/fondos.html#mundo-ono" target="_blank" rel="noopener">All artworks</a></div>
-      <div class="strip" role="group" aria-label="ONO campaigns" tabindex="0">
-        <figure class="rv"><img src="img/art/ono-oni-green-oni.jpg" alt="Green Oni mask" loading="lazy" decoding="async"><figcaption>Unmask your Oni</figcaption></figure>
-        <figure class="rv d1"><img src="img/art/ono-skin-tuna.jpg" alt="Tattooed tuna" loading="lazy" decoding="async"><figcaption>Beneath the skin</figcaption></figure>
-        <figure class="rv d2"><img src="img/art/ono-sellos-oni.jpg" alt="Postage stamp with an Oni mask" loading="lazy" decoding="async"><figcaption>Tokyo · Cartagena</figcaption></figure>
-        <figure class="rv d3"><img src="img/art/ono-grabados-waves.jpg" alt="Wave engraving" loading="lazy" decoding="async"><figcaption>Waves</figcaption></figure>
-        <figure class="rv d3"><img src="img/art/ono-oni-collection.jpg" alt="Twenty Oni masks on a cream poster" loading="lazy" decoding="async"><figcaption>The masks</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <section id="casa-salvaje" class="chapter ch-cs flip" aria-label="Casa Salvaje">
-    <div class="split">
-      <div class="media rv"><div class="arch"><img src="img/puerta.jpg" alt="Casa Salvaje’s wooden door with the jaguar plaque" loading="lazy" decoding="async"></div></div>
-      <div class="copy">
-        <div class="mark rv"><img src="img/logo-salvaje-oro-mark.png" alt="Casa Salvaje" width="194" height="252" loading="lazy" decoding="async"></div>
-        <div class="eyebrow rv">II · Old City · Cartagena</div>
-        <h2 class="rv d1"><span class="sr-only">Casa Salvaje, Cartagena: </span>Heaven has a guest list.</h2>
-        <p class="lead rv d2">A colonial house on Calle Santa Teresa with four worlds under one roof: coffee and aperitivo, fire, a feast that turns into a club, and soon hosomaki. You come in through one door; what happens inside depends on which world calls you.</p>
-        <div class="facts rv d2">
-          <div><small>Opened</small><b>25 Sep 2026</b></div>
-          <div><small>Instagram</small><b>@casasalvaje<wbr>.ctg</b></div>
-          <div class="wide"><small>Find us</small><b>Calle Santa Teresa #32-41</b></div>
-        </div>
-        <div class="cta rv d3"><a class="btn solid" href="https://restaurante.covermanager.com/casa-salvaje-cartagena/" target="_blank" rel="noopener">Book a table</a><a class="btn" href="https://www.casa-salvaje.com" target="_blank" rel="noopener">Visit casa-salvaje.com</a></div>
-      </div>
-    </div>
-    <div class="below">
-      <div class="wrap">
-        <div class="head rv"><span class="eyebrow">The four worlds</span></div>
-        <div class="doors">
-          <a class="door d-dom rv" href="https://www.casa-salvaje.com/domenica.html" target="_blank" rel="noopener"><img src="img/door-domenica.jpg" alt="" loading="lazy" decoding="async"><span><i class="soon">Soon</i><b>La Domenica</b><small>Coffee · Aperitivo</small></span></a>
-          <a class="door d-kan rv d1" href="https://www.casa-salvaje.com/kanibal.html" target="_blank" rel="noopener"><img src="img/door-kanibal.jpg" alt="" loading="lazy" decoding="async"><span><b>Kanibal</b><small>Fire · Instinct</small></span></a>
-          <a class="door d-slvj rv d2" href="https://www.casa-salvaje.com/slvj.html" target="_blank" rel="noopener"><img src="img/slvj-neon.jpg" alt="" loading="lazy" decoding="async"><span><b>SLVJ</b><small>Feast · Club</small></span></a>
-          <a class="door d-ono rv d3" href="https://www.casa-salvaje.com/ono.html" target="_blank" rel="noopener"><img src="img/door-ono.jpg" alt="" loading="lazy" decoding="async"><span><i class="soon">Soon</i><b>ONO</b><small>Hosomaki</small></span></a>
+        <div class="camp-note">
+          <p>ONO Cartagena opens inside Casa Salvaje in <span class="nw">November–December 2026</span>.<!-- REVIEW 2026-12-31: opening window --></p>
+          <p>We're staffing the opening. <a class="tl" href="/careers.html">Careers <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></p>
+          <p><a class="tl" href="https://www.casa-salvaje.com/fondos.html#mundo-ono">All artworks</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="doorways" aria-label="Careers and contact">
-    <a class="doorway deep" href="careers.html">
-      <img src="img/kanibal-salon.jpg" alt="" loading="lazy" decoding="async">
-      <div class="txt rv">
-        <div class="eyebrow">Careers</div>
-        <h2>People make the night.</h2>
-        <p>Kitchen, bar, floor and office in Bogotá and Cartagena.</p>
-        <span class="btn">Send your CV</span>
+  <section class="w-cs" id="casa-salvaje" aria-labelledby="h-cs">
+    <div class="wrap g12">
+      <div class="cs-copy">
+        <picture><source type="image/webp" srcset="/img/d/logo-salvaje-240.webp"><img class="cs-logo" src="/img/d/logo-salvaje-240.png" width="240" height="312" alt="Casa Salvaje" loading="lazy" decoding="async"></picture>
+        <p class="label kick">II · Casa Salvaje · Old City, Cartagena</p>
+        <h2 class="cs-h" id="h-cs"><span class="vh">Casa Salvaje, Cartagena: </span>Heaven has a guest list.</h2>
+        <p class="lead">A colonial house at Calle Santa Teresa <span class="nw">#32-41</span>, in Cartagena's Old City, open since <span class="nw">25 September 2026</span>. Four worlds share one roof: Kanibal, a tropical restaurant and bar built around fire, and SLVJ, restaurant, bar and club, both open; La Domenica, for caffè, pizza and aperitivo, opening on a date to be confirmed; and ONO Cartagena, opening <span class="nw">November–December 2026</span>. You come in through one door; what happens inside depends on which world calls you.<!-- REVIEW 2026-12-31: opening window --></p>
+        <dl class="ledger">
+          <div><dt>Address</dt><dd>Calle Santa Teresa <span class="nw">#32-41</span>, Old City</dd></div>
+          <div><dt>Open since</dt><dd><span class="nw">25 Sep 2026</span></dd></div>
+          <div><dt>Reservations</dt><dd><a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a><span class="sm">Restaurants via <a href="https://restaurante.covermanager.com/casa-salvaje-cartagena/">CoverManager</a>, nights via <a href="https://site.fourvenues.com/en/casa-salvaje">Fourvenues</a></span></dd></div>
+        </dl>
+        <p class="ctas"><a class="btn solid" href="https://www.casa-salvaje.com/">casa-salvaje.com</a><a class="btn" href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">Reserve on WhatsApp</a><a class="tl" href="https://www.instagram.com/casasalvaje.ctg/">Instagram @casasalvaje.ctg</a></p>
       </div>
-    </a>
-    <a class="doorway deep" href="contact.html">
-      <img src="img/slvj-grupo.jpg" alt="" loading="lazy" decoding="async">
-      <div class="txt rv d1">
-        <div class="eyebrow">Contact</div>
-        <h2>Press, partnerships &amp; events.</h2>
-        <p>Interviews, brand collaborations, private events and suppliers.</p>
-        <span class="btn">Write to us</span>
+      <figure class="arch-fig">
+        <div class="arch"><picture><source type="image/avif" srcset="/img/d/arch-720.avif 720w, /img/d/arch-1200.avif 1200w, /img/d/arch-1536.avif 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)"><source type="image/webp" srcset="/img/d/arch-720.webp 720w, /img/d/arch-1200.webp 1200w, /img/d/arch-1536.webp 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)"><img src="/img/d/arch-1536.jpg" srcset="/img/d/arch-720.jpg 720w, /img/d/arch-1200.jpg 1200w, /img/d/arch-1536.jpg 1536w" sizes="(min-width:1320px) 640px, (min-width:900px) 48vw, calc(100vw - 32px)" width="1536" height="1024" alt="The SLVJ dining room at Casa Salvaje at night: woven pendant lamps, red neon light and a full room." loading="lazy" decoding="async"></picture></div>
+        <figcaption>SLVJ, Casa Salvaje</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="w-cs-cream" id="worlds" aria-labelledby="h-worlds">
+    <div class="wrap">
+      <p class="label kick">Inside Casa Salvaje</p>
+      <h3 class="worlds-h" id="h-worlds">Four worlds under one roof.</h3>
+      <ul class="doors">
+        <li id="la-domenica" class="d-dom"><a class="door" href="https://www.casa-salvaje.com/domenica.html" aria-labelledby="dn-dom dp-dom">
+          <div class="lun"><h4 id="dn-dom">La Domenica</h4></div>
+          <picture class="fit"><source type="image/avif" srcset="/img/d/door-dom-400.avif 400w, /img/d/door-dom-640.avif 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-dom-400.webp 400w, /img/d/door-dom-640.webp 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-dom-640.jpg" srcset="/img/d/door-dom-400.jpg 400w, /img/d/door-dom-640.jpg 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="640" height="640" alt="Poster: a black greyhound standing in red water. Text: &quot;Endless Sunday. La Domenica. Caffè · Pizza · Aperitivo. Cartagena.&quot;" loading="lazy" decoding="async"></picture>
+          <div class="plate" id="dp-dom"><span class="desc">Caffè&nbsp;· Pizza&nbsp;· Aperitivo</span><span class="st st-opening">Opening</span></div>
+        </a></li>
+        <li id="kanibal" class="d-kan"><a class="door" href="https://www.casa-salvaje.com/kanibal.html" aria-labelledby="dn-kan dp-kan">
+          <div class="lun"><h4 id="dn-kan">Kanibal</h4></div>
+          <picture><source type="image/avif" srcset="/img/d/door-kan-400.avif 400w, /img/d/door-kan-640.avif 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-kan2-400.webp 400w, /img/d/door-kan2-640.webp 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-kan-640.jpg" srcset="/img/d/door-kan-400.jpg 400w, /img/d/door-kan-640.jpg 640w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="640" height="853" alt="A grilled steak sliced to show a rare centre, with the Kanibal wordmark and symbols." loading="lazy" decoding="async"></picture>
+          <div class="plate" id="dp-kan"><span class="desc">Fire&nbsp;· Instinct</span><span class="st st-open">Open</span></div>
+        </a></li>
+        <li id="slvj" class="d-slvj"><a class="door" href="https://www.casa-salvaje.com/slvj.html" aria-labelledby="dn-slvj dp-slvj">
+          <div class="lun"><h4 id="dn-slvj">SLVJ</h4></div>
+          <picture><source type="image/avif" srcset="/img/d/door-slvj-400.avif 400w, /img/d/door-slvj-500.avif 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-slvj-400.webp 400w, /img/d/door-slvj-500.webp 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-slvj-500.jpg" srcset="/img/d/door-slvj-400.jpg 400w, /img/d/door-slvj-500.jpg 500w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="500" height="666" alt="The SLVJ neon sign over the back bar, with pendant lamps and guests at dinner." loading="lazy" decoding="async"></picture>
+          <div class="plate" id="dp-slvj"><span class="desc">Feast&nbsp;· Club</span><span class="st st-open">Open</span></div>
+        </a></li>
+        <li id="ono-cartagena" class="d-onoc"><a class="door" href="https://www.casa-salvaje.com/ono.html" aria-labelledby="dn-onoc dp-onoc">
+          <div class="lun"><h4 id="dn-onoc">ONO Cartagena</h4></div>
+          <picture class="fit"><source type="image/avif" srcset="/img/d/door-onoctg-400.avif 400w, /img/d/door-onoctg-560.avif 560w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/door-onoctg-400.webp 400w, /img/d/door-onoctg-560.webp 560w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)"><img src="/img/d/door-onoctg-560.jpg" srcset="/img/d/door-onoctg-400.jpg 400w, /img/d/door-onoctg-560.jpg 560w" sizes="(min-width:1320px) 290px, (min-width:900px) calc((100vw - 160px)/4), calc((100vw - 48px)/2)" width="560" height="700" alt="Postage-stamp poster: a red Oni mask with horns and a Tokyo · ONO · Cartagena postmark. Text: &quot;Nihon&quot; in Japanese, &quot;ONO Cartagena&quot;, &quot;Unmask your Oni.&quot;" loading="lazy" decoding="async"></picture>
+          <div class="plate" id="dp-onoc"><span class="desc">Hosomaki&nbsp;· <span class="nw">Nov–Dec 2026</span></span><span class="st st-opening">Opening</span></div>
+        </a><!-- REVIEW 2026-12-31: opening window --></li>
+      </ul>
+      <div class="cs-wall">
+        <h3 class="label kick">The Casa Salvaje campaign</h3>
+        <div class="posters posters--4">
+          <figure><picture><source type="image/avif" srcset="/img/d/p-mosaico-280.avif 280w, /img/d/p-mosaico-420.avif 420w, /img/d/p-mosaico-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-mosaico-280.webp 280w, /img/d/p-mosaico-420.webp 420w, /img/d/p-mosaico-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-mosaico-560.jpg" srcset="/img/d/p-mosaico-280.jpg 280w, /img/d/p-mosaico-420.jpg 420w, /img/d/p-mosaico-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="700" alt="Poster: a mosaic jaguar on green tiles reaching for a cocktail glass. Text: &quot;Casa Salvaje. Cartagena. Somewhere between ritual and desire.&quot;" loading="lazy" decoding="async"></picture><figcaption>Somewhere between ritual and desire.</figcaption></figure>
+          <figure><picture><source type="image/avif" srcset="/img/d/p-miniatura-280.avif 280w, /img/d/p-miniatura-420.avif 420w, /img/d/p-miniatura-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-miniatura-280.webp 280w, /img/d/p-miniatura-420.webp 420w, /img/d/p-miniatura-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-miniatura-560.jpg" srcset="/img/d/p-miniatura-280.jpg 280w, /img/d/p-miniatura-420.jpg 420w, /img/d/p-miniatura-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="700" alt="Poster: tiny guests swimming and dining around a giant coupe glass in a colonial courtyard. Text: &quot;Casa Salvaje. For pleasure, mostly. Cartagena.&quot;" loading="lazy" decoding="async"></picture><figcaption>For pleasure, mostly.</figcaption></figure>
+          <figure><picture><source type="image/avif" srcset="/img/d/p-rituales-280.avif 280w, /img/d/p-rituales-420.avif 420w, /img/d/p-rituales-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-rituales2-280.webp 280w, /img/d/p-rituales2-420.webp 420w, /img/d/p-rituales2-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-rituales-560.jpg" srcset="/img/d/p-rituales-280.jpg 280w, /img/d/p-rituales-420.jpg 420w, /img/d/p-rituales-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="995" alt="Poster: a golden peacock over a draped table under an orange arch, between blue velvet curtains. Text: &quot;Bad habits, divine company.&quot; Casa Salvaje logo." loading="lazy" decoding="async"></picture><figcaption>Bad habits, divine company.</figcaption></figure>
+          <figure><picture><source type="image/avif" srcset="/img/d/p-tipografia-280.avif 280w, /img/d/p-tipografia-420.avif 420w, /img/d/p-tipografia-560.avif 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><source type="image/webp" srcset="/img/d/p-tipografia2-280.webp 280w, /img/d/p-tipografia2-420.webp 420w, /img/d/p-tipografia2-560.webp 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)"><img src="/img/d/p-tipografia-560.jpg" srcset="/img/d/p-tipografia-280.jpg 280w, /img/d/p-tipografia-420.jpg 420w, /img/d/p-tipografia-560.jpg 560w" sizes="(min-width:1320px) 300px, (min-width:900px) 23vw, calc((100vw - 48px)/2)" width="560" height="995" alt="Poster: red lettering &quot;Bad habits&quot; with a snake wound through it and a halo over the A. Text: &quot;Divine company.&quot; Casa Salvaje logo." loading="lazy" decoding="async"></picture><figcaption>Bad habits. Divine company.</figcaption></figure>
+        </div>
       </div>
-    </a>
+    </div>
+  </section>
+
+  <section class="sec" id="about" aria-labelledby="h-about">
+    <div class="wrap g12">
+      <div class="about-main">
+        <p class="label">About</p>
+        <h2 class="h2" id="h-about">We started in 2025 with a hosomaki bar in Bogotá. In 2026 came a whole house in Cartagena.</h2>
+        <p class="lead">Always the same idea: that the kitchen, the bar, the music and the service tell one story. Grupo ONO makes places with character. Each brand has its own kitchen, look and rhythm, and behind all of them is one team obsessed with produce and with a night done right.</p>
+        <ol class="values">
+          <li><span class="num" aria-hidden="true">I</span><p><strong>Produce</strong>What reaches the plate and the glass starts with what we buy.</p></li>
+          <li><span class="num" aria-hidden="true">II</span><p><strong>Character</strong>Every place with its own identity, from the menu to the light.</p></li>
+          <li><span class="num" aria-hidden="true">III</span><p><strong>People</strong>Teams make the night. We train them and look after them.</p></li>
+        </ol>
+      </div>
+      <div class="people-box" id="people">
+        <h3>Who runs Grupo ONO</h3>
+        <!-- OWNER: confirm Finance/Legal names may be published -->
+        <dl class="people">
+          <div><dt>Founders</dt><dd>Jaime Lora, Dilan Carrillo</dd></div>
+          <div><dt>Direction</dt><dd>Jaime Lora, Dilan Carrillo, Nicolás Manrique</dd></div>
+          <div><dt>Finance</dt><dd>Sebastián Patiño</dd></div>
+          <div><dt>Legal</dt><dd>Juan David Castro</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="press sec" id="press" aria-labelledby="h-press">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Press &amp; media</p>
+        <h2 class="h2" id="h-press">Press.</h2>
+      </div>
+      <div class="g12">
+        <div class="boiler">
+          <h3 class="label">About Grupo ONO · 72 words</h3>
+          <blockquote><p>Grupo ONO is a hospitality group founded by Jaime Lora and Dilan Carrillo. It began in Bogotá in <span class="nw">November 2025</span> with ONO Hosomaki Bar, a Japanese-inspired hosomaki bar and night club. On <span class="nw">25 September 2026</span> it opened Casa Salvaje in Cartagena's Old City, a colonial house with four worlds under one roof: Kanibal and SLVJ, both open; La Domenica, opening on a date to be confirmed; and ONO Cartagena, opening <span class="nw">November–December 2026</span>.</p></blockquote><!-- REVIEW 2026-12-31: opening window -->
+        </div>
+        <dl class="ledger ledger--sm">
+          <div><dt>Founded by</dt><dd>Jaime Lora, Dilan Carrillo</dd></div>
+          <div><dt>Cities</dt><dd>Bogotá, Cartagena</dd></div>
+          <div><dt>ONO Hosomaki Bar</dt><dd>Calle 84A <span class="nw">#9-11</span>, Bogotá · opened <span class="nw">Nov 2025</span> · <a href="https://onoculto.com/">onoculto.com</a></dd></div>
+          <div><dt>Casa Salvaje</dt><dd>Calle Santa Teresa <span class="nw">#32-41</span>, Old City · opened <span class="nw">25 Sep 2026</span> · <a href="https://www.casa-salvaje.com/">casa-salvaje.com</a></dd></div>
+          <div><dt>Still to open</dt><dd><span>La Domenica, date to be&nbsp;confirmed</span><span class="vh">; </span><span>ONO Cartagena, <span class="nw">Nov–Dec 2026</span></span><!-- REVIEW 2026-12-31: opening window --></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/grupo.ono/">@grupo.ono</a>&nbsp;· <a href="https://www.instagram.com/ono.culto/">@ono.culto</a>&nbsp;· <a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a>&nbsp;· <a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a>&nbsp;· <a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a>&nbsp;· <a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a>&nbsp;· <a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></dd></div>
+          <div><dt>ONO in the press</dt><dd><span>AXXIS, <a href="https://revistaaxxis.com.co/revistaaxxis/diseno-ono-hosomaki-bar-bogota/"><span lang="es">“Ono Hosomaki Bar: un viaje sensorial de cocina, cócteles y vida nocturna”</span></a>, <span class="nw">19 Feb 2026</span></span><span class="vh"> · </span><span>Also featured in: Marie Claire · Revista Diners</span></dd></div>
+          <div><dt>Casa Salvaje launch press</dt><dd>ACPR Global</dd></div>
+          <div><dt>Interviews and features</dt><dd><span><a class="tl" href="mailto:jaimeloralondono@gmail.com?subject=Press%20enquiry">jaimeloralondono@<wbr>gmail.com</a></span><span class="vh"> or </span><a class="tl" href="/contact.html?reason=press">Write to us <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a></dd></div>
+        </dl>
+      </div>
+      <table class="kit">
+        <caption>Web resolution; high-res on request. Images: courtesy of Grupo&nbsp;ONO.</caption>
+        <thead><tr><th scope="col">File</th><th scope="col">What</th><th scope="col">Format</th><th scope="col">Pixels</th><th scope="col">Size</th><th scope="col">Download</th></tr></thead>
+        <tbody>
+      <tr><td>logo-grupo-ono.svg</td><td>Grupo ONO logo, outlined</td><td>SVG</td><td>vector</td><td>6.0&nbsp;KB</td><td><a href="/img/logo-grupo-ono.svg" download>Download<span class="vh"> logo-grupo-ono.svg</span></a></td></tr>
+      <tr><td>logo-grupo-ono-512.png</td><td>Grupo ONO logo, black on light grey</td><td>PNG</td><td>512×512</td><td>7.1&nbsp;KB</td><td><a href="/img/logo-grupo-ono-512.png" download>Download<span class="vh"> logo-grupo-ono-512.png</span></a></td></tr>
+      <tr><td>logo-ono.png</td><td>ONO Hosomaki Bar logo</td><td>PNG</td><td>200×200</td><td>13&nbsp;KB</td><td><a href="/img/logo-ono.png" download>Download<span class="vh"> logo-ono.png</span></a></td></tr>
+      <tr><td>logo-salvaje-oro.png</td><td>Casa Salvaje logo, gold</td><td>PNG</td><td>500×650</td><td>69&nbsp;KB</td><td><a href="/img/logo-salvaje-oro.png" download>Download<span class="vh"> logo-salvaje-oro.png</span></a></td></tr>
+      <tr><td>puerta.jpg</td><td>Casa Salvaje's door, Calle Santa Teresa</td><td>JPG</td><td>800×1000</td><td>149&nbsp;KB</td><td><a href="/img/puerta.jpg" download>Download<span class="vh"> puerta.jpg</span></a></td></tr>
+      <tr><td>slvj-salon.jpg</td><td>The SLVJ dining room at night</td><td>JPG</td><td>1536×1024</td><td>241&nbsp;KB</td><td><a href="/img/slvj-salon.jpg" download>Download<span class="vh"> slvj-salon.jpg</span></a></td></tr>
+      <tr><td>kanibal-salon.jpg</td><td>The Kanibal dining room, full</td><td>JPG</td><td>1000×666</td><td>111&nbsp;KB</td><td><a href="/img/kanibal-salon.jpg" download>Download<span class="vh"> kanibal-salon.jpg</span></a></td></tr>
+      <tr><td>camp-ono-rojo.jpg</td><td>ONO Cartagena campaign: red Oni mask</td><td>JPG</td><td>800×1000</td><td>134&nbsp;KB</td><td><a href="/img/camp-ono-rojo.jpg" download>Download<span class="vh"> camp-ono-rojo.jpg</span></a></td></tr>
+      <tr><td>ono-anatomia-oni-tuna.jpg</td><td>Anatomy of a roll · ONO</td><td>JPG</td><td>560×700</td><td>54&nbsp;KB</td><td><a href="/img/art/ono-anatomia-oni-tuna.jpg" download>Download<span class="vh"> ono-anatomia-oni-tuna.jpg</span></a></td></tr>
+      <tr><td>ono-oni-green-oni.jpg</td><td>ONO Cartagena campaign: Unmask your Oni</td><td>JPG</td><td>560×700</td><td>82&nbsp;KB</td><td><a href="/img/art/ono-oni-green-oni.jpg" download>Download<span class="vh"> ono-oni-green-oni.jpg</span></a></td></tr>
+      <tr><td>ono-skin-tuna.jpg</td><td>ONO Cartagena campaign: Beneath the skin</td><td>JPG</td><td>560×995</td><td>81&nbsp;KB</td><td><a href="/img/art/ono-skin-tuna.jpg" download>Download<span class="vh"> ono-skin-tuna.jpg</span></a></td></tr>
+      <tr><td>mosaico-jaguar.jpg</td><td>Casa Salvaje campaign: mosaic jaguar</td><td>JPG</td><td>560×700</td><td>96&nbsp;KB</td><td><a href="/img/art/mosaico-jaguar.jpg" download>Download<span class="vh"> mosaico-jaguar.jpg</span></a></td></tr>
+      <tr><td>guest-list-heaven-has-a-guest-list.jpg</td><td>Casa Salvaje campaign: Heaven has a guest list</td><td>JPG</td><td>560×995</td><td>83&nbsp;KB</td><td><a href="/img/art/guest-list-heaven-has-a-guest-list.jpg" download>Download<span class="vh"> guest-list-heaven-has-a-guest-list.jpg</span></a></td></tr>
+      <tr><td>miniatura-the-coupe.jpg</td><td>Casa Salvaje campaign: For pleasure, mostly</td><td>JPG</td><td>560×700</td><td>95&nbsp;KB</td><td><a href="/img/art/miniatura-the-coupe.jpg" download>Download<span class="vh"> miniatura-the-coupe.jpg</span></a></td></tr>
+      <tr><td>kan-steak.jpg</td><td>Kanibal: steak from the fire</td><td>JPG</td><td>750×1000</td><td>156&nbsp;KB</td><td><a href="/img/kan-steak.jpg" download>Download<span class="vh"> kan-steak.jpg</span></a></td></tr>
+      <tr><td>dom-galgo2.jpg</td><td>La Domenica poster: Endless Sunday</td><td>JPG</td><td>1000×1000</td><td>91&nbsp;KB</td><td><a href="/img/dom-galgo2.jpg" download>Download<span class="vh"> dom-galgo2.jpg</span></a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" id="work" aria-labelledby="h-work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Doors</p>
+        <h2 class="h2" id="h-work">Work with us.</h2>
+      </div>
+      <p class="guest">Booking a table? Book with the house: Casa Salvaje on <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a>, ONO Bogotá <a href="https://restaurante.covermanager.com/ono/">online</a> or on <a href="https://www.instagram.com/ono.culto/">Instagram @ono.culto</a>.</p>
+      <ul class="doors-type">
+        <li>
+          <p class="label">Careers</p>
+          <h3>People make the night.</h3>
+          <p>Kitchen, bar, floor, hosts, office, events and marketing, in Bogotá and Cartagena. We're always hiring, and now also for the ONO Cartagena opening.</p>
+          <a class="tl" href="/careers.html">Send your CV <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        </li>
+        <li>
+          <p class="label">Partners &amp; investors</p>
+          <h3>Partnerships &amp; investment.</h3>
+          <p>Casa Salvaje partnerships: <a href="https://wa.me/573203048792">WhatsApp <span class="nw">+57 320 304 8792</span></a> or <span class="ml"><a href="mailto:comercial@slvjcartagena.com">comercial@<wbr>slvjcartagena.com</a>.</span> For group partnerships and investment, write to us.</p>
+          <a class="tl" href="/contact.html?reason=partnerships">Write to us <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        </li>
+        <li>
+          <p class="label">Events &amp; suppliers</p>
+          <h3>Private events &amp; suppliers.</h3>
+          <p>Private events, brand collaborations and supplier proposals for any of our houses.</p>
+          <a class="tl" href="/contact.html?reason=events">Write to us <svg class="ar" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        </li>
+      </ul>
+    </div>
   </section>
 </main>
 
-<footer>
+<footer class="site-footer">
+  <div class="band" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="logo"><svg aria-hidden="true" focusable="false" viewBox="60 214 670 400" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linejoin="round"><title>Grupo ONO</title><g class="grupo"><path d="M75 260H185M605 260H715"/><path stroke="none" fill="currentColor" d="M253.1 276.6Q248.6 276.6 245.1 275.3Q241.6 274 239.2 271.6Q236.8 269.3 235.5 266.2Q234.2 263.2 234.2 259.7Q234.2 255.8 235.7 252.8Q237.2 249.7 239.9 247.5Q242.6 245.3 246.2 244.1Q249.8 242.9 254 242.9Q256.7 242.9 259.1 243.4Q261.5 243.9 263.1 244.7Q263.6 245 263.6 245.1Q263.7 245.3 263.8 245.9L264.4 252.4Q264.4 252.5 264.2 252.6Q263.9 252.7 263.8 252.4Q263.3 250.8 262.4 249.3Q261.5 247.8 260.2 246.5Q258.8 245.3 257 244.6Q255.1 243.9 252.7 243.9Q248.8 243.9 245.7 245.7Q242.6 247.5 240.8 250.8Q238.9 254.2 238.9 258.8Q238.9 262.2 240 265.2Q241 268.3 242.9 270.7Q244.9 273.1 247.8 274.5Q250.7 275.8 254.4 275.8Q256.8 275.8 258.2 275.2Q259.5 274.6 260.2 273.3Q260.8 271.9 260.8 269.5Q260.8 267 260.5 265.8Q260.2 264.7 259 264.3Q257.8 263.9 255.1 263.9Q254.8 263.9 254.8 263.5Q254.8 263.1 255 263.1Q258.4 263.3 261.2 263.3Q264 263.4 267 263.2Q267.3 263.2 267.3 263.6Q267.3 263.9 267 263.9Q265.9 263.9 265.4 264.3Q264.9 264.7 264.8 266Q264.6 267.3 264.6 270Q264.6 271.7 264.7 272.6Q264.8 273.4 264.9 273.8Q265 274.2 265 274.6Q265 274.9 264.9 275Q264.8 275.1 264.4 275.2Q261.7 275.8 258.7 276.2Q255.7 276.6 253.1 276.6ZM335.4 276Q334.6 276 332.7 274Q330.8 272 328.2 268.3Q325.5 264.6 322.2 259.4L325.7 258.3Q330 264.6 333.1 268.4Q336.1 272.1 338.5 273.7Q340.8 275.4 342.9 275.4Q343.1 275.4 343.1 275.7Q343.1 276 342.9 276Q340 276 338.2 276Q336.3 276 335.4 276ZM323 243.3Q327.3 243.3 329.6 245.2Q332 247 332 250.1Q332 253 330.3 255.3Q328.6 257.6 326 258.9Q323.3 260.2 320.2 260.2Q319.6 260.2 318.9 260.2Q318.2 260.1 317.7 260.1V271.8Q317.7 273.3 317.9 274.1Q318.2 274.9 319.1 275.1Q320.1 275.4 321.9 275.4Q322 275.4 322 275.7Q322 276 321.9 276Q320.6 276 319 275.9Q317.5 275.9 315.6 275.9Q313.8 275.9 312.2 275.9Q310.6 276 309.3 276Q309.1 276 309.1 275.7Q309.1 275.4 309.3 275.4Q311.1 275.4 312 275.1Q312.9 274.9 313.2 274.1Q313.6 273.3 313.6 271.8V247.7Q313.6 246.2 313.2 245.4Q312.9 244.7 312 244.4Q311.2 244.1 309.3 244.1Q309.2 244.1 309.2 243.8Q309.2 243.5 309.3 243.5Q310.6 243.5 312.2 243.6Q313.8 243.7 315.6 243.7Q317.2 243.7 319.3 243.5Q321.4 243.3 323 243.3ZM327.7 251.8Q327.7 248.9 326.9 247.2Q326.1 245.6 324.7 244.9Q323.3 244.2 321.4 244.2Q319.4 244.2 318.5 244.9Q317.7 245.6 317.7 247.8V258.8Q318.4 258.8 319.2 258.9Q320.1 258.9 320.7 258.9Q324.6 258.9 326.1 257.2Q327.7 255.4 327.7 251.8ZM407.5 249.5Q407.5 246.9 406.3 245.5Q405.1 244.1 402.8 244.1Q402.7 244.1 402.7 243.8Q402.7 243.5 402.8 243.5Q404 243.5 405.3 243.6Q406.6 243.7 408.1 243.7Q409.4 243.7 410.7 243.6Q412 243.5 413.1 243.5Q413.2 243.5 413.2 243.8Q413.2 244.1 413.1 244.1Q411 244.1 409.9 245.5Q408.9 246.9 408.9 249.5V264.2Q408.9 268.1 407.3 270.9Q405.7 273.7 402.9 275.2Q400.1 276.7 396.4 276.7Q392.5 276.7 389.6 275.2Q386.7 273.7 385.1 271Q383.5 268.2 383.5 264.4V247.7Q383.5 246.2 383.2 245.4Q382.9 244.7 381.9 244.4Q381 244.1 379.3 244.1Q379.1 244.1 379.1 243.8Q379.1 243.5 379.3 243.5Q380.6 243.5 382.1 243.6Q383.7 243.7 385.5 243.7Q387.4 243.7 389 243.6Q390.6 243.5 391.8 243.5Q391.9 243.5 391.9 243.8Q391.9 244.1 391.8 244.1Q390 244.1 389.1 244.4Q388.2 244.7 387.9 245.5Q387.6 246.3 387.6 247.8V262.6Q387.6 268.8 390.3 271.9Q393 275 397.8 275Q402.4 275 404.9 272.2Q407.5 269.3 407.5 264.2ZM462.5 271.6Q462.5 273.1 462.9 273.9Q463.3 274.8 464.5 275.1Q465.8 275.4 468.3 275.4Q468.4 275.4 468.4 275.7Q468.4 276 468.3 276Q466.6 276 464.7 275.9Q462.7 275.9 460.4 275.9Q458.7 275.9 457.1 275.9Q455.4 276 454.1 276Q454 276 454 275.7Q454 275.4 454.1 275.4Q456 275.4 456.9 275.1Q457.8 274.9 458.1 274.1Q458.4 273.3 458.4 271.8V247.7Q458.4 246.2 458.1 245.4Q457.8 244.7 456.9 244.4Q456 244.1 454.1 244.1Q454 244.1 454 243.8Q454 243.5 454.1 243.5Q455.4 243.5 457.1 243.6Q458.7 243.7 460.4 243.7Q461.7 243.7 463.7 243.5Q465.6 243.3 467.6 243.3Q470.6 243.3 473 244.2Q475.5 245.1 476.9 247Q478.4 248.9 478.4 251.9Q478.4 254.6 477.4 256.6Q476.4 258.5 474.8 259.8Q473.1 261.1 471 261.8Q469 262.4 467 262.4Q466.4 262.4 465.7 262.3Q465.1 262.3 464.5 262.1Q464.3 262.1 464.4 261.7Q464.4 261.4 464.6 261.4Q465.1 261.5 465.6 261.6Q466 261.6 466.4 261.6Q468.4 261.6 470.1 260.7Q471.7 259.8 472.8 257.8Q473.8 255.9 473.8 253Q473.8 250.2 472.8 248.2Q471.9 246.3 470.2 245.3Q468.4 244.2 466.2 244.2Q464.7 244.2 463.9 244.4Q463.1 244.6 462.8 245.4Q462.5 246.2 462.5 247.8ZM537.5 276.6Q533.8 276.6 530.7 275.3Q527.7 274 525.5 271.6Q523.4 269.3 522.2 266.2Q521 263.2 521 259.8Q521 255.6 522.7 252.4Q524.3 249.2 527 247.1Q529.7 245 533 244Q536.2 242.9 539.4 242.9Q543.2 242.9 546.2 244.3Q549.3 245.7 551.4 248Q553.5 250.4 554.7 253.3Q555.8 256.3 555.8 259.4Q555.8 263.1 554.3 266.2Q552.9 269.3 550.4 271.6Q547.8 274 544.5 275.3Q541.2 276.6 537.5 276.6ZM539.4 275.5Q542.6 275.5 545.3 273.8Q548 272.1 549.5 268.9Q551.1 265.6 551.1 260.9Q551.1 256 549.4 252.3Q547.7 248.5 544.6 246.3Q541.5 244.2 537.2 244.2Q531.8 244.2 528.8 247.9Q525.8 251.6 525.8 258Q525.8 261.6 526.7 264.8Q527.7 268 529.5 270.4Q531.3 272.8 533.8 274.2Q536.3 275.5 539.4 275.5Z"/></g><g class="ono"><rect x="65" y="318" width="170" height="282" rx="34"/><path d="M108 318V600M192 318V600M65 360H235M65 560H235M65 460H108M192 460H235"/><path d="M75 328L108 360M225 328L192 360M75 590L108 560M225 590L192 560"/><rect x="275" y="318" width="65" height="282"/><path d="M267 318H348M267 600H348"/><path d="M292 318V600M323 318V600M275 340H340M275 578H340M275 460H292M323 460H340"/><rect x="450" y="318" width="65" height="282"/><path d="M442 318H523M442 600H523"/><path d="M467 318V600M498 318V600M450 340H515M450 578H515M450 460H467M498 460H515"/><path d="M322 326L458 478M322 398L458 552"/><rect x="555" y="318" width="170" height="282" rx="34"/><path d="M598 318V600M682 318V600M555 360H725M555 560H725M555 460H598M682 460H725"/><path d="M565 328L598 360M715 328L682 360M565 590L598 560M715 590L682 560"/></g></svg></div>
-    <div class="cols">
-      <div><h2>The group</h2><ul><li><a href="index.html#about">About</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html#press">Press</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h2>Bogotá</h2><ul><li><a href="index.html#ono">ONO Hosomaki Bar</a></li><li><a href="https://maps.google.com/?q=ONO+Hosomaki+Bar+Calle+84A+9-11+Bogota" target="_blank" rel="noopener">Calle 84A #9-11</a></li><li><a href="https://onoculto.com/" target="_blank" rel="noopener">onoculto.com</a></li></ul></div>
-      <div><h2>Cartagena</h2><ul><li><a href="https://www.casa-salvaje.com" target="_blank" rel="noopener">Casa Salvaje</a></li><li><a href="https://www.casa-salvaje.com/ono.html" target="_blank" rel="noopener">ONO Cartagena (soon, at Casa Salvaje)</a></li></ul></div>
-      <div><h2>Follow</h2><ul><li><a href="https://www.instagram.com/casasalvaje.ctg" target="_blank" rel="noopener">@casasalvaje.ctg</a></li></ul></div>
+    <div class="elev elev--unlit" aria-hidden="true"><svg viewBox="60 214 670 400" focusable="false"><use href="#elev-geo"/></svg></div>
+    <div class="foot-cols">
+      <div>
+        <p class="foot-h" id="f-group">The group</p>
+        <ul aria-labelledby="f-group">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#people">People</a></li>
+          <li><a href="/#press">Press</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h" id="f-bog">Bogotá</p>
+        <ul aria-labelledby="f-bog">
+          <li><a href="https://onoculto.com/">ONO Hosomaki Bar</a></li>
+          <li>Hosomaki bar and night club</li>
+          <li>Calle 84A <span class="nw">#9-11</span></li>
+          <li><a href="https://restaurante.covermanager.com/ono/">Book ONO Bogotá</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h" id="f-ctg">Cartagena</p>
+        <ul aria-labelledby="f-ctg">
+          <li><a href="https://www.casa-salvaje.com/">Casa Salvaje</a></li>
+          <li>Calle Santa Teresa <span class="nw">#32-41</span>, Old City</li>
+          <li>Reservations: <a href="https://wa.me/573108286602?text=Hi%20Casa%20Salvaje%2C%20I%27d%20like%20to%20book%20a%20table">WhatsApp <span class="nw">+57 310 828 6602</span></a></li>
+          <li><a href="https://www.casa-salvaje.com/ono.html">ONO Cartagena, <span class="nw">Nov–Dec 2026</span></a><!-- REVIEW 2026-12-31: opening window --></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-h" id="f-follow">Follow</p>
+        <ul aria-labelledby="f-follow">
+          <li><a href="https://www.instagram.com/grupo.ono/">@grupo.ono</a></li>
+          <li><a href="https://www.instagram.com/ono.culto/">@ono.culto</a></li>
+          <li><a href="https://www.instagram.com/casasalvaje.ctg/">@casasalvaje.ctg</a></li>
+          <li><a href="https://www.instagram.com/ladomenica.ctg/">@ladomenica.ctg</a></li>
+          <li><a href="https://www.instagram.com/kanibal.ctg/">@kanibal.ctg</a></li>
+          <li><a href="https://www.instagram.com/slvj.ctg/">@slvj.ctg</a></li>
+          <li><a href="https://www.instagram.com/ono.ctg/">@ono.ctg</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="legal"><span>© <span class="year">2026</span> Grupo ONO · Bogotá · Cartagena</span><a href="privacy.html">Personal data policy</a></div>
+    <p class="legal"><span>© 2026 Grupo ONO · Bogotá · Cartagena</span><!-- OWNER: becomes "© 2026 [Legal name] · NIT […]" --> <a href="/privacy.html">Personal data policy</a></p>
   </div>
 </footer>
-
-<script src="grupo.js" onerror="document.documentElement.classList.remove('js')"></script>
-</body></html>
+</body>
+</html>
