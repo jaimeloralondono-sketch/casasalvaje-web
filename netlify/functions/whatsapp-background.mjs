@@ -1,6 +1,8 @@
 // POST /api/whatsapp  <- webhook de Bird (evento whatsapp.received).
-// Responde por WhatsApp con Claude usando la misma ficha que el chat de la web. Va en la línea del concierge (+57 318 282 4124):
-// ahí escriben solo el bot y Jaime; el equipo atiende la línea de la casa (+57 310 828 6602) desde su app.
+// Responde por WhatsApp con Claude usando la misma ficha que el chat de la web. Atiende dos líneas:
+// - la del concierge (+57 318 282 4124): ahí escriben solo el bot y Jaime;
+// - la de reservas de la casa (+57 310 828 6602), si está en WHATSAPP_RESERVAS: ahí el bot solo toma reservas de mesa,
+//   las guarda en el panel /reservas/admin y le pasa la conversación al equipo para que confirme.
 // Es una función "background": Netlify responde 202 a Bird de inmediato y aquí hay tiempo para pensar la respuesta.
 //
 // Variables de entorno en Netlify:
@@ -9,9 +11,11 @@
 //   BIRD_WEBHOOK_SECRET   el secreto whsec_... que Bird muestra una sola vez al crear el webhook
 //   WHATSAPP_PRUEBA       opcional: números separados por coma; si existe, el bot solo responde a esos números
 //   WHATSAPP_APAGADO      opcional: "1" para que el bot no responda a nadie (el equipo sigue por la app)
+//   WHATSAPP_RESERVAS     opcional: el número de reservas de la casa, p. ej. +573108286602; en esa línea el bot solo toma reservas
 import { createHmac, timingSafeEqual } from "node:crypto";
 import Anthropic from "@anthropic-ai/sdk";
-import { FICHA_WHATSAPP } from "../lib/ficha.mjs";
+import { FICHA_WHATSAPP, FICHA_RESERVAS } from "../lib/ficha.mjs";
+import { leerReserva, guardarReserva } from "../lib/reservas.mjs";
 import { agendaDeLaWeb } from "../lib/agenda.mjs";
 
 const HORAS_SILENCIO = 6;   // si alguien del equipo escribió desde la app en estas horas, el bot no se mete
@@ -40,6 +44,7 @@ function bird(ruta, opciones = {}) {
   });
 }
 
+const digitos = (n) => String(n || "").replace(/\D/g, "");
 const esBot = (m) => (m.tags || []).some((t) => t.name === ETIQUETA.name && t.value === ETIQUETA.value);
 const textoDe = (m) => m.text?.body || m.interactive_reply?.title || (m.image || m.video || m.audio || m.document ? "[envió un archivo]" : m.location ? "[envió una ubicación]" : "");
 
@@ -58,6 +63,7 @@ export default async (req) => {
   if (!casa || d.to?.group_id) return;   // los grupos los atiende el equipo
   const prueba = (process.env.WHATSAPP_PRUEBA || "").split(",").map((n) => n.replace(/[^\d+]/g, "")).filter(Boolean);
   if (prueba.length && !prueba.includes(huesped.phone_number)) return;
+  const lineaReservas = !!digitos(process.env.WHATSAPP_RESERVAS) && digitos(casa) === digitos(process.env.WHATSAPP_RESERVAS);
 
   // La conversación reciente con este huésped, de la más vieja a la más nueva.
   const filtro = huesped.bsuid ? `bsuid=${encodeURIComponent(huesped.bsuid)}` : `phone_number=${encodeURIComponent(huesped.phone_number || "")}`;
@@ -88,13 +94,20 @@ export default async (req) => {
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
     output_config: { effort: "high" },   // en WhatsApp nadie espera en pantalla: que piense a fondo
-    system: [{ type: "text", text: FICHA_WHATSAPP, cache_control: { type: "ephemeral" } }, ...(agenda ? [{ type: "text", text: agenda }] : [])],
+    system: [{ type: "text", text: lineaReservas ? FICHA_RESERVAS : FICHA_WHATSAPP, cache_control: { type: "ephemeral" } }, ...(agenda ? [{ type: "text", text: agenda }] : [])],
     messages: turnos,
   });
   if (resp.stop_reason === "refusal") return;   // que lo atienda una persona
   let texto = resp.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
   let paso = null;
   texto = texto.replace(/\[\[HUMANO:\s*([\s\S]*?)\]\]/, (_, r) => { paso = r.trim(); return ""; }).trim();
+  // En la línea de reservas: la solicitud completa se guarda en el panel y el equipo la confirma por este chat.
+  let reserva = null;
+  texto = texto.replace(/\[\[RESERVA:\s*([\s\S]*?)\]\]/, (_, j) => { reserva = lineaReservas ? leerReserva(j.trim()) : null; return ""; }).trim();
+  if (reserva) {
+    const fila = await guardarReserva(reserva, huesped.phone_number || huesped.bsuid);
+    paso = `Reserva ${fila.lugar} ${fila.fecha} ${fila.hora}, ${fila.personas} personas, a nombre de ${fila.nombre || "sin nombre"}`;
+  }
   if (!texto) return;
 
   await bird("/v1/whatsapp/messages", {
