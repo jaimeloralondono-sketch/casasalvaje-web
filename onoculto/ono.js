@@ -15,7 +15,7 @@
   // Menú sólido al bajar; botón flotante se esconde en la sección de reservas
   var nav = document.getElementById('nav');
   var fab = document.getElementById('fab');
-  var visit = document.getElementById('visita');
+  var visit = document.getElementById('contacto');
   function onScroll() {
     nav.classList.toggle('solid', window.scrollY > 40);
     if (fab && visit) {
@@ -36,6 +36,16 @@
   } else {
     rv.forEach(function (el) { el.classList.add('in'); });
   }
+
+  // Menú a pantalla completa
+  var ov = document.getElementById('overlay');
+  var mb = document.getElementById('menuBtn');
+  function openMenu() { ov.hidden = false; ov.classList.add('open'); document.body.classList.add('locked'); mb.setAttribute('aria-expanded', 'true'); document.getElementById('menuClose').focus(); }
+  function closeMenu() { ov.hidden = true; ov.classList.remove('open'); document.body.classList.remove('locked'); mb.setAttribute('aria-expanded', 'false'); }
+  mb.addEventListener('click', openMenu);
+  document.getElementById('menuClose').addEventListener('click', function () { closeMenu(); mb.focus(); });
+  ov.querySelectorAll('.ov-links a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ov.hidden) { closeMenu(); mb.focus(); } });
 
   // Galería ampliable
   var lb = document.getElementById('lb');

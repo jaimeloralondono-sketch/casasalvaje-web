@@ -188,3 +188,23 @@ footer .hrs{color:var(--mute);font-size:.8rem}
 .energy .txt .hours{font:400 clamp(1.6rem,2.6vw,2.1rem)/1.15 var(--display);letter-spacing:.01em;color:#fff}
 .nav .logo img{height:46px}
 .party h2 em{color:#fff;text-decoration:underline;text-decoration-color:var(--red2);text-decoration-thickness:.08em;text-underline-offset:.08em}
+
+/* Menú a pantalla completa (como en onoculto.com) */
+.menu-btn{background:none;border:0;color:#fff;font:400 1.6rem/1 var(--display);letter-spacing:.02em;text-transform:uppercase;cursor:pointer;padding:6px 0}
+.menu-btn:hover{color:var(--red2)}
+.nav .menu-btn{display:none}
+@media (max-width:960px){.nav .menu-btn{display:block}.nav .book{display:none}}
+.overlay{position:fixed;inset:0;z-index:120;background:#000;display:flex;flex-direction:column;padding:calc(14px + env(safe-area-inset-top,0px)) var(--pad) calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.overlay[hidden]{display:none!important}
+.ov-top{display:flex;justify-content:space-between;align-items:center;height:56px}
+.ov-top img{height:40px;width:auto}
+.ov-top .menu-btn{color:var(--bone2)}
+.ov-links{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.4vh,14px);padding:30px 0}
+.ov-links a{font:400 clamp(3rem,11vw,6rem)/1 var(--display);text-transform:uppercase;text-decoration:none;color:#fff;width:max-content;max-width:100%;transition:color .2s,transform .3s}
+.ov-links a:hover{color:var(--red2);transform:translateX(10px)}
+.overlay.open .ov-links a{animation:slidein .5s cubic-bezier(.2,.7,.2,1) both}
+.overlay.open .ov-links a:nth-child(2){animation-delay:.04s}.overlay.open .ov-links a:nth-child(3){animation-delay:.08s}.overlay.open .ov-links a:nth-child(4){animation-delay:.12s}.overlay.open .ov-links a:nth-child(5){animation-delay:.16s}.overlay.open .ov-links a:nth-child(6){animation-delay:.2s}.overlay.open .ov-links a:nth-child(7){animation-delay:.24s}.overlay.open .ov-links a:nth-child(8){animation-delay:.28s}
+@keyframes slidein{from{opacity:0;transform:translateX(-24px)}}
+.ov-foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+body.locked{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.overlay.open .ov-links a{animation:none}}

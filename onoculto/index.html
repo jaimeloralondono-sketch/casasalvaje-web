@@ -39,13 +39,37 @@
       <a href="#fiesta"><span class="es">Fiesta</span><span class="en">Party</span></a>
       <a href="#galeria"><span class="es">Galería</span><span class="en">Gallery</span></a>
       <a href="#cartagena">Cartagena</a>
+      <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Idioma / Language">
       <button type="button" data-set="es" aria-pressed="true">ES</button><button type="button" data-set="en" aria-pressed="false">EN</button>
     </div>
-    <a class="brush sm" href="https://restaurante.covermanager.com/ono/" target="_blank" rel="noopener"><span class="es">Reservar</span><span class="en">Book</span></a>
+    <a class="brush sm book" href="https://restaurante.covermanager.com/ono/" target="_blank" rel="noopener"><span class="es">Reservar</span><span class="en">Book</span></a>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="overlay"><span class="es">Menú</span><span class="en">Menu</span></button>
   </div>
 </header>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="ov-top">
+    <img src="img/logo-ono-rojo.png" width="1208" height="902" alt="ONO Hosomaki Bar">
+    <button type="button" class="menu-btn" id="menuClose"><span class="es">Cerrar</span><span class="en">Close</span></button>
+  </div>
+  <nav class="ov-links" aria-label="Menú principal">
+    <a href="#ritual"><span class="es">Nosotros</span><span class="en">About us</span></a>
+    <a href="#carta"><span class="es">Menú</span><span class="en">Menu</span></a>
+    <a href="#fiesta"><span class="es">Fiesta</span><span class="en">Party</span></a>
+    <a href="https://restaurante.covermanager.com/ono/" target="_blank" rel="noopener"><span class="es">Cena</span><span class="en">Dinner</span></a>
+    <a href="#galeria"><span class="es">Galería</span><span class="en">Gallery</span></a>
+    <a href="#cartagena">Cartagena</a>
+    <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+    <a href="#top"><span class="es">Inicio</span><span class="en">Home</span></a>
+  </nav>
+  <div class="ov-foot">
+    <a class="link" href="https://www.instagram.com/ono.culto/" target="_blank" rel="noopener">Instagram</a>
+    <a class="link" href="https://open.spotify.com/playlist/475mlQSTVBA7feZYBj5Mlt" target="_blank" rel="noopener">Spotify</a>
+    <span>Calle 84A #9-11 · Bogotá</span>
+  </div>
+</div>
 
 <main id="top">
 
@@ -235,7 +259,7 @@
   </section>
 </main>
 
-<footer>
+<footer id="contacto">
   <div class="wrap">
     <div class="row">
       <a class="link" href="https://www.instagram.com/ono.culto/" target="_blank" rel="noopener">Instagram</a>
