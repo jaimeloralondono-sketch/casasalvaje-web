@@ -25,6 +25,6 @@ Sitio estático de ONO Bogotá en español e inglés. No tiene build: Netlify pu
 ## Pendiente del dueño
 
 - Confirmar con Rodia Films el uso web de las fotos y que las personas que aparecen lo autorizaron.
-- Enlaces de Marie Claire y Revista Diners para la sección de prensa (hoy solo aparecen los nombres).
+- Marie Claire y Revista Diners fueron menciones en sus cuentas de Instagram, no artículos web; por eso en prensa van solo los nombres. Si Jaime pasa el enlace de cada publicación, se enlazan.
 - Revisar la ventana de apertura de ONO Cartagena el 2026-12-31 (busca `REVIEW` en `index.html`).
 - El sitio anterior (Framer) tenía un píxel de Meta (`1003594065627012`). Si la pauta lo necesita, se agrega aquí junto con un aviso de cookies.
