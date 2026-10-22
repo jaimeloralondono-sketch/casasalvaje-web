@@ -1,2 +1,18 @@
+# Archivos internos de la carpeta: no se sirven
 /README.md  /  404!
-/tools/*  /  404!
+/tools/*    /  404!
+
+# Rutas del sitio anterior (Framer), para que los enlaces viejos y Google sigan llegando
+/old-home     /            301!
+/about        /#ritual     301!
+/menu         /#carta      301!
+/events       /blog/       301!
+/contact      /#contacto   301!
+/book-dinner  https://restaurante.covermanager.com/ono/  302!
+/book-party   https://web.fourvenues.com/es/ono          302!
+
+# Atajos cortos
+/reservar     https://restaurante.covermanager.com/ono/  302
+/fiesta       https://web.fourvenues.com/es/ono          302
+/carta        https://menupp.co/ono                      302
+/en           /blog/en/    301
